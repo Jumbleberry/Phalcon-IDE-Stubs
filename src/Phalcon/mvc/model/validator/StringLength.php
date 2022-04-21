@@ -2,6 +2,10 @@
 
 namespace Phalcon\Mvc\Model\Validator;
 
+use Phalcon\Mvc\EntityInterface;
+use Phalcon\Mvc\Model\Validator;
+use Phalcon\Mvc\Model\Exception;
+
 /**
  * Phalcon\Mvc\Model\Validator\StringLength
  *
@@ -39,7 +43,7 @@ namespace Phalcon\Mvc\Model\Validator;
  * @deprecated 3.1.0
  * @see Phalcon\Validation\Validator\StringLength
  */
-class StringLength extends \Phalcon\Mvc\Model\Validator
+class StringLength extends Validator
 {
 
     /**
@@ -48,6 +52,8 @@ class StringLength extends \Phalcon\Mvc\Model\Validator
      * @param \Phalcon\Mvc\EntityInterface $record
      * @return bool
      */
-    public function validate(\Phalcon\Mvc\EntityInterface $record) {}
+    public function validate(\Phalcon\Mvc\EntityInterface $record): bool
+    {
+    }
 
 }

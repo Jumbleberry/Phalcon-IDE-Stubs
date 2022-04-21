@@ -2,6 +2,13 @@
 
 namespace Phalcon\Annotations;
 
+use Phalcon\Annotations\AdapterInterface;
+use Phalcon\Annotations\Reader;
+use Phalcon\Annotations\Exception;
+use Phalcon\Annotations\Collection;
+use Phalcon\Annotations\Reflection;
+use Phalcon\Annotations\ReaderInterface;
+
 /**
  * Phalcon\Annotations\Adapter
  *
@@ -21,22 +28,28 @@ abstract class Adapter implements \Phalcon\Annotations\AdapterInterface
      *
      * @param \Phalcon\Annotations\ReaderInterface $reader
      */
-    public function setReader(\Phalcon\Annotations\ReaderInterface $reader) {}
+    public function setReader(\Phalcon\Annotations\ReaderInterface $reader)
+    {
+    }
 
     /**
      * Returns the annotation reader
      *
-     * @return \Phalcon\Annotations\ReaderInterface
+     * @return ReaderInterface
      */
-    public function getReader() {}
+    public function getReader(): ReaderInterface
+    {
+    }
 
     /**
      * Parses or retrieves all the annotations found in a class
      *
      * @param string|object $className
-     * @return \Phalcon\Annotations\Reflection
+     * @return Reflection
      */
-    public function get($className) {}
+    public function get($className): Reflection
+    {
+    }
 
     /**
      * Returns the annotations found in all the class' methods
@@ -44,16 +57,20 @@ abstract class Adapter implements \Phalcon\Annotations\AdapterInterface
      * @param string $className
      * @return array
      */
-    public function getMethods($className) {}
+    public function getMethods(string $className): array
+    {
+    }
 
     /**
      * Returns the annotations found in a specific method
      *
      * @param string $className
      * @param string $methodName
-     * @return \Phalcon\Annotations\Collection
+     * @return Collection
      */
-    public function getMethod($className, $methodName) {}
+    public function getMethod(string $className, string $methodName): Collection
+    {
+    }
 
     /**
      * Returns the annotations found in all the class' methods
@@ -61,15 +78,19 @@ abstract class Adapter implements \Phalcon\Annotations\AdapterInterface
      * @param string $className
      * @return array
      */
-    public function getProperties($className) {}
+    public function getProperties(string $className): array
+    {
+    }
 
     /**
      * Returns the annotations found in a specific property
      *
      * @param string $className
      * @param string $propertyName
-     * @return \Phalcon\Annotations\Collection
+     * @return Collection
      */
-    public function getProperty($className, $propertyName) {}
+    public function getProperty(string $className, string $propertyName): Collection
+    {
+    }
 
 }

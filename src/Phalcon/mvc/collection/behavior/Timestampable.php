@@ -2,13 +2,17 @@
 
 namespace Phalcon\Mvc\Collection\Behavior;
 
+use Phalcon\Mvc\CollectionInterface;
+use Phalcon\Mvc\Collection\Behavior;
+use Phalcon\Mvc\Collection\Exception;
+
 /**
  * Phalcon\Mvc\Collection\Behavior\Timestampable
  *
  * Allows to automatically update a model’s attribute saving the
  * datetime when a record is created or updated
  */
-class Timestampable extends \Phalcon\Mvc\Collection\Behavior
+class Timestampable extends Behavior
 {
 
     /**
@@ -17,6 +21,8 @@ class Timestampable extends \Phalcon\Mvc\Collection\Behavior
      * @param string $type
      * @param \Phalcon\Mvc\CollectionInterface $model
      */
-    public function notify($type, \Phalcon\Mvc\CollectionInterface $model) {}
+    public function notify(string $type, \Phalcon\Mvc\CollectionInterface $model)
+    {
+    }
 
 }

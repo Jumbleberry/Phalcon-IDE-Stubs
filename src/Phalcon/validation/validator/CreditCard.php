@@ -2,6 +2,10 @@
 
 namespace Phalcon\Validation\Validator;
 
+use Phalcon\Validation;
+use Phalcon\Validation\Validator;
+use Phalcon\Validation\Message;
+
 /**
  * Phalcon\Validation\Validator\CreditCard
  *
@@ -38,7 +42,7 @@ namespace Phalcon\Validation\Validator;
  * );
  * </code>
  */
-class CreditCard extends \Phalcon\Validation\Validator
+class CreditCard extends Validator
 {
 
     /**
@@ -48,14 +52,18 @@ class CreditCard extends \Phalcon\Validation\Validator
      * @param string $field
      * @return bool
      */
-    public function validate(\Phalcon\Validation $validation, $field) {}
+    public function validate(\Phalcon\Validation $validation, string $field): bool
+    {
+    }
 
     /**
      * is a simple checksum formula used to validate a variety of identification numbers
      *
      * @param string $number
-     * @return bool
+     * @return boolean
      */
-    private function verifyByLuhnAlgorithm($number) {}
+    private function verifyByLuhnAlgorithm($number): bool
+    {
+    }
 
 }

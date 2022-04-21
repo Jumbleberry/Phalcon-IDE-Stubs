@@ -16,7 +16,7 @@ interface ValidatorInterface
      * @param string $key
      * @return bool
      */
-    public function hasOption($key);
+    public function hasOption(string $key): bool;
 
     /**
      * Returns an option in the validator's options
@@ -26,7 +26,7 @@ interface ValidatorInterface
      * @param mixed $defaultValue
      * @return mixed
      */
-    public function getOption($key, $defaultValue = null);
+    public function getOption(string $key, $defaultValue = null);
 
     /**
      * Executes the validation
@@ -35,6 +35,6 @@ interface ValidatorInterface
      * @param string $attribute
      * @return bool
      */
-    public function validate(\Phalcon\Validation $validation, $attribute);
+    public function validate(\Phalcon\Validation $validation, string $attribute): bool;
 
 }

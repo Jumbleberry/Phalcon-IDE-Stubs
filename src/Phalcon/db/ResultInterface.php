@@ -53,8 +53,9 @@ interface ResultInterface
      * Moves internal resultset cursor to another position letting us to fetch a certain row
      *
      * @param int $number
+     * @return void
      */
-    public function dataSeek($number);
+    public function dataSeek(int $number): void;
 
     /**
      * Changes the fetching mode affecting Phalcon\Db\Result\Pdo::fetch()
@@ -64,7 +65,7 @@ interface ResultInterface
      * @param mixed $ctorargs
      * @return bool
      */
-    public function setFetchMode($fetchMode, $colNoOrClassNameOrObject = null, $ctorargs = null);
+    public function setFetchMode(int $fetchMode, $colNoOrClassNameOrObject = null, $ctorargs = null): bool;
 
     /**
      * Gets the internal PDO result object

@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\Model;
 
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Mvc\Model\MessageInterface;
+
 /**
  * Phalcon\Mvc\Model\Message
  *
@@ -52,12 +55,16 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
     /**
      * @return string
      */
-    public function getType() {}
+    public function getType(): string
+    {
+    }
 
     /**
      * @return string
      */
-    public function getMessage() {}
+    public function getMessage(): string
+    {
+    }
 
     /**
      * Phalcon\Mvc\Model\Message constructor
@@ -68,7 +75,9 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param int|null $code
      */
-    public function __construct($message, $field = null, $type = null, $model = null, $code = null) {}
+    public function __construct(string $message, $field = null, $type = null, $model = null, int $code = null)
+    {
+    }
 
     /**
      * Sets message type
@@ -76,7 +85,9 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
      * @param string $type
      * @return Message
      */
-    public function setType($type) {}
+    public function setType(string $type): Message
+    {
+    }
 
     /**
      * Sets verbose message
@@ -84,7 +95,9 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
      * @param string $message
      * @return Message
      */
-    public function setMessage($message) {}
+    public function setMessage(string $message): Message
+    {
+    }
 
     /**
      * Sets field name related to message
@@ -92,12 +105,16 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
      * @param mixed $field
      * @return Message
      */
-    public function setField($field) {}
+    public function setField($field): Message
+    {
+    }
 
     /**
      * Returns field name related to message
      */
-    public function getField() {}
+    public function getField()
+    {
+    }
 
     /**
      * Set the model who generates the message
@@ -105,7 +122,9 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return Message
      */
-    public function setModel(\Phalcon\Mvc\ModelInterface $model) {}
+    public function setModel(\Phalcon\Mvc\ModelInterface $model): Message
+    {
+    }
 
     /**
      * Sets code for the message
@@ -113,35 +132,45 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
      * @param int $code
      * @return Message
      */
-    public function setCode($code) {}
+    public function setCode(int $code): Message
+    {
+    }
 
     /**
      * Returns the model that produced the message
      *
-     * @return \Phalcon\Mvc\ModelInterface
+     * @return ModelInterface
      */
-    public function getModel() {}
+    public function getModel(): ModelInterface
+    {
+    }
 
     /**
      * Returns the message code
      *
      * @return int
      */
-    public function getCode() {}
+    public function getCode(): int
+    {
+    }
 
     /**
      * Magic __toString method returns verbose message
      *
      * @return string
      */
-    public function __toString() {}
+    public function __toString(): string
+    {
+    }
 
     /**
      * Magic __set_state helps to re-build messages variable exporting
      *
      * @param array $message
-     * @return \Phalcon\Mvc\Model\MessageInterface
+     * @return MessageInterface
      */
-    public static function __set_state(array $message) {}
+    public static function __set_state(array $message): MessageInterface
+    {
+    }
 
 }

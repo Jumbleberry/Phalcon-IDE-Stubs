@@ -37,6 +37,6 @@ interface IndexInterface
      * @param array $data
      * @return IndexInterface
      */
-    public static function __set_state(array $data);
+    public static function __set_state(array $data): IndexInterface;
 
 }

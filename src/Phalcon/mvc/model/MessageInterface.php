@@ -15,7 +15,7 @@ interface MessageInterface
      *
      * @param string $type
      */
-    public function setType($type);
+    public function setType(string $type);
 
     /**
      * Returns message type
@@ -29,7 +29,7 @@ interface MessageInterface
      *
      * @param string $message
      */
-    public function setMessage($message);
+    public function setMessage(string $message);
 
     /**
      * Returns verbose message
@@ -57,7 +57,7 @@ interface MessageInterface
      *
      * @return string
      */
-    public function __toString();
+    public function __toString(): string;
 
     /**
      * Magic __set_state helps to recover messages from serialization
@@ -65,6 +65,6 @@ interface MessageInterface
      * @param array $message
      * @return MessageInterface
      */
-    public static function __set_state(array $message);
+    public static function __set_state(array $message): MessageInterface;
 
 }

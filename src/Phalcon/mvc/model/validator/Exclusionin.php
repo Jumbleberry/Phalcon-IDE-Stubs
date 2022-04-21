@@ -2,6 +2,10 @@
 
 namespace Phalcon\Mvc\Model\Validator;
 
+use Phalcon\Mvc\EntityInterface;
+use Phalcon\Mvc\Model\Validator;
+use Phalcon\Mvc\Model\Exception;
+
 /**
  * Phalcon\Mvc\Model\Validator\ExclusionIn
  *
@@ -36,7 +40,7 @@ namespace Phalcon\Mvc\Model\Validator;
  * @deprecated 3.1.0
  * @see Phalcon\Validation\Validator\EclusionIn
  */
-class Exclusionin extends \Phalcon\Mvc\Model\Validator
+class Exclusionin extends Validator
 {
 
     /**
@@ -45,6 +49,8 @@ class Exclusionin extends \Phalcon\Mvc\Model\Validator
      * @param \Phalcon\Mvc\EntityInterface $record
      * @return bool
      */
-    public function validate(\Phalcon\Mvc\EntityInterface $record) {}
+    public function validate(\Phalcon\Mvc\EntityInterface $record): bool
+    {
+    }
 
 }

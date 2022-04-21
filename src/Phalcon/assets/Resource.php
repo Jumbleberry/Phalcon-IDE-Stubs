@@ -51,36 +51,52 @@ class Resource implements \Phalcon\Assets\ResourceInterface
     /**
      * @return string
      */
-    public function getType() {}
+    public function getType(): string
+    {
+    }
 
     /**
      * @return string
      */
-    public function getPath() {}
+    public function getPath(): string
+    {
+    }
 
     /**
-     * @return boolean
+     * @return mixed
      */
-    public function getLocal() {}
+    public function getLocal()
+    {
+    }
 
     /**
      * @return bool
      */
-    public function getFilter() {}
+    public function getFilter(): bool
+    {
+    }
 
     /**
      * @return array|null
      */
-    public function getAttributes() {}
+    public function getAttributes(): ?array
+    {
+    }
 
 
-    public function getSourcePath() {}
+    public function getSourcePath()
+    {
+    }
 
 
-    public function getTargetPath() {}
+    public function getTargetPath()
+    {
+    }
 
 
-    public function getTargetUri() {}
+    public function getTargetUri()
+    {
+    }
 
     /**
      * Phalcon\Assets\Resource constructor
@@ -91,7 +107,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param boolean $filter
      * @param array $attributes
      */
-    public function __construct($type, $path, $local = true, $filter = true, $attributes = null) {}
+    public function __construct(string $type, string $path, bool $local = true, bool $filter = true, $attributes = null)
+    {
+    }
 
     /**
      * Sets the resource's type
@@ -99,7 +117,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param string $type
      * @return ResourceInterface
      */
-    public function setType($type) {}
+    public function setType(string $type): ResourceInterface
+    {
+    }
 
     /**
      * Sets the resource's path
@@ -107,7 +127,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param string $path
      * @return Resource
      */
-    public function setPath($path) {}
+    public function setPath(string $path): Resource
+    {
+    }
 
     /**
      * Sets if the resource is local or external
@@ -115,7 +137,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param bool $local
      * @return Resource
      */
-    public function setLocal($local) {}
+    public function setLocal(bool $local): Resource
+    {
+    }
 
     /**
      * Sets if the resource must be filtered or not
@@ -123,7 +147,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param bool $filter
      * @return ResourceInterface
      */
-    public function setFilter($filter) {}
+    public function setFilter(bool $filter): ResourceInterface
+    {
+    }
 
     /**
      * Sets extra HTML attributes
@@ -131,7 +157,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param array $attributes
      * @return ResourceInterface
      */
-    public function setAttributes(array $attributes) {}
+    public function setAttributes(array $attributes): ResourceInterface
+    {
+    }
 
     /**
      * Sets a target uri for the generated HTML
@@ -139,7 +167,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param string $targetUri
      * @return Resource
      */
-    public function setTargetUri($targetUri) {}
+    public function setTargetUri(string $targetUri): Resource
+    {
+    }
 
     /**
      * Sets the resource's source path
@@ -147,7 +177,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param string $sourcePath
      * @return Resource
      */
-    public function setSourcePath($sourcePath) {}
+    public function setSourcePath(string $sourcePath): Resource
+    {
+    }
 
     /**
      * Sets the resource's target path
@@ -155,7 +187,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param string $targetPath
      * @return Resource
      */
-    public function setTargetPath($targetPath) {}
+    public function setTargetPath(string $targetPath): Resource
+    {
+    }
 
     /**
      * Returns the content of the resource as an string
@@ -164,14 +198,18 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param string $basePath
      * @return string
      */
-    public function getContent($basePath = null) {}
+    public function getContent(string $basePath = null): string
+    {
+    }
 
     /**
      * Returns the real target uri for the generated HTML
      *
      * @return string
      */
-    public function getRealTargetUri() {}
+    public function getRealTargetUri(): string
+    {
+    }
 
     /**
      * Returns the complete location where the resource is located
@@ -179,7 +217,9 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param string $basePath
      * @return string
      */
-    public function getRealSourcePath($basePath = null) {}
+    public function getRealSourcePath(string $basePath = null): string
+    {
+    }
 
     /**
      * Returns the complete location where the resource must be written
@@ -187,13 +227,17 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      * @param string $basePath
      * @return string
      */
-    public function getRealTargetPath($basePath = null) {}
+    public function getRealTargetPath(string $basePath = null): string
+    {
+    }
 
     /**
      * Gets the resource's key.
      *
      * @return string
      */
-    public function getResourceKey() {}
+    public function getResourceKey(): string
+    {
+    }
 
 }

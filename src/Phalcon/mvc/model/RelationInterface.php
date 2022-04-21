@@ -17,28 +17,28 @@ interface RelationInterface
      * @param string $intermediateModel
      * @param string|array $intermediateReferencedFields
      */
-    public function setIntermediateRelation($intermediateFields, $intermediateModel, $intermediateReferencedFields);
+    public function setIntermediateRelation($intermediateFields, string $intermediateModel, $intermediateReferencedFields);
 
     /**
      * Check if records returned by getting belongs-to/has-many are implicitly cached during the current request
      *
      * @return bool
      */
-    public function isReusable();
+    public function isReusable(): bool;
 
     /**
      * Returns the relations type
      *
      * @return int
      */
-    public function getType();
+    public function getType(): int;
 
     /**
      * Returns the referenced model
      *
      * @return string
      */
-    public function getReferencedModel();
+    public function getReferencedModel(): string;
 
     /**
      * Returns the fields
@@ -67,14 +67,14 @@ interface RelationInterface
      *
      * @param string $name
      */
-    public function getOption($name);
+    public function getOption(string $name);
 
     /**
      * Check whether the relation act as a foreign key
      *
      * @return bool
      */
-    public function isForeignKey();
+    public function isForeignKey(): bool;
 
     /**
      * Returns the foreign key configuration
@@ -88,7 +88,7 @@ interface RelationInterface
      *
      * @return bool
      */
-    public function isThrough();
+    public function isThrough(): bool;
 
     /**
      * Gets the intermediate fields for has--through relations
@@ -102,7 +102,7 @@ interface RelationInterface
      *
      * @return string
      */
-    public function getIntermediateModel();
+    public function getIntermediateModel(): string;
 
     /**
      * Gets the intermediate referenced fields for has--through relations

@@ -2,6 +2,11 @@
 
 namespace Phalcon\Validation\Message;
 
+use Phalcon\Validation\Message;
+use Phalcon\Validation\Exception;
+use Phalcon\Validation\MessageInterface;
+use Phalcon\Validation\Message\Group;
+
 /**
  * Phalcon\Validation\Message\Group
  *
@@ -21,7 +26,9 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      *
      * @param array $messages
      */
-    public function __construct($messages = null) {}
+    public function __construct($messages = null)
+    {
+    }
 
     /**
      * Gets an attribute a message using the array syntax
@@ -33,9 +40,11 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * </code>
      *
      * @param int $index
-     * @return bool|\Phalcon\Validation\Message
+     * @return \Phalcon\Validation\Message
      */
-    public function offsetGet($index) {}
+    public function offsetGet($index)
+    {
+    }
 
     /**
      * Sets an attribute using the array-syntax
@@ -47,7 +56,9 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * @param int $index
      * @param \Phalcon\Validation\Message $message
      */
-    public function offsetSet($index, $message) {}
+    public function offsetSet($index, $message)
+    {
+    }
 
     /**
      * Checks if an index exists
@@ -59,9 +70,11 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * </code>
      *
      * @param int $index
-     * @return bool
+     * @return boolean
      */
-    public function offsetExists($index) {}
+    public function offsetExists($index): bool
+    {
+    }
 
     /**
      * Removes a message from the list
@@ -72,7 +85,9 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      *
      * @param mixed $index
      */
-    public function offsetUnset($index) {}
+    public function offsetUnset($index)
+    {
+    }
 
     /**
      * Appends a message to the group
@@ -85,7 +100,9 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      *
      * @param \Phalcon\Validation\MessageInterface $message
      */
-    public function appendMessage(\Phalcon\Validation\MessageInterface $message) {}
+    public function appendMessage(\Phalcon\Validation\MessageInterface $message)
+    {
+    }
 
     /**
      * Appends an array of messages to the group
@@ -96,7 +113,9 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      *
      * @param \Phalcon\Validation\MessageInterface[] $messages
      */
-    public function appendMessages($messages) {}
+    public function appendMessages($messages)
+    {
+    }
 
     /**
      * Filters the message group by field name
@@ -104,45 +123,63 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * @param string $fieldName
      * @return array
      */
-    public function filter($fieldName) {}
+    public function filter(string $fieldName)
+    {
+    }
 
     /**
      * Returns the number of messages in the list
      *
      * @return int
      */
-    public function count() {}
+    public function count(): int
+    {
+    }
 
     /**
      * Rewinds the internal iterator
+     *
+     * @return void
      */
-    public function rewind() {}
+    public function rewind(): void
+    {
+    }
 
     /**
      * Returns the current message in the iterator
      *
-     * @return \Phalcon\Validation\Message
+     * @return Message
      */
-    public function current() {}
+    public function current(): Message
+    {
+    }
 
     /**
      * Returns the current position/key in the iterator
      *
      * @return int
      */
-    public function key() {}
+    public function key(): int
+    {
+    }
 
     /**
      * Moves the internal iteration pointer to the next position
+     *
+     * @return void
      */
-    public function next() {}
+    public function next(): void
+    {
+    }
 
     /**
      * Check if the current message in the iterator is valid
      *
      * @return bool
      */
-    public function valid() {}
+    public function valid(): bool
+    {
+    }
 
     /**
      * Magic __set_state helps to re-build messages variable when exporting
@@ -150,6 +187,8 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * @param array $group
      * @return \Phalcon\Validation\Message\Group
      */
-    public static function __set_state($group) {}
+    public static function __set_state($group): Group
+    {
+    }
 
 }

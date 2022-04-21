@@ -2,6 +2,9 @@
 
 namespace Phalcon\Queue;
 
+use Phalcon\Queue\Beanstalk\Job;
+use Phalcon\Queue\Beanstalk\Exception;
+
 /**
  * Phalcon\Queue\Beanstalk
  *
@@ -89,14 +92,18 @@ class Beanstalk
      *
      * @param array $parameters
      */
-    public function __construct(array $parameters = array()) {}
+    public function __construct(array $parameters = array())
+    {
+    }
 
     /**
      * Makes a connection to the Beanstalkd server
      *
      * @return resource
      */
-    public function connect() {}
+    public function connect()
+    {
+    }
 
     /**
      * Puts a job on the queue using specified tube.
@@ -105,7 +112,9 @@ class Beanstalk
      * @param array $options
      * @return int|bool
      */
-    public function put($data, array $options = null) {}
+    public function put($data, array $options = null)
+    {
+    }
 
     /**
      * Reserves/locks a ready job from the specified tube.
@@ -113,7 +122,9 @@ class Beanstalk
      * @param mixed $timeout
      * @return bool|\Phalcon\Queue\Beanstalk\Job
      */
-    public function reserve($timeout = null) {}
+    public function reserve($timeout = null)
+    {
+    }
 
     /**
      * Change the active tube. By default the tube is "default".
@@ -121,7 +132,9 @@ class Beanstalk
      * @param string $tube
      * @return bool|string
      */
-    public function choose($tube) {}
+    public function choose(string $tube)
+    {
+    }
 
     /**
      * The watch command adds the named tube to the watch list for the current connection.
@@ -129,7 +142,9 @@ class Beanstalk
      * @param string $tube
      * @return bool|int
      */
-    public function watch($tube) {}
+    public function watch(string $tube)
+    {
+    }
 
     /**
      * It removes the named tube from the watch list for the current connection.
@@ -137,7 +152,9 @@ class Beanstalk
      * @param string $tube
      * @return bool|int
      */
-    public function ignore($tube) {}
+    public function ignore(string $tube)
+    {
+    }
 
     /**
      * Can delay any new job being reserved for a given time.
@@ -146,7 +163,9 @@ class Beanstalk
      * @param int $delay
      * @return bool
      */
-    public function pauseTube($tube, $delay) {}
+    public function pauseTube(string $tube, int $delay): bool
+    {
+    }
 
     /**
      * The kick command applies only to the currently used tube.
@@ -154,14 +173,18 @@ class Beanstalk
      * @param int $bound
      * @return bool|int
      */
-    public function kick($bound) {}
+    public function kick(int $bound)
+    {
+    }
 
     /**
      * Gives statistical information about the system as a whole.
      *
      * @return bool|array
      */
-    public function stats() {}
+    public function stats()
+    {
+    }
 
     /**
      * Gives statistical information about the specified tube if it exists.
@@ -169,49 +192,63 @@ class Beanstalk
      * @param string $tube
      * @return bool|array
      */
-    public function statsTube($tube) {}
+    public function statsTube(string $tube)
+    {
+    }
 
     /**
      * Returns a list of all existing tubes.
      *
      * @return bool|array
      */
-    public function listTubes() {}
+    public function listTubes()
+    {
+    }
 
     /**
      * Returns the tube currently being used by the client.
      *
      * @return bool|string
      */
-    public function listTubeUsed() {}
+    public function listTubeUsed()
+    {
+    }
 
     /**
      * Returns a list tubes currently being watched by the client.
      *
      * @return bool|array
      */
-    public function listTubesWatched() {}
+    public function listTubesWatched()
+    {
+    }
 
     /**
      * Inspect the next ready job.
      *
      * @return bool|\Phalcon\Queue\Beanstalk\Job
      */
-    public function peekReady() {}
+    public function peekReady()
+    {
+    }
 
     /**
      * Return the next job in the list of buried jobs.
      *
      * @return bool|\Phalcon\Queue\Beanstalk\Job
      */
-    public function peekBuried() {}
+    public function peekBuried()
+    {
+    }
 
     /**
      * Return the next job in the list of buried jobs.
      *
      * @return bool|\Phalcon\Queue\Beanstalk\Job
      */
-    public function peekDelayed() {}
+    public function peekDelayed()
+    {
+    }
 
     /**
      * The peek commands let the client inspect a job in the system.
@@ -219,21 +256,27 @@ class Beanstalk
      * @param int $id
      * @return bool|\Phalcon\Queue\Beanstalk\Job
      */
-    public function jobPeek($id) {}
+    public function jobPeek(int $id)
+    {
+    }
 
     /**
      * Reads the latest status from the Beanstalkd server
      *
      * @return array
      */
-    final public function readStatus() {}
+    final public function readStatus(): array
+    {
+    }
 
     /**
      * Fetch a YAML payload from the Beanstalkd server
      *
      * @return array
      */
-    final public function readYaml() {}
+    final public function readYaml(): array
+    {
+    }
 
     /**
      * Reads a packet from the socket. Prior to reading from the socket will
@@ -242,7 +285,9 @@ class Beanstalk
      * @param int $length
      * @return bool|string
      */
-    public function read($length = 0) {}
+    public function read(int $length = 0)
+    {
+    }
 
     /**
      * Writes data to the socket. Performs a connection if none is available
@@ -250,20 +295,26 @@ class Beanstalk
      * @param string $data
      * @return bool|int
      */
-    public function write($data) {}
+    public function write(string $data)
+    {
+    }
 
     /**
      * Closes the connection to the beanstalk server.
      *
      * @return bool
      */
-    public function disconnect() {}
+    public function disconnect(): bool
+    {
+    }
 
     /**
      * Simply closes the connection.
      *
      * @return bool
      */
-    public function quit() {}
+    public function quit(): bool
+    {
+    }
 
 }

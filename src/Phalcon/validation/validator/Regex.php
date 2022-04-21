@@ -2,6 +2,10 @@
 
 namespace Phalcon\Validation\Validator;
 
+use Phalcon\Validation;
+use Phalcon\Validation\Message;
+use Phalcon\Validation\Validator;
+
 /**
  * Phalcon\Validation\Validator\Regex
  *
@@ -43,7 +47,7 @@ namespace Phalcon\Validation\Validator;
  * );
  * </code>
  */
-class Regex extends \Phalcon\Validation\Validator
+class Regex extends Validator
 {
 
     /**
@@ -53,6 +57,8 @@ class Regex extends \Phalcon\Validation\Validator
      * @param string $field
      * @return bool
      */
-    public function validate(\Phalcon\Validation $validation, $field) {}
+    public function validate(\Phalcon\Validation $validation, string $field): bool
+    {
+    }
 
 }

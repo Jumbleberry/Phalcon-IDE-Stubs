@@ -2,6 +2,11 @@
 
 namespace Phalcon\Di;
 
+use Phalcon\DiInterface;
+use Phalcon\Di\Exception;
+use Phalcon\Di\ServiceInterface;
+use Phalcon\Di\Service\Builder;
+
 /**
  * Phalcon\Di\Service
  *
@@ -41,49 +46,66 @@ class Service implements \Phalcon\Di\ServiceInterface
      * @param mixed $definition
      * @param boolean $shared
      */
-    public final function __construct($name, $definition, $shared = false) {}
+    public final function __construct(string $name, $definition, bool $shared = false)
+    {
+    }
 
     /**
      * Returns the service's name
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * Sets if the service is shared or not
      *
      * @param bool $shared
+     * @return void
      */
-    public function setShared($shared) {}
+    public function setShared(bool $shared): void
+    {
+    }
 
     /**
      * Check whether the service is shared or not
      *
      * @return bool
      */
-    public function isShared() {}
+    public function isShared(): bool
+    {
+    }
 
     /**
      * Sets/Resets the shared instance related to the service
      *
      * @param mixed $sharedInstance
+     * @return void
      */
-    public function setSharedInstance($sharedInstance) {}
+    public function setSharedInstance($sharedInstance): void
+    {
+    }
 
     /**
      * Set the service definition
      *
      * @param mixed $definition
+     * @return void
      */
-    public function setDefinition($definition) {}
+    public function setDefinition($definition): void
+    {
+    }
 
     /**
      * Returns the service definition
      *
      * @return mixed
      */
-    public function getDefinition() {}
+    public function getDefinition()
+    {
+    }
 
     /**
      * Resolves the service
@@ -92,16 +114,20 @@ class Service implements \Phalcon\Di\ServiceInterface
      * @param \Phalcon\DiInterface $dependencyInjector
      * @return mixed
      */
-    public function resolve($parameters = null, \Phalcon\DiInterface $dependencyInjector = null) {}
+    public function resolve($parameters = null, \Phalcon\DiInterface $dependencyInjector = null)
+    {
+    }
 
     /**
      * Changes a parameter in the definition without resolve the service
      *
      * @param int $position
      * @param array $parameter
-     * @return \Phalcon\Di\ServiceInterface
+     * @return ServiceInterface
      */
-    public function setParameter($position, array $parameter) {}
+    public function setParameter(int $position, array $parameter): ServiceInterface
+    {
+    }
 
     /**
      * Returns a parameter in a specific position
@@ -109,21 +135,27 @@ class Service implements \Phalcon\Di\ServiceInterface
      * @param int $position
      * @return array
      */
-    public function getParameter($position) {}
+    public function getParameter(int $position)
+    {
+    }
 
     /**
      * Returns true if the service was resolved
      *
      * @return bool
      */
-    public function isResolved() {}
+    public function isResolved(): bool
+    {
+    }
 
     /**
      * Restore the internal state of a service
      *
      * @param array $attributes
-     * @return \Phalcon\Di\ServiceInterface
+     * @return ServiceInterface
      */
-    public static function __set_state(array $attributes) {}
+    public static function __set_state(array $attributes): ServiceInterface
+    {
+    }
 
 }

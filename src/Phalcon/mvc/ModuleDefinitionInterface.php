@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc;
 
+use Phalcon\DiInterface;
+
 /**
  * Phalcon\Mvc\ModuleDefinitionInterface
  *

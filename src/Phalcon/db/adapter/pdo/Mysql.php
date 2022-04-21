@@ -2,6 +2,15 @@
 
 namespace Phalcon\Db\Adapter\Pdo;
 
+use Phalcon\Db;
+use Phalcon\Db\Column;
+use Phalcon\Db\Index;
+use Phalcon\Db\Reference;
+use Phalcon\Db\IndexInterface;
+use Phalcon\Db\Adapter\Pdo as PdoAdapter;
+use Phalcon\Application\Exception;
+use Phalcon\Db\ReferenceInterface;
+
 /**
  * Phalcon\Db\Adapter\Pdo\Mysql
  *
@@ -41,9 +50,11 @@ class Mysql extends \Phalcon\Db\Adapter\Pdo
      *
      * @param string $table
      * @param string $schema
-     * @return \Phalcon\Db\ColumnInterface[]
+     * @return array|\Phalcon\Db\ColumnInterface[]
      */
-    public function describeColumns($table, $schema = null) {}
+    public function describeColumns(string $table, string $schema = null): array
+    {
+    }
 
     /**
      * Lists table indexes
@@ -58,7 +69,9 @@ class Mysql extends \Phalcon\Db\Adapter\Pdo
      * @param string $schema
      * @return \Phalcon\Db\IndexInterface[]
      */
-    public function describeIndexes($table, $schema = null) {}
+    public function describeIndexes(string $table, string $schema = null): array
+    {
+    }
 
     /**
      * Lists table references
@@ -71,9 +84,11 @@ class Mysql extends \Phalcon\Db\Adapter\Pdo
      *
      * @param string $table
      * @param string $schema
-     * @return \Phalcon\Db\ReferenceInterface[]
+     * @return array|\Phalcon\Db\ReferenceInterface[]
      */
-    public function describeReferences($table, $schema = null) {}
+    public function describeReferences(string $table, string $schema = null): array
+    {
+    }
 
     /**
      * Adds a foreign key to a table
@@ -83,6 +98,8 @@ class Mysql extends \Phalcon\Db\Adapter\Pdo
      * @param \Phalcon\Db\ReferenceInterface $reference
      * @return bool
      */
-    public function addForeignKey($tableName, $schemaName, \Phalcon\Db\ReferenceInterface $reference) {}
+    public function addForeignKey(string $tableName, string $schemaName, \Phalcon\Db\ReferenceInterface $reference): bool
+    {
+    }
 
 }

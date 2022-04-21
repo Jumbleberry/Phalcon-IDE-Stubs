@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\Model\Query;
 
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Mvc\Model\Query\StatusInterface;
+
 /**
  * Phalcon\Mvc\Model\Query\Status
  *
@@ -44,27 +47,35 @@ class Status implements \Phalcon\Mvc\Model\Query\StatusInterface
      * @param bool $success
      * @param \Phalcon\Mvc\ModelInterface $model
      */
-    public function __construct($success, \Phalcon\Mvc\ModelInterface $model = null) {}
+    public function __construct(bool $success, \Phalcon\Mvc\ModelInterface $model = null)
+    {
+    }
 
     /**
      * Returns the model that executed the action
      *
-     * @return \Phalcon\Mvc\ModelInterface
+     * @return ModelInterface
      */
-    public function getModel() {}
+    public function getModel(): ModelInterface
+    {
+    }
 
     /**
      * Returns the messages produced because of a failed operation
      *
-     * @return \Phalcon\Mvc\Model\MessageInterface[]
+     * @return array|\Phalcon\Mvc\Model\MessageInterface[]
      */
-    public function getMessages() {}
+    public function getMessages(): array
+    {
+    }
 
     /**
      * Allows to check if the executed operation was successful
      *
      * @return bool
      */
-    public function success() {}
+    public function success(): bool
+    {
+    }
 
 }

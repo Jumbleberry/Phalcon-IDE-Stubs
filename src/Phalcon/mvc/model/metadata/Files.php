@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\Model\MetaData;
 
+use Phalcon\Mvc\Model\MetaData;
+use Phalcon\Mvc\Model\Exception;
+
 /**
  * Phalcon\Mvc\Model\MetaData\Files
  *
@@ -15,7 +18,7 @@ namespace Phalcon\Mvc\Model\MetaData;
  * );
  * </code>
  */
-class Files extends \Phalcon\Mvc\Model\MetaData
+class Files extends MetaData
 {
 
     protected $_metaDataDir = './';
@@ -29,7 +32,9 @@ class Files extends \Phalcon\Mvc\Model\MetaData
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads meta-data from files
@@ -37,14 +42,19 @@ class Files extends \Phalcon\Mvc\Model\MetaData
      * @param string $key
      * @return mixed
      */
-    public function read($key) {}
+    public function read(string $key)
+    {
+    }
 
     /**
      * Writes the meta-data to files
      *
      * @param string $key
      * @param array $data
+     * @return void
      */
-    public function write($key, $data) {}
+    public function write(string $key, $data): void
+    {
+    }
 
 }

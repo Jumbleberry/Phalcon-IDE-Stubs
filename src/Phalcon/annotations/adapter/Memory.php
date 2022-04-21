@@ -2,12 +2,15 @@
 
 namespace Phalcon\Annotations\Adapter;
 
+use Phalcon\Annotations\Adapter;
+use Phalcon\Annotations\Reflection;
+
 /**
  * Phalcon\Annotations\Adapter\Memory
  *
  * Stores the parsed annotations in memory. This adapter is the suitable development/testing
  */
-class Memory extends \Phalcon\Annotations\Adapter
+class Memory extends Adapter
 {
     /**
      * Data
@@ -23,7 +26,9 @@ class Memory extends \Phalcon\Annotations\Adapter
      * @param string $key
      * @return bool|\Phalcon\Annotations\Reflection
      */
-    public function read($key) {}
+    public function read(string $key)
+    {
+    }
 
     /**
      * Writes parsed annotations to memory
@@ -31,6 +36,8 @@ class Memory extends \Phalcon\Annotations\Adapter
      * @param string $key
      * @param \Phalcon\Annotations\Reflection $data
      */
-    public function write($key, \Phalcon\Annotations\Reflection $data) {}
+    public function write(string $key, \Phalcon\Annotations\Reflection $data)
+    {
+    }
 
 }

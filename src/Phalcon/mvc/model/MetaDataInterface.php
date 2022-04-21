@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\Model;
 
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Mvc\Model\MetaData\StrategyInterface;
+
 /**
  * Phalcon\Mvc\Model\MetaDataInterface
  *
@@ -39,7 +42,7 @@ interface MetaDataInterface
      * @param int $index
      * @return mixed
      */
-    public function readMetaDataIndex(\Phalcon\Mvc\ModelInterface $model, $index);
+    public function readMetaDataIndex(\Phalcon\Mvc\ModelInterface $model, int $index);
 
     /**
      * Writes meta-data for certain model using a MODEL_ constant
@@ -48,7 +51,7 @@ interface MetaDataInterface
      * @param int $index
      * @param mixed $data
      */
-    public function writeMetaDataIndex(\Phalcon\Mvc\ModelInterface $model, $index, $data);
+    public function writeMetaDataIndex(\Phalcon\Mvc\ModelInterface $model, int $index, $data);
 
     /**
      * Reads the ordered/reversed column map for certain model
@@ -64,7 +67,7 @@ interface MetaDataInterface
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param int $index
      */
-    public function readColumnMapIndex(\Phalcon\Mvc\ModelInterface $model, $index);
+    public function readColumnMapIndex(\Phalcon\Mvc\ModelInterface $model, int $index);
 
     /**
      * Returns table attributes names (fields)
@@ -144,7 +147,7 @@ interface MetaDataInterface
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array
      */
-    public function getAutomaticUpdateAttributes(\Phalcon\Mvc\ModelInterface $model);
+    public function getAutomaticUpdateAttributes(\Phalcon\Mvc\ModelInterface $model): array;
 
     /**
      * Set the attributes that must be ignored from the INSERT SQL generation
@@ -167,8 +170,9 @@ interface MetaDataInterface
      *
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param array $attributes
+     * @return void
      */
-    public function setEmptyStringAttributes(\Phalcon\Mvc\ModelInterface $model, array $attributes);
+    public function setEmptyStringAttributes(\Phalcon\Mvc\ModelInterface $model, array $attributes): void;
 
     /**
      * Returns attributes allow empty strings
@@ -176,7 +180,7 @@ interface MetaDataInterface
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array
      */
-    public function getEmptyStringAttributes(\Phalcon\Mvc\ModelInterface $model);
+    public function getEmptyStringAttributes(\Phalcon\Mvc\ModelInterface $model): array;
 
     /**
      * Returns attributes (which have default values) and their default values
@@ -184,7 +188,7 @@ interface MetaDataInterface
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array
      */
-    public function getDefaultValues(\Phalcon\Mvc\ModelInterface $model);
+    public function getDefaultValues(\Phalcon\Mvc\ModelInterface $model): array;
 
     /**
      * Returns the column map if any
@@ -192,7 +196,7 @@ interface MetaDataInterface
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array
      */
-    public function getColumnMap(\Phalcon\Mvc\ModelInterface $model);
+    public function getColumnMap(\Phalcon\Mvc\ModelInterface $model): array;
 
     /**
      * Returns the reverse column map if any
@@ -200,7 +204,7 @@ interface MetaDataInterface
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array
      */
-    public function getReverseColumnMap(\Phalcon\Mvc\ModelInterface $model);
+    public function getReverseColumnMap(\Phalcon\Mvc\ModelInterface $model): array;
 
     /**
      * Check if a model has certain attribute
@@ -209,7 +213,7 @@ interface MetaDataInterface
      * @param string $attribute
      * @return bool
      */
-    public function hasAttribute(\Phalcon\Mvc\ModelInterface $model, $attribute);
+    public function hasAttribute(\Phalcon\Mvc\ModelInterface $model, string $attribute): bool;
 
     /**
      * Checks if the internal meta-data container is empty
@@ -229,7 +233,7 @@ interface MetaDataInterface
      * @param string $key
      * @return array
      */
-    public function read($key);
+    public function read(string $key);
 
     /**
      * Writes meta-data to the adapter
@@ -237,6 +241,6 @@ interface MetaDataInterface
      * @param string $key
      * @param array $data
      */
-    public function write($key, $data);
+    public function write(string $key, $data);
 
 }

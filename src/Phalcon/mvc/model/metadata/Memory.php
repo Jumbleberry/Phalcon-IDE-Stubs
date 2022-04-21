@@ -2,12 +2,15 @@
 
 namespace Phalcon\Mvc\Model\MetaData;
 
+use Phalcon\Mvc\Model\MetaData;
+use Phalcon\Mvc\Model\Exception;
+
 /**
  * Phalcon\Mvc\Model\MetaData\Memory
  *
  * Stores model meta-data in memory. Data will be erased when the request finishes
  */
-class Memory extends \Phalcon\Mvc\Model\MetaData
+class Memory extends MetaData
 {
 
     protected $_metaData = array();
@@ -18,7 +21,9 @@ class Memory extends \Phalcon\Mvc\Model\MetaData
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads the meta-data from temporal memory
@@ -26,14 +31,19 @@ class Memory extends \Phalcon\Mvc\Model\MetaData
      * @param string $key
      * @return array
      */
-    public function read($key) {}
+    public function read(string $key)
+    {
+    }
 
     /**
      * Writes the meta-data to temporal memory
      *
      * @param string $key
      * @param array $data
+     * @return void
      */
-    public function write($key, $data) {}
+    public function write(string $key, $data): void
+    {
+    }
 
 }

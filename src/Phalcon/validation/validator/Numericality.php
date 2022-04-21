@@ -2,6 +2,10 @@
 
 namespace Phalcon\Validation\Validator;
 
+use Phalcon\Validation;
+use Phalcon\Validation\Message;
+use Phalcon\Validation\Validator;
+
 /**
  * Phalcon\Validation\Validator\Numericality
  *
@@ -38,7 +42,7 @@ namespace Phalcon\Validation\Validator;
  * );
  * </code>
  */
-class Numericality extends \Phalcon\Validation\Validator
+class Numericality extends Validator
 {
 
     /**
@@ -48,6 +52,8 @@ class Numericality extends \Phalcon\Validation\Validator
      * @param string $field
      * @return bool
      */
-    public function validate(\Phalcon\Validation $validation, $field) {}
+    public function validate(\Phalcon\Validation $validation, string $field): bool
+    {
+    }
 
 }

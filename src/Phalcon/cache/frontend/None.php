@@ -2,6 +2,8 @@
 
 namespace Phalcon\Cache\Frontend;
 
+use Phalcon\Cache\FrontendInterface;
+
 /**
  * Phalcon\Cache\Frontend\None
  *
@@ -54,38 +56,50 @@ class None implements \Phalcon\Cache\FrontendInterface
      *
      * @return int
      */
-    public function getLifetime() {}
+    public function getLifetime(): int
+    {
+    }
 
     /**
      * Check whether if frontend is buffering output, always false
      *
      * @return bool
      */
-    public function isBuffering() {}
+    public function isBuffering(): bool
+    {
+    }
 
     /**
      * Starts output frontend
      */
-    public function start() {}
+    public function start()
+    {
+    }
 
     /**
      * Returns output cached content
      *
      * @return string
      */
-    public function getContent() {}
+    public function getContent()
+    {
+    }
 
     /**
      * Stops output frontend
      */
-    public function stop() {}
+    public function stop()
+    {
+    }
 
     /**
      * Prepare data to be stored
      *
      * @param mixed $data
      */
-    public function beforeStore($data) {}
+    public function beforeStore($data)
+    {
+    }
 
     /**
      * Prepares data to be retrieved to user
@@ -93,6 +107,8 @@ class None implements \Phalcon\Cache\FrontendInterface
      * @param mixed $data
      * @return mixed
      */
-    public function afterRetrieve($data) {}
+    public function afterRetrieve($data)
+    {
+    }
 
 }

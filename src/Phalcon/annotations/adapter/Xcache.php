@@ -2,6 +2,9 @@
 
 namespace Phalcon\Annotations\Adapter;
 
+use Phalcon\Annotations\Adapter;
+use Phalcon\Annotations\Reflection;
+
 /**
  * Phalcon\Annotations\Adapter\Xcache
  *
@@ -11,16 +14,18 @@ namespace Phalcon\Annotations\Adapter;
  * $annotations = new \Phalcon\Annotations\Adapter\Xcache();
  * </code>
  */
-class Xcache extends \Phalcon\Annotations\Adapter
+class Xcache extends Adapter
 {
 
     /**
      * Reads parsed annotations from XCache
      *
      * @param string $key
-     * @return bool|\Phalcon\Annotations\Reflection
+     * @return \Phalcon\Annotations\Reflection
      */
-    public function read($key) {}
+    public function read(string $key)
+    {
+    }
 
     /**
      * Writes parsed annotations to XCache
@@ -28,6 +33,8 @@ class Xcache extends \Phalcon\Annotations\Adapter
      * @param string $key
      * @param \Phalcon\Annotations\Reflection $data
      */
-    public function write($key, \Phalcon\Annotations\Reflection $data) {}
+    public function write(string $key, \Phalcon\Annotations\Reflection $data)
+    {
+    }
 
 }

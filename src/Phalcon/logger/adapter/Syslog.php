@@ -2,6 +2,10 @@
 
 namespace Phalcon\Logger\Adapter;
 
+use Phalcon\Logger\Exception;
+use Phalcon\Logger\Adapter;
+use Phalcon\Logger\Formatter\Syslog as SyslogFormatter;
+
 /**
  * Phalcon\Logger\Adapter\Syslog
  *
@@ -25,7 +29,7 @@ namespace Phalcon\Logger\Adapter;
  * $logger->error("This is another error");
  * </code>
  */
-class Syslog extends \Phalcon\Logger\Adapter
+class Syslog extends Adapter
 {
 
     protected $_opened = false;
@@ -37,14 +41,18 @@ class Syslog extends \Phalcon\Logger\Adapter
      * @param string $name
      * @param array $options
      */
-    public function __construct($name, $options = null) {}
+    public function __construct($name, $options = null)
+    {
+    }
 
     /**
      * Returns the internal formatter
      *
      * @return \Phalcon\Logger\FormatterInterface
      */
-    public function getFormatter() {}
+    public function getFormatter(): \Phalcon\Logger\FormatterInterface
+    {
+    }
 
     /**
      * Writes the log to the stream itself
@@ -54,13 +62,17 @@ class Syslog extends \Phalcon\Logger\Adapter
      * @param int $time
      * @param array $context
      */
-    public function logInternal($message, $type, $time, array $context) {}
+    public function logInternal(string $message, int $type, int $time, array $context)
+    {
+    }
 
     /**
      * Closes the logger
      *
      * @return bool
      */
-    public function close() {}
+    public function close(): bool
+    {
+    }
 
 }

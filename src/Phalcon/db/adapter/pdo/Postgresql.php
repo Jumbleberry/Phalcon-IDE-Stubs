@@ -2,6 +2,11 @@
 
 namespace Phalcon\Db\Adapter\Pdo;
 
+use Phalcon\Db\Column;
+use Phalcon\Db\RawValue;
+use Phalcon\Db\Adapter\Pdo as PdoAdapter;
+use Phalcon\Db\Exception;
+
 /**
  * Phalcon\Db\Adapter\Pdo\Postgresql
  *
@@ -37,7 +42,9 @@ class Postgresql extends \Phalcon\Db\Adapter\Pdo
      * @param array $descriptor
      * @return bool
      */
-    public function connect(array $descriptor = null) {}
+    public function connect(array $descriptor = null): bool
+    {
+    }
 
     /**
      * Returns an array of Phalcon\Db\Column objects describing a table
@@ -50,9 +57,11 @@ class Postgresql extends \Phalcon\Db\Adapter\Pdo
      *
      * @param string $table
      * @param string $schema
-     * @return \Phalcon\Db\ColumnInterface[]
+     * @return array|\Phalcon\Db\ColumnInterface[]
      */
-    public function describeColumns($table, $schema = null) {}
+    public function describeColumns(string $table, string $schema = null): array
+    {
+    }
 
     /**
      * Creates a table
@@ -62,7 +71,9 @@ class Postgresql extends \Phalcon\Db\Adapter\Pdo
      * @param array $definition
      * @return bool
      */
-    public function createTable($tableName, $schemaName, array $definition) {}
+    public function createTable(string $tableName, string $schemaName, array $definition): bool
+    {
+    }
 
     /**
      * Modifies a table column based on a definition
@@ -73,14 +84,18 @@ class Postgresql extends \Phalcon\Db\Adapter\Pdo
      * @param \Phalcon\Db\ColumnInterface $currentColumn
      * @return bool
      */
-    public function modifyColumn($tableName, $schemaName, \Phalcon\Db\ColumnInterface $column, \Phalcon\Db\ColumnInterface $currentColumn = null) {}
+    public function modifyColumn(string $tableName, string $schemaName, \Phalcon\Db\ColumnInterface $column, \Phalcon\Db\ColumnInterface $currentColumn = null): bool
+    {
+    }
 
     /**
      * Check whether the database system requires an explicit value for identity columns
      *
      * @return bool
      */
-    public function useExplicitIdValue() {}
+    public function useExplicitIdValue(): bool
+    {
+    }
 
     /**
      * Returns the default identity value to be inserted in an identity column
@@ -102,15 +117,19 @@ class Postgresql extends \Phalcon\Db\Adapter\Pdo
      * );
      * </code>
      *
-     * @return \Phalcon\Db\RawValue
+     * @return RawValue
      */
-    public function getDefaultIdValue() {}
+    public function getDefaultIdValue(): RawValue
+    {
+    }
 
     /**
      * Check whether the database system requires a sequence to produce auto-numeric values
      *
      * @return bool
      */
-    public function supportSequences() {}
+    public function supportSequences(): bool
+    {
+    }
 
 }

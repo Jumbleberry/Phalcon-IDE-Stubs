@@ -2,12 +2,14 @@
 
 namespace Phalcon\Logger\Formatter;
 
+use Phalcon\Logger\Formatter;
+
 /**
  * Phalcon\Logger\Formatter\Line
  *
  * Formats messages using an one-line string
  */
-class Line extends \Phalcon\Logger\Formatter
+class Line extends Formatter
 {
     /**
      * Default date format
@@ -29,28 +31,36 @@ class Line extends \Phalcon\Logger\Formatter
      *
      * @return string
      */
-    public function getDateFormat() {}
+    public function getDateFormat(): string
+    {
+    }
 
     /**
      * Default date format
      *
      * @param string $dateFormat
      */
-    public function setDateFormat($dateFormat) {}
+    public function setDateFormat(string $dateFormat)
+    {
+    }
 
     /**
      * Format applied to each message
      *
      * @return string
      */
-    public function getFormat() {}
+    public function getFormat(): string
+    {
+    }
 
     /**
      * Format applied to each message
      *
      * @param string $format
      */
-    public function setFormat($format) {}
+    public function setFormat(string $format)
+    {
+    }
 
     /**
      * Phalcon\Logger\Formatter\Line construct
@@ -58,7 +68,9 @@ class Line extends \Phalcon\Logger\Formatter
      * @param string $format
      * @param string $dateFormat
      */
-    public function __construct($format = null, $dateFormat = null) {}
+    public function __construct($format = null, $dateFormat = null)
+    {
+    }
 
     /**
      * Applies a format to a message before sent it to the internal log
@@ -69,6 +81,8 @@ class Line extends \Phalcon\Logger\Formatter
      * @param array $context
      * @return string
      */
-    public function format($message, $type, $timestamp, $context = null) {}
+    public function format(string $message, int $type, int $timestamp, $context = null): string
+    {
+    }
 
 }

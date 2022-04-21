@@ -2,6 +2,11 @@
 
 namespace Phalcon\Mvc\Router;
 
+use Phalcon\DiInterface;
+use Phalcon\Mvc\Router;
+use Phalcon\Annotations\Annotation;
+use Phalcon\Mvc\Router\Exception;
+
 /**
  * Phalcon\Mvc\Router\Annotations
  *
@@ -24,7 +29,7 @@ namespace Phalcon\Mvc\Router;
  * );
  * </code>
  */
-class Annotations extends \Phalcon\Mvc\Router
+class Annotations extends Router
 {
 
     protected $_handlers = array();
@@ -47,7 +52,9 @@ class Annotations extends \Phalcon\Mvc\Router
      * @param string $prefix
      * @return Annotations
      */
-    public function addResource($handler, $prefix = null) {}
+    public function addResource(string $handler, string $prefix = null): Annotations
+    {
+    }
 
     /**
      * Adds a resource to the annotations handler
@@ -59,14 +66,19 @@ class Annotations extends \Phalcon\Mvc\Router
      * @param string $prefix
      * @return Annotations
      */
-    public function addModuleResource($module, $handler, $prefix = null) {}
+    public function addModuleResource(string $module, string $handler, string $prefix = null): Annotations
+    {
+    }
 
     /**
      * Produce the routing parameters from the rewrite information
      *
      * @param string $uri
+     * @return void
      */
-    public function handle($uri = null) {}
+    public function handle(string $uri = null): void
+    {
+    }
 
     /**
      * Checks for annotations in the controller docblock
@@ -74,7 +86,9 @@ class Annotations extends \Phalcon\Mvc\Router
      * @param string $handler
      * @param \Phalcon\Annotations\Annotation $annotation
      */
-    public function processControllerAnnotation($handler, \Phalcon\Annotations\Annotation $annotation) {}
+    public function processControllerAnnotation(string $handler, \Phalcon\Annotations\Annotation $annotation)
+    {
+    }
 
     /**
      * Checks for annotations in the public methods of the controller
@@ -85,27 +99,35 @@ class Annotations extends \Phalcon\Mvc\Router
      * @param string $action
      * @param \Phalcon\Annotations\Annotation $annotation
      */
-    public function processActionAnnotation($module, $namespaceName, $controller, $action, \Phalcon\Annotations\Annotation $annotation) {}
+    public function processActionAnnotation(string $module, string $namespaceName, string $controller, string $action, \Phalcon\Annotations\Annotation $annotation)
+    {
+    }
 
     /**
      * Changes the controller class suffix
      *
      * @param string $controllerSuffix
      */
-    public function setControllerSuffix($controllerSuffix) {}
+    public function setControllerSuffix(string $controllerSuffix)
+    {
+    }
 
     /**
      * Changes the action method suffix
      *
      * @param string $actionSuffix
      */
-    public function setActionSuffix($actionSuffix) {}
+    public function setActionSuffix(string $actionSuffix)
+    {
+    }
 
     /**
      * Return the registered resources
      *
      * @return array
      */
-    public function getResources() {}
+    public function getResources(): array
+    {
+    }
 
 }

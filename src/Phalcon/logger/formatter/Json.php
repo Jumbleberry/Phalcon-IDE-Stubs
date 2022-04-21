@@ -2,12 +2,14 @@
 
 namespace Phalcon\Logger\Formatter;
 
+use Phalcon\Logger\Formatter;
+
 /**
  * Phalcon\Logger\Formatter\Json
  *
  * Formats messages using JSON encoding
  */
-class Json extends \Phalcon\Logger\Formatter
+class Json extends Formatter
 {
 
     /**
@@ -19,6 +21,8 @@ class Json extends \Phalcon\Logger\Formatter
      * @param array $context
      * @return string
      */
-    public function format($message, $type, $timestamp, $context = null) {}
+    public function format(string $message, int $type, int $timestamp, $context = null): string
+    {
+    }
 
 }

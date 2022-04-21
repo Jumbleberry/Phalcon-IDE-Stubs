@@ -2,6 +2,9 @@
 
 namespace Phalcon\Annotations\Adapter;
 
+use Phalcon\Annotations\Adapter;
+use Phalcon\Annotations\Reflection;
+
 /**
  * Phalcon\Annotations\Adapter\Apcu
  *
@@ -13,7 +16,7 @@ namespace Phalcon\Annotations\Adapter;
  * $annotations = new Apcu();
  * </code>
  */
-class Apcu extends \Phalcon\Annotations\Adapter
+class Apcu extends Adapter
 {
 
     protected $_prefix = '';
@@ -27,7 +30,9 @@ class Apcu extends \Phalcon\Annotations\Adapter
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads parsed annotations from APCu
@@ -35,7 +40,9 @@ class Apcu extends \Phalcon\Annotations\Adapter
      * @param string $key
      * @return bool|\Phalcon\Annotations\Reflection
      */
-    public function read($key) {}
+    public function read(string $key)
+    {
+    }
 
     /**
      * Writes parsed annotations to APCu
@@ -43,6 +50,8 @@ class Apcu extends \Phalcon\Annotations\Adapter
      * @param string $key
      * @param \Phalcon\Annotations\Reflection $data
      */
-    public function write($key, \Phalcon\Annotations\Reflection $data) {}
+    public function write(string $key, \Phalcon\Annotations\Reflection $data)
+    {
+    }
 
 }

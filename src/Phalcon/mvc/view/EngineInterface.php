@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\View;
 
+use Phalcon\DiInterface;
+use Phalcon\Mvc\ViewBaseInterface;
+
 /**
  * Phalcon\Mvc\View\EngineInterface
  *
@@ -15,7 +18,7 @@ interface EngineInterface
      *
      * @return string
      */
-    public function getContent();
+    public function getContent(): string;
 
     /**
      * Renders a partial inside another view
@@ -24,7 +27,7 @@ interface EngineInterface
      * @param mixed $params
      * @return string
      */
-    public function partial($partialPath, $params = null);
+    public function partial(string $partialPath, $params = null): string;
 
     /**
      * Renders a view using the template engine
@@ -33,6 +36,6 @@ interface EngineInterface
      * @param mixed $params
      * @param bool $mustClean
      */
-    public function render($path, $params, $mustClean = false);
+    public function render(string $path, $params, bool $mustClean = false);
 
 }

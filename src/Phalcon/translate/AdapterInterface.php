@@ -13,26 +13,20 @@ interface AdapterInterface
     /**
      * Returns the translation string of the given key
      *
-     * @param	string translateKey
-     * @param	array placeholders
-     * @return	string
      * @param string $translateKey
-     * @param mixed $placeholders
-     * @return string
+     * @param array $placeholders
+     * @return	string
      */
-    public function t($translateKey, $placeholders = null);
+    public function t(string $translateKey, $placeholders = null): string;
 
     /**
      * Returns the translation related to the given key
      *
-     * @param	string index
-     * @param	array placeholders
-     * @return	string
      * @param string $index
-     * @param mixed $placeholders
-     * @return string
+     * @param array $placeholders
+     * @return	string
      */
-    public function query($index, $placeholders = null);
+    public function query(string $index, $placeholders = null): string;
 
     /**
      * Check whether is defined a translation key in the internal array
@@ -40,6 +34,6 @@ interface AdapterInterface
      * @param string $index
      * @return bool
      */
-    public function exists($index);
+    public function exists(string $index): bool;
 
 }

@@ -2,6 +2,10 @@
 
 namespace Phalcon\Mvc\Model\MetaData;
 
+use Phalcon\Mvc\Model\MetaData;
+use Phalcon\Cache\Backend\Memcache;
+use Phalcon\Cache\Frontend\Data as FrontendData;
+
 /**
  * Phalcon\Mvc\Model\MetaData\Memcache
  *
@@ -21,7 +25,7 @@ namespace Phalcon\Mvc\Model\MetaData;
  * );
  * </code>
  */
-class Memcache extends \Phalcon\Mvc\Model\MetaData
+class Memcache extends MetaData
 {
 
     protected $_ttl = 172800;
@@ -38,7 +42,9 @@ class Memcache extends \Phalcon\Mvc\Model\MetaData
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads metadata from Memcache
@@ -46,19 +52,28 @@ class Memcache extends \Phalcon\Mvc\Model\MetaData
      * @param string $key
      * @return array|null
      */
-    public function read($key) {}
+    public function read(string $key): ?array
+    {
+    }
 
     /**
      * Writes the metadata to Memcache
      *
      * @param string $key
      * @param mixed $data
+     * @return void
      */
-    public function write($key, $data) {}
+    public function write(string $key, $data): void
+    {
+    }
 
     /**
      * Flush Memcache data and resets internal meta-data in order to regenerate it
+     *
+     * @return void
      */
-    public function reset() {}
+    public function reset(): void
+    {
+    }
 
 }

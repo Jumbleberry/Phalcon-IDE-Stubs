@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc\Model\MetaData;
 
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\DiInterface;
 
 interface StrategyInterface
 {
@@ -18,10 +20,10 @@ interface StrategyInterface
     /**
      * Read the model's column map, this can't be inferred
      *
-     * @todo Not implemented
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param \Phalcon\DiInterface $dependencyInjector
      * @return array
+     * @todo Not implemented
      */
     public function getColumnMaps(\Phalcon\Mvc\ModelInterface $model, \Phalcon\DiInterface $dependencyInjector);
 

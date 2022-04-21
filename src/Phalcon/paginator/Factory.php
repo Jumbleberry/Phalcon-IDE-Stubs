@@ -2,6 +2,8 @@
 
 namespace Phalcon\Paginator;
 
+use Phalcon\Factory as BaseFactory;
+
 /**
  * Loads Paginator Adapter class using 'adapter' option
  *
@@ -28,6 +30,8 @@ class Factory extends \Phalcon\Factory
      * @param \Phalcon\Config|array $config
      * @return AdapterInterface
      */
-    public static function load($config) {}
+    public static function load($config): AdapterInterface
+    {
+    }
 
 }

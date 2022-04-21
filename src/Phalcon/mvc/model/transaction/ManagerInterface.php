@@ -15,7 +15,7 @@ interface ManagerInterface
      *
      * @return bool
      */
-    public function has();
+    public function has(): bool;
 
     /**
      * Returns a new \Phalcon\Mvc\Model\Transaction or an already created once
@@ -23,7 +23,7 @@ interface ManagerInterface
      * @param bool $autoBegin
      * @return \Phalcon\Mvc\Model\TransactionInterface
      */
-    public function get($autoBegin = true);
+    public function get(bool $autoBegin = true): \Phalcon\Mvc\Model\TransactionInterface;
 
     /**
      * Rollbacks active transactions within the manager

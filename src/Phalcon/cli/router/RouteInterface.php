@@ -16,68 +16,72 @@ interface RouteInterface
      * @param string $pattern
      * @return string
      */
-    public function compilePattern($pattern);
+    public function compilePattern(string $pattern): string;
 
     /**
      * Reconfigure the route adding a new pattern and a set of paths
      *
      * @param string $pattern
      * @param mixed $paths
+     * @return void
      */
-    public function reConfigure($pattern, $paths = null);
+    public function reConfigure(string $pattern, $paths = null): void;
 
     /**
      * Returns the route's name
      *
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * Sets the route's name
      *
      * @param string $name
+     * @return void
      */
-    public function setName($name);
+    public function setName(string $name): void;
 
     /**
      * Returns the route's id
      *
      * @return string
      */
-    public function getRouteId();
+    public function getRouteId(): string;
 
     /**
      * Returns the route's pattern
      *
      * @return string
      */
-    public function getPattern();
+    public function getPattern(): string;
 
     /**
      * Returns the route's pattern
      *
      * @return string
      */
-    public function getCompiledPattern();
+    public function getCompiledPattern(): string;
 
     /**
      * Returns the paths
      *
      * @return array
      */
-    public function getPaths();
+    public function getPaths(): array;
 
     /**
      * Returns the paths using positions as keys and names as values
      *
      * @return array
      */
-    public function getReversedPaths();
+    public function getReversedPaths(): array;
 
     /**
      * Resets the internal route id generator
+     *
+     * @return void
      */
-    public static function reset();
+    public static function reset(): void;
 
 }

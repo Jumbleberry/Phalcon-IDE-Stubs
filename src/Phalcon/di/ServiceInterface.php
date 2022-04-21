@@ -22,14 +22,14 @@ interface ServiceInterface
      *
      * @param bool $shared
      */
-    public function setShared($shared);
+    public function setShared(bool $shared);
 
     /**
      * Check whether the service is shared or not
      *
      * @return bool
      */
-    public function isShared();
+    public function isShared(): bool;
 
     /**
      * Set the service definition
@@ -61,7 +61,7 @@ interface ServiceInterface
      * @param array $parameter
      * @return ServiceInterface
      */
-    public function setParameter($position, array $parameter);
+    public function setParameter(int $position, array $parameter): ServiceInterface;
 
     /**
      * Restore the internal state of a service
@@ -69,6 +69,6 @@ interface ServiceInterface
      * @param array $attributes
      * @return ServiceInterface
      */
-    public static function __set_state(array $attributes);
+    public static function __set_state(array $attributes): ServiceInterface;
 
 }

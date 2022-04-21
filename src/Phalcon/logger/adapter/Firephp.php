@@ -2,6 +2,11 @@
 
 namespace Phalcon\Logger\Adapter;
 
+use Phalcon\Logger\Adapter;
+use Phalcon\Logger\Exception;
+use Phalcon\Logger\FormatterInterface;
+use Phalcon\Logger\Formatter\Firephp as FirePhpFormatter;
+
 /**
  * Phalcon\Logger\Adapter\Firephp
  *
@@ -19,7 +24,7 @@ namespace Phalcon\Logger\Adapter;
  *
  * @deprecated Will be removed in 4.0.0
  */
-class Firephp extends \Phalcon\Logger\Adapter
+class Firephp extends Adapter
 {
 
     private $_initialized = false;
@@ -31,9 +36,11 @@ class Firephp extends \Phalcon\Logger\Adapter
     /**
      * Returns the internal formatter
      *
-     * @return \Phalcon\Logger\FormatterInterface
+     * @return FormatterInterface
      */
-    public function getFormatter() {}
+    public function getFormatter(): FormatterInterface
+    {
+    }
 
     /**
      * Writes the log to the stream itself
@@ -42,14 +49,19 @@ class Firephp extends \Phalcon\Logger\Adapter
      * @param int $type
      * @param int $time
      * @param array $context
+     * @return void
      */
-    public function logInternal($message, $type, $time, array $context) {}
+    public function logInternal(string $message, int $type, int $time, array $context): void
+    {
+    }
 
     /**
      * Closes the logger
      *
      * @return bool
      */
-    public function close() {}
+    public function close(): bool
+    {
+    }
 
 }

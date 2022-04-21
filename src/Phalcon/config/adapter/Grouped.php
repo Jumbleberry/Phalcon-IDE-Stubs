@@ -2,6 +2,10 @@
 
 namespace Phalcon\Config\Adapter;
 
+use Phalcon\Config;
+use Phalcon\Factory\Exception;
+use Phalcon\Config\Factory;
+
 /**
  * Phalcon\Config\Adapter\Grouped
  *
@@ -54,7 +58,7 @@ namespace Phalcon\Config\Adapter;
  * );
  * </code>
  */
-class Grouped extends \Phalcon\Config
+class Grouped extends Config
 {
 
     /**
@@ -63,6 +67,8 @@ class Grouped extends \Phalcon\Config
      * @param array $arrayConfig
      * @param string $defaultAdapter
      */
-    public function __construct(array $arrayConfig, $defaultAdapter = 'php') {}
+    public function __construct(array $arrayConfig, string $defaultAdapter = 'php')
+    {
+    }
 
 }

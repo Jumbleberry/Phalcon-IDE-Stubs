@@ -37,26 +37,34 @@ class Item
     /**
      * Log type
      *
-     * @return integer
+     * @return mixed
      */
-    public function getType() {}
+    public function getType()
+    {
+    }
 
     /**
      * Log message
      *
      * @return string
      */
-    public function getMessage() {}
+    public function getMessage(): string
+    {
+    }
 
     /**
      * Log timestamp
      *
-     * @return integer
+     * @return mixed
      */
-    public function getTime() {}
+    public function getTime()
+    {
+    }
 
 
-    public function getContext() {}
+    public function getContext()
+    {
+    }
 
     /**
      * Phalcon\Logger\Item constructor
@@ -66,6 +74,8 @@ class Item
      * @param integer $time
      * @param array $context
      */
-    public function __construct($message, $type, $time = 0, $context = null) {}
+    public function __construct(string $message, int $type, int $time = 0, $context = null)
+    {
+    }
 
 }

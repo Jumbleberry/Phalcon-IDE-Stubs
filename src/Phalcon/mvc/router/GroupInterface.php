@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc\Router;
 
+use Phalcon\Mvc\Router\RouteInterface;
+
 /**
  * Phalcon\Mvc\Router\GroupInterface
  *
@@ -57,14 +59,14 @@ interface GroupInterface
      * @param string $hostname
      * @return GroupInterface
      */
-    public function setHostname($hostname);
+    public function setHostname(string $hostname): GroupInterface;
 
     /**
      * Returns the hostname restriction
      *
      * @return string
      */
-    public function getHostname();
+    public function getHostname(): string;
 
     /**
      * Set a common uri prefix for all the routes in this group
@@ -72,14 +74,14 @@ interface GroupInterface
      * @param string $prefix
      * @return GroupInterface
      */
-    public function setPrefix($prefix);
+    public function setPrefix(string $prefix): GroupInterface;
 
     /**
      * Returns the common prefix for all the routes
      *
      * @return string
      */
-    public function getPrefix();
+    public function getPrefix(): string;
 
     /**
      * Sets a callback that is called if the route is matched.
@@ -89,12 +91,12 @@ interface GroupInterface
      * @param callable $beforeMatch
      * @return GroupInterface
      */
-    public function beforeMatch($beforeMatch);
+    public function beforeMatch($beforeMatch): GroupInterface;
 
     /**
      * Returns the 'before match' callback if any
      *
-     * @return callable
+     * @return mixed
      */
     public function getBeforeMatch();
 
@@ -102,9 +104,9 @@ interface GroupInterface
      * Set common paths for all the routes in the group
      *
      * @param array $paths
-     * @return GroupInterface
+     * @return \Phalcon\Mvc\Router\Group
      */
-    public function setPaths($paths);
+    public function setPaths($paths): GroupInterface;
 
     /**
      * Returns the common paths defined for this group
@@ -116,9 +118,9 @@ interface GroupInterface
     /**
      * Returns the routes added to the group
      *
-     * @return \Phalcon\Mvc\Router\RouteInterface[]
+     * @return array|\Phalcon\Mvc\Router\RouteInterface[]
      */
-    public function getRoutes();
+    public function getRoutes(): array;
 
     /**
      * Adds a route to the router on any HTTP method
@@ -130,76 +132,78 @@ interface GroupInterface
      * @param string $pattern
      * @param mixed $paths
      * @param mixed $httpMethods
-     * @return \Phalcon\Mvc\Router\RouteInterface
+     * @return RouteInterface
      */
-    public function add($pattern, $paths = null, $httpMethods = null);
+    public function add(string $pattern, $paths = null, $httpMethods = null): RouteInterface;
 
     /**
      * Adds a route to the router that only match if the HTTP method is GET
      *
      * @param string $pattern
      * @param mixed $paths
-     * @return \Phalcon\Mvc\Router\RouteInterface
+     * @return RouteInterface
      */
-    public function addGet($pattern, $paths = null);
+    public function addGet(string $pattern, $paths = null): RouteInterface;
 
     /**
      * Adds a route to the router that only match if the HTTP method is POST
      *
      * @param string $pattern
      * @param mixed $paths
-     * @return \Phalcon\Mvc\Router\RouteInterface
+     * @return RouteInterface
      */
-    public function addPost($pattern, $paths = null);
+    public function addPost(string $pattern, $paths = null): RouteInterface;
 
     /**
      * Adds a route to the router that only match if the HTTP method is PUT
      *
      * @param string $pattern
      * @param mixed $paths
-     * @return \Phalcon\Mvc\Router\RouteInterface
+     * @return RouteInterface
      */
-    public function addPut($pattern, $paths = null);
+    public function addPut(string $pattern, $paths = null): RouteInterface;
 
     /**
      * Adds a route to the router that only match if the HTTP method is PATCH
      *
      * @param string $pattern
      * @param mixed $paths
-     * @return \Phalcon\Mvc\Router\RouteInterface
+     * @return RouteInterface
      */
-    public function addPatch($pattern, $paths = null);
+    public function addPatch(string $pattern, $paths = null): RouteInterface;
 
     /**
      * Adds a route to the router that only match if the HTTP method is DELETE
      *
      * @param string $pattern
      * @param mixed $paths
-     * @return \Phalcon\Mvc\Router\RouteInterface
+     * @return RouteInterface
      */
-    public function addDelete($pattern, $paths = null);
+    public function addDelete(string $pattern, $paths = null): RouteInterface;
 
     /**
      * Add a route to the router that only match if the HTTP method is OPTIONS
      *
      * @param string $pattern
      * @param mixed $paths
-     * @return \Phalcon\Mvc\Router\RouteInterface
+     * @return RouteInterface
      */
-    public function addOptions($pattern, $paths = null);
+    public function addOptions(string $pattern, $paths = null): RouteInterface;
 
     /**
      * Adds a route to the router that only match if the HTTP method is HEAD
      *
      * @param string $pattern
      * @param mixed $paths
-     * @return \Phalcon\Mvc\Router\RouteInterface
+     * @return RouteInterface
      */
-    public function addHead($pattern, $paths = null);
+    public function addHead(string $pattern, $paths = null): RouteInterface;
 
     /**
      * Removes all the pre-defined routes
+     *
+     * @return void
      */
-    public function clear();
+    public function clear(): void;
 
 }

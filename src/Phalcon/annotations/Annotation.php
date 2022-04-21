@@ -2,6 +2,9 @@
 
 namespace Phalcon\Annotations;
 
+use Phalcon\Annotations\Annotation;
+use Phalcon\Annotations\Exception;
+
 /**
  * Phalcon\Annotations\Annotation
  *
@@ -36,14 +39,18 @@ class Annotation
      *
      * @param array $reflectionData
      */
-    public function __construct(array $reflectionData) {}
+    public function __construct(array $reflectionData)
+    {
+    }
 
     /**
      * Returns the annotation's name
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * Resolves an annotation expression
@@ -51,28 +58,36 @@ class Annotation
      * @param array $expr
      * @return mixed
      */
-    public function getExpression(array $expr) {}
+    public function getExpression(array $expr)
+    {
+    }
 
     /**
      * Returns the expression arguments without resolving
      *
      * @return array
      */
-    public function getExprArguments() {}
+    public function getExprArguments()
+    {
+    }
 
     /**
      * Returns the expression arguments
      *
      * @return array
      */
-    public function getArguments() {}
+    public function getArguments()
+    {
+    }
 
     /**
      * Returns the number of arguments that the annotation has
      *
      * @return int
      */
-    public function numberArguments() {}
+    public function numberArguments(): int
+    {
+    }
 
     /**
      * Returns an argument in a specific position
@@ -80,30 +95,38 @@ class Annotation
      * @param int|string $position
      * @return mixed
      */
-    public function getArgument($position) {}
+    public function getArgument($position)
+    {
+    }
 
     /**
      * Returns an argument in a specific position
      *
      * @param int|string $position
-     * @return bool
+     * @return boolean
      */
-    public function hasArgument($position) {}
+    public function hasArgument($position): bool
+    {
+    }
 
     /**
      * Returns a named argument
      *
-     * @param string $name
      * @return mixed
+     * @param string $name
      */
-    public function getNamedArgument($name) {}
+    public function getNamedArgument(string $name)
+    {
+    }
 
     /**
      * Returns a named parameter
      *
-     * @param string $name
      * @return mixed
+     * @param string $name
      */
-    public function getNamedParameter($name) {}
+    public function getNamedParameter(string $name)
+    {
+    }
 
 }

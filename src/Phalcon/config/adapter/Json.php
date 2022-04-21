@@ -2,6 +2,8 @@
 
 namespace Phalcon\Config\Adapter;
 
+use Phalcon\Config;
+
 /**
  * Phalcon\Config\Adapter\Json
  *
@@ -22,7 +24,7 @@ namespace Phalcon\Config\Adapter;
  * echo $config->models->metadata;
  * </code>
  */
-class Json extends \Phalcon\Config
+class Json extends Config
 {
 
     /**
@@ -30,6 +32,8 @@ class Json extends \Phalcon\Config
      *
      * @param string $filePath
      */
-    public function __construct($filePath) {}
+    public function __construct(string $filePath)
+    {
+    }
 
 }

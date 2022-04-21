@@ -2,6 +2,9 @@
 
 namespace Phalcon\Db\Adapter\Pdo;
 
+use Phalcon\Factory as BaseFactory;
+use Phalcon\Db\AdapterInterface;
+
 /**
  * Loads PDO Adapter class using 'adapter' option
  *
@@ -24,8 +27,10 @@ class Factory extends \Phalcon\Factory
 
     /**
      * @param \Phalcon\Config|array $config
-     * @return \Phalcon\Db\AdapterInterface
+     * @return AdapterInterface
      */
-    public static function load($config) {}
+    public static function load($config): AdapterInterface
+    {
+    }
 
 }

@@ -2,13 +2,17 @@
 
 namespace Phalcon\Mvc\Collection\Behavior;
 
+use Phalcon\Mvc\CollectionInterface;
+use Phalcon\Mvc\Collection\Behavior;
+use Phalcon\Mvc\Collection\Exception;
+
 /**
  * Phalcon\Mvc\Collection\Behavior\SoftDelete
  *
  * Instead of permanently delete a record it marks the record as
  * deleted changing the value of a flag column
  */
-class SoftDelete extends \Phalcon\Mvc\Collection\Behavior
+class SoftDelete extends Behavior
 {
 
     /**
@@ -17,6 +21,8 @@ class SoftDelete extends \Phalcon\Mvc\Collection\Behavior
      * @param string $type
      * @param \Phalcon\Mvc\CollectionInterface $model
      */
-    public function notify($type, \Phalcon\Mvc\CollectionInterface $model) {}
+    public function notify(string $type, \Phalcon\Mvc\CollectionInterface $model)
+    {
+    }
 
 }

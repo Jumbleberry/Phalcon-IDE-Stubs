@@ -2,6 +2,11 @@
 
 namespace Phalcon\Logger\Adapter;
 
+use Phalcon\Logger\Exception;
+use Phalcon\Logger\Adapter;
+use Phalcon\Logger\FormatterInterface;
+use Phalcon\Logger\Formatter\Line as LineFormatter;
+
 /**
  * Phalcon\Logger\Adapter\Stream
  *
@@ -18,7 +23,7 @@ namespace Phalcon\Logger\Adapter;
  * $logger->error("This is another error");
  * </code>
  */
-class Stream extends \Phalcon\Logger\Adapter
+class Stream extends Adapter
 {
     /**
      * File handler resource
@@ -34,14 +39,18 @@ class Stream extends \Phalcon\Logger\Adapter
      * @param string $name
      * @param array $options
      */
-    public function __construct($name, $options = null) {}
+    public function __construct(string $name, $options = null)
+    {
+    }
 
     /**
      * Returns the internal formatter
      *
-     * @return \Phalcon\Logger\FormatterInterface
+     * @return FormatterInterface
      */
-    public function getFormatter() {}
+    public function getFormatter(): FormatterInterface
+    {
+    }
 
     /**
      * Writes the log to the stream itself
@@ -51,13 +60,17 @@ class Stream extends \Phalcon\Logger\Adapter
      * @param int $time
      * @param array $context
      */
-    public function logInternal($message, $type, $time, array $context) {}
+    public function logInternal(string $message, int $type, int $time, array $context)
+    {
+    }
 
     /**
      * Closes the logger
      *
      * @return bool
      */
-    public function close() {}
+    public function close(): bool
+    {
+    }
 
 }

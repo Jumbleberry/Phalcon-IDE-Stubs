@@ -2,6 +2,10 @@
 
 namespace Phalcon\Cli;
 
+use Phalcon\DiInterface;
+use Phalcon\Cli\Router\Route;
+use Phalcon\Cli\Router\Exception;
+
 /**
  * Phalcon\Cli\Router
  *
@@ -71,42 +75,54 @@ class Router implements \Phalcon\Di\InjectionAwareInterface
      *
      * @param bool $defaultRoutes
      */
-    public function __construct($defaultRoutes = true) {}
+    public function __construct(bool $defaultRoutes = true)
+    {
+    }
 
     /**
      * Sets the dependency injector
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the internal dependency injector
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Sets the name of the default module
      *
      * @param string $moduleName
      */
-    public function setDefaultModule($moduleName) {}
+    public function setDefaultModule(string $moduleName)
+    {
+    }
 
     /**
      * Sets the default controller name
      *
      * @param string $taskName
      */
-    public function setDefaultTask($taskName) {}
+    public function setDefaultTask(string $taskName)
+    {
+    }
 
     /**
      * Sets the default action name
      *
      * @param string $actionName
      */
-    public function setDefaultAction($actionName) {}
+    public function setDefaultAction(string $actionName)
+    {
+    }
 
     /**
      * Sets an array of default paths. If a route is missing a path the router will use the defined here
@@ -124,14 +140,18 @@ class Router implements \Phalcon\Di\InjectionAwareInterface
      * @param array $defaults
      * @return Router
      */
-    public function setDefaults(array $defaults) {}
+    public function setDefaults(array $defaults): Router
+    {
+    }
 
     /**
      * Handles routing information received from command-line arguments
      *
      * @param array $arguments
      */
-    public function handle($arguments = null) {}
+    public function handle($arguments = null)
+    {
+    }
 
     /**
      * Adds a route to the router
@@ -141,74 +161,96 @@ class Router implements \Phalcon\Di\InjectionAwareInterface
      * </code>
      *
      * @param string $pattern
-     * @param string/array $paths
-     * @return RouteInterface
+     * @param string/array paths
+     * @return \Phalcon\Cli\Router\Route
+     * @param mixed $paths
+     * @param string  /array paths
      */
-    public function add($pattern, $paths = null) {}
+    public function add(string $pattern, $paths = null): RouteInterface
+    {
+    }
 
     /**
      * Returns processed module name
      *
      * @return string
      */
-    public function getModuleName() {}
+    public function getModuleName(): string
+    {
+    }
 
     /**
      * Returns processed task name
      *
      * @return string
      */
-    public function getTaskName() {}
+    public function getTaskName(): string
+    {
+    }
 
     /**
      * Returns processed action name
      *
      * @return string
      */
-    public function getActionName() {}
+    public function getActionName(): string
+    {
+    }
 
     /**
      * Returns processed extra params
      *
      * @return array
      */
-    public function getParams() {}
+    public function getParams()
+    {
+    }
 
     /**
      * Returns the route that matches the handled URI
      *
      * @return RouteInterface
      */
-    public function getMatchedRoute() {}
+    public function getMatchedRoute(): RouteInterface
+    {
+    }
 
     /**
      * Returns the sub expressions in the regular expression matched
      *
      * @return array
      */
-    public function getMatches() {}
+    public function getMatches()
+    {
+    }
 
     /**
      * Checks if the router matches any of the defined routes
      *
      * @return bool
      */
-    public function wasMatched() {}
+    public function wasMatched(): bool
+    {
+    }
 
     /**
      * Returns all the routes defined in the router
      *
-     * @return \Phalcon\Cli\Router\Route[]
+     * @return array|\Phalcon\Cli\Router\Route[]
      */
-    public function getRoutes() {}
+    public function getRoutes(): array
+    {
+    }
 
     /**
      * Returns a route object by its id
      *
      * @param int $id
-     * @return bool|RouteInterface
+     * @return \Phalcon\Cli\Router\Route
      */
-    public function getRouteById($id) {}
+    public function getRouteById($id)
+    {
+    }
 
     /**
      * Returns a route object by its name
@@ -216,6 +258,8 @@ class Router implements \Phalcon\Di\InjectionAwareInterface
      * @param string $name
      * @return bool|RouteInterface
      */
-    public function getRouteByName($name) {}
+    public function getRouteByName(string $name)
+    {
+    }
 
 }

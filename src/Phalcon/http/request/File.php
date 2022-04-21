@@ -2,6 +2,8 @@
 
 namespace Phalcon\Http\Request;
 
+use Phalcon\Http\Request\FileInterface;
+
 /**
  * Phalcon\Http\Request\File
  *
@@ -61,17 +63,23 @@ class File implements \Phalcon\Http\Request\FileInterface
     /**
      * @return string|null
      */
-    public function getError() {}
+    public function getError(): ?string
+    {
+    }
 
     /**
      * @return string|null
      */
-    public function getKey() {}
+    public function getKey(): ?string
+    {
+    }
 
     /**
      * @return string
      */
-    public function getExtension() {}
+    public function getExtension(): string
+    {
+    }
 
     /**
      * Phalcon\Http\Request\File constructor
@@ -79,28 +87,36 @@ class File implements \Phalcon\Http\Request\FileInterface
      * @param array $file
      * @param mixed $key
      */
-    public function __construct(array $file, $key = null) {}
+    public function __construct(array $file, $key = null)
+    {
+    }
 
     /**
      * Returns the file size of the uploaded file
      *
      * @return int
      */
-    public function getSize() {}
+    public function getSize(): int
+    {
+    }
 
     /**
      * Returns the real name of the uploaded file
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * Returns the temporary name of the uploaded file
      *
      * @return string
      */
-    public function getTempName() {}
+    public function getTempName(): string
+    {
+    }
 
     /**
      * Returns the mime type reported by the browser
@@ -108,21 +124,27 @@ class File implements \Phalcon\Http\Request\FileInterface
      *
      * @return string
      */
-    public function getType() {}
+    public function getType(): string
+    {
+    }
 
     /**
      * Gets the real mime type of the upload file using finfo
      *
      * @return string
      */
-    public function getRealType() {}
+    public function getRealType(): string
+    {
+    }
 
     /**
      * Checks whether the file has been uploaded via Post.
      *
      * @return bool
      */
-    public function isUploadedFile() {}
+    public function isUploadedFile(): bool
+    {
+    }
 
     /**
      * Moves the temporary file to a destination within the application
@@ -130,6 +152,8 @@ class File implements \Phalcon\Http\Request\FileInterface
      * @param string $destination
      * @return bool
      */
-    public function moveTo($destination) {}
+    public function moveTo(string $destination): bool
+    {
+    }
 
 }

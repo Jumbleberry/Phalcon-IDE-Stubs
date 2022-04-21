@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\Model\MetaData;
 
+use Phalcon\Mvc\Model\MetaData;
+use Phalcon\Mvc\Model\Exception;
+
 /**
  * Phalcon\Mvc\Model\MetaData\Apcu
  *
@@ -20,7 +23,7 @@ namespace Phalcon\Mvc\Model\MetaData;
  * );
  * </code>
  */
-class Apcu extends \Phalcon\Mvc\Model\MetaData
+class Apcu extends MetaData
 {
 
     protected $_prefix = '';
@@ -37,7 +40,9 @@ class Apcu extends \Phalcon\Mvc\Model\MetaData
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads meta-data from APCu
@@ -45,14 +50,19 @@ class Apcu extends \Phalcon\Mvc\Model\MetaData
      * @param string $key
      * @return array|null
      */
-    public function read($key) {}
+    public function read(string $key): ?array
+    {
+    }
 
     /**
      * Writes the meta-data to APCu
      *
      * @param string $key
      * @param mixed $data
+     * @return void
      */
-    public function write($key, $data) {}
+    public function write(string $key, $data): void
+    {
+    }
 
 }

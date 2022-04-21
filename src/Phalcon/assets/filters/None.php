@@ -2,6 +2,8 @@
 
 namespace Phalcon\Assets\Filters;
 
+use Phalcon\Assets\FilterInterface;
+
 /**
  * Phalcon\Assets\Filters\None
  *
@@ -16,6 +18,8 @@ class None implements \Phalcon\Assets\FilterInterface
      * @param string $content
      * @return string
      */
-    public function filter($content) {}
+    public function filter(string $content): string
+    {
+    }
 
 }

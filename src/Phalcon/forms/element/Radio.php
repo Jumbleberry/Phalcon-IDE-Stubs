@@ -2,12 +2,15 @@
 
 namespace Phalcon\Forms\Element;
 
+use Phalcon\Tag;
+use Phalcon\Forms\Element;
+
 /**
  * Phalcon\Forms\Element\Radio
  *
  * Component INPUT[type=radio] for forms
  */
-class Radio extends \Phalcon\Forms\Element
+class Radio extends Element
 {
 
     /**
@@ -16,6 +19,8 @@ class Radio extends \Phalcon\Forms\Element
      * @param array $attributes
      * @return string
      */
-    public function render($attributes = null) {}
+    public function render($attributes = null): string
+    {
+    }
 
 }

@@ -2,6 +2,8 @@
 
 namespace Phalcon\Acl;
 
+use Phalcon\Acl\Exception;
+
 /**
  * Phalcon\Acl\Resource
  *
@@ -29,21 +31,27 @@ class Resource implements \Phalcon\Acl\ResourceInterface
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * Resource name
      *
      * @return string
      */
-    public function __toString() {}
+    public function __toString(): string
+    {
+    }
 
     /**
      * Resource description
      *
      * @return string
      */
-    public function getDescription() {}
+    public function getDescription(): string
+    {
+    }
 
     /**
      * Phalcon\Acl\Resource constructor
@@ -51,6 +59,8 @@ class Resource implements \Phalcon\Acl\ResourceInterface
      * @param string $name
      * @param string $description
      */
-    public function __construct($name, $description = null) {}
+    public function __construct(string $name, string $description = null)
+    {
+    }
 
 }

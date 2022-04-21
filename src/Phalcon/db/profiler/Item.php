@@ -50,76 +50,98 @@ class Item
      *
      * @param string $sqlStatement
      */
-    public function setSqlStatement($sqlStatement) {}
+    public function setSqlStatement(string $sqlStatement)
+    {
+    }
 
     /**
      * SQL statement related to the profile
      *
      * @return string
      */
-    public function getSqlStatement() {}
+    public function getSqlStatement(): string
+    {
+    }
 
     /**
      * SQL variables related to the profile
      *
      * @param array $sqlVariables
      */
-    public function setSqlVariables(array $sqlVariables) {}
+    public function setSqlVariables(array $sqlVariables)
+    {
+    }
 
     /**
      * SQL variables related to the profile
      *
      * @return array
      */
-    public function getSqlVariables() {}
+    public function getSqlVariables(): array
+    {
+    }
 
     /**
      * SQL bind types related to the profile
      *
      * @param array $sqlBindTypes
      */
-    public function setSqlBindTypes(array $sqlBindTypes) {}
+    public function setSqlBindTypes(array $sqlBindTypes)
+    {
+    }
 
     /**
      * SQL bind types related to the profile
      *
      * @return array
      */
-    public function getSqlBindTypes() {}
+    public function getSqlBindTypes(): array
+    {
+    }
 
     /**
      * Timestamp when the profile started
      *
      * @param double $initialTime
      */
-    public function setInitialTime($initialTime) {}
+    public function setInitialTime(float $initialTime)
+    {
+    }
 
     /**
      * Timestamp when the profile started
      *
-     * @return double
+     * @return float
      */
-    public function getInitialTime() {}
+    public function getInitialTime(): float
+    {
+    }
 
     /**
      * Timestamp when the profile ended
      *
      * @param double $finalTime
      */
-    public function setFinalTime($finalTime) {}
+    public function setFinalTime(float $finalTime)
+    {
+    }
 
     /**
      * Timestamp when the profile ended
      *
-     * @return double
+     * @return float
      */
-    public function getFinalTime() {}
+    public function getFinalTime(): float
+    {
+    }
 
     /**
      * Returns the total time in seconds spent by the profile
      *
-     * @return double
+     * @return float
      */
-    public function getTotalElapsedSeconds() {}
+    public function getTotalElapsedSeconds(): float
+    {
+    }
 
 }

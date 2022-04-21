@@ -2,6 +2,14 @@
 
 namespace Phalcon\Mvc;
 
+use Phalcon\DiInterface;
+use Phalcon\Di\Injectable;
+use Phalcon\Mvc\View\Exception;
+use Phalcon\Mvc\ViewInterface;
+use Phalcon\Cache\BackendInterface;
+use Phalcon\Events\ManagerInterface;
+use Phalcon\Mvc\View\Engine\Php as PhpEngine;
+
 /**
  * Phalcon\Mvc\View
  *
@@ -27,7 +35,7 @@ namespace Phalcon\Mvc;
  * echo $view->getContent();
  * </code>
  */
-class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
+class View extends Injectable implements \Phalcon\Mvc\ViewInterface
 {
     /**
      * Render Level: To the main layout
@@ -143,29 +151,39 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
 
 
 
-    public function getRenderLevel() {}
+    public function getRenderLevel()
+    {
+    }
 
 
-    public function getCurrentRenderLevel() {}
+    public function getCurrentRenderLevel()
+    {
+    }
 
     /**
      * @return array
      */
-    public function getRegisteredEngines() {}
+    public function getRegisteredEngines(): array
+    {
+    }
 
     /**
      * Phalcon\Mvc\View constructor
      *
      * @param array $options
      */
-    public function __construct(array $options = array()) {}
+    public function __construct(array $options = array())
+    {
+    }
 
     /**
      * Checks if a path is absolute or not
      *
      * @param string $path
      */
-    protected final function _isAbsolutePath($path) {}
+    protected final function _isAbsolutePath(string $path)
+    {
+    }
 
     /**
      * Sets the views directory. Depending of your platform,
@@ -174,14 +192,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $viewsDir
      * @return View
      */
-    public function setViewsDir($viewsDir) {}
+    public function setViewsDir($viewsDir): View
+    {
+    }
 
     /**
      * Gets views directory
      *
      * @return string|array
      */
-    public function getViewsDir() {}
+    public function getViewsDir()
+    {
+    }
 
     /**
      * Sets the layouts sub-directory. Must be a directory under the views directory.
@@ -194,14 +216,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $layoutsDir
      * @return View
      */
-    public function setLayoutsDir($layoutsDir) {}
+    public function setLayoutsDir(string $layoutsDir): View
+    {
+    }
 
     /**
      * Gets the current layouts sub-directory
      *
      * @return string
      */
-    public function getLayoutsDir() {}
+    public function getLayoutsDir(): string
+    {
+    }
 
     /**
      * Sets a partials sub-directory. Must be a directory under the views directory.
@@ -214,14 +240,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $partialsDir
      * @return View
      */
-    public function setPartialsDir($partialsDir) {}
+    public function setPartialsDir(string $partialsDir): View
+    {
+    }
 
     /**
      * Gets the current partials sub-directory
      *
      * @return string
      */
-    public function getPartialsDir() {}
+    public function getPartialsDir(): string
+    {
+    }
 
     /**
      * Sets base path. Depending of your platform, always add a trailing slash or backslash
@@ -233,14 +263,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $basePath
      * @return View
      */
-    public function setBasePath($basePath) {}
+    public function setBasePath(string $basePath): View
+    {
+    }
 
     /**
      * Gets base path
      *
      * @return string
      */
-    public function getBasePath() {}
+    public function getBasePath(): string
+    {
+    }
 
     /**
      * Sets the render level for the view
@@ -255,7 +289,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param int $level
      * @return View
      */
-    public function setRenderLevel($level) {}
+    public function setRenderLevel(int $level): View
+    {
+    }
 
     /**
      * Disables a specific level of rendering
@@ -270,7 +306,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $level
      * @return View
      */
-    public function disableLevel($level) {}
+    public function disableLevel($level): View
+    {
+    }
 
     /**
      * Sets default view name. Must be a file without extension in the views directory
@@ -283,14 +321,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $viewPath
      * @return View
      */
-    public function setMainView($viewPath) {}
+    public function setMainView(string $viewPath): View
+    {
+    }
 
     /**
      * Returns the name of the main view
      *
      * @return string
      */
-    public function getMainView() {}
+    public function getMainView(): string
+    {
+    }
 
     /**
      * Change the layout to be used instead of using the name of the latest controller name
@@ -302,14 +344,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $layout
      * @return View
      */
-    public function setLayout($layout) {}
+    public function setLayout(string $layout): View
+    {
+    }
 
     /**
      * Returns the name of the main view
      *
      * @return string
      */
-    public function getLayout() {}
+    public function getLayout(): string
+    {
+    }
 
     /**
      * Sets a template before the controller layout
@@ -317,14 +363,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $templateBefore
      * @return View
      */
-    public function setTemplateBefore($templateBefore) {}
+    public function setTemplateBefore($templateBefore): View
+    {
+    }
 
     /**
      * Resets any "template before" layouts
      *
      * @return View
      */
-    public function cleanTemplateBefore() {}
+    public function cleanTemplateBefore(): View
+    {
+    }
 
     /**
      * Sets a "template after" controller layout
@@ -332,14 +382,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $templateAfter
      * @return View
      */
-    public function setTemplateAfter($templateAfter) {}
+    public function setTemplateAfter($templateAfter): View
+    {
+    }
 
     /**
      * Resets any template before layouts
      *
      * @return View
      */
-    public function cleanTemplateAfter() {}
+    public function cleanTemplateAfter(): View
+    {
+    }
 
     /**
      * Adds parameters to views (alias of setVar)
@@ -352,7 +406,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $value
      * @return View
      */
-    public function setParamToView($key, $value) {}
+    public function setParamToView(string $key, $value): View
+    {
+    }
 
     /**
      * Set all the render params
@@ -369,7 +425,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param bool $merge
      * @return View
      */
-    public function setVars(array $params, $merge = true) {}
+    public function setVars(array $params, bool $merge = true): View
+    {
+    }
 
     /**
      * Set a single view parameter
@@ -382,35 +440,45 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $value
      * @return View
      */
-    public function setVar($key, $value) {}
+    public function setVar(string $key, $value): View
+    {
+    }
 
     /**
      * Returns a parameter previously set in the view
      *
      * @param string $key
      */
-    public function getVar($key) {}
+    public function getVar(string $key)
+    {
+    }
 
     /**
      * Returns parameters to views
      *
      * @return array
      */
-    public function getParamsToView() {}
+    public function getParamsToView(): array
+    {
+    }
 
     /**
      * Gets the name of the controller rendered
      *
      * @return string
      */
-    public function getControllerName() {}
+    public function getControllerName(): string
+    {
+    }
 
     /**
      * Gets the name of the action rendered
      *
      * @return string
      */
-    public function getActionName() {}
+    public function getActionName(): string
+    {
+    }
 
     /**
      * Gets extra parameters of the action rendered
@@ -419,21 +487,27 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @deprecated
      * @return array
      */
-    public function getParams() {}
+    public function getParams(): array
+    {
+    }
 
     /**
      * Starts rendering process enabling the output buffering
      *
      * @return View
      */
-    public function start() {}
+    public function start(): View
+    {
+    }
 
     /**
      * Loads registered template engines, if none is registered it will use Phalcon\Mvc\View\Engine\Php
      *
      * @return array
      */
-    protected function _loadTemplateEngines() {}
+    protected function _loadTemplateEngines(): array
+    {
+    }
 
     /**
      * Checks whether view exists on registered extensions and render it
@@ -444,7 +518,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param boolean $mustClean
      * @param \Phalcon\Cache\BackendInterface $cache
      */
-    protected function _engineRender($engines, $viewPath, $silence, $mustClean, \Phalcon\Cache\BackendInterface $cache = null) {}
+    protected function _engineRender($engines, string $viewPath, bool $silence, bool $mustClean, \Phalcon\Cache\BackendInterface $cache = null)
+    {
+    }
 
     /**
      * Register templating engines
@@ -462,7 +538,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param array $engines
      * @return View
      */
-    public function registerEngines(array $engines) {}
+    public function registerEngines(array $engines): View
+    {
+    }
 
     /**
      * Checks whether view exists
@@ -470,7 +548,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $view
      * @return bool
      */
-    public function exists($view) {}
+    public function exists(string $view): bool
+    {
+    }
 
     /**
      * Executes render process from dispatching data
@@ -485,7 +565,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param array $params
      * @return bool|View
      */
-    public function render($controllerName, $actionName, $params = null) {}
+    public function render(string $controllerName, string $actionName, $params = null)
+    {
+    }
 
     /**
      * Choose a different view to render instead of last-controller/last-action
@@ -508,7 +590,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $renderView
      * @return View
      */
-    public function pick($renderView) {}
+    public function pick($renderView): View
+    {
+    }
 
     /**
      * Renders a partial view
@@ -532,7 +616,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $params
      * @return string
      */
-    public function getPartial($partialPath, $params = null) {}
+    public function getPartial(string $partialPath, $params = null): string
+    {
+    }
 
     /**
      * Renders a partial view
@@ -555,7 +641,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $partialPath
      * @param mixed $params
      */
-    public function partial($partialPath, $params = null) {}
+    public function partial(string $partialPath, $params = null)
+    {
+    }
 
     /**
      * Perform the automatic rendering returning the output as a string
@@ -576,35 +664,45 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $configCallback
      * @return string
      */
-    public function getRender($controllerName, $actionName, $params = null, $configCallback = null) {}
+    public function getRender(string $controllerName, string $actionName, $params = null, $configCallback = null): string
+    {
+    }
 
     /**
      * Finishes the render process by stopping the output buffering
      *
      * @return View
      */
-    public function finish() {}
+    public function finish(): View
+    {
+    }
 
     /**
      * Create a Phalcon\Cache based on the internal cache options
      *
-     * @return \Phalcon\Cache\BackendInterface
+     * @return BackendInterface
      */
-    protected function _createCache() {}
+    protected function _createCache(): BackendInterface
+    {
+    }
 
     /**
      * Check if the component is currently caching the output content
      *
      * @return bool
      */
-    public function isCaching() {}
+    public function isCaching(): bool
+    {
+    }
 
     /**
      * Returns the cache instance used to cache
      *
-     * @return \Phalcon\Cache\BackendInterface
+     * @return BackendInterface
      */
-    public function getCache() {}
+    public function getCache(): BackendInterface
+    {
+    }
 
     /**
      * Cache the actual view render to certain level
@@ -621,7 +719,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param mixed $options
      * @return View
      */
-    public function cache($options = true) {}
+    public function cache($options = true): View
+    {
+    }
 
     /**
      * Externally sets the view content
@@ -633,42 +733,54 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $content
      * @return View
      */
-    public function setContent($content) {}
+    public function setContent(string $content): View
+    {
+    }
 
     /**
      * Returns cached output from another view stage
      *
      * @return string
      */
-    public function getContent() {}
+    public function getContent(): string
+    {
+    }
 
     /**
      * Returns the path (or paths) of the views that are currently rendered
      *
      * @return string|array
      */
-    public function getActiveRenderPath() {}
+    public function getActiveRenderPath()
+    {
+    }
 
     /**
      * Disables the auto-rendering process
      *
      * @return View
      */
-    public function disable() {}
+    public function disable(): View
+    {
+    }
 
     /**
      * Enables the auto-rendering process
      *
      * @return View
      */
-    public function enable() {}
+    public function enable(): View
+    {
+    }
 
     /**
      * Resets the view component to its factory default values
      *
      * @return View
      */
-    public function reset() {}
+    public function reset(): View
+    {
+    }
 
     /**
      * Magic method to pass variables to the views
@@ -680,7 +792,9 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $key
      * @param mixed $value
      */
-    public function __set($key, $value) {}
+    public function __set(string $key, $value)
+    {
+    }
 
     /**
      * Magic method to retrieve a variable passed to the view
@@ -692,14 +806,18 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $key
      * @return mixed|null
      */
-    public function __get($key) {}
+    public function __get(string $key)
+    {
+    }
 
     /**
      * Whether automatic rendering is enabled
      *
      * @return bool
      */
-    public function isDisabled() {}
+    public function isDisabled(): bool
+    {
+    }
 
     /**
      * Magic method to retrieve if a variable is set in the view
@@ -711,13 +829,17 @@ class View extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewInterface
      * @param string $key
      * @return bool
      */
-    public function __isset($key) {}
+    public function __isset(string $key): bool
+    {
+    }
 
     /**
      * Gets views directories
      *
      * @return array
      */
-    protected function getViewsDirs() {}
+    protected function getViewsDirs(): array
+    {
+    }
 
 }

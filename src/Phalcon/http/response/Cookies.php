@@ -2,6 +2,12 @@
 
 namespace Phalcon\Http\Response;
 
+use Phalcon\DiInterface;
+use Phalcon\Http\CookieInterface;
+use Phalcon\Http\Response\CookiesInterface;
+use Phalcon\Di\InjectionAwareInterface;
+use Phalcon\Http\Cookie\Exception;
+
 /**
  * Phalcon\Http\Response\Cookies
  *
@@ -75,7 +81,9 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
      * @param bool $useEncryption
      * @param string $signKey
      */
-    public function __construct($useEncryption = true, $signKey = null) {}
+    public function __construct(bool $useEncryption = true, string $signKey = null)
+    {
+    }
 
     /**
      * Sets the cookie's sign key.
@@ -87,38 +95,48 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
      *
      * @see \Phalcon\Security\Random
      * @param string $signKey
-     * @return \Phalcon\Http\CookieInterface
+     * @return CookieInterface
      */
-    public function setSignKey($signKey = null) {}
+    public function setSignKey(string $signKey = null): CookieInterface
+    {
+    }
 
     /**
      * Sets the dependency injector
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the internal dependency injector
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Set if cookies in the bag must be automatically encrypted/decrypted
      *
      * @param bool $useEncryption
-     * @return \Phalcon\Http\Response\CookiesInterface
+     * @return CookiesInterface
      */
-    public function useEncryption($useEncryption) {}
+    public function useEncryption(bool $useEncryption): CookiesInterface
+    {
+    }
 
     /**
      * Returns if the bag is automatically encrypting/decrypting cookies
      *
      * @return bool
      */
-    public function isUsingEncryption() {}
+    public function isUsingEncryption(): bool
+    {
+    }
 
     /**
      * Sets a cookie to be sent at the end of the request.
@@ -146,17 +164,21 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
      * @param bool $secure
      * @param string $domain
      * @param bool $httpOnly
-     * @return \Phalcon\Http\Response\CookiesInterface
+     * @return CookiesInterface
      */
-    public function set($name, $value = null, $expire = 0, $path = '/', $secure = null, $domain = null, $httpOnly = null) {}
+    public function set(string $name, $value = null, int $expire = 0, string $path = '/', bool $secure = null, string $domain = null, bool $httpOnly = null): CookiesInterface
+    {
+    }
 
     /**
      * Gets a cookie from the bag
      *
      * @param string $name
-     * @return \Phalcon\Http\Response\CookiesInterface
+     * @return CookieInterface
      */
-    public function get($name) {}
+    public function get(string $name): CookieInterface
+    {
+    }
 
     /**
      * Check if a cookie is defined in the bag or exists in the _COOKIE superglobal
@@ -164,7 +186,9 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
      * @param string $name
      * @return bool
      */
-    public function has($name) {}
+    public function has(string $name): bool
+    {
+    }
 
     /**
      * Deletes a cookie by its name
@@ -173,7 +197,9 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
      * @param string $name
      * @return bool
      */
-    public function delete($name) {}
+    public function delete(string $name): bool
+    {
+    }
 
     /**
      * Sends the cookies to the client
@@ -181,13 +207,17 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
      *
      * @return bool
      */
-    public function send() {}
+    public function send(): bool
+    {
+    }
 
     /**
      * Reset set cookies
      *
-     * @return \Phalcon\Http\Response\CookiesInterface
+     * @return CookiesInterface
      */
-    public function reset() {}
+    public function reset(): CookiesInterface
+    {
+    }
 
 }

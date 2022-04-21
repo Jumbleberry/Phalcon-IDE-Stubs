@@ -15,7 +15,7 @@ interface ResultsetInterface
      *
      * @return int
      */
-    public function getType();
+    public function getType(): int;
 
     /**
      * Get first row in the resultset
@@ -36,14 +36,14 @@ interface ResultsetInterface
      *
      * @param bool $isFresh
      */
-    public function setIsFresh($isFresh);
+    public function setIsFresh(bool $isFresh);
 
     /**
      * Tell if the resultset if fresh or an old one cached
      *
      * @return bool
      */
-    public function isFresh();
+    public function isFresh(): bool;
 
     /**
      * Returns the associated cache for the resultset
@@ -58,6 +58,6 @@ interface ResultsetInterface
      *
      * @return array
      */
-    public function toArray();
+    public function toArray(): array;
 
 }

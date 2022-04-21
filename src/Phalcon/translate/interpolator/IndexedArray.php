@@ -2,6 +2,7 @@
 
 namespace Phalcon\Translate\Interpolator;
 
+use Phalcon\Translate\InterpolatorInterface;
 
 class IndexedArray implements \Phalcon\Translate\InterpolatorInterface
 {
@@ -13,6 +14,8 @@ class IndexedArray implements \Phalcon\Translate\InterpolatorInterface
      * @param mixed $placeholders
      * @return string
      */
-    public function replacePlaceholders($translation, $placeholders = null) {}
+    public function replacePlaceholders(string $translation, $placeholders = null): string
+    {
+    }
 
 }

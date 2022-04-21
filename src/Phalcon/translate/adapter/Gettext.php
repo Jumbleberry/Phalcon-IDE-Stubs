@@ -2,6 +2,9 @@
 
 namespace Phalcon\Translate\Adapter;
 
+use Phalcon\Translate\Exception;
+use Phalcon\Translate\Adapter;
+
 /**
  * Phalcon\Translate\Adapter\Gettext
  *
@@ -20,7 +23,7 @@ namespace Phalcon\Translate\Adapter;
  *
  * Allows translate using gettext
  */
-class Gettext extends \Phalcon\Translate\Adapter implements \ArrayAccess
+class Gettext extends Adapter implements \ArrayAccess
 {
     /**
      * @var string|array
@@ -46,29 +49,39 @@ class Gettext extends \Phalcon\Translate\Adapter implements \ArrayAccess
     /**
      * @return string|array
      */
-    public function getDirectory() {}
+    public function getDirectory()
+    {
+    }
 
     /**
      * @return string
      */
-    public function getDefaultDomain() {}
+    public function getDefaultDomain(): string
+    {
+    }
 
     /**
      * @return string
      */
-    public function getLocale() {}
+    public function getLocale(): string
+    {
+    }
 
     /**
      * @return int
      */
-    public function getCategory() {}
+    public function getCategory(): int
+    {
+    }
 
     /**
      * Phalcon\Translate\Adapter\Gettext constructor
      *
      * @param array $options
      */
-    public function __construct(array $options) {}
+    public function __construct(array $options)
+    {
+    }
 
     /**
      * Returns the translation related to the given key.
@@ -81,7 +94,9 @@ class Gettext extends \Phalcon\Translate\Adapter implements \ArrayAccess
      * @param mixed $placeholders
      * @return string
      */
-    public function query($index, $placeholders = null) {}
+    public function query(string $index, $placeholders = null): string
+    {
+    }
 
     /**
      * Check whether is defined a translation key in the internal array
@@ -89,7 +104,9 @@ class Gettext extends \Phalcon\Translate\Adapter implements \ArrayAccess
      * @param string $index
      * @return bool
      */
-    public function exists($index) {}
+    public function exists(string $index): bool
+    {
+    }
 
     /**
      * The plural version of gettext().
@@ -102,7 +119,9 @@ class Gettext extends \Phalcon\Translate\Adapter implements \ArrayAccess
      * @param string $domain
      * @return string
      */
-    public function nquery($msgid1, $msgid2, $count, $placeholders = null, $domain = null) {}
+    public function nquery(string $msgid1, string $msgid2, int $count, $placeholders = null, string $domain = null): string
+    {
+    }
 
     /**
      * Changes the current domain (i.e. the translation file)
@@ -110,21 +129,28 @@ class Gettext extends \Phalcon\Translate\Adapter implements \ArrayAccess
      * @param mixed $domain
      * @return string
      */
-    public function setDomain($domain) {}
+    public function setDomain($domain): string
+    {
+    }
 
     /**
      * Sets the default domain
      *
      * @return string
      */
-    public function resetDomain() {}
+    public function resetDomain(): string
+    {
+    }
 
     /**
      * Sets the domain default to search within when calls are made to gettext()
      *
      * @param string $domain
+     * @return void
      */
-    public function setDefaultDomain($domain) {}
+    public function setDefaultDomain(string $domain): void
+    {
+    }
 
     /**
      * Sets the path for a domain
@@ -143,8 +169,11 @@ class Gettext extends \Phalcon\Translate\Adapter implements \ArrayAccess
      * </code>
      *
      * @param string|array $directory The directory path or an array of directories and domains
+     * @return void
      */
-    public function setDirectory($directory) {}
+    public function setDirectory($directory): void
+    {
+    }
 
     /**
      * Sets locale information
@@ -161,20 +190,27 @@ class Gettext extends \Phalcon\Translate\Adapter implements \ArrayAccess
      * @param string $locale
      * @return string|bool
      */
-    public function setLocale($category, $locale) {}
+    public function setLocale(int $category, string $locale)
+    {
+    }
 
     /**
      * Validator for constructor
      *
      * @param array $options
+     * @return void
      */
-    protected function prepareOptions(array $options) {}
+    protected function prepareOptions(array $options): void
+    {
+    }
 
     /**
      * Gets default options
      *
      * @return array
      */
-    protected function getOptionsDefault() {}
+    protected function getOptionsDefault(): array
+    {
+    }
 
 }

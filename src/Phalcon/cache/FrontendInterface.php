@@ -15,14 +15,14 @@ interface FrontendInterface
      *
      * @return int
      */
-    public function getLifetime();
+    public function getLifetime(): int;
 
     /**
      * Check whether if frontend is buffering output
      *
      * @return bool
      */
-    public function isBuffering();
+    public function isBuffering(): bool;
 
     /**
      * Starts the frontend

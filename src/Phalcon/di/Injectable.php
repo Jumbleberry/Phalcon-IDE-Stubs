@@ -2,6 +2,14 @@
 
 namespace Phalcon\Di;
 
+use Phalcon\Di;
+use Phalcon\DiInterface;
+use Phalcon\Events\ManagerInterface;
+use Phalcon\Di\InjectionAwareInterface;
+use Phalcon\Events\EventsAwareInterface;
+use Phalcon\Di\Exception;
+use Phalcon\Session\BagInterface;
+
 /**
  * Phalcon\Di\Injectable
  *
@@ -55,34 +63,44 @@ abstract class Injectable implements \Phalcon\Di\InjectionAwareInterface, \Phalc
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the internal dependency injector
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Sets the event manager
      *
      * @param \Phalcon\Events\ManagerInterface $eventsManager
      */
-    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager) {}
+    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager)
+    {
+    }
 
     /**
      * Returns the internal event manager
      *
-     * @return \Phalcon\Events\ManagerInterface
+     * @return ManagerInterface
      */
-    public function getEventsManager() {}
+    public function getEventsManager(): ManagerInterface
+    {
+    }
 
     /**
      * Magic method __get
      *
      * @param string $propertyName
      */
-    public function __get($propertyName) {}
+    public function __get(string $propertyName)
+    {
+    }
 
 }

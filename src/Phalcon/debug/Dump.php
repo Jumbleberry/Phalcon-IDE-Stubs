@@ -2,6 +2,8 @@
 
 namespace Phalcon\Debug;
 
+use Phalcon\Di;
+
 /**
  * Phalcon\Debug\Dump
  *
@@ -34,20 +36,26 @@ class Dump
 
 
 
-    public function getDetailed() {}
+    public function getDetailed()
+    {
+    }
 
     /**
      * @param mixed $detailed
      */
-    public function setDetailed($detailed) {}
+    public function setDetailed($detailed)
+    {
+    }
 
     /**
      * Phalcon\Debug\Dump constructor
      *
-     * @param array $styles
      * @param boolean $detailed debug object's private and protected properties
+     * @param array $styles
      */
-    public function __construct(array $styles = array(), $detailed = false) {}
+    public function __construct(array $styles = array(), bool $detailed = false)
+    {
+    }
 
     /**
      * Alias of variables() method
@@ -56,7 +64,9 @@ class Dump
      * @param ...
      * @return string
      */
-    public function all() {}
+    public function all(): string
+    {
+    }
 
     /**
      * Get style for type
@@ -64,7 +74,9 @@ class Dump
      * @param string $type
      * @return string
      */
-    protected function getStyle($type) {}
+    protected function getStyle(string $type): string
+    {
+    }
 
     /**
      * Set styles for vars type
@@ -72,7 +84,9 @@ class Dump
      * @param array $styles
      * @return array
      */
-    public function setStyles(array $styles = array()) {}
+    public function setStyles(array $styles = array()): array
+    {
+    }
 
     /**
      * Alias of variable() method
@@ -81,7 +95,9 @@ class Dump
      * @param string $name
      * @return string
      */
-    public function one($variable, $name = null) {}
+    public function one($variable, string $name = null): string
+    {
+    }
 
     /**
      * Prepare an HTML string of information about a single variable.
@@ -91,7 +107,9 @@ class Dump
      * @param int $tab
      * @return string
      */
-    protected function output($variable, $name = null, $tab = 1) {}
+    protected function output($variable, string $name = null, int $tab = 1): string
+    {
+    }
 
     /**
      * Returns an HTML string of information about a single variable.
@@ -104,7 +122,9 @@ class Dump
      * @param string $name
      * @return string
      */
-    public function variable($variable, $name = null) {}
+    public function variable($variable, string $name = null): string
+    {
+    }
 
     /**
      * Returns an HTML string of debugging information about any number of
@@ -122,7 +142,9 @@ class Dump
      * @param ...
      * @return string
      */
-    public function variables() {}
+    public function variables(): string
+    {
+    }
 
     /**
      * Returns an JSON string of information about a single variable.
@@ -143,6 +165,8 @@ class Dump
      * @param mixed $variable
      * @return string
      */
-    public function toJson($variable) {}
+    public function toJson($variable): string
+    {
+    }
 
 }

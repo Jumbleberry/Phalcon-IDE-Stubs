@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc\Model\MetaData;
 
+use Phalcon\Mvc\Model\MetaData;
+
 /**
  * Phalcon\Mvc\Model\MetaData\Xcache
  *
@@ -20,7 +22,7 @@ namespace Phalcon\Mvc\Model\MetaData;
  * );
  * </code>
  */
-class Xcache extends \Phalcon\Mvc\Model\MetaData
+class Xcache extends MetaData
 {
 
     protected $_prefix = '';
@@ -37,7 +39,9 @@ class Xcache extends \Phalcon\Mvc\Model\MetaData
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads metadata from XCache
@@ -45,7 +49,9 @@ class Xcache extends \Phalcon\Mvc\Model\MetaData
      * @param string $key
      * @return array
      */
-    public function read($key) {}
+    public function read(string $key)
+    {
+    }
 
     /**
      *  Writes the metadata to XCache
@@ -53,6 +59,8 @@ class Xcache extends \Phalcon\Mvc\Model\MetaData
      * @param string $key
      * @param array $data
      */
-    public function write($key, $data) {}
+    public function write(string $key, $data)
+    {
+    }
 
 }

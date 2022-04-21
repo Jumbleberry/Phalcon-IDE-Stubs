@@ -2,6 +2,9 @@
 
 namespace Phalcon\Cache\Backend;
 
+use Phalcon\Cache\Exception;
+use Phalcon\Cache\Backend;
+
 /**
  * Phalcon\Cache\Backend\Apc
  *
@@ -35,7 +38,7 @@ namespace Phalcon\Cache\Backend;
  * @see \Phalcon\Cache\Backend\Apcu
  * @deprecated
  */
-class Apc extends \Phalcon\Cache\Backend
+class Apc extends Backend
 {
 
     /**
@@ -45,7 +48,9 @@ class Apc extends \Phalcon\Cache\Backend
      * @param int $lifetime
      * @return mixed|null
      */
-    public function get($keyName, $lifetime = null) {}
+    public function get(string $keyName, int $lifetime = null)
+    {
+    }
 
     /**
      * Stores cached content into the APC backend and stops the frontend
@@ -56,7 +61,9 @@ class Apc extends \Phalcon\Cache\Backend
      * @param boolean $stopBuffer
      * @return bool
      */
-    public function save($keyName = null, $content = null, $lifetime = null, $stopBuffer = true) {}
+    public function save($keyName = null, $content = null, $lifetime = null, bool $stopBuffer = true): bool
+    {
+    }
 
     /**
      * Increment of a given key, by number $value
@@ -65,7 +72,9 @@ class Apc extends \Phalcon\Cache\Backend
      * @param int $value
      * @return int|bool
      */
-    public function increment($keyName = null, $value = 1) {}
+    public function increment($keyName = null, int $value = 1)
+    {
+    }
 
     /**
      * Decrement of a given key, by number $value
@@ -74,7 +83,9 @@ class Apc extends \Phalcon\Cache\Backend
      * @param int $value
      * @return int|bool
      */
-    public function decrement($keyName = null, $value = 1) {}
+    public function decrement($keyName = null, int $value = 1)
+    {
+    }
 
     /**
      * Deletes a value from the cache by its key
@@ -82,7 +93,9 @@ class Apc extends \Phalcon\Cache\Backend
      * @param string $keyName
      * @return bool
      */
-    public function delete($keyName) {}
+    public function delete(string $keyName): bool
+    {
+    }
 
     /**
      * Query the existing cached keys.
@@ -97,7 +110,9 @@ class Apc extends \Phalcon\Cache\Backend
      * @param string $prefix
      * @return array
      */
-    public function queryKeys($prefix = null) {}
+    public function queryKeys(string $prefix = null): array
+    {
+    }
 
     /**
      * Checks if cache exists and it hasn't expired
@@ -106,7 +121,9 @@ class Apc extends \Phalcon\Cache\Backend
      * @param int $lifetime
      * @return bool
      */
-    public function exists($keyName = null, $lifetime = null) {}
+    public function exists($keyName = null, int $lifetime = null): bool
+    {
+    }
 
     /**
      * Immediately invalidates all existing items.
@@ -124,6 +141,8 @@ class Apc extends \Phalcon\Cache\Backend
      *
      * @return bool
      */
-    public function flush() {}
+    public function flush(): bool
+    {
+    }
 
 }

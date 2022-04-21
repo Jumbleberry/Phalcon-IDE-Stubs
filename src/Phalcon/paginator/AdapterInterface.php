@@ -15,7 +15,7 @@ interface AdapterInterface
      *
      * @param int $page
      */
-    public function setCurrentPage($page);
+    public function setCurrentPage(int $page);
 
     /**
      * Returns a slice of the resultset to show in the pagination
@@ -23,20 +23,20 @@ interface AdapterInterface
      * @deprecated will be removed after 4.0
      * @return \stdClass
      */
-    public function getPaginate();
+    public function getPaginate(): \stdClass;
 
     /**
      * Set current rows limit
      *
      * @param int $limit
      */
-    public function setLimit($limit);
+    public function setLimit(int $limit);
 
     /**
      * Get current rows limit
      *
      * @return int
      */
-    public function getLimit();
+    public function getLimit(): int;
 
 }

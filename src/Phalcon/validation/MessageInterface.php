@@ -2,6 +2,8 @@
 
 namespace Phalcon\Validation;
 
+use Phalcon\Validation\Message;
+
 /**
  * Phalcon\Validation\Message
  *
@@ -14,39 +16,39 @@ interface MessageInterface
      * Sets message type
      *
      * @param string $type
-     * @return \Phalcon\Validation\Message
+     * @return Message
      */
-    public function setType($type);
+    public function setType(string $type): Message;
 
     /**
      * Returns message type
      *
      * @return string
      */
-    public function getType();
+    public function getType(): string;
 
     /**
      * Sets verbose message
      *
      * @param string $message
-     * @return \Phalcon\Validation\Message
+     * @return Message
      */
-    public function setMessage($message);
+    public function setMessage(string $message): Message;
 
     /**
      * Returns verbose message
      *
      * @return string
      */
-    public function getMessage();
+    public function getMessage(): string;
 
     /**
      * Sets field name related to message
      *
      * @param string $field
-     * @return \Phalcon\Validation\Message
+     * @return Message
      */
-    public function setField($field);
+    public function setField(string $field): Message;
 
     /**
      * Returns field name related to message
@@ -60,7 +62,7 @@ interface MessageInterface
      *
      * @return string
      */
-    public function __toString();
+    public function __toString(): string;
 
     /**
      * Magic __set_state helps to recover messages from serialization
@@ -68,6 +70,6 @@ interface MessageInterface
      * @param array $message
      * @return MessageInterface
      */
-    public static function __set_state(array $message);
+    public static function __set_state(array $message): MessageInterface;
 
 }

@@ -2,6 +2,15 @@
 
 namespace Phalcon\Http;
 
+use Phalcon\DiInterface;
+use Phalcon\Http\Response\Exception;
+use Phalcon\Http\Response\HeadersInterface;
+use Phalcon\Http\Response\CookiesInterface;
+use Phalcon\Mvc\UrlInterface;
+use Phalcon\Mvc\ViewInterface;
+use Phalcon\Http\Response\Headers;
+use Phalcon\Di\InjectionAwareInterface;
+
 /**
  * Phalcon\Http\Response
  *
@@ -46,21 +55,27 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param mixed $code
      * @param mixed $status
      */
-    public function __construct($content = null, $code = null, $status = null) {}
+    public function __construct($content = null, $code = null, $status = null)
+    {
+    }
 
     /**
      * Sets the dependency injector
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the internal dependency injector
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Sets the HTTP response code
@@ -73,7 +88,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param string $message
      * @return ResponseInterface
      */
-    public function setStatusCode($code, $message = null) {}
+    public function setStatusCode(int $code, string $message = null): ResponseInterface
+    {
+    }
 
     /**
      * Returns the status code
@@ -84,7 +101,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      *
      * @return int|null
      */
-    public function getStatusCode() {}
+    public function getStatusCode(): ?int
+    {
+    }
 
     /**
      * Returns the reason phrase
@@ -95,7 +114,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      *
      * @return string|null
      */
-    public function getReasonPhrase() {}
+    public function getReasonPhrase(): ?string
+    {
+    }
 
     /**
      * Sets a headers bag for the response externally
@@ -103,14 +124,18 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param \Phalcon\Http\Response\HeadersInterface $headers
      * @return ResponseInterface
      */
-    public function setHeaders(\Phalcon\Http\Response\HeadersInterface $headers) {}
+    public function setHeaders(\Phalcon\Http\Response\HeadersInterface $headers): ResponseInterface
+    {
+    }
 
     /**
      * Returns headers set by the user
      *
-     * @return \Phalcon\Http\Response\HeadersInterface
+     * @return HeadersInterface
      */
-    public function getHeaders() {}
+    public function getHeaders(): HeadersInterface
+    {
+    }
 
     /**
      * Sets a cookies bag for the response externally
@@ -118,14 +143,18 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param \Phalcon\Http\Response\CookiesInterface $cookies
      * @return Response
      */
-    public function setCookies(\Phalcon\Http\Response\CookiesInterface $cookies) {}
+    public function setCookies(\Phalcon\Http\Response\CookiesInterface $cookies): Response
+    {
+    }
 
     /**
      * Returns cookies set by the user
      *
      * @return \Phalcon\Http\Response\CookiesInterface
      */
-    public function getCookies() {}
+    public function getCookies(): CookiesInterface
+    {
+    }
 
     /**
      * Overwrites a header in the response
@@ -138,7 +167,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param mixed $value
      * @return ResponseInterface
      */
-    public function setHeader($name, $value) {}
+    public function setHeader(string $name, $value): ResponseInterface
+    {
+    }
 
     /**
      * Send a raw header to the response
@@ -150,14 +181,18 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param string $header
      * @return ResponseInterface
      */
-    public function setRawHeader($header) {}
+    public function setRawHeader(string $header): ResponseInterface
+    {
+    }
 
     /**
      * Resets all the established headers
      *
      * @return ResponseInterface
      */
-    public function resetHeaders() {}
+    public function resetHeaders(): ResponseInterface
+    {
+    }
 
     /**
      * Sets an Expires header in the response that allows to use the HTTP cache
@@ -171,7 +206,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param \DateTime $datetime
      * @return ResponseInterface
      */
-    public function setExpires(\DateTime $datetime) {}
+    public function setExpires(\DateTime $datetime): ResponseInterface
+    {
+    }
 
     /**
      * Sets Last-Modified header
@@ -185,7 +222,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param \DateTime $datetime
      * @return Response
      */
-    public function setLastModified(\DateTime $datetime) {}
+    public function setLastModified(\DateTime $datetime): Response
+    {
+    }
 
     /**
      * Sets Cache headers to use HTTP cache
@@ -197,14 +236,18 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param int $minutes
      * @return Response
      */
-    public function setCache($minutes) {}
+    public function setCache(int $minutes): Response
+    {
+    }
 
     /**
      * Sends a Not-Modified response
      *
      * @return ResponseInterface
      */
-    public function setNotModified() {}
+    public function setNotModified(): ResponseInterface
+    {
+    }
 
     /**
      * Sets the response content-type mime, optionally the charset
@@ -218,7 +261,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param mixed $charset
      * @return ResponseInterface
      */
-    public function setContentType($contentType, $charset = null) {}
+    public function setContentType(string $contentType, $charset = null): ResponseInterface
+    {
+    }
 
     /**
      * Sets the response content-length
@@ -230,7 +275,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param int $contentLength
      * @return ResponseInterface
      */
-    public function setContentLength($contentLength) {}
+    public function setContentLength(int $contentLength): ResponseInterface
+    {
+    }
 
     /**
      * Set a custom ETag
@@ -242,7 +289,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param string $etag
      * @return Response
      */
-    public function setEtag($etag) {}
+    public function setEtag(string $etag): Response
+    {
+    }
 
     /**
      * Redirect by HTTP to another action or URL
@@ -268,7 +317,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param int $statusCode
      * @return ResponseInterface
      */
-    public function redirect($location = null, $externalRedirect = false, $statusCode = 302) {}
+    public function redirect($location = null, bool $externalRedirect = false, int $statusCode = 302): ResponseInterface
+    {
+    }
 
     /**
      * Sets HTTP response body
@@ -280,7 +331,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param string $content
      * @return ResponseInterface
      */
-    public function setContent($content) {}
+    public function setContent(string $content): ResponseInterface
+    {
+    }
 
     /**
      * Sets HTTP response body. The parameter is automatically converted to JSON
@@ -299,7 +352,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param int $depth
      * @return ResponseInterface
      */
-    public function setJsonContent($content, $jsonOptions = 0, $depth = 512) {}
+    public function setJsonContent($content, int $jsonOptions = 0, int $depth = 512): ResponseInterface
+    {
+    }
 
     /**
      * Appends a string to the HTTP response body
@@ -307,42 +362,54 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param mixed $content
      * @return ResponseInterface
      */
-    public function appendContent($content) {}
+    public function appendContent($content): ResponseInterface
+    {
+    }
 
     /**
      * Gets the HTTP response body
      *
      * @return string
      */
-    public function getContent() {}
+    public function getContent(): string
+    {
+    }
 
     /**
      * Check if the response is already sent
      *
      * @return bool
      */
-    public function isSent() {}
+    public function isSent(): bool
+    {
+    }
 
     /**
      * Sends headers to the client
      *
      * @return ResponseInterface
      */
-    public function sendHeaders() {}
+    public function sendHeaders(): ResponseInterface
+    {
+    }
 
     /**
      * Sends cookies to the client
      *
      * @return ResponseInterface
      */
-    public function sendCookies() {}
+    public function sendCookies(): ResponseInterface
+    {
+    }
 
     /**
      * Prints out HTTP response to the client
      *
      * @return ResponseInterface
      */
-    public function send() {}
+    public function send(): ResponseInterface
+    {
+    }
 
     /**
      * Sets an attached file to be sent at the end of the request
@@ -352,7 +419,9 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param mixed $attachment
      * @return ResponseInterface
      */
-    public function setFileToSend($filePath, $attachmentName = null, $attachment = true) {}
+    public function setFileToSend(string $filePath, $attachmentName = null, $attachment = true): ResponseInterface
+    {
+    }
 
     /**
      * Remove a header in the response
@@ -364,6 +433,8 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
      * @param string $name
      * @return Response
      */
-    public function removeHeader($name) {}
+    public function removeHeader(string $name): Response
+    {
+    }
 
 }

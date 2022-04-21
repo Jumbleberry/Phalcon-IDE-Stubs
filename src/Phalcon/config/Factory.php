@@ -2,6 +2,10 @@
 
 namespace Phalcon\Config;
 
+use Phalcon\Factory as BaseFactory;
+use Phalcon\Factory\Exception;
+use Phalcon\Config;
+
 /**
  * Loads Config Adapter class using 'adapter' option, if no extension is provided it will be added to filePath
  *
@@ -20,14 +24,18 @@ class Factory extends \Phalcon\Factory
 
     /**
      * @param \Phalcon\Config|array $config
-     * @return \Phalcon\Config
+     * @return Config
      */
-    public static function load($config) {}
+    public static function load($config): Config
+    {
+    }
 
     /**
      * @param string $namespace
      * @param mixed $config
      */
-    protected static function loadClass($namespace, $config) {}
+    protected static function loadClass(string $namespace, $config)
+    {
+    }
 
 }

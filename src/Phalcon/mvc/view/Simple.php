@@ -2,6 +2,13 @@
 
 namespace Phalcon\Mvc\View;
 
+use Phalcon\Di\Injectable;
+use Phalcon\Mvc\View\Exception;
+use Phalcon\Mvc\ViewBaseInterface;
+use Phalcon\Cache\BackendInterface;
+use Phalcon\Mvc\View\EngineInterface;
+use Phalcon\Mvc\View\Engine\Php as PhpEngine;
+
 /**
  * Phalcon\Mvc\View\Simple
  *
@@ -29,7 +36,7 @@ namespace Phalcon\Mvc\View;
  * );
  * </code>
  */
-class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInterface
+class Simple extends Injectable implements \Phalcon\Mvc\ViewBaseInterface
 {
 
     protected $_options;
@@ -69,28 +76,36 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
     /**
      * @return array|null
      */
-    public function getRegisteredEngines() {}
+    public function getRegisteredEngines(): ?array
+    {
+    }
 
     /**
      * Phalcon\Mvc\View\Simple constructor
      *
      * @param array $options
      */
-    public function __construct(array $options = array()) {}
+    public function __construct(array $options = array())
+    {
+    }
 
     /**
      * Sets views directory. Depending of your platform, always add a trailing slash or backslash
      *
      * @param string $viewsDir
      */
-    public function setViewsDir($viewsDir) {}
+    public function setViewsDir(string $viewsDir)
+    {
+    }
 
     /**
      * Gets views directory
      *
      * @return string
      */
-    public function getViewsDir() {}
+    public function getViewsDir(): string
+    {
+    }
 
     /**
      * Register templating engines
@@ -107,14 +122,18 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      *
      * @param array $engines
      */
-    public function registerEngines(array $engines) {}
+    public function registerEngines(array $engines)
+    {
+    }
 
     /**
      * Loads registered template engines, if none is registered it will use Phalcon\Mvc\View\Engine\Php
      *
      * @return array
      */
-    protected function _loadTemplateEngines() {}
+    protected function _loadTemplateEngines()
+    {
+    }
 
     /**
      * Tries to render the view with every engine registered in the component
@@ -122,7 +141,9 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param string $path
      * @param array $params
      */
-    protected final function _internalRender($path, $params) {}
+    protected final function _internalRender(string $path, $params)
+    {
+    }
 
     /**
      * Renders a view
@@ -131,7 +152,9 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param array $params
      * @return string
      */
-    public function render($path, $params = null) {}
+    public function render(string $path, $params = null): string
+    {
+    }
 
     /**
      * Renders a partial view
@@ -154,7 +177,9 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param string $partialPath
      * @param mixed $params
      */
-    public function partial($partialPath, $params = null) {}
+    public function partial(string $partialPath, $params = null)
+    {
+    }
 
     /**
      * Sets the cache options
@@ -162,28 +187,36 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param array $options
      * @return Simple
      */
-    public function setCacheOptions(array $options) {}
+    public function setCacheOptions(array $options): Simple
+    {
+    }
 
     /**
      * Returns the cache options
      *
      * @return array
      */
-    public function getCacheOptions() {}
+    public function getCacheOptions()
+    {
+    }
 
     /**
      * Create a Phalcon\Cache based on the internal cache options
      *
-     * @return \Phalcon\Cache\BackendInterface
+     * @return BackendInterface
      */
-    protected function _createCache() {}
+    protected function _createCache(): BackendInterface
+    {
+    }
 
     /**
      * Returns the cache instance used to cache
      *
-     * @return \Phalcon\Cache\BackendInterface
+     * @return BackendInterface
      */
-    public function getCache() {}
+    public function getCache(): BackendInterface
+    {
+    }
 
     /**
      * Cache the actual view render to certain level
@@ -200,7 +233,9 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param mixed $options
      * @return Simple
      */
-    public function cache($options = true) {}
+    public function cache($options = true): Simple
+    {
+    }
 
     /**
      * Adds parameters to views (alias of setVar)
@@ -213,7 +248,9 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param mixed $value
      * @return Simple
      */
-    public function setParamToView($key, $value) {}
+    public function setParamToView(string $key, $value): Simple
+    {
+    }
 
     /**
      * Set all the render params
@@ -230,7 +267,9 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param bool $merge
      * @return Simple
      */
-    public function setVars(array $params, $merge = true) {}
+    public function setVars(array $params, bool $merge = true): Simple
+    {
+    }
 
     /**
      * Set a single view parameter
@@ -243,7 +282,9 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param mixed $value
      * @return Simple
      */
-    public function setVar($key, $value) {}
+    public function setVar(string $key, $value): Simple
+    {
+    }
 
     /**
      * Returns a parameter previously set in the view
@@ -251,14 +292,18 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param string $key
      * @return mixed|null
      */
-    public function getVar($key) {}
+    public function getVar(string $key)
+    {
+    }
 
     /**
      * Returns parameters to views
      *
      * @return array
      */
-    public function getParamsToView() {}
+    public function getParamsToView(): array
+    {
+    }
 
     /**
      * Externally sets the view content
@@ -270,21 +315,27 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param string $content
      * @return Simple
      */
-    public function setContent($content) {}
+    public function setContent(string $content): Simple
+    {
+    }
 
     /**
      * Returns cached output from another view stage
      *
      * @return string
      */
-    public function getContent() {}
+    public function getContent(): string
+    {
+    }
 
     /**
      * Returns the path of the view that is currently rendered
      *
      * @return string
      */
-    public function getActiveRenderPath() {}
+    public function getActiveRenderPath()
+    {
+    }
 
     /**
      * Magic method to pass variables to the views
@@ -296,7 +347,9 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param string $key
      * @param mixed $value
      */
-    public function __set($key, $value) {}
+    public function __set(string $key, $value)
+    {
+    }
 
     /**
      * Magic method to retrieve a variable passed to the view
@@ -308,6 +361,8 @@ class Simple extends \Phalcon\Di\Injectable implements \Phalcon\Mvc\ViewBaseInte
      * @param string $key
      * @return mixed|null
      */
-    public function __get($key) {}
+    public function __get(string $key)
+    {
+    }
 
 }

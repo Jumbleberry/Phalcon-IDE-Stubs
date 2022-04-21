@@ -2,6 +2,17 @@
 
 namespace Phalcon\Mvc;
 
+use Phalcon\Application as BaseApplication;
+use Phalcon\DiInterface;
+use Phalcon\Mvc\ViewInterface;
+use Phalcon\Mvc\RouterInterface;
+use Phalcon\Http\ResponseInterface;
+use Phalcon\Events\ManagerInterface;
+use Phalcon\Mvc\DispatcherInterface;
+use Phalcon\Mvc\Application\Exception;
+use Phalcon\Mvc\Router\RouteInterface;
+use Phalcon\Mvc\ModuleDefinitionInterface;
+
 /**
  * Phalcon\Mvc\Application
  *
@@ -65,7 +76,9 @@ class Application extends \Phalcon\Application
      * @param bool $sendHeaders
      * @return Application
      */
-    public function sendHeadersOnHandleRequest($sendHeaders) {}
+    public function sendHeadersOnHandleRequest(bool $sendHeaders): Application
+    {
+    }
 
     /**
      * Enables or disables sending cookies by each request handling
@@ -73,7 +86,9 @@ class Application extends \Phalcon\Application
      * @param bool $sendCookies
      * @return Application
      */
-    public function sendCookiesOnHandleRequest($sendCookies) {}
+    public function sendCookiesOnHandleRequest(bool $sendCookies): Application
+    {
+    }
 
     /**
      * By default. The view is implicitly buffering all the output
@@ -82,7 +97,9 @@ class Application extends \Phalcon\Application
      * @param bool $implicitView
      * @return Application
      */
-    public function useImplicitView($implicitView) {}
+    public function useImplicitView(bool $implicitView): Application
+    {
+    }
 
     /**
      * Handles a MVC request
@@ -90,6 +107,8 @@ class Application extends \Phalcon\Application
      * @param string $uri
      * @return bool|\Phalcon\Http\ResponseInterface
      */
-    public function handle($uri = null) {}
+    public function handle(string $uri = null)
+    {
+    }
 
 }

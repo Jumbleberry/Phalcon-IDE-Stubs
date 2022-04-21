@@ -2,6 +2,8 @@
 
 namespace Phalcon\Http\Response;
 
+use Phalcon\Http\CookieInterface;
+
 /**
  * Phalcon\Http\Response\CookiesInterface
  *
@@ -16,14 +18,14 @@ interface CookiesInterface
      * @param bool $useEncryption
      * @return CookiesInterface
      */
-    public function useEncryption($useEncryption);
+    public function useEncryption(bool $useEncryption): CookiesInterface;
 
     /**
      * Returns if the bag is automatically encrypting/decrypting cookies
      *
      * @return bool
      */
-    public function isUsingEncryption();
+    public function isUsingEncryption(): bool;
 
     /**
      * Sets a cookie to be sent at the end of the request
@@ -37,15 +39,15 @@ interface CookiesInterface
      * @param bool $httpOnly
      * @return CookiesInterface
      */
-    public function set($name, $value = null, $expire = 0, $path = '/', $secure = null, $domain = null, $httpOnly = null);
+    public function set(string $name, $value = null, int $expire = 0, string $path = '/', bool $secure = null, string $domain = null, bool $httpOnly = null): CookiesInterface;
 
     /**
      * Gets a cookie from the bag
      *
      * @param string $name
-     * @return CookiesInterface
+     * @return CookieInterface
      */
-    public function get($name);
+    public function get(string $name): CookieInterface;
 
     /**
      * Check if a cookie is defined in the bag or exists in the _COOKIE superglobal
@@ -53,7 +55,7 @@ interface CookiesInterface
      * @param string $name
      * @return bool
      */
-    public function has($name);
+    public function has(string $name): bool;
 
     /**
      * Deletes a cookie by its name
@@ -62,20 +64,20 @@ interface CookiesInterface
      * @param string $name
      * @return bool
      */
-    public function delete($name);
+    public function delete(string $name): bool;
 
     /**
      * Sends the cookies to the client
      *
      * @return bool
      */
-    public function send();
+    public function send(): bool;
 
     /**
      * Reset set cookies
      *
      * @return CookiesInterface
      */
-    public function reset();
+    public function reset(): CookiesInterface;
 
 }

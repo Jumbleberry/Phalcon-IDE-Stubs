@@ -2,6 +2,8 @@
 
 namespace Phalcon\Di;
 
+use Phalcon\DiInterface;
+
 /**
  * Phalcon\Di\ServiceProviderInterface
  *
@@ -32,7 +34,8 @@ interface ServiceProviderInterface
      * Registers a service provider.
      *
      * @param \Phalcon\DiInterface $di
+     * @return void
      */
-    public function register(\Phalcon\DiInterface $di);
+    public function register(\Phalcon\DiInterface $di): void;
 
 }

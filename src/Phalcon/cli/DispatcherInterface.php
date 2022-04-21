@@ -2,12 +2,14 @@
 
 namespace Phalcon\Cli;
 
+use Phalcon\DispatcherInterface as DispatcherInterfaceBase;
+
 /**
  * Phalcon\Cli\DispatcherInterface
  *
  * Interface for Phalcon\Cli\Dispatcher
  */
-interface DispatcherInterface extends \Phalcon\DispatcherInterface
+interface DispatcherInterface extends DispatcherInterfaceBase
 {
 
     /**
@@ -15,41 +17,41 @@ interface DispatcherInterface extends \Phalcon\DispatcherInterface
      *
      * @param string $taskSuffix
      */
-    public function setTaskSuffix($taskSuffix);
+    public function setTaskSuffix(string $taskSuffix);
 
     /**
      * Sets the default task name
      *
      * @param string $taskName
      */
-    public function setDefaultTask($taskName);
+    public function setDefaultTask(string $taskName);
 
     /**
      * Sets the task name to be dispatched
      *
      * @param string $taskName
      */
-    public function setTaskName($taskName);
+    public function setTaskName(string $taskName);
 
     /**
      * Gets last dispatched task name
      *
      * @return string
      */
-    public function getTaskName();
+    public function getTaskName(): string;
 
     /**
      * Returns the latest dispatched controller
      *
      * @return TaskInterface
      */
-    public function getLastTask();
+    public function getLastTask(): TaskInterface;
 
     /**
      * Returns the active task in the dispatcher
      *
      * @return TaskInterface
      */
-    public function getActiveTask();
+    public function getActiveTask(): TaskInterface;
 
 }

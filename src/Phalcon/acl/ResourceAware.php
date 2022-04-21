@@ -15,6 +15,6 @@ interface ResourceAware
      *
      * @return string
      */
-    public function getResourceName();
+    public function getResourceName(): string;
 
 }

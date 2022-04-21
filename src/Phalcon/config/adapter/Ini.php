@@ -2,6 +2,9 @@
 
 namespace Phalcon\Config\Adapter;
 
+use Phalcon\Config;
+use Phalcon\Config\Exception;
+
 /**
  * Phalcon\Config\Adapter\Ini
  *
@@ -44,7 +47,7 @@ namespace Phalcon\Config\Adapter;
  * );
  * </code>
  */
-class Ini extends \Phalcon\Config
+class Ini extends Config
 {
 
     /**
@@ -53,7 +56,9 @@ class Ini extends \Phalcon\Config
      * @param string $filePath
      * @param mixed $mode
      */
-    public function __construct($filePath, $mode = null) {}
+    public function __construct(string $filePath, $mode = null)
+    {
+    }
 
     /**
      * Build multidimensional array from string
@@ -75,7 +80,9 @@ class Ini extends \Phalcon\Config
      * @param mixed $value
      * @return array
      */
-    protected function _parseIniString($path, $value) {}
+    protected function _parseIniString(string $path, $value): array
+    {
+    }
 
     /**
      * We have to cast values manually because parse_ini_file() has a poor implementation.
@@ -83,6 +90,8 @@ class Ini extends \Phalcon\Config
      * @param mixed $ini The array casted by `parse_ini_file`
      * @return bool|null|double|int|string
      */
-    protected function _cast($ini) {}
+    protected function _cast($ini)
+    {
+    }
 
 }

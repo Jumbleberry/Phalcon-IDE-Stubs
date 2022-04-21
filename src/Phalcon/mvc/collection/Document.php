@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\Collection;
 
+use Phalcon\Mvc\EntityInterface;
+use Phalcon\Mvc\Collection\Exception;
+
 /**
  * Phalcon\Mvc\Collection\Document
  *
@@ -15,31 +18,40 @@ class Document implements \Phalcon\Mvc\EntityInterface, \ArrayAccess
      * Checks whether an offset exists in the document
      *
      * @param int $index
-     * @return bool
+     * @return boolean
      */
-    public function offsetExists($index) {}
+    public function offsetExists($index): bool
+    {
+    }
 
     /**
      * Returns the value of a field using the ArrayAccess interfase
      *
      * @param mixed $index
      */
-    public function offsetGet($index) {}
+    public function offsetGet($index)
+    {
+    }
 
     /**
      * Change a value using the ArrayAccess interface
      *
      * @param mixed $index
      * @param mixed $value
+     * @return void
      */
-    public function offsetSet($index, $value) {}
+    public function offsetSet($index, $value): void
+    {
+    }
 
     /**
      * Rows cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface
      *
      * @param string $offset
      */
-    public function offsetUnset($offset) {}
+    public function offsetUnset($offset)
+    {
+    }
 
     /**
      * Reads an attribute value by its name
@@ -51,7 +63,9 @@ class Document implements \Phalcon\Mvc\EntityInterface, \ArrayAccess
      * @param string $attribute
      * @return mixed
      */
-    public function readAttribute($attribute) {}
+    public function readAttribute($attribute)
+    {
+    }
 
     /**
      * Writes an attribute value by its name
@@ -62,14 +76,19 @@ class Document implements \Phalcon\Mvc\EntityInterface, \ArrayAccess
      *
      * @param string $attribute
      * @param mixed $value
+     * @return void
      */
-    public function writeAttribute($attribute, $value) {}
+    public function writeAttribute(string $attribute, $value): void
+    {
+    }
 
     /**
      * Returns the instance as an array representation
      *
      * @return array
      */
-    public function toArray() {}
+    public function toArray()
+    {
+    }
 
 }

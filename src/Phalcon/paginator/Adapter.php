@@ -23,7 +23,9 @@ abstract class Adapter implements \Phalcon\Paginator\AdapterInterface
      *
      * @return int
      */
-    public function getLimit() {}
+    public function getLimit(): int
+    {
+    }
 
     /**
      * Set the current page number
@@ -31,7 +33,9 @@ abstract class Adapter implements \Phalcon\Paginator\AdapterInterface
      * @param int $page
      * @return Adapter
      */
-    public function setCurrentPage($page) {}
+    public function setCurrentPage(int $page): Adapter
+    {
+    }
 
     /**
      * Set current rows limit
@@ -39,6 +43,8 @@ abstract class Adapter implements \Phalcon\Paginator\AdapterInterface
      * @param int $limitRows
      * @return Adapter
      */
-    public function setLimit($limitRows) {}
+    public function setLimit(int $limitRows): Adapter
+    {
+    }
 
 }

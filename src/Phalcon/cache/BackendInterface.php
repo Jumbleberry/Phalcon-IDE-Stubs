@@ -15,7 +15,7 @@ interface BackendInterface
      *
      * @param int|string $keyName
      * @param int $lifetime
-     * @return mixed
+     * @return  mixed
      */
     public function start($keyName, $lifetime = null);
 
@@ -24,7 +24,7 @@ interface BackendInterface
      *
      * @param boolean $stopBuffer
      */
-    public function stop($stopBuffer = true);
+    public function stop(bool $stopBuffer = true);
 
     /**
      * Returns front-end instance adapter related to the back-end
@@ -45,14 +45,14 @@ interface BackendInterface
      *
      * @return bool
      */
-    public function isFresh();
+    public function isFresh(): bool;
 
     /**
      * Checks whether the cache has starting buffering or not
      *
      * @return bool
      */
-    public function isStarted();
+    public function isStarted(): bool;
 
     /**
      * Sets the last key used in the cache
@@ -75,7 +75,7 @@ interface BackendInterface
      * @param int $lifetime
      * @return mixed|null
      */
-    public function get($keyName, $lifetime = null);
+    public function get(string $keyName, int $lifetime = null);
 
     /**
      * Stores cached content into the file backend and stops the frontend
@@ -84,9 +84,9 @@ interface BackendInterface
      * @param string $content
      * @param int $lifetime
      * @param boolean $stopBuffer
-     * @return bool
+     * @return boolean true on success/false otherwise
      */
-    public function save($keyName = null, $content = null, $lifetime = null, $stopBuffer = true);
+    public function save($keyName = null, $content = null, $lifetime = null, bool $stopBuffer = true): bool;
 
     /**
      * Deletes a value from the cache by its key
@@ -94,7 +94,7 @@ interface BackendInterface
      * @param string $keyName
      * @return boolean
      */
-    public function delete($keyName);
+    public function delete(string $keyName);
 
     /**
      * Query the existing cached keys
@@ -102,15 +102,15 @@ interface BackendInterface
      * @param string $prefix
      * @return array
      */
-    public function queryKeys($prefix = null);
+    public function queryKeys(string $prefix = null): array;
 
     /**
      * Checks if cache exists and it hasn't expired
      *
      * @param string $keyName
      * @param int $lifetime
-     * @return bool
+     * @return boolean
      */
-    public function exists($keyName = null, $lifetime = null);
+    public function exists($keyName = null, int $lifetime = null): bool;
 
 }

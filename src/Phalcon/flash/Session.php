@@ -2,6 +2,11 @@
 
 namespace Phalcon\Flash;
 
+use Phalcon\Flash as FlashBase;
+use Phalcon\DiInterface;
+use Phalcon\Flash\Exception;
+use Phalcon\Session\AdapterInterface as SessionInterface;
+
 /**
  * Phalcon\Flash\Session
  *
@@ -17,7 +22,9 @@ class Session extends \Phalcon\Flash
      * @param mixed $type
      * @return array
      */
-    protected function _getSessionMessages($remove, $type = null) {}
+    protected function _getSessionMessages(bool $remove, $type = null): array
+    {
+    }
 
     /**
      * Stores the messages in session
@@ -25,7 +32,9 @@ class Session extends \Phalcon\Flash
      * @param array $messages
      * @return array
      */
-    protected function _setSessionMessages(array $messages) {}
+    protected function _setSessionMessages(array $messages): array
+    {
+    }
 
     /**
      * Adds a message to the session flasher
@@ -33,7 +42,9 @@ class Session extends \Phalcon\Flash
      * @param string $type
      * @param string $message
      */
-    public function message($type, $message) {}
+    public function message(string $type, string $message)
+    {
+    }
 
     /**
      * Checks whether there are messages
@@ -41,7 +52,9 @@ class Session extends \Phalcon\Flash
      * @param mixed $type
      * @return bool
      */
-    public function has($type = null) {}
+    public function has($type = null): bool
+    {
+    }
 
     /**
      * Returns the messages in the session flasher
@@ -50,18 +63,27 @@ class Session extends \Phalcon\Flash
      * @param bool $remove
      * @return array
      */
-    public function getMessages($type = null, $remove = true) {}
+    public function getMessages($type = null, bool $remove = true): array
+    {
+    }
 
     /**
      * Prints the messages in the session flasher
      *
      * @param bool $remove
+     * @return void
      */
-    public function output($remove = true) {}
+    public function output(bool $remove = true): void
+    {
+    }
 
     /**
      * Clear messages in the session messenger
+     *
+     * @return void
      */
-    public function clear() {}
+    public function clear(): void
+    {
+    }
 
 }

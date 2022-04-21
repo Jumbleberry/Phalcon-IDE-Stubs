@@ -19,6 +19,6 @@ interface FormatterInterface
      * @param array $context
      * @return string|array
      */
-    public function format($message, $type, $timestamp, $context = null);
+    public function format(string $message, int $type, int $timestamp, $context = null);
 
 }

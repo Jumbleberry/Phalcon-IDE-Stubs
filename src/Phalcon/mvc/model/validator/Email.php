@@ -2,6 +2,10 @@
 
 namespace Phalcon\Mvc\Model\Validator;
 
+use Phalcon\Mvc\EntityInterface;
+use Phalcon\Mvc\Model\Exception;
+use Phalcon\Mvc\Model\Validator;
+
 /**
  * Phalcon\Mvc\Model\Validator\Email
  *
@@ -35,7 +39,7 @@ namespace Phalcon\Mvc\Model\Validator;
  * @deprecated 3.1.0
  * @see Phalcon\Validation\Validator\Email
  */
-class Email extends \Phalcon\Mvc\Model\Validator
+class Email extends Validator
 {
 
     /**
@@ -44,6 +48,8 @@ class Email extends \Phalcon\Mvc\Model\Validator
      * @param \Phalcon\Mvc\EntityInterface $record
      * @return bool
      */
-    public function validate(\Phalcon\Mvc\EntityInterface $record) {}
+    public function validate(\Phalcon\Mvc\EntityInterface $record): bool
+    {
+    }
 
 }

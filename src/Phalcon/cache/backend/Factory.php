@@ -2,6 +2,12 @@
 
 namespace Phalcon\Cache\Backend;
 
+use Phalcon\Factory as BaseFactory;
+use Phalcon\Factory\Exception;
+use Phalcon\Cache\BackendInterface;
+use Phalcon\Cache\Frontend\Factory as FrontendFactory;
+use Phalcon\Config;
+
 /**
  * Loads Backend Cache Adapter class using 'adapter' option, if frontend will be provided as array it will call Frontend Cache Factory
  *
@@ -22,14 +28,18 @@ class Factory extends \Phalcon\Factory
 
     /**
      * @param \Phalcon\Config|array $config
-     * @return \Phalcon\Cache\BackendInterface
+     * @return BackendInterface
      */
-    public static function load($config) {}
+    public static function load($config): BackendInterface
+    {
+    }
 
     /**
      * @param string $namespace
      * @param mixed $config
      */
-    protected static function loadClass($namespace, $config) {}
+    protected static function loadClass(string $namespace, $config)
+    {
+    }
 
 }

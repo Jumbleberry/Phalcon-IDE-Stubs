@@ -2,6 +2,17 @@
 
 namespace Phalcon\Mvc;
 
+use Phalcon\Di;
+use Phalcon\DiInterface;
+use Phalcon\Mvc\Collection\Document;
+use Phalcon\Di\InjectionAwareInterface;
+use Phalcon\Mvc\Collection\ManagerInterface;
+use Phalcon\Mvc\Collection\BehaviorInterface;
+use Phalcon\Mvc\Collection\Exception;
+use Phalcon\Mvc\Model\MessageInterface;
+use Phalcon\Mvc\Model\Message;
+use Phalcon\ValidationInterface;
+
 /**
  * Phalcon\Mvc\Collection
  *
@@ -71,70 +82,90 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param \Phalcon\DiInterface $dependencyInjector
      * @param \Phalcon\Mvc\Collection\ManagerInterface $modelsManager
      */
-    public final function __construct(\Phalcon\DiInterface $dependencyInjector = null, \Phalcon\Mvc\Collection\ManagerInterface $modelsManager = null) {}
+    public final function __construct(\Phalcon\DiInterface $dependencyInjector = null, \Phalcon\Mvc\Collection\ManagerInterface $modelsManager = null)
+    {
+    }
 
     /**
      * Sets a value for the _id property, creates a MongoId object if needed
      *
      * @param mixed $id
      */
-    public function setId($id) {}
+    public function setId($id)
+    {
+    }
 
     /**
      * Returns the value of the _id property
      *
      * @return \MongoId
      */
-    public function getId() {}
+    public function getId()
+    {
+    }
 
     /**
      * Sets the dependency injection container
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the dependency injection container
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Sets a custom events manager
      *
      * @param \Phalcon\Mvc\Collection\ManagerInterface $eventsManager
      */
-    protected function setEventsManager(\Phalcon\Mvc\Collection\ManagerInterface $eventsManager) {}
+    protected function setEventsManager(\Phalcon\Mvc\Collection\ManagerInterface $eventsManager)
+    {
+    }
 
     /**
      * Returns the custom events manager
      *
-     * @return \Phalcon\Mvc\Collection\ManagerInterface
+     * @return ManagerInterface
      */
-    protected function getEventsManager() {}
+    protected function getEventsManager(): ManagerInterface
+    {
+    }
 
     /**
      * Returns the models manager related to the entity instance
      *
-     * @return \Phalcon\Mvc\Collection\ManagerInterface
+     * @return ManagerInterface
      */
-    public function getCollectionManager() {}
+    public function getCollectionManager(): ManagerInterface
+    {
+    }
 
     /**
      * Returns an array with reserved properties that cannot be part of the insert/update
      *
      * @return array
      */
-    public function getReservedAttributes() {}
+    public function getReservedAttributes(): array
+    {
+    }
 
     /**
      * Sets if a model must use implicit objects ids
      *
      * @param bool $useImplicitObjectIds
      */
-    protected function useImplicitObjectIds($useImplicitObjectIds) {}
+    protected function useImplicitObjectIds(bool $useImplicitObjectIds)
+    {
+    }
 
     /**
      * Sets collection name which model should be mapped
@@ -142,14 +173,18 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param string $source
      * @return Collection
      */
-    protected function setSource($source) {}
+    protected function setSource(string $source): Collection
+    {
+    }
 
     /**
      * Returns collection name mapped in the model
      *
      * @return string
      */
-    public function getSource() {}
+    public function getSource(): string
+    {
+    }
 
     /**
      * Sets the DependencyInjection connection service name
@@ -157,21 +192,27 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param string $connectionService
      * @return Collection
      */
-    public function setConnectionService($connectionService) {}
+    public function setConnectionService(string $connectionService): Collection
+    {
+    }
 
     /**
      * Returns DependencyInjection connection service
      *
      * @return string
      */
-    public function getConnectionService() {}
+    public function getConnectionService(): string
+    {
+    }
 
     /**
      * Retrieves a database connection
      *
      * @return \MongoDb
      */
-    public function getConnection() {}
+    public function getConnection()
+    {
+    }
 
     /**
      * Reads an attribute value by its name
@@ -183,7 +224,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param string $attribute
      * @return mixed
      */
-    public function readAttribute($attribute) {}
+    public function readAttribute(string $attribute)
+    {
+    }
 
     /**
      * Writes an attribute value by its name
@@ -195,7 +238,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param string $attribute
      * @param mixed $value
      */
-    public function writeAttribute($attribute, $value) {}
+    public function writeAttribute(string $attribute, $value)
+    {
+    }
 
     /**
      * Returns a cloned collection
@@ -204,7 +249,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param array $document
      * @return CollectionInterface
      */
-    public static function cloneResult(CollectionInterface $collection, array $document) {}
+    public static function cloneResult(CollectionInterface $collection, array $document): CollectionInterface
+    {
+    }
 
     /**
      * Returns a collection resultset
@@ -213,9 +260,11 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param \Phalcon\Mvc\Collection $collection
      * @param \MongoDb $connection
      * @param boolean $unique
-     * @return array
+     * @return array|boolean
      */
-    protected static function _getResultset($params, CollectionInterface $collection, $connection, $unique) {}
+    protected static function _getResultset($params, CollectionInterface $collection, $connection, bool $unique)
+    {
+    }
 
     /**
      * Perform a count over a resultset
@@ -225,7 +274,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param \MongoDb $connection
      * @return int
      */
-    protected static function _getGroupResultset($params, Collection $collection, $connection) {}
+    protected static function _getGroupResultset($params, Collection $collection, $connection): int
+    {
+    }
 
     /**
      * Executes internal hooks before save a document
@@ -233,9 +284,11 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param \Phalcon\DiInterface $dependencyInjector
      * @param boolean $disableEvents
      * @param boolean $exists
-     * @return bool
+     * @return boolean
      */
-    protected final function _preSave($dependencyInjector, $disableEvents, $exists) {}
+    protected final function _preSave($dependencyInjector, bool $disableEvents, bool $exists): bool
+    {
+    }
 
     /**
      * Executes internal events after save a document
@@ -245,7 +298,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param bool $exists
      * @return bool
      */
-    protected final function _postSave($disableEvents, $success, $exists) {}
+    protected final function _postSave(bool $disableEvents, bool $success, bool $exists): bool
+    {
+    }
 
     /**
      * Executes validators on every validation call
@@ -298,7 +353,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      *
      * @param mixed $validator
      */
-    protected function validate($validator) {}
+    protected function validate($validator)
+    {
+    }
 
     /**
      * Check whether validation process has generated any messages
@@ -328,7 +385,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      *
      * @return bool
      */
-    public function validationHasFailed() {}
+    public function validationHasFailed(): bool
+    {
+    }
 
     /**
      * Fires an internal event
@@ -336,7 +395,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param string $eventName
      * @return bool
      */
-    public function fireEvent($eventName) {}
+    public function fireEvent(string $eventName): bool
+    {
+    }
 
     /**
      * Fires an internal event that cancels the operation
@@ -344,7 +405,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param string $eventName
      * @return bool
      */
-    public function fireEventCancel($eventName) {}
+    public function fireEventCancel(string $eventName): bool
+    {
+    }
 
     /**
      * Cancel the current operation
@@ -352,15 +415,19 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param bool $disableEvents
      * @return bool
      */
-    protected function _cancelOperation($disableEvents) {}
+    protected function _cancelOperation(bool $disableEvents): bool
+    {
+    }
 
     /**
      * Checks if the document exists in the collection
      *
      * @param \MongoCollection $collection
-     * @return bool
+     * @return boolean
      */
-    protected function _exists($collection) {}
+    protected function _exists($collection): bool
+    {
+    }
 
     /**
      * Returns all the validation messages
@@ -385,9 +452,11 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * }
      * </code>
      *
-     * @return \Phalcon\Mvc\Model\MessageInterface[]
+     * @return array|\Phalcon\Mvc\Model\MessageInterface[]
      */
-    public function getMessages() {}
+    public function getMessages(): array
+    {
+    }
 
     /**
      * Appends a customized message on the validation process
@@ -412,27 +481,35 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      *
      * @param \Phalcon\Mvc\Model\MessageInterface $message
      */
-    public function appendMessage(\Phalcon\Mvc\Model\MessageInterface $message) {}
+    public function appendMessage(\Phalcon\Mvc\Model\MessageInterface $message)
+    {
+    }
 
     /**
      * Shared Code for CU Operations
      * Prepares Collection
      */
-    protected function prepareCU() {}
+    protected function prepareCU()
+    {
+    }
 
     /**
      * Creates/Updates a collection based on the values in the attributes
      *
      * @return bool
      */
-    public function save() {}
+    public function save(): bool
+    {
+    }
 
     /**
      * Creates a collection based on the values in the attributes
      *
      * @return bool
      */
-    public function create() {}
+    public function create(): bool
+    {
+    }
 
     /**
      * Creates a document based on the values in the attributes, if not found by criteria
@@ -456,14 +533,18 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param array $criteria
      * @return bool
      */
-    public function createIfNotExist(array $criteria) {}
+    public function createIfNotExist(array $criteria): bool
+    {
+    }
 
     /**
      * Creates/Updates a collection based on the values in the attributes
      *
      * @return bool
      */
-    public function update() {}
+    public function update(): bool
+    {
+    }
 
     /**
      * Find a document by its id (_id)
@@ -484,9 +565,11 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * </code>
      *
      * @param mixed $id
-     * @return null|CollectionInterface
+     * @return CollectionInterface|null
      */
-    public static function findById($id) {}
+    public static function findById($id): ?CollectionInterface
+    {
+    }
 
     /**
      * Allows to query the first record that match the specified conditions
@@ -535,9 +618,11 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * </code>
      *
      * @param array $parameters
-     * @return array
+     * @return array|bool
      */
-    public static function findFirst(array $parameters = null) {}
+    public static function findFirst(array $parameters = null)
+    {
+    }
 
     /**
      * Allows to query a set of records that match the specified conditions
@@ -596,7 +681,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param array $parameters
      * @return array
      */
-    public static function find(array $parameters = null) {}
+    public static function find(array $parameters = null): array
+    {
+    }
 
     /**
      * Perform a count over a collection
@@ -608,7 +695,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param array $parameters
      * @return int
      */
-    public static function count(array $parameters = null) {}
+    public static function count(array $parameters = null): int
+    {
+    }
 
     /**
      * Perform an aggregation using the Mongo aggregation framework
@@ -617,7 +706,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param array $options
      * @return array
      */
-    public static function aggregate(array $parameters = null, array $options = null) {}
+    public static function aggregate(array $parameters = null, array $options = null): array
+    {
+    }
 
     /**
      * Allows to perform a summatory group for a column in the collection
@@ -627,7 +718,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param mixed $finalize
      * @return array
      */
-    public static function summatory($field, $conditions = null, $finalize = null) {}
+    public static function summatory(string $field, $conditions = null, $finalize = null): array
+    {
+    }
 
     /**
      * Deletes a model instance. Returning true on success or false otherwise.
@@ -646,7 +739,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      *
      * @return bool
      */
-    public function delete() {}
+    public function delete(): bool
+    {
+    }
 
     /**
      * Sets the dirty state of the object using one of the DIRTY_STATE_ constants
@@ -654,28 +749,37 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * @param int $dirtyState
      * @return CollectionInterface
      */
-    public function setDirtyState($dirtyState) {}
+    public function setDirtyState(int $dirtyState): CollectionInterface
+    {
+    }
 
     /**
      * Returns one of the DIRTY_STATE_ constants telling if the document exists in the collection or not
      *
      * @return int
      */
-    public function getDirtyState() {}
+    public function getDirtyState(): int
+    {
+    }
 
     /**
      * Sets up a behavior in a collection
      *
      * @param \Phalcon\Mvc\Collection\BehaviorInterface $behavior
+     * @return void
      */
-    protected function addBehavior(\Phalcon\Mvc\Collection\BehaviorInterface $behavior) {}
+    protected function addBehavior(\Phalcon\Mvc\Collection\BehaviorInterface $behavior): void
+    {
+    }
 
     /**
      * Skips the current operation forcing a success state
      *
      * @param bool $skip
      */
-    public function skipOperation($skip) {}
+    public function skipOperation(bool $skip)
+    {
+    }
 
     /**
      * Returns the instance as an array representation
@@ -688,20 +792,26 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      *
      * @return array
      */
-    public function toArray() {}
+    public function toArray(): array
+    {
+    }
 
     /**
      * Serializes the object ignoring connections or protected properties
      *
      * @return string
      */
-    public function serialize() {}
+    public function serialize(): string
+    {
+    }
 
     /**
      * Unserializes the object from a serialized string
      *
      * @param mixed $data
      */
-    public function unserialize($data) {}
+    public function unserialize($data)
+    {
+    }
 
 }

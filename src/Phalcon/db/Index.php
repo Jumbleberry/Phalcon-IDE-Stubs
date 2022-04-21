@@ -62,21 +62,27 @@ class Index implements \Phalcon\Db\IndexInterface
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * Index columns
      *
      * @return array
      */
-    public function getColumns() {}
+    public function getColumns(): array
+    {
+    }
 
     /**
      * Index type
      *
      * @return string
      */
-    public function getType() {}
+    public function getType(): string
+    {
+    }
 
     /**
      * Phalcon\Db\Index constructor
@@ -85,7 +91,9 @@ class Index implements \Phalcon\Db\IndexInterface
      * @param array $columns
      * @param mixed $type
      */
-    public function __construct($name, array $columns, $type = null) {}
+    public function __construct(string $name, array $columns, $type = null)
+    {
+    }
 
     /**
      * Restore a Phalcon\Db\Index object from export
@@ -93,6 +101,8 @@ class Index implements \Phalcon\Db\IndexInterface
      * @param array $data
      * @return IndexInterface
      */
-    public static function __set_state(array $data) {}
+    public static function __set_state(array $data): IndexInterface
+    {
+    }
 
 }

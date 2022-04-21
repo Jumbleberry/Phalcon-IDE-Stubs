@@ -2,6 +2,11 @@
 
 namespace Phalcon\Session\Adapter;
 
+use Phalcon\Session\Adapter;
+use Phalcon\Session\Exception;
+use Phalcon\Cache\Backend\Libmemcached;
+use Phalcon\Cache\Frontend\Data as FrontendData;
+
 /**
  * Phalcon\Session\Adapter\Libmemcached
  *
@@ -35,7 +40,7 @@ namespace Phalcon\Session\Adapter;
  * echo $session->get("var");
  * </code>
  */
-class Libmemcached extends \Phalcon\Session\Adapter
+class Libmemcached extends Adapter
 {
 
     protected $_libmemcached = null;
@@ -45,10 +50,14 @@ class Libmemcached extends \Phalcon\Session\Adapter
 
 
 
-    public function getLibmemcached() {}
+    public function getLibmemcached()
+    {
+    }
 
 
-    public function getLifetime() {}
+    public function getLifetime()
+    {
+    }
 
     /**
      * Phalcon\Session\Adapter\Libmemcached constructor
@@ -56,17 +65,23 @@ class Libmemcached extends \Phalcon\Session\Adapter
      * @throws \Phalcon\Session\Exception
      * @param array $options
      */
-    public function __construct(array $options) {}
+    public function __construct(array $options)
+    {
+    }
 
     /**
      * @return bool
      */
-    public function open() {}
+    public function open(): bool
+    {
+    }
 
     /**
      * @return bool
      */
-    public function close() {}
+    public function close(): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -74,7 +89,9 @@ class Libmemcached extends \Phalcon\Session\Adapter
      * @param string $sessionId
      * @return string
      */
-    public function read($sessionId) {}
+    public function read(string $sessionId): string
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -83,7 +100,9 @@ class Libmemcached extends \Phalcon\Session\Adapter
      * @param string $data
      * @return bool
      */
-    public function write($sessionId, $data) {}
+    public function write(string $sessionId, string $data): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -91,13 +110,17 @@ class Libmemcached extends \Phalcon\Session\Adapter
      * @param mixed $sessionId
      * @return bool
      */
-    public function destroy($sessionId = null) {}
+    public function destroy($sessionId = null): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
      *
      * @return bool
      */
-    public function gc() {}
+    public function gc(): bool
+    {
+    }
 
 }

@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\Model\MetaData;
 
+use Phalcon\Mvc\Model\MetaData;
+use Phalcon\Mvc\Model\Exception;
+
 /**
  * Phalcon\Mvc\Model\MetaData\Apc
  *
@@ -23,7 +26,7 @@ namespace Phalcon\Mvc\Model\MetaData;
  * @deprecated Deprecated since 3.3.0, will be removed in 4.0.0
  * @see Phalcon\Mvc\Model\Metadata\Apcu
  */
-class Apc extends \Phalcon\Mvc\Model\MetaData
+class Apc extends MetaData
 {
 
     protected $_prefix = '';
@@ -40,7 +43,9 @@ class Apc extends \Phalcon\Mvc\Model\MetaData
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads meta-data from APC
@@ -48,14 +53,19 @@ class Apc extends \Phalcon\Mvc\Model\MetaData
      * @param string $key
      * @return array|null
      */
-    public function read($key) {}
+    public function read(string $key): ?array
+    {
+    }
 
     /**
      * Writes the meta-data to APC
      *
      * @param string $key
      * @param mixed $data
+     * @return void
      */
-    public function write($key, $data) {}
+    public function write(string $key, $data): void
+    {
+    }
 
 }

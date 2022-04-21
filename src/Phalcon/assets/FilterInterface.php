@@ -16,6 +16,6 @@ interface FilterInterface
      * @param string $content
      * @return string
      */
-    public function filter($content);
+    public function filter(string $content): string;
 
 }

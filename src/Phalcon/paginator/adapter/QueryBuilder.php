@@ -2,6 +2,11 @@
 
 namespace Phalcon\Paginator\Adapter;
 
+use Phalcon\Mvc\Model\Query\Builder;
+use Phalcon\Paginator\Adapter;
+use Phalcon\Paginator\Exception;
+use Phalcon\Db;
+
 /**
  * Phalcon\Paginator\Adapter\QueryBuilder
  *
@@ -24,7 +29,7 @@ namespace Phalcon\Paginator\Adapter;
  * );
  * </code>
  */
-class QueryBuilder extends \Phalcon\Paginator\Adapter
+class QueryBuilder extends Adapter
 {
     /**
      * Configuration of paginator by model
@@ -47,14 +52,18 @@ class QueryBuilder extends \Phalcon\Paginator\Adapter
      *
      * @param array $config
      */
-    public function __construct(array $config) {}
+    public function __construct(array $config)
+    {
+    }
 
     /**
      * Get the current page number
      *
      * @return int
      */
-    public function getCurrentPage() {}
+    public function getCurrentPage(): int
+    {
+    }
 
     /**
      * Set query builder object
@@ -62,14 +71,18 @@ class QueryBuilder extends \Phalcon\Paginator\Adapter
      * @param \Phalcon\Mvc\Model\Query\Builder $builder
      * @return QueryBuilder
      */
-    public function setQueryBuilder(\Phalcon\Mvc\Model\Query\Builder $builder) {}
+    public function setQueryBuilder(\Phalcon\Mvc\Model\Query\Builder $builder): QueryBuilder
+    {
+    }
 
     /**
      * Get query builder object
      *
-     * @return \Phalcon\Mvc\Model\Query\Builder
+     * @return Builder
      */
-    public function getQueryBuilder() {}
+    public function getQueryBuilder(): Builder
+    {
+    }
 
     /**
      * Returns a slice of the resultset to show in the pagination
@@ -77,13 +90,17 @@ class QueryBuilder extends \Phalcon\Paginator\Adapter
      * @deprecated `will be removed after 4.0
      * @return \stdClass
      */
-    public function getPaginate() {}
+    public function getPaginate(): \stdClass
+    {
+    }
 
     /**
      * Returns a slice of the resultset to show in the pagination
      *
      * @return \stdClass
      */
-    public function paginate() {}
+    public function paginate(): \stdClass
+    {
+    }
 
 }

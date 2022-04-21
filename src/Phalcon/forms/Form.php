@@ -2,12 +2,21 @@
 
 namespace Phalcon\Forms;
 
+use Phalcon\Validation;
+use Phalcon\ValidationInterface;
+use Phalcon\DiInterface;
+use Phalcon\FilterInterface;
+use Phalcon\Di\Injectable;
+use Phalcon\Forms\Exception;
+use Phalcon\Forms\ElementInterface;
+use Phalcon\Validation\Message\Group;
+
 /**
  * Phalcon\Forms\Form
  *
  * This component allows to build forms using an object-oriented interface
  */
-class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
+class Form extends Injectable implements \Countable, \Iterator
 {
 
     protected $_position;
@@ -40,10 +49,14 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
     /**
      * @param mixed $validation
      */
-    public function setValidation($validation) {}
+    public function setValidation($validation)
+    {
+    }
 
 
-    public function getValidation() {}
+    public function getValidation()
+    {
+    }
 
     /**
      * Phalcon\Forms\Form constructor
@@ -51,7 +64,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param object $entity
      * @param array $userOptions
      */
-    public function __construct($entity = null, $userOptions = null) {}
+    public function __construct($entity = null, $userOptions = null)
+    {
+    }
 
     /**
      * Sets the form's action
@@ -59,14 +74,18 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param string $action
      * @return Form
      */
-    public function setAction($action) {}
+    public function setAction(string $action): Form
+    {
+    }
 
     /**
      * Returns the form's action
      *
      * @return string
      */
-    public function getAction() {}
+    public function getAction(): string
+    {
+    }
 
     /**
      * Sets an option for the form
@@ -75,7 +94,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param mixed $value
      * @return Form
      */
-    public function setUserOption($option, $value) {}
+    public function setUserOption($option, $value): Form
+    {
+    }
 
     /**
      * Returns the value of an option if present
@@ -84,7 +105,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param mixed $defaultValue
      * @return mixed
      */
-    public function getUserOption($option, $defaultValue = null) {}
+    public function getUserOption($option, $defaultValue = null)
+    {
+    }
 
     /**
      * Sets options for the element
@@ -92,14 +115,18 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param array $options
      * @return Form
      */
-    public function setUserOptions(array $options) {}
+    public function setUserOptions(array $options): Form
+    {
+    }
 
     /**
      * Returns the options for the element
      *
      * @return array
      */
-    public function getUserOptions() {}
+    public function getUserOptions(): array
+    {
+    }
 
     /**
      * Sets the entity related to the model
@@ -107,21 +134,27 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param object $entity
      * @return Form
      */
-    public function setEntity($entity) {}
+    public function setEntity($entity): Form
+    {
+    }
 
     /**
      * Returns the entity related to the model
      *
      * @return object
      */
-    public function getEntity() {}
+    public function getEntity()
+    {
+    }
 
     /**
      * Returns the form elements added to the form
      *
-     * @return \Phalcon\Forms\ElementInterface[]
+     * @return array|\Phalcon\Forms\ElementInterface[]
      */
-    public function getElements() {}
+    public function getElements(): array
+    {
+    }
 
     /**
      * Binds data to the entity
@@ -131,7 +164,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param array $whitelist
      * @return Form
      */
-    public function bind(array $data, $entity, $whitelist = null) {}
+    public function bind(array $data, $entity, $whitelist = null): Form
+    {
+    }
 
     /**
      * Validates the form
@@ -140,7 +175,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param object $entity
      * @return bool
      */
-    public function isValid($data = null, $entity = null) {}
+    public function isValid($data = null, $entity = null): bool
+    {
+    }
 
     /**
      * Returns the messages generated in the validation.
@@ -168,15 +205,19 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param bool $byItemName
      * @return array|\Phalcon\Validation\Message\Group
      */
-    public function getMessages($byItemName = false) {}
+    public function getMessages(bool $byItemName = false)
+    {
+    }
 
     /**
      * Returns the messages generated for a specific element
      *
      * @param string $name
-     * @return \Phalcon\Validation\Message\Group
+     * @return Group
      */
-    public function getMessagesFor($name) {}
+    public function getMessagesFor(string $name): Group
+    {
+    }
 
     /**
      * Check if messages were generated for a specific element
@@ -184,7 +225,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param string $name
      * @return bool
      */
-    public function hasMessagesFor($name) {}
+    public function hasMessagesFor(string $name): bool
+    {
+    }
 
     /**
      * Adds an element to the form
@@ -194,7 +237,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param bool $type
      * @return Form
      */
-    public function add(\Phalcon\Forms\ElementInterface $element, $position = null, $type = null) {}
+    public function add(\Phalcon\Forms\ElementInterface $element, string $position = null, bool $type = null): Form
+    {
+    }
 
     /**
      * Renders a specific item in the form
@@ -203,15 +248,19 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param array $attributes
      * @return string
      */
-    public function render($name, $attributes = null) {}
+    public function render(string $name, $attributes = null): string
+    {
+    }
 
     /**
      * Returns an element added to the form by its name
      *
      * @param string $name
-     * @return \Phalcon\Forms\ElementInterface
+     * @return ElementInterface
      */
-    public function get($name) {}
+    public function get(string $name): ElementInterface
+    {
+    }
 
     /**
      * Generate the label of an element added to the form including HTML
@@ -220,7 +269,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param array $attributes
      * @return string
      */
-    public function label($name, array $attributes = null) {}
+    public function label(string $name, array $attributes = null): string
+    {
+    }
 
     /**
      * Returns a label for an element
@@ -228,7 +279,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param string $name
      * @return string
      */
-    public function getLabel($name) {}
+    public function getLabel(string $name): string
+    {
+    }
 
     /**
      * Gets a value from the internal related entity or from the default value
@@ -236,7 +289,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param string $name
      * @return mixed|null
      */
-    public function getValue($name) {}
+    public function getValue(string $name)
+    {
+    }
 
     /**
      * Check if the form contains an element
@@ -244,7 +299,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param string $name
      * @return bool
      */
-    public function has($name) {}
+    public function has(string $name): bool
+    {
+    }
 
     /**
      * Removes an element from the form
@@ -252,7 +309,9 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param string $name
      * @return bool
      */
-    public function remove($name) {}
+    public function remove(string $name): bool
+    {
+    }
 
     /**
      * Clears every element in the form to its default value
@@ -260,44 +319,62 @@ class Form extends \Phalcon\Di\Injectable implements \Countable, \Iterator
      * @param array $fields
      * @return Form
      */
-    public function clear($fields = null) {}
+    public function clear($fields = null): Form
+    {
+    }
 
     /**
      * Returns the number of elements in the form
      *
      * @return int
      */
-    public function count() {}
+    public function count(): int
+    {
+    }
 
     /**
      * Rewinds the internal iterator
+     *
+     * @return void
      */
-    public function rewind() {}
+    public function rewind(): void
+    {
+    }
 
     /**
      * Returns the current element in the iterator
      *
      * @return bool|\Phalcon\Forms\ElementInterface
      */
-    public function current() {}
+    public function current()
+    {
+    }
 
     /**
      * Returns the current position/key in the iterator
      *
      * @return int
      */
-    public function key() {}
+    public function key(): int
+    {
+    }
 
     /**
      * Moves the internal iteration pointer to the next position
+     *
+     * @return void
      */
-    public function next() {}
+    public function next(): void
+    {
+    }
 
     /**
      * Check if the current element in the iterator is valid
      *
      * @return bool
      */
-    public function valid() {}
+    public function valid(): bool
+    {
+    }
 
 }

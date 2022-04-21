@@ -2,6 +2,10 @@
 
 namespace Phalcon\Validation\Validator;
 
+use Phalcon\Validation;
+use Phalcon\Validation\Validator;
+use Phalcon\Validation\Message;
+
 /**
  * Phalcon\Validation\Validator\Alnum
  *
@@ -38,7 +42,7 @@ namespace Phalcon\Validation\Validator;
  * );
  * </code>
  */
-class Alnum extends \Phalcon\Validation\Validator
+class Alnum extends Validator
 {
 
     /**
@@ -48,6 +52,8 @@ class Alnum extends \Phalcon\Validation\Validator
      * @param string $field
      * @return bool
      */
-    public function validate(\Phalcon\Validation $validation, $field) {}
+    public function validate(\Phalcon\Validation $validation, string $field): bool
+    {
+    }
 
 }

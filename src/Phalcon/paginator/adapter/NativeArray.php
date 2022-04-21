@@ -2,6 +2,9 @@
 
 namespace Phalcon\Paginator\Adapter;
 
+use Phalcon\Paginator\Exception;
+use Phalcon\Paginator\Adapter;
+
 /**
  * Phalcon\Paginator\Adapter\NativeArray
  *
@@ -25,7 +28,7 @@ namespace Phalcon\Paginator\Adapter;
  * );
  * </code>
  */
-class NativeArray extends \Phalcon\Paginator\Adapter
+class NativeArray extends Adapter
 {
     /**
      * Configuration of the paginator
@@ -38,7 +41,9 @@ class NativeArray extends \Phalcon\Paginator\Adapter
      *
      * @param array $config
      */
-    public function __construct(array $config) {}
+    public function __construct(array $config)
+    {
+    }
 
     /**
      * Returns a slice of the resultset to show in the pagination
@@ -46,13 +51,17 @@ class NativeArray extends \Phalcon\Paginator\Adapter
      * @deprecated will be removed after 4.0
      * @return \stdClass
      */
-    public function getPaginate() {}
+    public function getPaginate(): \stdClass
+    {
+    }
 
     /**
      * Returns a slice of the resultset to show in the pagination
      *
      * @return \stdClass
      */
-    public function paginate() {}
+    public function paginate(): \stdClass
+    {
+    }
 
 }

@@ -2,6 +2,11 @@
 
 namespace Phalcon\Mvc;
 
+use Phalcon\DiInterface;
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Mvc\Model\TransactionInterface;
+use Phalcon\Mvc\Model\MessageInterface;
+
 /**
  * Phalcon\Mvc\ModelInterface
  *
@@ -14,9 +19,9 @@ interface ModelInterface
      * Sets a transaction related to the Model instance
      *
      * @param \Phalcon\Mvc\Model\TransactionInterface $transaction
-     * @return \Phalcon\Mvc\ModelInterface
+     * @return ModelInterface
      */
-    public function setTransaction(\Phalcon\Mvc\Model\TransactionInterface $transaction);
+    public function setTransaction(\Phalcon\Mvc\Model\TransactionInterface $transaction): ModelInterface;
 
     /**
      * Returns table name mapped in the model
@@ -36,75 +41,78 @@ interface ModelInterface
      * Sets both read/write connection services
      *
      * @param string $connectionService
+     * @return ModelInterface
      */
-    public function setConnectionService($connectionService);
+    public function setConnectionService(string $connectionService): ModelInterface;
 
     /**
      * Sets the DependencyInjection connection service used to write data
      *
      * @param string $connectionService
+     * @return ModelInterface
      */
-    public function setWriteConnectionService($connectionService);
+    public function setWriteConnectionService(string $connectionService): ModelInterface;
 
     /**
      * Sets the DependencyInjection connection service used to read data
      *
      * @param string $connectionService
+     * @return ModelInterface
      */
-    public function setReadConnectionService($connectionService);
+    public function setReadConnectionService(string $connectionService): ModelInterface;
 
     /**
      * Returns DependencyInjection connection service used to read data
      *
      * @return string
      */
-    public function getReadConnectionService();
+    public function getReadConnectionService(): string;
 
     /**
      * Returns DependencyInjection connection service used to write data
      *
      * @return string
      */
-    public function getWriteConnectionService();
+    public function getWriteConnectionService(): string;
 
     /**
      * Gets internal database connection
      *
      * @return \Phalcon\Db\AdapterInterface
      */
-    public function getReadConnection();
+    public function getReadConnection(): \Phalcon\Db\AdapterInterface;
 
     /**
      * Gets internal database connection
      *
      * @return \Phalcon\Db\AdapterInterface
      */
-    public function getWriteConnection();
+    public function getWriteConnection(): \Phalcon\Db\AdapterInterface;
 
     /**
      * Sets the dirty state of the object using one of the DIRTY_STATE_ constants
      *
      * @param int $dirtyState
-     * @return \Phalcon\Mvc\ModelInterface
+     * @return ModelInterface
      */
-    public function setDirtyState($dirtyState);
+    public function setDirtyState(int $dirtyState): \Phalcon\Mvc\ModelInterface;
 
     /**
      * Returns one of the DIRTY_STATE_ constants telling if the record exists in the database or not
      *
      * @return int
      */
-    public function getDirtyState();
+    public function getDirtyState(): int;
 
     /**
      * Assigns values to a model from an array
      *
-     * @param array $data
-     * @param mixed $dataColumnMap
-     * @param mixed $whiteList
      * @param \Phalcon\Mvc\Model $object
+     * @param array $data
      * @param array $columnMap
      * @return \Phalcon\Mvc\Model
+     * @param mixed $dataColumnMap
+     * @param mixed $whiteList
      */
     public function assign(array $data, $dataColumnMap = null, $whiteList = null);
 
@@ -116,9 +124,9 @@ interface ModelInterface
      * @param array $columnMap
      * @param int $dirtyState
      * @param boolean $keepSnapshots
-     * @return \Phalcon\Mvc\Model
+     * @return \Phalcon\Mvc\Model result
      */
-    public static function cloneResultMap($base, array $data, $columnMap, $dirtyState = 0, $keepSnapshots = null);
+    public static function cloneResultMap($base, array $data, $columnMap, int $dirtyState = 0, bool $keepSnapshots = null);
 
     /**
      * Assigns values to a model from an array returning a new model
@@ -128,7 +136,7 @@ interface ModelInterface
      * @param int $dirtyState
      * @return \Phalcon\Mvc\ModelInterface
      */
-    public static function cloneResult(\Phalcon\Mvc\ModelInterface $base, array $data, $dirtyState = 0);
+    public static function cloneResult(\Phalcon\Mvc\ModelInterface $base, array $data, int $dirtyState = 0);
 
     /**
      * Returns an hydrated result based on the data and the column map
@@ -137,13 +145,13 @@ interface ModelInterface
      * @param array $columnMap
      * @param int $hydrationMode
      */
-    public static function cloneResultMapHydrate(array $data, $columnMap, $hydrationMode);
+    public static function cloneResultMapHydrate(array $data, $columnMap, int $hydrationMode);
 
     /**
      * Allows to query a set of records that match the specified conditions
      *
+     * @return Phalcon\Mvc\Model\ResultsetInterface
      * @param mixed $parameters
-     * @return \Phalcon\Mvc\Model\ResultsetInterface
      */
     public static function find($parameters = null);
 
@@ -151,7 +159,7 @@ interface ModelInterface
      * Allows to query the first record that match the specified conditions
      *
      * @param array $parameters
-     * @return static
+     * @return static|boolean
      */
     public static function findFirst($parameters = null);
 
@@ -209,7 +217,7 @@ interface ModelInterface
      * @param string $eventName
      * @return boolean
      */
-    public function fireEvent($eventName);
+    public function fireEvent(string $eventName);
 
     /**
      * Fires an event, implicitly calls behaviors and listeners in the events manager are notified
@@ -218,7 +226,7 @@ interface ModelInterface
      * @param string $eventName
      * @return boolean
      */
-    public function fireEventCancel($eventName);
+    public function fireEventCancel(string $eventName);
 
     /**
      * Appends a customized message on the validation process
@@ -295,7 +303,7 @@ interface ModelInterface
      *
      * @param bool $skip
      */
-    public function skipOperation($skip);
+    public function skipOperation(bool $skip);
 
     /**
      * Returns related records based on defined relations
@@ -304,7 +312,7 @@ interface ModelInterface
      * @param array $arguments
      * @return \Phalcon\Mvc\Model\ResultsetInterface
      */
-    public function getRelated($alias, $arguments = null);
+    public function getRelated(string $alias, $arguments = null);
 
     /**
      * Sets the record's snapshot data.

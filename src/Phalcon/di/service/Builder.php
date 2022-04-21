@@ -2,6 +2,9 @@
 
 namespace Phalcon\Di\Service;
 
+use Phalcon\DiInterface;
+use Phalcon\Di\Exception;
+
 /**
  * Phalcon\Di\Service\Builder
  *
@@ -18,7 +21,9 @@ class Builder
      * @param array $argument
      * @return mixed
      */
-    private function _buildParameter(\Phalcon\DiInterface $dependencyInjector, $position, array $argument) {}
+    private function _buildParameter(\Phalcon\DiInterface $dependencyInjector, int $position, array $argument)
+    {
+    }
 
     /**
      * Resolves an array of parameters
@@ -27,7 +32,9 @@ class Builder
      * @param array $arguments
      * @return array
      */
-    private function _buildParameters(\Phalcon\DiInterface $dependencyInjector, array $arguments) {}
+    private function _buildParameters(\Phalcon\DiInterface $dependencyInjector, array $arguments): array
+    {
+    }
 
     /**
      * Builds a service using a complex service definition
@@ -37,6 +44,8 @@ class Builder
      * @param array $parameters
      * @return mixed
      */
-    public function build(\Phalcon\DiInterface $dependencyInjector, array $definition, $parameters = null) {}
+    public function build(\Phalcon\DiInterface $dependencyInjector, array $definition, $parameters = null)
+    {
+    }
 
 }

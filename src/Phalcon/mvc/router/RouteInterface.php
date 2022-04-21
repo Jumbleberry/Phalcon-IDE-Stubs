@@ -16,14 +16,14 @@ interface RouteInterface
      * @param string $hostname
      * @return RouteInterface
      */
-    public function setHostname($hostname);
+    public function setHostname(string $hostname): RouteInterface;
 
     /**
      * Returns the hostname restriction if any
      *
      * @return string
      */
-    public function getHostname();
+    public function getHostname(): string;
 
     /**
      * Replaces placeholders from pattern returning a valid PCRE regular expression
@@ -31,36 +31,39 @@ interface RouteInterface
      * @param string $pattern
      * @return string
      */
-    public function compilePattern($pattern);
+    public function compilePattern(string $pattern): string;
 
     /**
      * Set one or more HTTP methods that constraint the matching of the route
      *
      * @param mixed $httpMethods
+     * @return RouteInterface
      */
-    public function via($httpMethods);
+    public function via($httpMethods): RouteInterface;
 
     /**
      * Reconfigure the route adding a new pattern and a set of paths
      *
      * @param string $pattern
      * @param mixed $paths
+     * @return void
      */
-    public function reConfigure($pattern, $paths = null);
+    public function reConfigure(string $pattern, $paths = null): void;
 
     /**
      * Returns the route's name
      *
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * Sets the route's name
      *
      * @param string $name
+     * @return RouteInterface
      */
-    public function setName($name);
+    public function setName(string $name): RouteInterface;
 
     /**
      * Sets a set of HTTP methods that constraint the matching of the route
@@ -68,42 +71,42 @@ interface RouteInterface
      * @param mixed $httpMethods
      * @return RouteInterface
      */
-    public function setHttpMethods($httpMethods);
+    public function setHttpMethods($httpMethods): RouteInterface;
 
     /**
      * Returns the route's id
      *
      * @return string
      */
-    public function getRouteId();
+    public function getRouteId(): string;
 
     /**
      * Returns the route's pattern
      *
      * @return string
      */
-    public function getPattern();
+    public function getPattern(): string;
 
     /**
      * Returns the route's pattern
      *
      * @return string
      */
-    public function getCompiledPattern();
+    public function getCompiledPattern(): string;
 
     /**
      * Returns the paths
      *
      * @return array
      */
-    public function getPaths();
+    public function getPaths(): array;
 
     /**
      * Returns the paths using positions as keys and names as values
      *
      * @return array
      */
-    public function getReversedPaths();
+    public function getReversedPaths(): array;
 
     /**
      * Returns the HTTP methods that constraint matching the route
@@ -114,7 +117,9 @@ interface RouteInterface
 
     /**
      * Resets the internal route id generator
+     *
+     * @return void
      */
-    public static function reset();
+    public static function reset(): void;
 
 }

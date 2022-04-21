@@ -2,6 +2,9 @@
 
 namespace Phalcon\Paginator\Adapter;
 
+use Phalcon\Paginator\Exception;
+use Phalcon\Paginator\Adapter;
+
 /**
  * Phalcon\Paginator\Adapter\Model
  *
@@ -21,7 +24,7 @@ namespace Phalcon\Paginator\Adapter;
  * $paginate = $paginator->getPaginate();
  * </code>
  */
-class Model extends \Phalcon\Paginator\Adapter
+class Model extends Adapter
 {
     /**
      * Configuration of paginator by model
@@ -34,7 +37,9 @@ class Model extends \Phalcon\Paginator\Adapter
      *
      * @param array $config
      */
-    public function __construct(array $config) {}
+    public function __construct(array $config)
+    {
+    }
 
     /**
      * Returns a slice of the resultset to show in the pagination
@@ -42,13 +47,17 @@ class Model extends \Phalcon\Paginator\Adapter
      * @deprecated will be removed after 4.0
      * @return \stdClass
      */
-    public function getPaginate() {}
+    public function getPaginate(): \stdClass
+    {
+    }
 
     /**
      * Returns a slice of the resultset to show in the pagination
      *
      * @return \stdClass
      */
-    public function paginate() {}
+    public function paginate(): \stdClass
+    {
+    }
 
 }

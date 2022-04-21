@@ -2,6 +2,8 @@
 
 namespace Phalcon\Acl;
 
+use Phalcon\Acl\Exception;
+
 /**
  * Phalcon\Acl\Role
  *
@@ -29,21 +31,27 @@ class Role implements \Phalcon\Acl\RoleInterface
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * Role name
      *
      * @return string
      */
-    public function __toString() {}
+    public function __toString(): string
+    {
+    }
 
     /**
      * Role description
      *
      * @return string
      */
-    public function getDescription() {}
+    public function getDescription(): string
+    {
+    }
 
     /**
      * Phalcon\Acl\Role constructor
@@ -51,6 +59,8 @@ class Role implements \Phalcon\Acl\RoleInterface
      * @param string $name
      * @param string $description
      */
-    public function __construct($name, $description = null) {}
+    public function __construct(string $name, string $description = null)
+    {
+    }
 
 }

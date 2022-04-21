@@ -127,7 +127,7 @@ interface ColumnInterface
      *
      * @return bool
      */
-    public function hasDefault();
+    public function hasDefault(): bool;
 
     /**
      * Restores the internal state of a Phalcon\Db\Column object
@@ -135,6 +135,6 @@ interface ColumnInterface
      * @param array $data
      * @return ColumnInterface
      */
-    public static function __set_state(array $data);
+    public static function __set_state(array $data): ColumnInterface;
 
 }

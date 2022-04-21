@@ -33,20 +33,26 @@ class RawValue
      *
      * @return string
      */
-    public function getValue() {}
+    public function getValue(): string
+    {
+    }
 
     /**
      * Raw value without quoting or formatting
      *
      * @return string
      */
-    public function __toString() {}
+    public function __toString(): string
+    {
+    }
 
     /**
      * Phalcon\Db\RawValue constructor
      *
      * @param mixed $value
      */
-    public function __construct($value) {}
+    public function __construct($value)
+    {
+    }
 
 }

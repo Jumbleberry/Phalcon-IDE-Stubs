@@ -2,6 +2,9 @@
 
 namespace Phalcon\Db;
 
+use Phalcon\Db\Exception;
+use Phalcon\Db\ColumnInterface;
+
 /**
  * Phalcon\Db\Column
  *
@@ -264,54 +267,70 @@ class Column implements \Phalcon\Db\ColumnInterface
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * Schema which table related is
      *
      * @return string
      */
-    public function getSchemaName() {}
+    public function getSchemaName(): string
+    {
+    }
 
     /**
      * Column data type
      *
      * @return int|string
      */
-    public function getType() {}
+    public function getType()
+    {
+    }
 
     /**
      * Column data type reference
      *
      * @return int
      */
-    public function getTypeReference() {}
+    public function getTypeReference(): int
+    {
+    }
 
     /**
      * Column data type values
      *
      * @return array|string
      */
-    public function getTypeValues() {}
+    public function getTypeValues()
+    {
+    }
 
     /**
      * Integer column size
      *
      * @return int
      */
-    public function getSize() {}
+    public function getSize(): int
+    {
+    }
 
     /**
      * Integer column number scale
      *
      * @return int
      */
-    public function getScale() {}
+    public function getScale(): int
+    {
+    }
 
     /**
      * Default column value
      */
-    public function getDefault() {}
+    public function getDefault()
+    {
+    }
 
     /**
      * Phalcon\Db\Column constructor
@@ -319,77 +338,99 @@ class Column implements \Phalcon\Db\ColumnInterface
      * @param string $name
      * @param array $definition
      */
-    public function __construct($name, array $definition) {}
+    public function __construct(string $name, array $definition)
+    {
+    }
 
     /**
      * Returns true if number column is unsigned
      *
      * @return bool
      */
-    public function isUnsigned() {}
+    public function isUnsigned(): bool
+    {
+    }
 
     /**
      * Not null
      *
      * @return bool
      */
-    public function isNotNull() {}
+    public function isNotNull(): bool
+    {
+    }
 
     /**
      * Column is part of the primary key?
      *
      * @return bool
      */
-    public function isPrimary() {}
+    public function isPrimary(): bool
+    {
+    }
 
     /**
      * Auto-Increment
      *
      * @return bool
      */
-    public function isAutoIncrement() {}
+    public function isAutoIncrement(): bool
+    {
+    }
 
     /**
      * Check whether column have an numeric type
      *
      * @return bool
      */
-    public function isNumeric() {}
+    public function isNumeric(): bool
+    {
+    }
 
     /**
      * Check whether column have first position in table
      *
      * @return bool
      */
-    public function isFirst() {}
+    public function isFirst(): bool
+    {
+    }
 
     /**
      * Check whether field absolute to position in table
      *
      * @return string
      */
-    public function getAfterPosition() {}
+    public function getAfterPosition()
+    {
+    }
 
     /**
      * Returns the type of bind handling
      *
      * @return int
      */
-    public function getBindType() {}
+    public function getBindType(): int
+    {
+    }
 
     /**
      * Restores the internal state of a Phalcon\Db\Column object
      *
      * @param array $data
-     * @return \Phalcon\Db\ColumnInterface
+     * @return ColumnInterface
      */
-    public static function __set_state(array $data) {}
+    public static function __set_state(array $data): ColumnInterface
+    {
+    }
 
     /**
      * Check whether column has default value
      *
      * @return bool
      */
-    public function hasDefault() {}
+    public function hasDefault(): bool
+    {
+    }
 
 }

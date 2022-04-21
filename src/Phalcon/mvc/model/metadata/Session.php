@@ -2,6 +2,9 @@
 
 namespace Phalcon\Mvc\Model\MetaData;
 
+use Phalcon\Mvc\Model\MetaData;
+use Phalcon\Mvc\Model\Exception;
+
 /**
  * Phalcon\Mvc\Model\MetaData\Session
  *
@@ -18,7 +21,7 @@ namespace Phalcon\Mvc\Model\MetaData;
  * );
  * </code>
  */
-class Session extends \Phalcon\Mvc\Model\MetaData
+class Session extends MetaData
 {
 
     protected $_prefix = '';
@@ -29,7 +32,9 @@ class Session extends \Phalcon\Mvc\Model\MetaData
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads meta-data from $_SESSION
@@ -37,14 +42,19 @@ class Session extends \Phalcon\Mvc\Model\MetaData
      * @param string $key
      * @return array
      */
-    public function read($key) {}
+    public function read(string $key)
+    {
+    }
 
     /**
      * Writes the meta-data to $_SESSION
      *
      * @param string $key
      * @param array $data
+     * @return void
      */
-    public function write($key, $data) {}
+    public function write(string $key, $data): void
+    {
+    }
 
 }

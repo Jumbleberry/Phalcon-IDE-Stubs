@@ -50,21 +50,27 @@ class Event implements \Phalcon\Events\EventInterface
      *
      * @return string
      */
-    public function getType() {}
+    public function getType(): string
+    {
+    }
 
     /**
      * Event source
      *
      * @return object
      */
-    public function getSource() {}
+    public function getSource()
+    {
+    }
 
     /**
      * Event data
      *
      * @return mixed
      */
-    public function getData() {}
+    public function getData()
+    {
+    }
 
     /**
      * Phalcon\Events\Event constructor
@@ -74,7 +80,9 @@ class Event implements \Phalcon\Events\EventInterface
      * @param mixed $data
      * @param boolean $cancelable
      */
-    public function __construct($type, $source, $data = null, $cancelable = true) {}
+    public function __construct(string $type, $source, $data = null, bool $cancelable = true)
+    {
+    }
 
     /**
      * Sets event data.
@@ -82,7 +90,9 @@ class Event implements \Phalcon\Events\EventInterface
      * @param mixed $data
      * @return EventInterface
      */
-    public function setData($data = null) {}
+    public function setData($data = null): EventInterface
+    {
+    }
 
     /**
      * Sets event type.
@@ -90,7 +100,9 @@ class Event implements \Phalcon\Events\EventInterface
      * @param string $type
      * @return EventInterface
      */
-    public function setType($type) {}
+    public function setType(string $type): EventInterface
+    {
+    }
 
     /**
      * Stops the event preventing propagation.
@@ -103,14 +115,18 @@ class Event implements \Phalcon\Events\EventInterface
      *
      * @return EventInterface
      */
-    public function stop() {}
+    public function stop(): EventInterface
+    {
+    }
 
     /**
      * Check whether the event is currently stopped.
      *
      * @return bool
      */
-    public function isStopped() {}
+    public function isStopped(): bool
+    {
+    }
 
     /**
      * Check whether the event is cancelable.
@@ -123,6 +139,8 @@ class Event implements \Phalcon\Events\EventInterface
      *
      * @return bool
      */
-    public function isCancelable() {}
+    public function isCancelable(): bool
+    {
+    }
 
 }

@@ -2,6 +2,8 @@
 
 namespace Phalcon\Assets\Resource;
 
+use Phalcon\Assets\Resource as ResourceBase;
+
 /**
  * Phalcon\Assets\Resource\Css
  *
@@ -18,6 +20,8 @@ class Css extends \Phalcon\Assets\Resource
      * @param boolean $filter
      * @param array $attributes
      */
-    public function __construct($path, $local = true, $filter = true, $attributes = null) {}
+    public function __construct(string $path, bool $local = true, bool $filter = true, $attributes = null)
+    {
+    }
 
 }

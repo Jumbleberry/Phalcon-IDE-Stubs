@@ -2,6 +2,10 @@
 
 namespace Phalcon\Cache\Backend;
 
+use Phalcon\Cache\Backend;
+use Phalcon\Cache\Exception;
+use Phalcon\Cache\FrontendInterface;
+
 /**
  * Phalcon\Cache\Backend\Memcache
  *
@@ -37,7 +41,7 @@ namespace Phalcon\Cache\Backend;
  * $data = $cache->get("my-data");
  * </code>
  */
-class Memcache extends \Phalcon\Cache\Backend
+class Memcache extends Backend
 {
 
     protected $_memcache = null;
@@ -46,17 +50,19 @@ class Memcache extends \Phalcon\Cache\Backend
     /**
      * Phalcon\Cache\Backend\Memcache constructor
      *
-     * @param	Phalcon\Cache\FrontendInterface frontend
-     * @param	array options
-     * @param \Phalcon\Cache\FrontendInterface $frontend
-     * @param mixed $options
+     * @param Phalcon\Cache\FrontendInterface $frontend
+     * @param array $options
      */
-    public function __construct(\Phalcon\Cache\FrontendInterface $frontend, $options = null) {}
+    public function __construct(\Phalcon\Cache\FrontendInterface $frontend, $options = null)
+    {
+    }
 
     /**
      * Create internal connection to memcached
      */
-    public function _connect() {}
+    public function _connect()
+    {
+    }
 
     /**
      * Add servers to memcache pool
@@ -66,7 +72,9 @@ class Memcache extends \Phalcon\Cache\Backend
      * @param bool $persistent
      * @return bool
      */
-    public function addServers($host, $port, $persistent = false) {}
+    public function addServers(string $host, int $port, bool $persistent = false): bool
+    {
+    }
 
     /**
      * Returns a cached content
@@ -75,7 +83,9 @@ class Memcache extends \Phalcon\Cache\Backend
      * @param int $lifetime
      * @return mixed|null
      */
-    public function get($keyName, $lifetime = null) {}
+    public function get(string $keyName, int $lifetime = null)
+    {
+    }
 
     /**
      * Stores cached content into the file backend and stops the frontend
@@ -86,7 +96,9 @@ class Memcache extends \Phalcon\Cache\Backend
      * @param boolean $stopBuffer
      * @return bool
      */
-    public function save($keyName = null, $content = null, $lifetime = null, $stopBuffer = true) {}
+    public function save($keyName = null, $content = null, $lifetime = null, bool $stopBuffer = true): bool
+    {
+    }
 
     /**
      * Deletes a value from the cache by its key
@@ -94,7 +106,9 @@ class Memcache extends \Phalcon\Cache\Backend
      * @param int|string $keyName
      * @return boolean
      */
-    public function delete($keyName) {}
+    public function delete($keyName)
+    {
+    }
 
     /**
      * Query the existing cached keys.
@@ -109,7 +123,9 @@ class Memcache extends \Phalcon\Cache\Backend
      * @param string $prefix
      * @return array
      */
-    public function queryKeys($prefix = null) {}
+    public function queryKeys(string $prefix = null): array
+    {
+    }
 
     /**
      * Checks if cache exists and it isn't expired
@@ -118,7 +134,9 @@ class Memcache extends \Phalcon\Cache\Backend
      * @param int $lifetime
      * @return bool
      */
-    public function exists($keyName = null, $lifetime = null) {}
+    public function exists($keyName = null, int $lifetime = null): bool
+    {
+    }
 
     /**
      * Increment of given $keyName by $value
@@ -127,7 +145,9 @@ class Memcache extends \Phalcon\Cache\Backend
      * @param int $value
      * @return int|bool
      */
-    public function increment($keyName = null, $value = 1) {}
+    public function increment($keyName = null, int $value = 1)
+    {
+    }
 
     /**
      * Decrement of $keyName by given $value
@@ -136,13 +156,17 @@ class Memcache extends \Phalcon\Cache\Backend
      * @param int $value
      * @return int|bool
      */
-    public function decrement($keyName = null, $value = 1) {}
+    public function decrement($keyName = null, int $value = 1)
+    {
+    }
 
     /**
      * Immediately invalidates all existing items.
      *
      * @return bool
      */
-    public function flush() {}
+    public function flush(): bool
+    {
+    }
 
 }

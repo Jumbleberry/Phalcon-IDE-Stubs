@@ -33,14 +33,18 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Starts the session (if headers are already sent the session will not be started)
      *
      * @return bool
      */
-    public function start() {}
+    public function start(): bool
+    {
+    }
 
     /**
      * Sets session's options
@@ -55,28 +59,36 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      *
      * @param array $options
      */
-    public function setOptions(array $options) {}
+    public function setOptions(array $options)
+    {
+    }
 
     /**
      * Get internal options
      *
      * @return array
      */
-    public function getOptions() {}
+    public function getOptions(): array
+    {
+    }
 
     /**
      * Set session name
      *
      * @param string $name
      */
-    public function setName($name) {}
+    public function setName(string $name)
+    {
+    }
 
     /**
      * Get session name
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -84,7 +96,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * @param bool $deleteOldSession
      * @return AdapterInterface
      */
-    public function regenerateId($deleteOldSession = true) {}
+    public function regenerateId(bool $deleteOldSession = true): AdapterInterface
+    {
+    }
 
     /**
      * Gets a session variable from an application context
@@ -98,7 +112,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * @param bool $remove
      * @return mixed
      */
-    public function get($index, $defaultValue = null, $remove = false) {}
+    public function get(string $index, $defaultValue = null, bool $remove = false)
+    {
+    }
 
     /**
      * Sets a session variable in an application context
@@ -110,7 +126,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * @param string $index
      * @param mixed $value
      */
-    public function set($index, $value) {}
+    public function set(string $index, $value)
+    {
+    }
 
     /**
      * Check whether a session variable is set in an application context
@@ -124,7 +142,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * @param string $index
      * @return bool
      */
-    public function has($index) {}
+    public function has(string $index): bool
+    {
+    }
 
     /**
      * Removes a session variable from an application context
@@ -134,8 +154,11 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * </code>
      *
      * @param string $index
+     * @return void
      */
-    public function remove($index) {}
+    public function remove(string $index): void
+    {
+    }
 
     /**
      * Returns active session id
@@ -146,7 +169,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      *
      * @return string
      */
-    public function getId() {}
+    public function getId(): string
+    {
+    }
 
     /**
      * Set the current session id
@@ -157,7 +182,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      *
      * @param string $id
      */
-    public function setId($id) {}
+    public function setId(string $id)
+    {
+    }
 
     /**
      * Check whether the session has been started
@@ -170,7 +197,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      *
      * @return bool
      */
-    public function isStarted() {}
+    public function isStarted(): bool
+    {
+    }
 
     /**
      * Destroys the active session
@@ -188,7 +217,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * @param mixed $removeData
      * @return bool
      */
-    public function destroy($removeData = null) {}
+    public function destroy($removeData = null): bool
+    {
+    }
 
     /**
      * Returns the status of the current session.
@@ -205,7 +236,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      *
      * @return int
      */
-    public function status() {}
+    public function status(): int
+    {
+    }
 
     /**
      * Alias: Gets a session variable from an application context
@@ -213,7 +246,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * @param string $index
      * @return mixed
      */
-    public function __get($index) {}
+    public function __get(string $index)
+    {
+    }
 
     /**
      * Alias: Sets a session variable in an application context
@@ -221,7 +256,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * @param string $index
      * @param mixed $value
      */
-    public function __set($index, $value) {}
+    public function __set(string $index, $value)
+    {
+    }
 
     /**
      * Alias: Check whether a session variable is set in an application context
@@ -229,7 +266,9 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      * @param string $index
      * @return bool
      */
-    public function __isset($index) {}
+    public function __isset(string $index): bool
+    {
+    }
 
     /**
      * Alias: Removes a session variable from an application context
@@ -240,12 +279,20 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
      *
      * @param string $index
      */
-    public function __unset($index) {}
+    public function __unset(string $index)
+    {
+    }
 
 
-    public function __destruct() {}
+    public function __destruct()
+    {
+    }
 
-
-    protected function removeSessionData() {}
+    /**
+     * @return void
+     */
+    protected function removeSessionData(): void
+    {
+    }
 
 }

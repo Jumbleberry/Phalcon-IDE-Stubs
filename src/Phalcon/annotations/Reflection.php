@@ -2,6 +2,8 @@
 
 namespace Phalcon\Annotations;
 
+use Phalcon\Annotations\Collection;
+
 /**
  * Phalcon\Annotations\Reflection
  *
@@ -42,42 +44,53 @@ class Reflection
      *
      * @param array $reflectionData
      */
-    public function __construct($reflectionData = null) {}
+    public function __construct($reflectionData = null)
+    {
+    }
 
     /**
      * Returns the annotations found in the class docblock
      *
      * @return bool|\Phalcon\Annotations\Collection
      */
-    public function getClassAnnotations() {}
+    public function getClassAnnotations()
+    {
+    }
 
     /**
      * Returns the annotations found in the methods' docblocks
      *
-     * @return bool|\Phalcon\Annotations\Collection[]
+     * @return array|bool|\Phalcon\Annotations\Collection[]
      */
-    public function getMethodsAnnotations() {}
+    public function getMethodsAnnotations()
+    {
+    }
 
     /**
      * Returns the annotations found in the properties' docblocks
      *
-     * @return bool|\Phalcon\Annotations\Collection[]
+     * @return array|bool|\Phalcon\Annotations\Collection[]
      */
-    public function getPropertiesAnnotations() {}
+    public function getPropertiesAnnotations()
+    {
+    }
 
     /**
      * Returns the raw parsing intermediate definitions used to construct the reflection
      *
      * @return array
      */
-    public function getReflectionData() {}
+    public function getReflectionData()
+    {
+    }
 
     /**
      * Restores the state of a Phalcon\Annotations\Reflection variable export
      *
-     * @param mixed $data
-     * @return Reflection
+     * @return array data
      */
-    public static function __set_state($data) {}
+    public static function __set_state($data): Reflection
+    {
+    }
 
 }

@@ -2,6 +2,9 @@
 
 namespace Phalcon\Logger\Formatter;
 
+use Phalcon\Logger;
+use Phalcon\Logger\Formatter;
+
 /**
  * Phalcon\Logger\Formatter\Firephp
  *
@@ -9,7 +12,7 @@ namespace Phalcon\Logger\Formatter;
  *
  * @deprecated Will be removed in 4.0.0
  */
-class Firephp extends \Phalcon\Logger\Formatter
+class Firephp extends Formatter
 {
 
     protected $_showBacktrace = true;
@@ -24,7 +27,9 @@ class Firephp extends \Phalcon\Logger\Formatter
      * @param int $type
      * @return string
      */
-    public function getTypeString($type) {}
+    public function getTypeString(int $type): string
+    {
+    }
 
     /**
      * Returns the string meaning of a logger constant
@@ -32,14 +37,18 @@ class Firephp extends \Phalcon\Logger\Formatter
      * @param bool $isShow
      * @return Firephp
      */
-    public function setShowBacktrace($isShow = null) {}
+    public function setShowBacktrace(bool $isShow = null): Firephp
+    {
+    }
 
     /**
      * Returns the string meaning of a logger constant
      *
      * @return bool
      */
-    public function getShowBacktrace() {}
+    public function getShowBacktrace(): bool
+    {
+    }
 
     /**
      * Returns the string meaning of a logger constant
@@ -47,26 +56,31 @@ class Firephp extends \Phalcon\Logger\Formatter
      * @param bool $isEnable
      * @return Firephp
      */
-    public function enableLabels($isEnable = null) {}
+    public function enableLabels(bool $isEnable = null): Firephp
+    {
+    }
 
     /**
      * Returns the labels enabled
      *
      * @return bool
      */
-    public function labelsEnabled() {}
+    public function labelsEnabled(): bool
+    {
+    }
 
     /**
      * Applies a format to a message before sending it to the log
      *
-     * @param array $context
-     *
      * @param string $message
      * @param int $type
      * @param int $timestamp
-     * @param mixed $context
+     * @param array $context
+     *
      * @return string
      */
-    public function format($message, $type, $timestamp, $context = null) {}
+    public function format(string $message, int $type, int $timestamp, $context = null): string
+    {
+    }
 
 }

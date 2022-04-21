@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc\Collection;
 
+use Phalcon\Mvc\CollectionInterface;
+
 /**
  * Phalcon\Mvc\Collection\BehaviorInterface
  *
@@ -16,7 +18,7 @@ interface BehaviorInterface
      * @param string $type
      * @param \Phalcon\Mvc\CollectionInterface $collection
      */
-    public function notify($type, \Phalcon\Mvc\CollectionInterface $collection);
+    public function notify(string $type, \Phalcon\Mvc\CollectionInterface $collection);
 
     /**
      * Calls a method when it's missing in the collection
@@ -25,6 +27,6 @@ interface BehaviorInterface
      * @param string $method
      * @param mixed $arguments
      */
-    public function missingMethod(\Phalcon\Mvc\CollectionInterface $collection, $method, $arguments = null);
+    public function missingMethod(\Phalcon\Mvc\CollectionInterface $collection, string $method, $arguments = null);
 
 }

@@ -2,6 +2,10 @@
 
 namespace Phalcon\Session\Adapter;
 
+use Phalcon\Session\Adapter;
+use Phalcon\Cache\Backend\Redis;
+use Phalcon\Cache\Frontend\None as FrontendNone;
+
 /**
  * Phalcon\Session\Adapter\Redis
  *
@@ -30,7 +34,7 @@ namespace Phalcon\Session\Adapter;
  * echo $session->get("var");
  * </code>
  */
-class Redis extends \Phalcon\Session\Adapter
+class Redis extends Adapter
 {
 
     protected $_redis = null;
@@ -40,31 +44,41 @@ class Redis extends \Phalcon\Session\Adapter
 
 
 
-    public function getRedis() {}
+    public function getRedis()
+    {
+    }
 
 
-    public function getLifetime() {}
+    public function getLifetime()
+    {
+    }
 
     /**
      * Phalcon\Session\Adapter\Redis constructor
      *
      * @param array $options
      */
-    public function __construct(array $options = array()) {}
+    public function __construct(array $options = array())
+    {
+    }
 
     /**
      * {@inheritdoc}
      *
      * @return bool
      */
-    public function open() {}
+    public function open(): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
      *
      * @return bool
      */
-    public function close() {}
+    public function close(): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -72,7 +86,9 @@ class Redis extends \Phalcon\Session\Adapter
      * @param mixed $sessionId
      * @return string
      */
-    public function read($sessionId) {}
+    public function read($sessionId): string
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -81,7 +97,9 @@ class Redis extends \Phalcon\Session\Adapter
      * @param string $data
      * @return bool
      */
-    public function write($sessionId, $data) {}
+    public function write(string $sessionId, string $data): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -89,13 +107,17 @@ class Redis extends \Phalcon\Session\Adapter
      * @param mixed $sessionId
      * @return bool
      */
-    public function destroy($sessionId = null) {}
+    public function destroy($sessionId = null): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
      *
      * @return bool
      */
-    public function gc() {}
+    public function gc(): bool
+    {
+    }
 
 }

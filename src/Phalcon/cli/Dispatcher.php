@@ -2,6 +2,11 @@
 
 namespace Phalcon\Cli;
 
+use Phalcon\FilterInterface;
+use Phalcon\Events\ManagerInterface;
+use Phalcon\Cli\Dispatcher\Exception;
+use Phalcon\Dispatcher as CliDispatcher;
+
 /**
  * Phalcon\Cli\Dispatcher
  *
@@ -44,28 +49,36 @@ class Dispatcher extends \Phalcon\Dispatcher implements \Phalcon\Cli\DispatcherI
      *
      * @param string $taskSuffix
      */
-    public function setTaskSuffix($taskSuffix) {}
+    public function setTaskSuffix(string $taskSuffix)
+    {
+    }
 
     /**
      * Sets the default task name
      *
      * @param string $taskName
      */
-    public function setDefaultTask($taskName) {}
+    public function setDefaultTask(string $taskName)
+    {
+    }
 
     /**
      * Sets the task name to be dispatched
      *
      * @param string $taskName
      */
-    public function setTaskName($taskName) {}
+    public function setTaskName(string $taskName)
+    {
+    }
 
     /**
      * Gets last dispatched task name
      *
      * @return string
      */
-    public function getTaskName() {}
+    public function getTaskName(): string
+    {
+    }
 
     /**
      * Throws an internal exception
@@ -73,52 +86,66 @@ class Dispatcher extends \Phalcon\Dispatcher implements \Phalcon\Cli\DispatcherI
      * @param string $message
      * @param int $exceptionCode
      */
-    protected function _throwDispatchException($message, $exceptionCode = 0) {}
+    protected function _throwDispatchException(string $message, int $exceptionCode = 0)
+    {
+    }
 
     /**
      * Handles a user exception
      *
      * @param \Exception $exception
      */
-    protected function _handleException(\Exception $exception) {}
+    protected function _handleException(\Exception $exception)
+    {
+    }
 
     /**
      * Returns the latest dispatched controller
      *
      * @return TaskInterface
      */
-    public function getLastTask() {}
+    public function getLastTask(): TaskInterface
+    {
+    }
 
     /**
      * Returns the active task in the dispatcher
      *
      * @return TaskInterface
      */
-    public function getActiveTask() {}
+    public function getActiveTask(): TaskInterface
+    {
+    }
 
     /**
      * Set the options to be dispatched
      *
      * @param array $options
      */
-    public function setOptions(array $options) {}
+    public function setOptions(array $options)
+    {
+    }
 
     /**
      * Get dispatched options
      *
      * @return array
      */
-    public function getOptions() {}
+    public function getOptions(): array
+    {
+    }
 
     /**
      * Gets an option by its name or numeric index
      *
-     * @param mixed $option
-     * @param string|array $filters
-     * @param mixed $defaultValue
+     * @param  mixed $option
+     * @param  string|array $filters
+     * @param  mixed $defaultValue
      * @return mixed
      */
-    public function getOption($option, $filters = null, $defaultValue = null) {}
+    public function getOption($option, $filters = null, $defaultValue = null)
+    {
+    }
 
     /**
      * Check if an option exists
@@ -126,7 +153,9 @@ class Dispatcher extends \Phalcon\Dispatcher implements \Phalcon\Cli\DispatcherI
      * @param mixed $option
      * @return bool
      */
-    public function hasOption($option) {}
+    public function hasOption($option): bool
+    {
+    }
 
     /**
      * Calls the action method.
@@ -136,6 +165,8 @@ class Dispatcher extends \Phalcon\Dispatcher implements \Phalcon\Cli\DispatcherI
      * @param array $params
      * @return mixed
      */
-    public function callActionMethod($handler, $actionMethod, array $params = array()) {}
+    public function callActionMethod($handler, string $actionMethod, array $params = array())
+    {
+    }
 
 }

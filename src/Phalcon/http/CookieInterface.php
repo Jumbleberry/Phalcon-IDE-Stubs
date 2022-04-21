@@ -14,9 +14,9 @@ interface CookieInterface
      * Sets the cookie's value
      *
      * @param string $value
-     * @return CookieInterface
+     * @return \Phalcon\Http\CookieInterface
      */
-    public function setValue($value);
+    public function setValue($value): CookieInterface;
 
     /**
      * Returns the cookie's value.
@@ -32,7 +32,7 @@ interface CookieInterface
      *
      * @return CookieInterface
      */
-    public function send();
+    public function send(): CookieInterface;
 
     /**
      * Deletes the cookie
@@ -45,14 +45,14 @@ interface CookieInterface
      * @param bool $useEncryption
      * @return CookieInterface
      */
-    public function useEncryption($useEncryption);
+    public function useEncryption(bool $useEncryption): CookieInterface;
 
     /**
      * Check if the cookie is using implicit encryption
      *
      * @return bool
      */
-    public function isUsingEncryption();
+    public function isUsingEncryption(): bool;
 
     /**
      * Sets the cookie's expiration time
@@ -60,14 +60,14 @@ interface CookieInterface
      * @param int $expire
      * @return CookieInterface
      */
-    public function setExpiration($expire);
+    public function setExpiration(int $expire): CookieInterface;
 
     /**
      * Returns the current expiration time
      *
      * @return string
      */
-    public function getExpiration();
+    public function getExpiration(): string;
 
     /**
      * Sets the cookie's expiration time
@@ -75,21 +75,21 @@ interface CookieInterface
      * @param string $path
      * @return CookieInterface
      */
-    public function setPath($path);
+    public function setPath(string $path): CookieInterface;
 
     /**
      * Returns the current cookie's name
      *
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * Returns the current cookie's path
      *
      * @return string
      */
-    public function getPath();
+    public function getPath(): string;
 
     /**
      * Sets the domain that the cookie is available to
@@ -97,14 +97,14 @@ interface CookieInterface
      * @param string $domain
      * @return CookieInterface
      */
-    public function setDomain($domain);
+    public function setDomain(string $domain): CookieInterface;
 
     /**
      * Returns the domain that the cookie is available to
      *
      * @return string
      */
-    public function getDomain();
+    public function getDomain(): string;
 
     /**
      * Sets if the cookie must only be sent when the connection is secure (HTTPS)
@@ -112,14 +112,14 @@ interface CookieInterface
      * @param bool $secure
      * @return CookieInterface
      */
-    public function setSecure($secure);
+    public function setSecure(bool $secure): CookieInterface;
 
     /**
      * Returns whether the cookie must only be sent when the connection is secure (HTTPS)
      *
      * @return bool
      */
-    public function getSecure();
+    public function getSecure(): bool;
 
     /**
      * Sets if the cookie is accessible only through the HTTP protocol
@@ -127,13 +127,13 @@ interface CookieInterface
      * @param bool $httpOnly
      * @return CookieInterface
      */
-    public function setHttpOnly($httpOnly);
+    public function setHttpOnly(bool $httpOnly): CookieInterface;
 
     /**
      * Returns if the cookie is accessible only through the HTTP protocol
      *
      * @return bool
      */
-    public function getHttpOnly();
+    public function getHttpOnly(): bool;
 
 }

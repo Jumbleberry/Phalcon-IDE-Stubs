@@ -2,6 +2,9 @@
 
 namespace Phalcon\Acl;
 
+use Phalcon\Events\ManagerInterface;
+use Phalcon\Events\EventsAwareInterface;
+
 /**
  * Phalcon\Acl\Adapter
  *
@@ -57,48 +60,62 @@ abstract class Adapter implements \Phalcon\Acl\AdapterInterface, \Phalcon\Events
      *
      * @return string
      */
-    public function getActiveRole() {}
+    public function getActiveRole(): string
+    {
+    }
 
     /**
      * Resource which the list is checking if some role can access it
      *
      * @return string
      */
-    public function getActiveResource() {}
+    public function getActiveResource(): string
+    {
+    }
 
     /**
      * Active access which the list is checking if some role can access it
      *
      * @return string
      */
-    public function getActiveAccess() {}
+    public function getActiveAccess(): string
+    {
+    }
 
     /**
      * Sets the events manager
      *
      * @param \Phalcon\Events\ManagerInterface $eventsManager
      */
-    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager) {}
+    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager)
+    {
+    }
 
     /**
      * Returns the internal event manager
      *
-     * @return \Phalcon\Events\ManagerInterface
+     * @return ManagerInterface
      */
-    public function getEventsManager() {}
+    public function getEventsManager(): ManagerInterface
+    {
+    }
 
     /**
      * Sets the default access level (Phalcon\Acl::ALLOW or Phalcon\Acl::DENY)
      *
      * @param int $defaultAccess
      */
-    public function setDefaultAction($defaultAccess) {}
+    public function setDefaultAction(int $defaultAccess)
+    {
+    }
 
     /**
      * Returns the default ACL access level
      *
      * @return int
      */
-    public function getDefaultAction() {}
+    public function getDefaultAction(): int
+    {
+    }
 
 }

@@ -2,12 +2,15 @@
 
 namespace Phalcon\Forms\Element;
 
+use Phalcon\Tag;
+use Phalcon\Forms\Element;
+
 /**
  * Phalcon\Forms\Element\Password
  *
  * Component INPUT[type=password] for forms
  */
-class Password extends \Phalcon\Forms\Element
+class Password extends Element
 {
 
     /**
@@ -16,6 +19,8 @@ class Password extends \Phalcon\Forms\Element
      * @param array $attributes
      * @return string
      */
-    public function render($attributes = null) {}
+    public function render($attributes = null): string
+    {
+    }
 
 }

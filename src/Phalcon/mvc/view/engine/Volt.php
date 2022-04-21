@@ -2,12 +2,17 @@
 
 namespace Phalcon\Mvc\View\Engine;
 
+use Phalcon\DiInterface;
+use Phalcon\Mvc\View\Engine;
+use Phalcon\Mvc\View\Engine\Volt\Compiler;
+use Phalcon\Mvc\View\Exception;
+
 /**
  * Phalcon\Mvc\View\Engine\Volt
  *
  * Designer friendly and fast template engine for PHP written in Zephir/C
  */
-class Volt extends \Phalcon\Mvc\View\Engine
+class Volt extends Engine
 {
 
     protected $_options;
@@ -24,21 +29,27 @@ class Volt extends \Phalcon\Mvc\View\Engine
      *
      * @param array $options
      */
-    public function setOptions(array $options) {}
+    public function setOptions(array $options)
+    {
+    }
 
     /**
      * Return Volt's options
      *
      * @return array
      */
-    public function getOptions() {}
+    public function getOptions(): array
+    {
+    }
 
     /**
      * Returns the Volt's compiler
      *
-     * @return \Phalcon\Mvc\View\Engine\Volt\Compiler
+     * @return Compiler
      */
-    public function getCompiler() {}
+    public function getCompiler(): Compiler
+    {
+    }
 
     /**
      * Renders a view using the template engine
@@ -47,7 +58,9 @@ class Volt extends \Phalcon\Mvc\View\Engine
      * @param mixed $params
      * @param bool $mustClean
      */
-    public function render($templatePath, $params, $mustClean = false) {}
+    public function render(string $templatePath, $params, bool $mustClean = false)
+    {
+    }
 
     /**
      * Length filter. If an array/object is passed a count is performed otherwise a strlen/mb_strlen
@@ -55,7 +68,9 @@ class Volt extends \Phalcon\Mvc\View\Engine
      * @param mixed $item
      * @return int
      */
-    public function length($item) {}
+    public function length($item): int
+    {
+    }
 
     /**
      * Checks if the needle is included in the haystack
@@ -64,7 +79,9 @@ class Volt extends \Phalcon\Mvc\View\Engine
      * @param mixed $haystack
      * @return bool
      */
-    public function isIncluded($needle, $haystack) {}
+    public function isIncluded($needle, $haystack): bool
+    {
+    }
 
     /**
      * Performs a string conversion
@@ -74,7 +91,9 @@ class Volt extends \Phalcon\Mvc\View\Engine
      * @param string $to
      * @return string
      */
-    public function convertEncoding($text, $from, $to) {}
+    public function convertEncoding(string $text, string $from, string $to): string
+    {
+    }
 
     /**
      * Extracts a slice from a string/array/traversable object value
@@ -83,7 +102,9 @@ class Volt extends \Phalcon\Mvc\View\Engine
      * @param int $start
      * @param mixed $end
      */
-    public function slice($value, $start = 0, $end = null) {}
+    public function slice($value, int $start = 0, $end = null)
+    {
+    }
 
     /**
      * Sorts an array
@@ -91,7 +112,9 @@ class Volt extends \Phalcon\Mvc\View\Engine
      * @param array $value
      * @return array
      */
-    public function sort(array $value) {}
+    public function sort(array $value): array
+    {
+    }
 
     /**
      * Checks if a macro is defined and calls it
@@ -100,6 +123,8 @@ class Volt extends \Phalcon\Mvc\View\Engine
      * @param array $arguments
      * @return mixed
      */
-    public function callMacro($name, array $arguments = array()) {}
+    public function callMacro(string $name, array $arguments = array())
+    {
+    }
 
 }

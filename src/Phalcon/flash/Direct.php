@@ -2,6 +2,8 @@
 
 namespace Phalcon\Flash;
 
+use Phalcon\Flash as FlashBase;
+
 /**
  * Phalcon\Flash\Direct
  *
@@ -15,15 +17,19 @@ class Direct extends \Phalcon\Flash
      *
      * @param string $type
      * @param mixed $message
-     * @return string
      */
-    public function message($type, $message) {}
+    public function message(string $type, $message)
+    {
+    }
 
     /**
      * Prints the messages accumulated in the flasher
      *
      * @param bool $remove
+     * @return void
      */
-    public function output($remove = true) {}
+    public function output(bool $remove = true): void
+    {
+    }
 
 }

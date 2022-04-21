@@ -39,7 +39,7 @@ interface QueryInterface
      * @param boolean $uniqueRow
      * @return \Phalcon\Mvc\Model\Query
      */
-    public function setUniqueRow($uniqueRow);
+    public function setUniqueRow(bool $uniqueRow);
 
     /**
      * Check if the query is programmed to get only the first row in the resultset

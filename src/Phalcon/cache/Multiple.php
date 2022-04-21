@@ -2,6 +2,9 @@
 
 namespace Phalcon\Cache;
 
+use Phalcon\Cache\Exception;
+use Phalcon\Cache\BackendInterface;
+
 /**
  * Phalcon\Cache\Multiple
  *
@@ -72,10 +75,11 @@ class Multiple
     /**
      * Phalcon\Cache\Multiple constructor
      *
-     * @param	Phalcon\Cache\BackendInterface[] backends
-     * @param mixed $backends
+     * @param Phalcon\Cache\BackendInterface[] $backends
      */
-    public function __construct($backends = null) {}
+    public function __construct($backends = null)
+    {
+    }
 
     /**
      * Adds a backend
@@ -83,7 +87,9 @@ class Multiple
      * @param \Phalcon\Cache\BackendInterface $backend
      * @return Multiple
      */
-    public function push(\Phalcon\Cache\BackendInterface $backend) {}
+    public function push(\Phalcon\Cache\BackendInterface $backend): Multiple
+    {
+    }
 
     /**
      * Returns a cached content reading the internal backends
@@ -92,15 +98,20 @@ class Multiple
      * @param int $lifetime
      * @return mixed
      */
-    public function get($keyName, $lifetime = null) {}
+    public function get($keyName, $lifetime = null)
+    {
+    }
 
     /**
      * Starts every backend
      *
      * @param string|int $keyName
      * @param int $lifetime
+     * @return void
      */
-    public function start($keyName, $lifetime = null) {}
+    public function start($keyName, $lifetime = null): void
+    {
+    }
 
     /**
      * Stores cached content into all backends and stops the frontend
@@ -109,16 +120,21 @@ class Multiple
      * @param string $content
      * @param int $lifetime
      * @param boolean $stopBuffer
+     * @return void
      */
-    public function save($keyName = null, $content = null, $lifetime = null, $stopBuffer = null) {}
+    public function save($keyName = null, $content = null, $lifetime = null, $stopBuffer = null): void
+    {
+    }
 
     /**
      * Deletes a value from each backend
      *
      * @param string|int $keyName
-     * @return bool
+     * @return boolean
      */
-    public function delete($keyName) {}
+    public function delete($keyName): bool
+    {
+    }
 
     /**
      * Checks if cache exists in at least one backend
@@ -127,13 +143,17 @@ class Multiple
      * @param int $lifetime
      * @return bool
      */
-    public function exists($keyName = null, $lifetime = null) {}
+    public function exists($keyName = null, $lifetime = null): bool
+    {
+    }
 
     /**
      * Flush all backend(s)
      *
      * @return bool
      */
-    public function flush() {}
+    public function flush(): bool
+    {
+    }
 
 }

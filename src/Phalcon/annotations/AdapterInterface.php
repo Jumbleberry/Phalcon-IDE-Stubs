@@ -2,6 +2,10 @@
 
 namespace Phalcon\Annotations;
 
+use Phalcon\Annotations\Reflection;
+use Phalcon\Annotations\Collection;
+use Phalcon\Annotations\ReaderInterface;
+
 /**
  * Phalcon\Annotations\AdapterInterface
  *
@@ -20,17 +24,17 @@ interface AdapterInterface
     /**
      * Returns the annotation reader
      *
-     * @return \Phalcon\Annotations\ReaderInterface
+     * @return ReaderInterface
      */
-    public function getReader();
+    public function getReader(): ReaderInterface;
 
     /**
      * Parses or retrieves all the annotations found in a class
      *
      * @param string|object $className
-     * @return \Phalcon\Annotations\Reflection
+     * @return Reflection
      */
-    public function get($className);
+    public function get($className): Reflection;
 
     /**
      * Returns the annotations found in all the class' methods
@@ -38,16 +42,16 @@ interface AdapterInterface
      * @param string $className
      * @return array
      */
-    public function getMethods($className);
+    public function getMethods(string $className): array;
 
     /**
      * Returns the annotations found in a specific method
      *
      * @param string $className
      * @param string $methodName
-     * @return \Phalcon\Annotations\Collection
+     * @return Collection
      */
-    public function getMethod($className, $methodName);
+    public function getMethod(string $className, string $methodName): Collection;
 
     /**
      * Returns the annotations found in all the class' methods
@@ -55,15 +59,15 @@ interface AdapterInterface
      * @param string $className
      * @return array
      */
-    public function getProperties($className);
+    public function getProperties(string $className): array;
 
     /**
      * Returns the annotations found in a specific property
      *
      * @param string $className
      * @param string $propertyName
-     * @return \Phalcon\Annotations\Collection
+     * @return Collection
      */
-    public function getProperty($className, $propertyName);
+    public function getProperty(string $className, string $propertyName): Collection;
 
 }

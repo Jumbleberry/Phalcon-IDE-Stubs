@@ -81,48 +81,64 @@ class Reference implements \Phalcon\Db\ReferenceInterface
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
 
-    public function getSchemaName() {}
+    public function getSchemaName()
+    {
+    }
 
 
-    public function getReferencedSchema() {}
+    public function getReferencedSchema()
+    {
+    }
 
     /**
      * Referenced Table
      *
      * @return string
      */
-    public function getReferencedTable() {}
+    public function getReferencedTable(): string
+    {
+    }
 
     /**
      * Local reference columns
      *
      * @return array
      */
-    public function getColumns() {}
+    public function getColumns(): array
+    {
+    }
 
     /**
      * Referenced Columns
      *
      * @return array
      */
-    public function getReferencedColumns() {}
+    public function getReferencedColumns(): array
+    {
+    }
 
     /**
      * ON DELETE
      *
      * @return array
      */
-    public function getOnDelete() {}
+    public function getOnDelete(): array
+    {
+    }
 
     /**
      * ON UPDATE
      *
      * @return array
      */
-    public function getOnUpdate() {}
+    public function getOnUpdate(): array
+    {
+    }
 
     /**
      * Phalcon\Db\Reference constructor
@@ -130,7 +146,9 @@ class Reference implements \Phalcon\Db\ReferenceInterface
      * @param string $name
      * @param array $definition
      */
-    public function __construct($name, array $definition) {}
+    public function __construct(string $name, array $definition)
+    {
+    }
 
     /**
      * Restore a Phalcon\Db\Reference object from export
@@ -138,6 +156,8 @@ class Reference implements \Phalcon\Db\ReferenceInterface
      * @param array $data
      * @return ReferenceInterface
      */
-    public static function __set_state(array $data) {}
+    public static function __set_state(array $data): ReferenceInterface
+    {
+    }
 
 }

@@ -2,6 +2,27 @@
 
 namespace Phalcon\Mvc\Model;
 
+use Phalcon\Db\Column;
+use Phalcon\Db\RawValue;
+use Phalcon\Db\ResultInterface;
+use Phalcon\Db\AdapterInterface;
+use Phalcon\DiInterface;
+use Phalcon\Mvc\Model\Row;
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Mvc\Model\Exception;
+use Phalcon\Mvc\Model\ManagerInterface;
+use Phalcon\Mvc\Model\QueryInterface;
+use Phalcon\Cache\BackendInterface;
+use Phalcon\Mvc\Model\Query\Status;
+use Phalcon\Mvc\Model\Resultset\Complex;
+use Phalcon\Mvc\Model\Query\StatusInterface;
+use Phalcon\Mvc\Model\ResultsetInterface;
+use Phalcon\Mvc\Model\Resultset\Simple;
+use Phalcon\Di\InjectionAwareInterface;
+use Phalcon\Mvc\Model\RelationInterface;
+use Phalcon\Mvc\Model\TransactionInterface;
+use Phalcon\Db\DialectInterface;
+
 /**
  * Phalcon\Mvc\Model\Query
  *
@@ -147,7 +168,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * around batch updates and intermediate selects within the transaction.
      * however if a model got a transaction set inside it will use the local transaction instead of this one
      */
-    public function getTransaction() {}
+    public function getTransaction()
+    {
+    }
 
     /**
      * Phalcon\Mvc\Model\Query constructor
@@ -156,21 +179,27 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param \Phalcon\DiInterface $dependencyInjector
      * @param mixed $options
      */
-    public function __construct($phql = null, \Phalcon\DiInterface $dependencyInjector = null, $options = null) {}
+    public function __construct($phql = null, \Phalcon\DiInterface $dependencyInjector = null, $options = null)
+    {
+    }
 
     /**
      * Sets the dependency injection container
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the dependency injection container
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Tells to the query if only the first row in the resultset must be returned
@@ -178,14 +207,18 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param bool $uniqueRow
      * @return Query
      */
-    public function setUniqueRow($uniqueRow) {}
+    public function setUniqueRow(bool $uniqueRow): Query
+    {
+    }
 
     /**
      * Check if the query is programmed to get only the first row in the resultset
      *
      * @return bool
      */
-    public function getUniqueRow() {}
+    public function getUniqueRow(): bool
+    {
+    }
 
     /**
      * Replaces the model's name to its source name in a qualified-name expression
@@ -193,7 +226,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $expr
      * @return array
      */
-    protected final function _getQualified(array $expr) {}
+    protected final function _getQualified(array $expr): array
+    {
+    }
 
     /**
      * Resolves an expression in a single call argument
@@ -201,7 +236,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $argument
      * @return array
      */
-    protected final function _getCallArgument(array $argument) {}
+    protected final function _getCallArgument(array $argument): array
+    {
+    }
 
     /**
      * Resolves an expression in a single call argument
@@ -209,7 +246,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $expr
      * @return array
      */
-    protected final function _getCaseExpression(array $expr) {}
+    protected final function _getCaseExpression(array $expr): array
+    {
+    }
 
     /**
      * Resolves an expression in a single call argument
@@ -217,7 +256,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $expr
      * @return array
      */
-    protected final function _getFunctionCall(array $expr) {}
+    protected final function _getFunctionCall(array $expr): array
+    {
+    }
 
     /**
      * Resolves an expression from its intermediate code into a string
@@ -226,7 +267,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param boolean $quoting
      * @return string
      */
-    protected final function _getExpression($expr, $quoting = true) {}
+    protected final function _getExpression($expr, bool $quoting = true): string
+    {
+    }
 
     /**
      * Resolves a column from its intermediate representation into an array used to determine
@@ -235,7 +278,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $column
      * @return array
      */
-    protected final function _getSelectColumn(array $column) {}
+    protected final function _getSelectColumn(array $column): array
+    {
+    }
 
     /**
      * Resolves a table in a SELECT statement checking if the model exists
@@ -244,7 +289,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $qualifiedName
      * @return string
      */
-    protected final function _getTable(\Phalcon\Mvc\Model\ManagerInterface $manager, $qualifiedName) {}
+    protected final function _getTable(\Phalcon\Mvc\Model\ManagerInterface $manager, $qualifiedName)
+    {
+    }
 
     /**
      * Resolves a JOIN clause checking if the associated models exist
@@ -253,7 +300,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param mixed $join
      * @return array
      */
-    protected final function _getJoin(\Phalcon\Mvc\Model\ManagerInterface $manager, $join) {}
+    protected final function _getJoin(\Phalcon\Mvc\Model\ManagerInterface $manager, $join): array
+    {
+    }
 
     /**
      * Resolves a JOIN type
@@ -261,7 +310,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $join
      * @return string
      */
-    protected final function _getJoinType($join) {}
+    protected final function _getJoinType($join): string
+    {
+    }
 
     /**
      * Resolves joins involving has-one/belongs-to/has-many relations
@@ -273,7 +324,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param \Phalcon\Mvc\Model\RelationInterface $relation
      * @return array
      */
-    protected final function _getSingleJoin($joinType, $joinSource, $modelAlias, $joinAlias, \Phalcon\Mvc\Model\RelationInterface $relation) {}
+    protected final function _getSingleJoin(string $joinType, $joinSource, $modelAlias, $joinAlias, \Phalcon\Mvc\Model\RelationInterface $relation): array
+    {
+    }
 
     /**
      * Resolves joins involving many-to-many relations
@@ -285,7 +338,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param \Phalcon\Mvc\Model\RelationInterface $relation
      * @return array
      */
-    protected final function _getMultiJoin($joinType, $joinSource, $modelAlias, $joinAlias, \Phalcon\Mvc\Model\RelationInterface $relation) {}
+    protected final function _getMultiJoin($joinType, $joinSource, $modelAlias, $joinAlias, \Phalcon\Mvc\Model\RelationInterface $relation): array
+    {
+    }
 
     /**
      * Processes the JOINs in the query returning an internal representation for the database dialect
@@ -293,7 +348,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $select
      * @return array
      */
-    protected final function _getJoins($select) {}
+    protected final function _getJoins($select)
+    {
+    }
 
     /**
      * Returns a processed order clause for a SELECT statement
@@ -301,7 +358,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array|string $order
      * @return array
      */
-    protected final function _getOrderClause($order) {}
+    protected final function _getOrderClause($order): array
+    {
+    }
 
     /**
      * Returns a processed group clause for a SELECT statement
@@ -309,7 +368,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $group
      * @return array
      */
-    protected final function _getGroupClause(array $group) {}
+    protected final function _getGroupClause(array $group): array
+    {
+    }
 
     /**
      * Returns a processed limit clause for a SELECT statement
@@ -317,7 +378,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $limitClause
      * @return array
      */
-    protected final function _getLimitClause(array $limitClause) {}
+    protected final function _getLimitClause(array $limitClause): array
+    {
+    }
 
     /**
      * Analyzes a SELECT intermediate code and produces an array to be executed later
@@ -326,28 +389,36 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param mixed $merge
      * @return array
      */
-    protected final function _prepareSelect($ast = null, $merge = null) {}
+    protected final function _prepareSelect($ast = null, $merge = null): array
+    {
+    }
 
     /**
      * Analyzes an INSERT intermediate code and produces an array to be executed later
      *
      * @return array
      */
-    protected final function _prepareInsert() {}
+    protected final function _prepareInsert(): array
+    {
+    }
 
     /**
      * Analyzes an UPDATE intermediate code and produces an array to be executed later
      *
      * @return array
      */
-    protected final function _prepareUpdate() {}
+    protected final function _prepareUpdate(): array
+    {
+    }
 
     /**
      * Analyzes a DELETE intermediate code and produces an array to be executed later
      *
      * @return array
      */
-    protected final function _prepareDelete() {}
+    protected final function _prepareDelete(): array
+    {
+    }
 
     /**
      * Parses the intermediate code produced by Phalcon\Mvc\Model\Query\Lang generating another
@@ -355,14 +426,18 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      *
      * @return array
      */
-    public function parse() {}
+    public function parse(): array
+    {
+    }
 
     /**
      * Returns the current cache backend instance
      *
-     * @return \Phalcon\Cache\BackendInterface
+     * @return BackendInterface
      */
-    public function getCache() {}
+    public function getCache(): BackendInterface
+    {
+    }
 
     /**
      * Executes the SELECT intermediate representation producing a Phalcon\Mvc\Model\Resultset
@@ -373,7 +448,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param bool $simulate
      * @return array|\Phalcon\Mvc\Model\ResultsetInterface
      */
-    protected final function _executeSelect($intermediate, $bindParams, $bindTypes, $simulate = false) {}
+    protected final function _executeSelect($intermediate, $bindParams, $bindTypes, bool $simulate = false)
+    {
+    }
 
     /**
      * Executes the INSERT intermediate representation producing a Phalcon\Mvc\Model\Query\Status
@@ -383,7 +460,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $bindTypes
      * @return \Phalcon\Mvc\Model\Query\StatusInterface
      */
-    protected final function _executeInsert($intermediate, $bindParams, $bindTypes) {}
+    protected final function _executeInsert($intermediate, $bindParams, $bindTypes): StatusInterface
+    {
+    }
 
     /**
      * Executes the UPDATE intermediate representation producing a Phalcon\Mvc\Model\Query\Status
@@ -393,7 +472,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $bindTypes
      * @return \Phalcon\Mvc\Model\Query\StatusInterface
      */
-    protected final function _executeUpdate($intermediate, $bindParams, $bindTypes) {}
+    protected final function _executeUpdate($intermediate, $bindParams, $bindTypes): StatusInterface
+    {
+    }
 
     /**
      * Executes the DELETE intermediate representation producing a Phalcon\Mvc\Model\Query\Status
@@ -403,7 +484,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $bindTypes
      * @return \Phalcon\Mvc\Model\Query\StatusInterface
      */
-    protected final function _executeDelete($intermediate, $bindParams, $bindTypes) {}
+    protected final function _executeDelete($intermediate, $bindParams, $bindTypes): StatusInterface
+    {
+    }
 
     /**
      * Query the records on which the UPDATE/DELETE operation well be done
@@ -414,7 +497,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $bindTypes
      * @return \Phalcon\Mvc\Model\ResultsetInterface
      */
-    protected final function _getRelatedRecords(\Phalcon\Mvc\ModelInterface $model, $intermediate, $bindParams, $bindTypes) {}
+    protected final function _getRelatedRecords(\Phalcon\Mvc\ModelInterface $model, $intermediate, $bindParams, $bindTypes): ResultsetInterface
+    {
+    }
 
     /**
      * Executes a parsed PHQL statement
@@ -423,7 +508,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $bindTypes
      * @return mixed
      */
-    public function execute($bindParams = null, $bindTypes = null) {}
+    public function execute($bindParams = null, $bindTypes = null)
+    {
+    }
 
     /**
      * Executes the query returning the first result
@@ -432,7 +519,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $bindTypes
      * @return \Phalcon\Mvc\ModelInterface
      */
-    public function getSingleResult($bindParams = null, $bindTypes = null) {}
+    public function getSingleResult($bindParams = null, $bindTypes = null)
+    {
+    }
 
     /**
      * Sets the type of PHQL statement to be executed
@@ -440,14 +529,18 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param int $type
      * @return Query
      */
-    public function setType($type) {}
+    public function setType(int $type): Query
+    {
+    }
 
     /**
      * Gets the type of PHQL statement executed
      *
      * @return int
      */
-    public function getType() {}
+    public function getType(): int
+    {
+    }
 
     /**
      * Set default bind parameters
@@ -456,14 +549,18 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param bool $merge
      * @return Query
      */
-    public function setBindParams(array $bindParams, $merge = false) {}
+    public function setBindParams(array $bindParams, bool $merge = false): Query
+    {
+    }
 
     /**
      * Returns default bind params
      *
      * @return array
      */
-    public function getBindParams() {}
+    public function getBindParams()
+    {
+    }
 
     /**
      * Set default bind parameters
@@ -472,7 +569,9 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param bool $merge
      * @return Query
      */
-    public function setBindTypes(array $bindTypes, $merge = false) {}
+    public function setBindTypes(array $bindTypes, bool $merge = false): Query
+    {
+    }
 
     /**
      * Set SHARED LOCK clause
@@ -480,14 +579,18 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param bool $sharedLock
      * @return Query
      */
-    public function setSharedLock($sharedLock = false) {}
+    public function setSharedLock(bool $sharedLock = false): Query
+    {
+    }
 
     /**
      * Returns default bind types
      *
      * @return array
      */
-    public function getBindTypes() {}
+    public function getBindTypes()
+    {
+    }
 
     /**
      * Allows to set the IR to be executed
@@ -495,14 +598,18 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $intermediate
      * @return Query
      */
-    public function setIntermediate(array $intermediate) {}
+    public function setIntermediate(array $intermediate): Query
+    {
+    }
 
     /**
      * Returns the intermediate representation of the PHQL statement
      *
      * @return array
      */
-    public function getIntermediate() {}
+    public function getIntermediate()
+    {
+    }
 
     /**
      * Sets the cache parameters of the query
@@ -510,26 +617,34 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param mixed $cacheOptions
      * @return Query
      */
-    public function cache($cacheOptions) {}
+    public function cache($cacheOptions): Query
+    {
+    }
 
     /**
      * Returns the current cache options
      *
      * @param array
      */
-    public function getCacheOptions() {}
+    public function getCacheOptions()
+    {
+    }
 
     /**
      * Returns the SQL to be generated by the internal PHQL (only works in SELECT statements)
      *
      * @return array
      */
-    public function getSql() {}
+    public function getSql(): array
+    {
+    }
 
     /**
      * Destroys the internal PHQL cache
      */
-    public static function clean() {}
+    public static function clean()
+    {
+    }
 
     /**
      * Gets the read connection from the model if there is no transaction set inside the query object
@@ -538,9 +653,11 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $intermediate
      * @param array $bindParams
      * @param array $bindTypes
-     * @return \Phalcon\Db\AdapterInterface
+     * @return AdapterInterface
      */
-    protected function getReadConnection(\Phalcon\Mvc\ModelInterface $model, array $intermediate = null, array $bindParams = null, array $bindTypes = null) {}
+    protected function getReadConnection(\Phalcon\Mvc\ModelInterface $model, array $intermediate = null, array $bindParams = null, array $bindTypes = null): AdapterInterface
+    {
+    }
 
     /**
      * Gets the write connection from the model if there is no transaction inside the query object
@@ -549,9 +666,11 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param array $intermediate
      * @param array $bindParams
      * @param array $bindTypes
-     * @return \Phalcon\Db\AdapterInterface
+     * @return AdapterInterface
      */
-    protected function getWriteConnection(\Phalcon\Mvc\ModelInterface $model, array $intermediate = null, array $bindParams = null, array $bindTypes = null) {}
+    protected function getWriteConnection(\Phalcon\Mvc\ModelInterface $model, array $intermediate = null, array $bindParams = null, array $bindTypes = null): AdapterInterface
+    {
+    }
 
     /**
      * allows to wrap a transaction around all queries
@@ -559,6 +678,8 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param \Phalcon\Mvc\Model\TransactionInterface $transaction
      * @return Query
      */
-    public function setTransaction(\Phalcon\Mvc\Model\TransactionInterface $transaction) {}
+    public function setTransaction(\Phalcon\Mvc\Model\TransactionInterface $transaction): Query
+    {
+    }
 
 }

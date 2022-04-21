@@ -2,6 +2,10 @@
 
 namespace Phalcon\Validation;
 
+use Phalcon\Validation;
+use Phalcon\Validation\Exception;
+use Phalcon\Validation\ValidatorInterface;
+
 /**
  * Phalcon\Validation\Validator
  *
@@ -18,7 +22,9 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
      *
      * @param array $options
      */
-    public function __construct(array $options = null) {}
+    public function __construct(array $options = null)
+    {
+    }
 
     /**
      * Checks if an option has been defined
@@ -29,7 +35,9 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
      * @deprecated
      * @return bool
      */
-    public function isSetOption($key) {}
+    public function isSetOption(string $key): bool
+    {
+    }
 
     /**
      * Checks if an option is defined
@@ -37,7 +45,9 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
      * @param string $key
      * @return bool
      */
-    public function hasOption($key) {}
+    public function hasOption(string $key): bool
+    {
+    }
 
     /**
      * Returns an option in the validator's options
@@ -47,15 +57,20 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
      * @param mixed $defaultValue
      * @return mixed
      */
-    public function getOption($key, $defaultValue = null) {}
+    public function getOption(string $key, $defaultValue = null)
+    {
+    }
 
     /**
      * Sets an option in the validator
      *
      * @param string $key
      * @param mixed $value
+     * @return void
      */
-    public function setOption($key, $value) {}
+    public function setOption(string $key, $value): void
+    {
+    }
 
     /**
      * Executes the validation
@@ -64,7 +79,7 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
      * @param string $attribute
      * @return bool
      */
-    abstract public function validate(\Phalcon\Validation $validation, $attribute);
+    abstract public function validate(\Phalcon\Validation $validation, string $attribute): bool;
 
     /**
      * Prepares a label for the field.
@@ -73,7 +88,9 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
      * @param string $field
      * @return mixed
      */
-    protected function prepareLabel(\Phalcon\Validation $validation, $field) {}
+    protected function prepareLabel(\Phalcon\Validation $validation, string $field)
+    {
+    }
 
     /**
      * Prepares a validation message.
@@ -84,7 +101,9 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
      * @param string $option
      * @return mixed
      */
-    protected function prepareMessage(\Phalcon\Validation $validation, $field, $type, $option = 'message') {}
+    protected function prepareMessage(\Phalcon\Validation $validation, string $field, string $type, string $option = 'message')
+    {
+    }
 
     /**
      * Prepares a validation code.
@@ -92,6 +111,8 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
      * @param string $field
      * @return int|null
      */
-    protected function prepareCode($field) {}
+    protected function prepareCode(string $field): ?int
+    {
+    }
 
 }

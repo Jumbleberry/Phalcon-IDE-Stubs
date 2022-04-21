@@ -2,6 +2,15 @@
 
 namespace Phalcon\Validation\Validator;
 
+use Phalcon\Validation;
+use Phalcon\Validation\CombinedFieldsValidator;
+use Phalcon\Validation\Exception;
+use Phalcon\Validation\Message;
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Mvc\CollectionInterface;
+use Phalcon\Mvc\Model;
+use Phalcon\Mvc\Collection;
+
 /**
  * Phalcon\Validation\Validator\Uniqueness
  *
@@ -74,7 +83,7 @@ namespace Phalcon\Validation\Validator;
  * );
  * </code>
  */
-class Uniqueness extends \Phalcon\Validation\CombinedFieldsValidator
+class Uniqueness extends CombinedFieldsValidator
 {
 
     private $columnMap = null;
@@ -87,14 +96,18 @@ class Uniqueness extends \Phalcon\Validation\CombinedFieldsValidator
      * @param mixed $field
      * @return bool
      */
-    public function validate(\Phalcon\Validation $validation, $field) {}
+    public function validate(\Phalcon\Validation $validation, $field): bool
+    {
+    }
 
     /**
      * @param \Phalcon\Validation $validation
      * @param mixed $field
      * @return bool
      */
-    protected function isUniqueness(\Phalcon\Validation $validation, $field) {}
+    protected function isUniqueness(\Phalcon\Validation $validation, $field): bool
+    {
+    }
 
     /**
      * The column map is used in the case to get real column name
@@ -103,7 +116,9 @@ class Uniqueness extends \Phalcon\Validation\CombinedFieldsValidator
      * @param string $field
      * @return string
      */
-    protected function getColumnNameReal($record, $field) {}
+    protected function getColumnNameReal($record, string $field): string
+    {
+    }
 
     /**
      * Uniqueness method used for model
@@ -112,7 +127,9 @@ class Uniqueness extends \Phalcon\Validation\CombinedFieldsValidator
      * @param array $field
      * @param array $values
      */
-    protected function isUniquenessModel($record, array $field, array $values) {}
+    protected function isUniquenessModel($record, array $field, array $values)
+    {
+    }
 
     /**
      * Uniqueness method used for collection
@@ -121,6 +138,8 @@ class Uniqueness extends \Phalcon\Validation\CombinedFieldsValidator
      * @param array $field
      * @param array $values
      */
-    protected function isUniquenessCollection($record, array $field, array $values) {}
+    protected function isUniquenessCollection($record, array $field, array $values)
+    {
+    }
 
 }

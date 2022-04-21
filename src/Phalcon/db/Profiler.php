@@ -2,6 +2,8 @@
 
 namespace Phalcon\Db;
 
+use Phalcon\Db\Profiler\Item;
+
 /**
  * Phalcon\Db\Profiler
  *
@@ -82,52 +84,66 @@ class Profiler
      * Starts the profile of a SQL sentence
      *
      * @param string $sqlStatement
+     * @return \Phalcon\Db\Profiler
      * @param mixed $sqlVariables
      * @param mixed $sqlBindTypes
-     * @return Profiler
      */
-    public function startProfile($sqlStatement, $sqlVariables = null, $sqlBindTypes = null) {}
+    public function startProfile($sqlStatement, $sqlVariables = null, $sqlBindTypes = null): Profiler
+    {
+    }
 
     /**
      * Stops the active profile
      *
      * @return Profiler
      */
-    public function stopProfile() {}
+    public function stopProfile(): Profiler
+    {
+    }
 
     /**
      * Returns the total number of SQL statements processed
      *
      * @return int
      */
-    public function getNumberTotalStatements() {}
+    public function getNumberTotalStatements(): int
+    {
+    }
 
     /**
      * Returns the total time in seconds spent by the profiles
      *
-     * @return double
+     * @return float
      */
-    public function getTotalElapsedSeconds() {}
+    public function getTotalElapsedSeconds(): float
+    {
+    }
 
     /**
      * Returns all the processed profiles
      *
-     * @return \Phalcon\Db\Profiler\Item[]
+     * @return array|\Phalcon\Db\Profiler\Item[]
      */
-    public function getProfiles() {}
+    public function getProfiles(): array
+    {
+    }
 
     /**
      * Resets the profiler, cleaning up all the profiles
      *
      * @return Profiler
      */
-    public function reset() {}
+    public function reset(): Profiler
+    {
+    }
 
     /**
      * Returns the last profile executed in the profiler
      *
-     * @return \Phalcon\Db\Profiler\Item
+     * @return Item
      */
-    public function getLastProfile() {}
+    public function getLastProfile(): Item
+    {
+    }
 
 }

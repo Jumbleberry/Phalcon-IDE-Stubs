@@ -2,6 +2,9 @@
 
 namespace Phalcon\Annotations;
 
+use Phalcon\Annotations\Annotation;
+use Phalcon\Annotations\Exception;
+
 /**
  * Phalcon\Annotations\Collection
  *
@@ -34,68 +37,92 @@ class Collection implements \Iterator, \Countable
      *
      * @param array $reflectionData
      */
-    public function __construct($reflectionData = null) {}
+    public function __construct($reflectionData = null)
+    {
+    }
 
     /**
      * Returns the number of annotations in the collection
      *
      * @return int
      */
-    public function count() {}
+    public function count(): int
+    {
+    }
 
     /**
      * Rewinds the internal iterator
+     *
+     * @return void
      */
-    public function rewind() {}
+    public function rewind(): void
+    {
+    }
 
     /**
      * Returns the current annotation in the iterator
      *
-     * @return bool|\Phalcon\Annotations\Annotation
+     * @return \Phalcon\Annotations\Annotation
      */
-    public function current() {}
+    public function current()
+    {
+    }
 
     /**
      * Returns the current position/key in the iterator
      *
      * @return int
      */
-    public function key() {}
+    public function key(): int
+    {
+    }
 
     /**
      * Moves the internal iteration pointer to the next position
+     *
+     * @return void
      */
-    public function next() {}
+    public function next(): void
+    {
+    }
 
     /**
      * Check if the current annotation in the iterator is valid
      *
      * @return bool
      */
-    public function valid() {}
+    public function valid(): bool
+    {
+    }
 
     /**
      * Returns the internal annotations as an array
      *
-     * @return \Phalcon\Annotations\Annotation[]
+     * @return array|\Phalcon\Annotations\Annotation[]
      */
-    public function getAnnotations() {}
+    public function getAnnotations(): array
+    {
+    }
 
     /**
      * Returns the first annotation that match a name
      *
      * @param string $name
-     * @return \Phalcon\Annotations\Annotation
+     * @return Annotation
      */
-    public function get($name) {}
+    public function get(string $name): Annotation
+    {
+    }
 
     /**
      * Returns all the annotations that match a name
      *
      * @param string $name
-     * @return \Phalcon\Annotations\Annotation[]
+     * @return array|\Phalcon\Annotations\Annotation[]
      */
-    public function getAll($name) {}
+    public function getAll(string $name): array
+    {
+    }
 
     /**
      * Check if an annotation exists in a collection
@@ -103,6 +130,8 @@ class Collection implements \Iterator, \Countable
      * @param string $name
      * @return bool
      */
-    public function has($name) {}
+    public function has(string $name): bool
+    {
+    }
 
 }

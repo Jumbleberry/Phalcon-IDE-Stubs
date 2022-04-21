@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc;
 
+use Phalcon\Mvc\Model\MessageInterface;
+
 /**
  * Phalcon\Mvc\CollectionInterface
  *
@@ -29,21 +31,21 @@ interface CollectionInterface
      *
      * @return array
      */
-    public function getReservedAttributes();
+    public function getReservedAttributes(): array;
 
     /**
      * Returns collection name mapped in the model
      *
      * @return string
      */
-    public function getSource();
+    public function getSource(): string;
 
     /**
      * Sets a service in the services container that returns the Mongo database
      *
      * @param string $connectionService
      */
-    public function setConnectionService($connectionService);
+    public function setConnectionService(string $connectionService);
 
     /**
      * Retrieves a database connection
@@ -58,14 +60,14 @@ interface CollectionInterface
      * @param int $dirtyState
      * @return \Phalcon\Mvc\CollectionInterface
      */
-    public function setDirtyState($dirtyState);
+    public function setDirtyState(int $dirtyState): \Phalcon\Mvc\CollectionInterface;
 
     /**
      * Returns one of the DIRTY_STATE_ constants telling if the record exists in the database or not
      *
      * @return int
      */
-    public function getDirtyState();
+    public function getDirtyState(): int;
 
     /**
      * Returns a cloned collection
@@ -74,7 +76,7 @@ interface CollectionInterface
      * @param array $document
      * @return CollectionInterface
      */
-    public static function cloneResult(CollectionInterface $collection, array $document);
+    public static function cloneResult(CollectionInterface $collection, array $document): CollectionInterface;
 
     /**
      * Fires an event, implicitly calls behaviors and listeners in the events manager are notified
@@ -82,7 +84,7 @@ interface CollectionInterface
      * @param string $eventName
      * @return bool
      */
-    public function fireEvent($eventName);
+    public function fireEvent(string $eventName): bool;
 
     /**
      * Fires an event, implicitly listeners in the events manager are notified
@@ -91,21 +93,21 @@ interface CollectionInterface
      * @param string $eventName
      * @return bool
      */
-    public function fireEventCancel($eventName);
+    public function fireEventCancel(string $eventName): bool;
 
     /**
      * Check whether validation process has generated any messages
      *
      * @return bool
      */
-    public function validationHasFailed();
+    public function validationHasFailed(): bool;
 
     /**
      * Returns all the validation messages
      *
-     * @return \Phalcon\Mvc\Model\MessageInterface[]
+     * @return array|\Phalcon\Mvc\Model\MessageInterface[]
      */
-    public function getMessages();
+    public function getMessages(): array;
 
     /**
      * Appends a customized message on the validation process
@@ -119,15 +121,15 @@ interface CollectionInterface
      *
      * @return bool
      */
-    public function save();
+    public function save(): bool;
 
     /**
      * Find a document by its id
      *
      * @param string $id
-     * @return null|CollectionInterface
+     * @return \Phalcon\Mvc\Collection
      */
-    public static function findById($id);
+    public static function findById($id): ?CollectionInterface;
 
     /**
      * Allows to query the first record that match the specified conditions
@@ -141,8 +143,7 @@ interface CollectionInterface
      * Allows to query a set of records that match the specified conditions
      *
      * @param array $parameters
-     * @param $array parameters
-     * @return array
+     * @return  array
      */
     public static function find(array $parameters = null);
 
@@ -159,6 +160,6 @@ interface CollectionInterface
      *
      * @return bool
      */
-    public function delete();
+    public function delete(): bool;
 
 }

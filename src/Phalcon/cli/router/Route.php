@@ -49,7 +49,9 @@ class Route
      * @param string $pattern
      * @param array $paths
      */
-    public function __construct($pattern, $paths = null) {}
+    public function __construct(string $pattern, $paths = null)
+    {
+    }
 
     /**
      * Replaces placeholders from pattern returning a valid PCRE regular expression
@@ -57,7 +59,9 @@ class Route
      * @param string $pattern
      * @return string
      */
-    public function compilePattern($pattern) {}
+    public function compilePattern(string $pattern): string
+    {
+    }
 
     /**
      * Extracts parameters from a string
@@ -65,7 +69,9 @@ class Route
      * @param string $pattern
      * @return array|boolean
      */
-    public function extractNamedParams($pattern) {}
+    public function extractNamedParams(string $pattern)
+    {
+    }
 
     /**
      * Reconfigure the route adding a new pattern and a set of paths
@@ -73,14 +79,18 @@ class Route
      * @param string $pattern
      * @param array $paths
      */
-    public function reConfigure($pattern, $paths = null) {}
+    public function reConfigure(string $pattern, $paths = null)
+    {
+    }
 
     /**
      * Returns the route's name
      *
      * @return string
      */
-    public function getName() {}
+    public function getName(): string
+    {
+    }
 
     /**
      * Sets the route's name
@@ -97,7 +107,9 @@ class Route
      * @param string $name
      * @return Route
      */
-    public function setName($name) {}
+    public function setName(string $name): Route
+    {
+    }
 
     /**
      * Sets a callback that is called if the route is matched.
@@ -105,85 +117,109 @@ class Route
      * If the callback returns false the route is treated as not matched
      *
      * @param callback $callback
-     * @return Route
+     * @return \Phalcon\Cli\Router\Route
      */
-    public function beforeMatch($callback) {}
+    public function beforeMatch($callback): Route
+    {
+    }
 
     /**
      * Returns the 'before match' callback if any
      *
      * @return mixed
      */
-    public function getBeforeMatch() {}
+    public function getBeforeMatch()
+    {
+    }
 
     /**
      * Returns the route's id
      *
      * @return string
      */
-    public function getRouteId() {}
+    public function getRouteId(): string
+    {
+    }
 
     /**
      * Returns the route's pattern
      *
      * @return string
      */
-    public function getPattern() {}
+    public function getPattern(): string
+    {
+    }
 
     /**
      * Returns the route's compiled pattern
      *
      * @return string
      */
-    public function getCompiledPattern() {}
+    public function getCompiledPattern(): string
+    {
+    }
 
     /**
      * Returns the paths
      *
      * @return array
      */
-    public function getPaths() {}
+    public function getPaths(): array
+    {
+    }
 
     /**
      * Returns the paths using positions as keys and names as values
      *
      * @return array
      */
-    public function getReversedPaths() {}
+    public function getReversedPaths(): array
+    {
+    }
 
     /**
      * Adds a converter to perform an additional transformation for certain parameter
      *
      * @param string $name
      * @param callable $converter
-     * @return Route
+     * @return \Phalcon\Cli\Router\Route
      */
-    public function convert($name, $converter) {}
+    public function convert(string $name, $converter): Route
+    {
+    }
 
     /**
      * Returns the router converter
      *
      * @return array
      */
-    public function getConverters() {}
+    public function getConverters(): array
+    {
+    }
 
     /**
      * Resets the internal route id generator
      */
-    public static function reset() {}
+    public static function reset()
+    {
+    }
 
     /**
      * Set the routing delimiter
      *
      * @param string $delimiter
      */
-    public static function delimiter($delimiter = null) {}
+    public static function delimiter(string $delimiter = null)
+    {
+    }
 
     /**
      * Get routing delimiter
      *
      * @return string
      */
-    public static function getDelimiter() {}
+    public static function getDelimiter(): string
+    {
+    }
 
 }

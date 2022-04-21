@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc\Model;
 
+use Phalcon\Mvc\ModelInterface;
+
 /**
  * Phalcon\Mvc\Model\BehaviorInterface
  *
@@ -16,7 +18,7 @@ interface BehaviorInterface
      * @param string $type
      * @param \Phalcon\Mvc\ModelInterface $model
      */
-    public function notify($type, \Phalcon\Mvc\ModelInterface $model);
+    public function notify(string $type, \Phalcon\Mvc\ModelInterface $model);
 
     /**
      * Calls a method when it's missing in the model
@@ -25,6 +27,6 @@ interface BehaviorInterface
      * @param string $method
      * @param array $arguments
      */
-    public function missingMethod(\Phalcon\Mvc\ModelInterface $model, $method, $arguments = null);
+    public function missingMethod(\Phalcon\Mvc\ModelInterface $model, string $method, $arguments = null);
 
 }

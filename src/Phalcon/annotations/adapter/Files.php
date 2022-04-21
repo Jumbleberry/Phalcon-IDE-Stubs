@@ -2,6 +2,10 @@
 
 namespace Phalcon\Annotations\Adapter;
 
+use Phalcon\Annotations\Adapter;
+use Phalcon\Annotations\Reflection;
+use Phalcon\Annotations\Exception;
+
 /**
  * Phalcon\Annotations\Adapter\Files
  *
@@ -17,7 +21,7 @@ namespace Phalcon\Annotations\Adapter;
  * );
  * </code>
  */
-class Files extends \Phalcon\Annotations\Adapter
+class Files extends Adapter
 {
 
     protected $_annotationsDir = './';
@@ -28,15 +32,19 @@ class Files extends \Phalcon\Annotations\Adapter
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Reads parsed annotations from files
      *
      * @param string $key
-     * @return bool|int|\Phalcon\Annotations\Reflection
+     * @return \Phalcon\Annotations\Reflection
      */
-    public function read($key) {}
+    public function read(string $key)
+    {
+    }
 
     /**
      * Writes parsed annotations to files
@@ -44,6 +52,8 @@ class Files extends \Phalcon\Annotations\Adapter
      * @param string $key
      * @param \Phalcon\Annotations\Reflection $data
      */
-    public function write($key, \Phalcon\Annotations\Reflection $data) {}
+    public function write(string $key, \Phalcon\Annotations\Reflection $data)
+    {
+    }
 
 }

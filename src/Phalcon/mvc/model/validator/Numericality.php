@@ -2,6 +2,10 @@
 
 namespace Phalcon\Mvc\Model\Validator;
 
+use Phalcon\Mvc\EntityInterface;
+use Phalcon\Mvc\Model\Exception;
+use Phalcon\Mvc\Model\Validator;
+
 /**
  * Phalcon\Mvc\Model\Validator\Numericality
  *
@@ -35,7 +39,7 @@ namespace Phalcon\Mvc\Model\Validator;
  * @deprecated 3.1.0
  * @see Phalcon\Validation\Validator\Numericality
  */
-class Numericality extends \Phalcon\Mvc\Model\Validator
+class Numericality extends Validator
 {
 
     /**
@@ -44,6 +48,8 @@ class Numericality extends \Phalcon\Mvc\Model\Validator
      * @param \Phalcon\Mvc\EntityInterface $record
      * @return bool
      */
-    public function validate(\Phalcon\Mvc\EntityInterface $record) {}
+    public function validate(\Phalcon\Mvc\EntityInterface $record): bool
+    {
+    }
 
 }

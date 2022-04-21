@@ -28,6 +28,8 @@ abstract class Lang
      * @param string $phql
      * @return string
      */
-    public static function parsePHQL($phql) {}
+    public static function parsePHQL(string $phql)
+    {
+    }
 
 }

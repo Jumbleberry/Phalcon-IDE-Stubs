@@ -15,6 +15,6 @@ interface RoleAware
      *
      * @return string
      */
-    public function getRoleName();
+    public function getRoleName(): string;
 
 }

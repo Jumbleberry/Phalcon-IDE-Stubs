@@ -2,6 +2,10 @@
 
 namespace Phalcon\Tag;
 
+use Phalcon\Tag\Exception;
+use Phalcon\Tag as BaseTag;
+use Phalcon\EscaperInterface;
+
 /**
  * Phalcon\Tag\Select
  *
@@ -16,7 +20,9 @@ abstract class Select
      * @param array $parameters
      * @param array $data
      */
-    public static function selectField($parameters, $data = null) {}
+    public static function selectField($parameters, $data = null)
+    {
+    }
 
     /**
      * Generate the OPTION tags based on a resultset
@@ -26,7 +32,9 @@ abstract class Select
      * @param mixed $value
      * @param string $closeOption
      */
-    private static function _optionsFromResultset($resultset, $using, $value, $closeOption) {}
+    private static function _optionsFromResultset($resultset, $using, $value, $closeOption)
+    {
+    }
 
     /**
      * Generate the OPTION tags based on an array
@@ -35,6 +43,8 @@ abstract class Select
      * @param mixed $value
      * @param string $closeOption
      */
-    private static function _optionsFromArray($data, $value, $closeOption) {}
+    private static function _optionsFromArray($data, $value, $closeOption)
+    {
+    }
 
 }

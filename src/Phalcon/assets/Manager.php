@@ -2,6 +2,15 @@
 
 namespace Phalcon\Assets;
 
+use Phalcon\Tag;
+use Phalcon\Assets\Resource;
+use Phalcon\Assets\Collection;
+use Phalcon\Assets\Exception;
+use Phalcon\Assets\Resource\Js as ResourceJs;
+use Phalcon\Assets\Resource\Css as ResourceCss;
+use Phalcon\Assets\Inline\Css as InlineCss;
+use Phalcon\Assets\Inline\Js as InlineJs;
+
 /**
  * Phalcon\Assets\Manager
  *
@@ -28,7 +37,9 @@ class Manager
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Sets the manager options
@@ -36,14 +47,18 @@ class Manager
      * @param array $options
      * @return Manager
      */
-    public function setOptions(array $options) {}
+    public function setOptions(array $options): Manager
+    {
+    }
 
     /**
      * Returns the manager options
      *
      * @return array
      */
-    public function getOptions() {}
+    public function getOptions(): array
+    {
+    }
 
     /**
      * Sets if the HTML generated must be directly printed or returned
@@ -51,7 +66,9 @@ class Manager
      * @param bool $implicitOutput
      * @return Manager
      */
-    public function useImplicitOutput($implicitOutput) {}
+    public function useImplicitOutput(bool $implicitOutput): Manager
+    {
+    }
 
     /**
      * Adds a Css resource to the 'css' collection
@@ -67,7 +84,9 @@ class Manager
      * @param mixed $attributes
      * @return Manager
      */
-    public function addCss($path, $local = true, $filter = true, $attributes = null) {}
+    public function addCss(string $path, $local = true, $filter = true, $attributes = null): Manager
+    {
+    }
 
     /**
      * Adds an inline Css to the 'css' collection
@@ -77,7 +96,9 @@ class Manager
      * @param mixed $attributes
      * @return Manager
      */
-    public function addInlineCss($content, $filter = true, $attributes = null) {}
+    public function addInlineCss(string $content, $filter = true, $attributes = null): Manager
+    {
+    }
 
     /**
      * Adds a javascript resource to the 'js' collection
@@ -93,7 +114,9 @@ class Manager
      * @param mixed $attributes
      * @return Manager
      */
-    public function addJs($path, $local = true, $filter = true, $attributes = null) {}
+    public function addJs(string $path, $local = true, $filter = true, $attributes = null): Manager
+    {
+    }
 
     /**
      * Adds an inline javascript to the 'js' collection
@@ -103,7 +126,9 @@ class Manager
      * @param mixed $attributes
      * @return Manager
      */
-    public function addInlineJs($content, $filter = true, $attributes = null) {}
+    public function addInlineJs(string $content, $filter = true, $attributes = null): Manager
+    {
+    }
 
     /**
      * Adds a resource by its type
@@ -118,7 +143,9 @@ class Manager
      * @param \Phalcon\Assets\Resource $resource
      * @return Manager
      */
-    public function addResourceByType($type, \Phalcon\Assets\Resource $resource) {}
+    public function addResourceByType(string $type, \Phalcon\Assets\Resource $resource): Manager
+    {
+    }
 
     /**
      * Adds an inline code by its type
@@ -127,7 +154,9 @@ class Manager
      * @param Inline $code
      * @return Manager
      */
-    public function addInlineCodeByType($type, Inline $code) {}
+    public function addInlineCodeByType(string $type, Inline $code): Manager
+    {
+    }
 
     /**
      * Adds a raw resource to the manager
@@ -141,7 +170,9 @@ class Manager
      * @param \Phalcon\Assets\Resource $resource
      * @return Manager
      */
-    public function addResource(\Phalcon\Assets\Resource $resource) {}
+    public function addResource(\Phalcon\Assets\Resource $resource): Manager
+    {
+    }
 
     /**
      * Adds a raw inline code to the manager
@@ -149,7 +180,9 @@ class Manager
      * @param Inline $code
      * @return Manager
      */
-    public function addInlineCode(Inline $code) {}
+    public function addInlineCode(Inline $code): Manager
+    {
+    }
 
     /**
      * Sets a collection in the Assets Manager
@@ -162,7 +195,9 @@ class Manager
      * @param \Phalcon\Assets\Collection $collection
      * @return Manager
      */
-    public function set($id, \Phalcon\Assets\Collection $collection) {}
+    public function set(string $id, \Phalcon\Assets\Collection $collection): Manager
+    {
+    }
 
     /**
      * Returns a collection by its id.
@@ -172,38 +207,48 @@ class Manager
      * </code>
      *
      * @param string $id
-     * @return \Phalcon\Assets\Collection
+     * @return Collection
      */
-    public function get($id) {}
+    public function get(string $id): Collection
+    {
+    }
 
     /**
      * Returns the CSS collection of assets
      *
-     * @return \Phalcon\Assets\Collection
+     * @return Collection
      */
-    public function getCss() {}
+    public function getCss(): Collection
+    {
+    }
 
     /**
      * Returns the CSS collection of assets
      *
-     * @return \Phalcon\Assets\Collection
+     * @return Collection
      */
-    public function getJs() {}
+    public function getJs(): Collection
+    {
+    }
 
     /**
      * Creates/Returns a collection of resources
      *
      * @param string $name
-     * @return \Phalcon\Assets\Collection
+     * @return Collection
      */
-    public function collection($name) {}
+    public function collection(string $name): Collection
+    {
+    }
 
     /**
      * @param array $resources
      * @param string $type
      * @return array
      */
-    public function collectionResourcesByType(array $resources, $type) {}
+    public function collectionResourcesByType(array $resources, string $type): array
+    {
+    }
 
     /**
      * Traverses a collection calling the callback to generate its HTML
@@ -213,7 +258,9 @@ class Manager
      * @param string $type
      * @return string|null
      */
-    public function output(\Phalcon\Assets\Collection $collection, $callback, $type) {}
+    public function output(\Phalcon\Assets\Collection $collection, $callback, $type): ?string
+    {
+    }
 
     /**
      * Traverses a collection and generate its HTML
@@ -222,7 +269,9 @@ class Manager
      * @param string $type
      * @return string
      */
-    public function outputInline(\Phalcon\Assets\Collection $collection, $type) {}
+    public function outputInline(\Phalcon\Assets\Collection $collection, $type): string
+    {
+    }
 
     /**
      * Prints the HTML for CSS resources
@@ -230,7 +279,9 @@ class Manager
      * @param string $collectionName
      * @return string
      */
-    public function outputCss($collectionName = null) {}
+    public function outputCss($collectionName = null): string
+    {
+    }
 
     /**
      * Prints the HTML for inline CSS
@@ -238,7 +289,9 @@ class Manager
      * @param string $collectionName
      * @return string
      */
-    public function outputInlineCss($collectionName = null) {}
+    public function outputInlineCss($collectionName = null): string
+    {
+    }
 
     /**
      * Prints the HTML for JS resources
@@ -246,7 +299,9 @@ class Manager
      * @param string $collectionName
      * @return string
      */
-    public function outputJs($collectionName = null) {}
+    public function outputJs($collectionName = null): string
+    {
+    }
 
     /**
      * Prints the HTML for inline JS
@@ -254,14 +309,18 @@ class Manager
      * @param string $collectionName
      * @return string
      */
-    public function outputInlineJs($collectionName = null) {}
+    public function outputInlineJs($collectionName = null): string
+    {
+    }
 
     /**
      * Returns existing collections in the manager
      *
-     * @return \Phalcon\Assets\Collection[]
+     * @return array|\Phalcon\Assets\Collection[]
      */
-    public function getCollections() {}
+    public function getCollections(): array
+    {
+    }
 
     /**
      * Returns true or false if collection exists.
@@ -276,6 +335,8 @@ class Manager
      * @param string $id
      * @return bool
      */
-    public function exists($id) {}
+    public function exists(string $id): bool
+    {
+    }
 
 }

@@ -2,6 +2,10 @@
 
 namespace Phalcon\Session\Adapter;
 
+use Phalcon\Session\Adapter;
+use Phalcon\Cache\Backend\Memcache;
+use Phalcon\Cache\Frontend\Data as FrontendData;
+
 /**
  * Phalcon\Session\Adapter\Memcache
  *
@@ -28,7 +32,7 @@ namespace Phalcon\Session\Adapter;
  * echo $session->get("var");
  * </code>
  */
-class Memcache extends \Phalcon\Session\Adapter
+class Memcache extends Adapter
 {
 
     protected $_memcache = null;
@@ -38,27 +42,37 @@ class Memcache extends \Phalcon\Session\Adapter
 
 
 
-    public function getMemcache() {}
+    public function getMemcache()
+    {
+    }
 
 
-    public function getLifetime() {}
+    public function getLifetime()
+    {
+    }
 
     /**
      * Phalcon\Session\Adapter\Memcache constructor
      *
      * @param array $options
      */
-    public function __construct(array $options = array()) {}
+    public function __construct(array $options = array())
+    {
+    }
 
     /**
      * @return bool
      */
-    public function open() {}
+    public function open(): bool
+    {
+    }
 
     /**
      * @return bool
      */
-    public function close() {}
+    public function close(): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -66,7 +80,9 @@ class Memcache extends \Phalcon\Session\Adapter
      * @param string $sessionId
      * @return string
      */
-    public function read($sessionId) {}
+    public function read(string $sessionId): string
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -75,7 +91,9 @@ class Memcache extends \Phalcon\Session\Adapter
      * @param string $data
      * @return bool
      */
-    public function write($sessionId, $data) {}
+    public function write(string $sessionId, string $data): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
@@ -83,13 +101,17 @@ class Memcache extends \Phalcon\Session\Adapter
      * @param mixed $sessionId
      * @return bool
      */
-    public function destroy($sessionId = null) {}
+    public function destroy($sessionId = null): bool
+    {
+    }
 
     /**
      * {@inheritdoc}
      *
      * @return bool
      */
-    public function gc() {}
+    public function gc(): bool
+    {
+    }
 
 }

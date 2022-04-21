@@ -2,6 +2,13 @@
 
 namespace Phalcon\Mvc;
 
+use Phalcon\DiInterface;
+use Phalcon\Mvc\UrlInterface;
+use Phalcon\Mvc\Url\Exception;
+use Phalcon\Mvc\RouterInterface;
+use Phalcon\Mvc\Router\RouteInterface;
+use Phalcon\Di\InjectionAwareInterface;
+
 /**
  * Phalcon\Mvc\Url
  *
@@ -44,14 +51,18 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the DependencyInjector container
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Sets a prefix for all the URIs to be generated
@@ -65,7 +76,9 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
      * @param string $baseUri
      * @return Url
      */
-    public function setBaseUri($baseUri) {}
+    public function setBaseUri(string $baseUri): Url
+    {
+    }
 
     /**
      * Sets a prefix for all static URLs generated
@@ -77,21 +90,27 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
      * @param string $staticBaseUri
      * @return Url
      */
-    public function setStaticBaseUri($staticBaseUri) {}
+    public function setStaticBaseUri(string $staticBaseUri): Url
+    {
+    }
 
     /**
      * Returns the prefix for all the generated urls. By default /
      *
      * @return string
      */
-    public function getBaseUri() {}
+    public function getBaseUri(): string
+    {
+    }
 
     /**
      * Returns the prefix for all the generated static urls. By default /
      *
      * @return string
      */
-    public function getStaticBaseUri() {}
+    public function getStaticBaseUri(): string
+    {
+    }
 
     /**
      * Sets a base path for all the generated paths
@@ -103,14 +122,18 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
      * @param string $basePath
      * @return Url
      */
-    public function setBasePath($basePath) {}
+    public function setBasePath(string $basePath): Url
+    {
+    }
 
     /**
      * Returns the base path
      *
      * @return string
      */
-    public function getBasePath() {}
+    public function getBasePath(): string
+    {
+    }
 
     /**
      * Generates a URL
@@ -151,7 +174,9 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
      * @param mixed $baseUri
      * @return string
      */
-    public function get($uri = null, $args = null, $local = null, $baseUri = null) {}
+    public function get($uri = null, $args = null, $local = null, $baseUri = null): string
+    {
+    }
 
     /**
      * Generates a URL for a static resource
@@ -171,7 +196,9 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
      * @param mixed $uri
      * @return string
      */
-    public function getStatic($uri = null) {}
+    public function getStatic($uri = null): string
+    {
+    }
 
     /**
      * Generates a local path
@@ -179,6 +206,8 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
      * @param string $path
      * @return string
      */
-    public function path($path = null) {}
+    public function path(string $path = null): string
+    {
+    }
 
 }

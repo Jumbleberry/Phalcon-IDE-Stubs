@@ -23,7 +23,7 @@ interface EventInterface
      * @param mixed $data
      * @return EventInterface
      */
-    public function setData($data = null);
+    public function setData($data = null): EventInterface;
 
     /**
      * Gets event type
@@ -38,27 +38,27 @@ interface EventInterface
      * @param string $type
      * @return EventInterface
      */
-    public function setType($type);
+    public function setType(string $type): EventInterface;
 
     /**
      * Stops the event preventing propagation
      *
      * @return EventInterface
      */
-    public function stop();
+    public function stop(): EventInterface;
 
     /**
      * Check whether the event is currently stopped
      *
      * @return bool
      */
-    public function isStopped();
+    public function isStopped(): bool;
 
     /**
      * Check whether the event is cancelable
      *
      * @return bool
      */
-    public function isCancelable();
+    public function isCancelable(): bool;
 
 }

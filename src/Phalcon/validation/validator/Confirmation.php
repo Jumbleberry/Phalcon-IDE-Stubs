@@ -2,6 +2,11 @@
 
 namespace Phalcon\Validation\Validator;
 
+use Phalcon\Validation;
+use Phalcon\Validation\Message;
+use Phalcon\Validation\Exception;
+use Phalcon\Validation\Validator;
+
 /**
  * Phalcon\Validation\Validator\Confirmation
  *
@@ -43,7 +48,7 @@ namespace Phalcon\Validation\Validator;
  * );
  * </code>
  */
-class Confirmation extends \Phalcon\Validation\Validator
+class Confirmation extends Validator
 {
 
     /**
@@ -53,7 +58,9 @@ class Confirmation extends \Phalcon\Validation\Validator
      * @param string $field
      * @return bool
      */
-    public function validate(\Phalcon\Validation $validation, $field) {}
+    public function validate(\Phalcon\Validation $validation, string $field): bool
+    {
+    }
 
     /**
      * Compare strings
@@ -62,6 +69,8 @@ class Confirmation extends \Phalcon\Validation\Validator
      * @param string $b
      * @return bool
      */
-    protected final function compare($a, $b) {}
+    protected final function compare(string $a, string $b): bool
+    {
+    }
 
 }

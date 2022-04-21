@@ -2,6 +2,11 @@
 
 namespace Phalcon\Validation\Validator;
 
+use Phalcon\Validation;
+use Phalcon\Validation\Message;
+use Phalcon\Validation\Validator;
+use Phalcon\Validation\Exception;
+
 /**
  * Phalcon\Validation\Validator\ExclusionIn
  *
@@ -49,7 +54,7 @@ namespace Phalcon\Validation\Validator;
  * );
  * </code>
  */
-class ExclusionIn extends \Phalcon\Validation\Validator
+class ExclusionIn extends Validator
 {
 
     /**
@@ -59,6 +64,8 @@ class ExclusionIn extends \Phalcon\Validation\Validator
      * @param string $field
      * @return bool
      */
-    public function validate(\Phalcon\Validation $validation, $field) {}
+    public function validate(\Phalcon\Validation $validation, string $field): bool
+    {
+    }
 
 }

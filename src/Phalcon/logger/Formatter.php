@@ -2,6 +2,8 @@
 
 namespace Phalcon\Logger;
 
+use Phalcon\Logger;
+
 /**
  * Phalcon\Logger\Formatter
  *
@@ -16,7 +18,9 @@ abstract class Formatter implements \Phalcon\Logger\FormatterInterface
      * @param int $type
      * @return string
      */
-    public function getTypeString($type) {}
+    public function getTypeString(int $type): string
+    {
+    }
 
     /**
      * Interpolates context values into the message placeholders
@@ -25,6 +29,8 @@ abstract class Formatter implements \Phalcon\Logger\FormatterInterface
      * @param string $message
      * @param array $context
      */
-    public function interpolate($message, $context = null) {}
+    public function interpolate(string $message, $context = null)
+    {
+    }
 
 }

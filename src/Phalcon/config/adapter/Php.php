@@ -2,6 +2,8 @@
 
 namespace Phalcon\Config\Adapter;
 
+use Phalcon\Config;
+
 /**
  * Phalcon\Config\Adapter\Php
  *
@@ -37,7 +39,7 @@ namespace Phalcon\Config\Adapter;
  * echo $config->database->username;
  * </code>
  */
-class Php extends \Phalcon\Config
+class Php extends Config
 {
 
     /**
@@ -45,6 +47,8 @@ class Php extends \Phalcon\Config
      *
      * @param string $filePath
      */
-    public function __construct($filePath) {}
+    public function __construct(string $filePath)
+    {
+    }
 
 }

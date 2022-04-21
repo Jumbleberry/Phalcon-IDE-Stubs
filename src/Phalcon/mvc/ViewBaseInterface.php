@@ -15,7 +15,7 @@ interface ViewBaseInterface
      *
      * @param string $viewsDir
      */
-    public function setViewsDir($viewsDir);
+    public function setViewsDir(string $viewsDir);
 
     /**
      * Gets views directory
@@ -30,7 +30,7 @@ interface ViewBaseInterface
      * @param string $key
      * @param mixed $value
      */
-    public function setParamToView($key, $value);
+    public function setParamToView(string $key, $value);
 
     /**
      * Adds parameters to views
@@ -38,21 +38,21 @@ interface ViewBaseInterface
      * @param string $key
      * @param mixed $value
      */
-    public function setVar($key, $value);
+    public function setVar(string $key, $value);
 
     /**
      * Returns parameters to views
      *
      * @return array
      */
-    public function getParamsToView();
+    public function getParamsToView(): array;
 
     /**
      * Returns the cache instance used to cache
      *
      * @return \Phalcon\Cache\BackendInterface
      */
-    public function getCache();
+    public function getCache(): \Phalcon\Cache\BackendInterface;
 
     /**
      * Cache the actual view render to certain level
@@ -66,14 +66,14 @@ interface ViewBaseInterface
      *
      * @param string $content
      */
-    public function setContent($content);
+    public function setContent(string $content);
 
     /**
      * Returns cached output from another view stage
      *
      * @return string
      */
-    public function getContent();
+    public function getContent(): string;
 
     /**
      * Renders a partial view
@@ -81,6 +81,6 @@ interface ViewBaseInterface
      * @param string $partialPath
      * @param mixed $params
      */
-    public function partial($partialPath, $params = null);
+    public function partial(string $partialPath, $params = null);
 
 }

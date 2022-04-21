@@ -2,6 +2,11 @@
 
 namespace Phalcon\Mvc\Model\Validator;
 
+use Phalcon\Mvc\Model;
+use Phalcon\Mvc\EntityInterface;
+use Phalcon\Mvc\Model\Exception;
+use Phalcon\Mvc\Model\Validator;
+
 /**
  * Phalcon\Mvc\Model\Validator\Uniqueness
  *
@@ -38,7 +43,7 @@ namespace Phalcon\Mvc\Model\Validator;
  * @deprecated 3.1.0
  * @see Phalcon\Validation\Validator\Uniqueness
  */
-class Uniqueness extends \Phalcon\Mvc\Model\Validator
+class Uniqueness extends Validator
 {
 
     /**
@@ -47,6 +52,8 @@ class Uniqueness extends \Phalcon\Mvc\Model\Validator
      * @param \Phalcon\Mvc\EntityInterface $record
      * @return bool
      */
-    public function validate(\Phalcon\Mvc\EntityInterface $record) {}
+    public function validate(\Phalcon\Mvc\EntityInterface $record): bool
+    {
+    }
 
 }

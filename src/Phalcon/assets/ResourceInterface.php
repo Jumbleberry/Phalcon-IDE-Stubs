@@ -16,14 +16,14 @@ interface ResourceInterface
      * @param string $type
      * @return ResourceInterface
      */
-    public function setType($type);
+    public function setType(string $type): ResourceInterface;
 
     /**
      * Gets the resource's type.
      *
      * @return string
      */
-    public function getType();
+    public function getType(): string;
 
     /**
      * Sets if the resource must be filtered or not.
@@ -31,14 +31,14 @@ interface ResourceInterface
      * @param bool $filter
      * @return ResourceInterface
      */
-    public function setFilter($filter);
+    public function setFilter(bool $filter): ResourceInterface;
 
     /**
      * Gets if the resource must be filtered or not.
      *
      * @return bool
      */
-    public function getFilter();
+    public function getFilter(): bool;
 
     /**
      * Sets extra HTML attributes.
@@ -46,20 +46,20 @@ interface ResourceInterface
      * @param array $attributes
      * @return ResourceInterface
      */
-    public function setAttributes(array $attributes);
+    public function setAttributes(array $attributes): ResourceInterface;
 
     /**
      * Gets extra HTML attributes.
      *
      * @return array|null
      */
-    public function getAttributes();
+    public function getAttributes(): ?array;
 
     /**
      * Gets the resource's key.
      *
      * @return string
      */
-    public function getResourceKey();
+    public function getResourceKey(): string;
 
 }

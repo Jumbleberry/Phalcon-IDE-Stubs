@@ -2,12 +2,15 @@
 
 namespace Phalcon\Forms\Element;
 
+use Phalcon\Tag;
+use Phalcon\Forms\Element;
+
 /**
  * Phalcon\Forms\Element\TextArea
  *
  * Component TEXTAREA for forms
  */
-class TextArea extends \Phalcon\Forms\Element
+class TextArea extends Element
 {
 
     /**
@@ -16,6 +19,8 @@ class TextArea extends \Phalcon\Forms\Element
      * @param array $attributes
      * @return string
      */
-    public function render($attributes = null) {}
+    public function render($attributes = null): string
+    {
+    }
 
 }

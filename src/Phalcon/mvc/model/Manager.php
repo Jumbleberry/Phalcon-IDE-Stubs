@@ -2,6 +2,23 @@
 
 namespace Phalcon\Mvc\Model;
 
+use Phalcon\DiInterface;
+use Phalcon\Mvc\Model\Relation;
+use Phalcon\Mvc\Model\RelationInterface;
+use Phalcon\Mvc\Model\Exception;
+use Phalcon\Mvc\ModelInterface;
+use Phalcon\Db\AdapterInterface;
+use Phalcon\Mvc\Model\ResultsetInterface;
+use Phalcon\Mvc\Model\ManagerInterface;
+use Phalcon\Di\InjectionAwareInterface;
+use Phalcon\Events\EventsAwareInterface;
+use Phalcon\Mvc\Model\Query;
+use Phalcon\Mvc\Model\QueryInterface;
+use Phalcon\Mvc\Model\Query\Builder;
+use Phalcon\Mvc\Model\Query\BuilderInterface;
+use Phalcon\Mvc\Model\BehaviorInterface;
+use Phalcon\Events\ManagerInterface as EventsManagerInterface;
+
 /**
  * Phalcon\Mvc\Model\Manager
  *
@@ -140,14 +157,18 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the DependencyInjector container
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Sets a global events manager
@@ -155,14 +176,18 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Events\ManagerInterface $eventsManager
      * @return Manager
      */
-    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager) {}
+    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager): Manager
+    {
+    }
 
     /**
      * Returns the internal event manager
      *
-     * @return \Phalcon\Events\ManagerInterface
+     * @return EventsManagerInterface
      */
-    public function getEventsManager() {}
+    public function getEventsManager(): EventsManagerInterface
+    {
+    }
 
     /**
      * Sets a custom events manager for a specific model
@@ -170,7 +195,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param \Phalcon\Events\ManagerInterface $eventsManager
      */
-    public function setCustomEventsManager(\Phalcon\Mvc\ModelInterface $model, \Phalcon\Events\ManagerInterface $eventsManager) {}
+    public function setCustomEventsManager(\Phalcon\Mvc\ModelInterface $model, \Phalcon\Events\ManagerInterface $eventsManager)
+    {
+    }
 
     /**
      * Returns a custom events manager related to a model
@@ -178,7 +205,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return bool|\Phalcon\Events\ManagerInterface
      */
-    public function getCustomEventsManager(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getCustomEventsManager(\Phalcon\Mvc\ModelInterface $model)
+    {
+    }
 
     /**
      * Initializes a model in the model manager
@@ -186,7 +215,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return bool
      */
-    public function initialize(\Phalcon\Mvc\ModelInterface $model) {}
+    public function initialize(\Phalcon\Mvc\ModelInterface $model): bool
+    {
+    }
 
     /**
      * Check whether a model is already initialized
@@ -194,23 +225,29 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $modelName
      * @return bool
      */
-    public function isInitialized($modelName) {}
+    public function isInitialized(string $modelName): bool
+    {
+    }
 
     /**
      * Get last initialized model
      *
-     * @return \Phalcon\Mvc\ModelInterface
+     * @return ModelInterface
      */
-    public function getLastInitialized() {}
+    public function getLastInitialized(): ModelInterface
+    {
+    }
 
     /**
      * Loads a model throwing an exception if it doesn't exist
      *
      * @param string $modelName
      * @param bool $newInstance
-     * @return \Phalcon\Mvc\ModelInterface
+     * @return ModelInterface
      */
-    public function load($modelName, $newInstance = false) {}
+    public function load(string $modelName, bool $newInstance = false): ModelInterface
+    {
+    }
 
     /**
      * Sets the prefix for all model sources.
@@ -230,8 +267,11 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * </code>
      *
      * @param string $prefix
+     * @return void
      */
-    public function setModelPrefix($prefix) {}
+    public function setModelPrefix(string $prefix): void
+    {
+    }
 
     /**
      * Returns the prefix for all model sources.
@@ -252,15 +292,20 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      *
      * @return string
      */
-    public function getModelPrefix() {}
+    public function getModelPrefix(): string
+    {
+    }
 
     /**
      * Sets the mapped source for a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param string $source
+     * @return void
      */
-    public function setModelSource(\Phalcon\Mvc\ModelInterface $model, $source) {}
+    public function setModelSource(\Phalcon\Mvc\ModelInterface $model, string $source): void
+    {
+    }
 
     /**
      * Check whether a model property is declared as public.
@@ -276,7 +321,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $property
      * @return bool
      */
-    public final function isVisibleModelProperty(\Phalcon\Mvc\ModelInterface $model, $property) {}
+    public final function isVisibleModelProperty(\Phalcon\Mvc\ModelInterface $model, string $property): bool
+    {
+    }
 
     /**
      * Returns the mapped source for a model
@@ -284,15 +331,20 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return string
      */
-    public function getModelSource(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getModelSource(\Phalcon\Mvc\ModelInterface $model): string
+    {
+    }
 
     /**
      * Sets the mapped schema for a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param string $schema
+     * @return void
      */
-    public function setModelSchema(\Phalcon\Mvc\ModelInterface $model, $schema) {}
+    public function setModelSchema(\Phalcon\Mvc\ModelInterface $model, string $schema): void
+    {
+    }
 
     /**
      * Returns the mapped schema for a model
@@ -300,56 +352,73 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return string
      */
-    public function getModelSchema(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getModelSchema(\Phalcon\Mvc\ModelInterface $model): string
+    {
+    }
 
     /**
      * Sets both write and read connection service for a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param string $connectionService
+     * @return void
      */
-    public function setConnectionService(\Phalcon\Mvc\ModelInterface $model, $connectionService) {}
+    public function setConnectionService(\Phalcon\Mvc\ModelInterface $model, string $connectionService): void
+    {
+    }
 
     /**
      * Sets write connection service for a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param string $connectionService
+     * @return void
      */
-    public function setWriteConnectionService(\Phalcon\Mvc\ModelInterface $model, $connectionService) {}
+    public function setWriteConnectionService(\Phalcon\Mvc\ModelInterface $model, string $connectionService): void
+    {
+    }
 
     /**
      * Sets read connection service for a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param string $connectionService
+     * @return void
      */
-    public function setReadConnectionService(\Phalcon\Mvc\ModelInterface $model, $connectionService) {}
+    public function setReadConnectionService(\Phalcon\Mvc\ModelInterface $model, string $connectionService): void
+    {
+    }
 
     /**
      * Returns the connection to read data related to a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
-     * @return \Phalcon\Db\AdapterInterface
+     * @return AdapterInterface
      */
-    public function getReadConnection(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getReadConnection(\Phalcon\Mvc\ModelInterface $model): AdapterInterface
+    {
+    }
 
     /**
      * Returns the connection to write data related to a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
-     * @return \Phalcon\Db\AdapterInterface
+     * @return AdapterInterface
      */
-    public function getWriteConnection(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getWriteConnection(\Phalcon\Mvc\ModelInterface $model): AdapterInterface
+    {
+    }
 
     /**
      * Returns the connection to read or write data related to a model depending on the connection services.
      *
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param mixed $connectionServices
-     * @return \Phalcon\Db\AdapterInterface
+     * @return AdapterInterface
      */
-    protected function _getConnection(\Phalcon\Mvc\ModelInterface $model, $connectionServices) {}
+    protected function _getConnection(\Phalcon\Mvc\ModelInterface $model, $connectionServices): AdapterInterface
+    {
+    }
 
     /**
      * Returns the connection service name used to read data related to a model
@@ -357,7 +426,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return string
      */
-    public function getReadConnectionService(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getReadConnectionService(\Phalcon\Mvc\ModelInterface $model): string
+    {
+    }
 
     /**
      * Returns the connection service name used to write data related to a model
@@ -365,7 +436,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return string
      */
-    public function getWriteConnectionService(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getWriteConnectionService(\Phalcon\Mvc\ModelInterface $model): string
+    {
+    }
 
     /**
      * Returns the connection service name used to read or write data related to
@@ -375,7 +448,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param mixed $connectionServices
      * @return string
      */
-    public function _getConnectionService(\Phalcon\Mvc\ModelInterface $model, $connectionServices) {}
+    public function _getConnectionService(\Phalcon\Mvc\ModelInterface $model, $connectionServices): string
+    {
+    }
 
     /**
      * Receives events generated in the models and dispatches them to an events-manager if available
@@ -384,7 +459,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $eventName
      * @param \Phalcon\Mvc\ModelInterface $model
      */
-    public function notifyEvent($eventName, \Phalcon\Mvc\ModelInterface $model) {}
+    public function notifyEvent(string $eventName, \Phalcon\Mvc\ModelInterface $model)
+    {
+    }
 
     /**
      * Dispatch an event to the listeners and behaviors
@@ -395,7 +472,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $eventName
      * @param mixed $data
      */
-    public function missingMethod(\Phalcon\Mvc\ModelInterface $model, $eventName, $data) {}
+    public function missingMethod(\Phalcon\Mvc\ModelInterface $model, string $eventName, $data)
+    {
+    }
 
     /**
      * Binds a behavior to a model
@@ -403,15 +482,20 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param \Phalcon\Mvc\Model\BehaviorInterface $behavior
      */
-    public function addBehavior(\Phalcon\Mvc\ModelInterface $model, \Phalcon\Mvc\Model\BehaviorInterface $behavior) {}
+    public function addBehavior(\Phalcon\Mvc\ModelInterface $model, \Phalcon\Mvc\Model\BehaviorInterface $behavior)
+    {
+    }
 
     /**
      * Sets if a model must keep snapshots
      *
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param bool $keepSnapshots
+     * @return void
      */
-    public function keepSnapshots(\Phalcon\Mvc\ModelInterface $model, $keepSnapshots) {}
+    public function keepSnapshots(\Phalcon\Mvc\ModelInterface $model, bool $keepSnapshots): void
+    {
+    }
 
     /**
      * Checks if a model is keeping snapshots for the queried records
@@ -419,7 +503,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return bool
      */
-    public function isKeepingSnapshots(\Phalcon\Mvc\ModelInterface $model) {}
+    public function isKeepingSnapshots(\Phalcon\Mvc\ModelInterface $model): bool
+    {
+    }
 
     /**
      * Sets if a model must use dynamic update instead of the all-field update
@@ -427,7 +513,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @param bool $dynamicUpdate
      */
-    public function useDynamicUpdate(\Phalcon\Mvc\ModelInterface $model, $dynamicUpdate) {}
+    public function useDynamicUpdate(\Phalcon\Mvc\ModelInterface $model, bool $dynamicUpdate)
+    {
+    }
 
     /**
      * Checks if a model is using dynamic update instead of all-field update
@@ -435,78 +523,68 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return bool
      */
-    public function isUsingDynamicUpdate(\Phalcon\Mvc\ModelInterface $model) {}
+    public function isUsingDynamicUpdate(\Phalcon\Mvc\ModelInterface $model): bool
+    {
+    }
 
     /**
      * Setup a 1-1 relation between two models
      *
-     * @param	mixed fields
-     * @param	string referencedModel
-     * @param	mixed referencedFields
-     * @param	array options
-     * @param \Phalcon\Mvc\Model $model
+     * @param Phalcon\Mvc\Model $model
      * @param mixed $fields
      * @param string $referencedModel
      * @param mixed $referencedFields
-     * @param mixed $options
-     * @return \Phalcon\Mvc\Model\Relation
+     * @param array $options
+     * @return  Phalcon\Mvc\Model\Relation
      */
-    public function addHasOne(\Phalcon\Mvc\ModelInterface $model, $fields, $referencedModel, $referencedFields, $options = null) {}
+    public function addHasOne(\Phalcon\Mvc\ModelInterface $model, $fields, string $referencedModel, $referencedFields, $options = null): Relation
+    {
+    }
 
     /**
      * Setup a relation reverse many to one between two models
      *
-     * @param	mixed fields
-     * @param	string referencedModel
-     * @param	mixed referencedFields
-     * @param	array options
-     * @param \Phalcon\Mvc\Model $model
+     * @param Phalcon\Mvc\Model $model
      * @param mixed $fields
      * @param string $referencedModel
      * @param mixed $referencedFields
-     * @param mixed $options
-     * @return \Phalcon\Mvc\Model\Relation
+     * @param array $options
+     * @return  Phalcon\Mvc\Model\Relation
      */
-    public function addBelongsTo(\Phalcon\Mvc\ModelInterface $model, $fields, $referencedModel, $referencedFields, $options = null) {}
+    public function addBelongsTo(\Phalcon\Mvc\ModelInterface $model, $fields, string $referencedModel, $referencedFields, $options = null): Relation
+    {
+    }
 
     /**
      * Setup a relation 1-n between two models
      *
-     * @param	mixed fields
-     * @param	string referencedModel
-     * @param	mixed referencedFields
-     * @param	array options
-     * @param \Phalcon\Mvc\ModelInterface $model
+     * @param Phalcon\Mvc\ModelInterface $model
      * @param mixed $fields
      * @param string $referencedModel
      * @param mixed $referencedFields
-     * @param mixed $options
-     * @param $Phalcon\Mvc\ModelInterface model
-     * @return \Phalcon\Mvc\Model\Relation
+     * @param array $options
+     * @return Relation
      */
-    public function addHasMany(\Phalcon\Mvc\ModelInterface $model, $fields, $referencedModel, $referencedFields, $options = null) {}
+    public function addHasMany(\Phalcon\Mvc\ModelInterface $model, $fields, string $referencedModel, $referencedFields, $options = null): Relation
+    {
+    }
 
     /**
      * Setups a relation n-m between two models
      *
-     * @param	string fields
-     * @param	string intermediateModel
-     * @param	string intermediateFields
-     * @param	string intermediateReferencedFields
-     * @param	string referencedModel
-     * @param	string referencedFields
-     * @param \Phalcon\Mvc\ModelInterface $model
-     * @param mixed $fields
+     * @param Phalcon\Mvc\ModelInterface $model
+     * @param string $fields
      * @param string $intermediateModel
-     * @param mixed $intermediateFields
-     * @param mixed $intermediateReferencedFields
+     * @param string $intermediateFields
+     * @param string $intermediateReferencedFields
      * @param string $referencedModel
-     * @param mixed $referencedFields
+     * @param string $referencedFields
      * @param array $options
-     * @param $Phalcon\Mvc\ModelInterface model
-     * @return \Phalcon\Mvc\Model\Relation
+     * @return  Phalcon\Mvc\Model\Relation
      */
-    public function addHasManyToMany(\Phalcon\Mvc\ModelInterface $model, $fields, $intermediateModel, $intermediateFields, $intermediateReferencedFields, $referencedModel, $referencedFields, $options = null) {}
+    public function addHasManyToMany(\Phalcon\Mvc\ModelInterface $model, $fields, string $intermediateModel, $intermediateFields, $intermediateReferencedFields, string $referencedModel, $referencedFields, $options = null): Relation
+    {
+    }
 
     /**
      * Checks whether a model has a belongsTo relation with another model
@@ -515,7 +593,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $modelRelation
      * @return bool
      */
-    public function existsBelongsTo($modelName, $modelRelation) {}
+    public function existsBelongsTo(string $modelName, string $modelRelation): bool
+    {
+    }
 
     /**
      * Checks whether a model has a hasMany relation with another model
@@ -524,7 +604,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $modelRelation
      * @return bool
      */
-    public function existsHasMany($modelName, $modelRelation) {}
+    public function existsHasMany(string $modelName, string $modelRelation): bool
+    {
+    }
 
     /**
      * Checks whether a model has a hasOne relation with another model
@@ -533,7 +615,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $modelRelation
      * @return bool
      */
-    public function existsHasOne($modelName, $modelRelation) {}
+    public function existsHasOne(string $modelName, string $modelRelation): bool
+    {
+    }
 
     /**
      * Checks whether a model has a hasManyToMany relation with another model
@@ -542,7 +626,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $modelRelation
      * @return bool
      */
-    public function existsHasManyToMany($modelName, $modelRelation) {}
+    public function existsHasManyToMany(string $modelName, string $modelRelation): bool
+    {
+    }
 
     /**
      * Returns a relation by its alias
@@ -551,7 +637,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $alias
      * @return bool|\Phalcon\Mvc\Model\Relation
      */
-    public function getRelationByAlias($modelName, $alias) {}
+    public function getRelationByAlias(string $modelName, string $alias)
+    {
+    }
 
     /**
      * Merge two arrays of find parameters
@@ -560,18 +648,22 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param mixed $findParamsTwo
      * @return array
      */
-    protected final function _mergeFindParameters($findParamsOne, $findParamsTwo) {}
+    protected final function _mergeFindParameters($findParamsOne, $findParamsTwo): array
+    {
+    }
 
     /**
      * Helper method to query records based on a relation definition
      *
+     * @return \Phalcon\Mvc\Model\Resultset\Simple|Phalcon\Mvc\Model\Resultset\Simple|int|false
      * @param \Phalcon\Mvc\Model\RelationInterface $relation
      * @param string $method
      * @param \Phalcon\Mvc\ModelInterface $record
      * @param mixed $parameters
-     * @return \Phalcon\Mvc\Model\Resultset\Simple|Phalcon\Mvc\Model\Resultset\Simple|int|false
      */
-    public function getRelationRecords(\Phalcon\Mvc\Model\RelationInterface $relation, $method, \Phalcon\Mvc\ModelInterface $record, $parameters = null) {}
+    public function getRelationRecords(\Phalcon\Mvc\Model\RelationInterface $relation, string $method = null, \Phalcon\Mvc\ModelInterface $record, $parameters = null)
+    {
+    }
 
     /**
      * Returns a reusable object from the internal list
@@ -579,7 +671,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $modelName
      * @param string $key
      */
-    public function getReusableRecords($modelName, $key) {}
+    public function getReusableRecords(string $modelName, string $key)
+    {
+    }
 
     /**
      * Stores a reusable record in the internal list
@@ -588,12 +682,16 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $key
      * @param mixed $records
      */
-    public function setReusableRecords($modelName, $key, $records) {}
+    public function setReusableRecords(string $modelName, string $key, $records)
+    {
+    }
 
     /**
      * Clears the internal reusable list
      */
-    public function clearReusableObjects() {}
+    public function clearReusableObjects()
+    {
+    }
 
     /**
      * Gets belongsTo related records from a model
@@ -605,7 +703,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param mixed $parameters
      * @return bool|\Phalcon\Mvc\Model\ResultsetInterface
      */
-    public function getBelongsToRecords($method, $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null) {}
+    public function getBelongsToRecords(string $method, string $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null)
+    {
+    }
 
     /**
      * Gets hasMany related records from a model
@@ -617,7 +717,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param mixed $parameters
      * @return bool|\Phalcon\Mvc\Model\ResultsetInterface
      */
-    public function getHasManyRecords($method, $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null) {}
+    public function getHasManyRecords(string $method, string $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null)
+    {
+    }
 
     /**
      * Gets belongsTo related records from a model
@@ -629,7 +731,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param mixed $parameters
      * @return bool|\Phalcon\Mvc\ModelInterface
      */
-    public function getHasOneRecords($method, $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null) {}
+    public function getHasOneRecords(string $method, string $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null)
+    {
+    }
 
     /**
      * Gets all the belongsTo relations defined in a model
@@ -643,7 +747,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array|\Phalcon\Mvc\Model\RelationInterface[]
      */
-    public function getBelongsTo(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getBelongsTo(\Phalcon\Mvc\ModelInterface $model): array
+    {
+    }
 
     /**
      * Gets hasMany relations defined on a model
@@ -651,7 +757,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array|\Phalcon\Mvc\Model\RelationInterface[]
      */
-    public function getHasMany(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getHasMany(\Phalcon\Mvc\ModelInterface $model): array
+    {
+    }
 
     /**
      * Gets hasOne relations defined on a model
@@ -659,7 +767,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array
      */
-    public function getHasOne(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getHasOne(\Phalcon\Mvc\ModelInterface $model): array
+    {
+    }
 
     /**
      * Gets hasManyToMany relations defined on a model
@@ -667,40 +777,50 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param \Phalcon\Mvc\ModelInterface $model
      * @return array|\Phalcon\Mvc\Model\RelationInterface[]
      */
-    public function getHasManyToMany(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getHasManyToMany(\Phalcon\Mvc\ModelInterface $model): array
+    {
+    }
 
     /**
      * Gets hasOne relations defined on a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
-     * @return \Phalcon\Mvc\Model\RelationInterface[]
+     * @return array|\Phalcon\Mvc\Model\RelationInterface[]
      */
-    public function getHasOneAndHasMany(\Phalcon\Mvc\ModelInterface $model) {}
+    public function getHasOneAndHasMany(\Phalcon\Mvc\ModelInterface $model): array
+    {
+    }
 
     /**
      * Query all the relationships defined on a model
      *
      * @param string $modelName
-     * @return \Phalcon\Mvc\Model\RelationInterface[]
+     * @return array|\Phalcon\Mvc\Model\RelationInterface[]
      */
-    public function getRelations($modelName) {}
+    public function getRelations(string $modelName): array
+    {
+    }
 
     /**
      * Query the first relationship defined between two models
      *
      * @param string $first
      * @param string $second
-     * @return bool|\Phalcon\Mvc\Model\RelationInterface[]
+     * @return array|bool|\Phalcon\Mvc\Model\RelationInterface[]
      */
-    public function getRelationsBetween($first, $second) {}
+    public function getRelationsBetween(string $first, string $second)
+    {
+    }
 
     /**
      * Creates a Phalcon\Mvc\Model\Query without execute it
      *
      * @param string $phql
-     * @return \Phalcon\Mvc\Model\QueryInterface
+     * @return QueryInterface
      */
-    public function createQuery($phql) {}
+    public function createQuery(string $phql): QueryInterface
+    {
+    }
 
     /**
      * Creates a Phalcon\Mvc\Model\Query and execute it
@@ -708,32 +828,41 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $phql
      * @param mixed $placeholders
      * @param mixed $types
-     * @return \Phalcon\Mvc\Model\QueryInterface
+     * @return QueryInterface
      */
-    public function executeQuery($phql, $placeholders = null, $types = null) {}
+    public function executeQuery(string $phql, $placeholders = null, $types = null): QueryInterface
+    {
+    }
 
     /**
      * Creates a Phalcon\Mvc\Model\Query\Builder
      *
      * @param mixed $params
-     * @return \Phalcon\Mvc\Model\Query\BuilderInterface
+     * @return BuilderInterface
      */
-    public function createBuilder($params = null) {}
+    public function createBuilder($params = null): BuilderInterface
+    {
+    }
 
     /**
      * Returns the last query created or executed in the models manager
      *
-     * @return \Phalcon\Mvc\Model\QueryInterface
+     * @return QueryInterface
      */
-    public function getLastQuery() {}
+    public function getLastQuery(): QueryInterface
+    {
+    }
 
     /**
      * Registers shorter aliases for namespaces in PHQL statements
      *
      * @param string $alias
      * @param string $namespaceName
+     * @return void
      */
-    public function registerNamespaceAlias($alias, $namespaceName) {}
+    public function registerNamespaceAlias(string $alias, string $namespaceName): void
+    {
+    }
 
     /**
      * Returns a real namespace from its alias
@@ -741,18 +870,24 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param string $alias
      * @return string
      */
-    public function getNamespaceAlias($alias) {}
+    public function getNamespaceAlias(string $alias): string
+    {
+    }
 
     /**
      * Returns all the registered namespace aliases
      *
      * @return array
      */
-    public function getNamespaceAliases() {}
+    public function getNamespaceAliases(): array
+    {
+    }
 
     /**
      * Destroys the current PHQL cache
      */
-    public function __destruct() {}
+    public function __destruct()
+    {
+    }
 
 }

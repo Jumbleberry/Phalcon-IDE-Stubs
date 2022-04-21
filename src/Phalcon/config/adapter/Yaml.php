@@ -2,6 +2,9 @@
 
 namespace Phalcon\Config\Adapter;
 
+use Phalcon\Config;
+use Phalcon\Config\Exception;
+
 /**
  * Phalcon\Config\Adapter\Yaml
  *
@@ -39,7 +42,7 @@ namespace Phalcon\Config\Adapter;
  * echo $config->models->metadata;
  * </code>
  */
-class Yaml extends \Phalcon\Config
+class Yaml extends Config
 {
 
     /**
@@ -49,6 +52,8 @@ class Yaml extends \Phalcon\Config
      * @param string $filePath
      * @param array $callbacks
      */
-    public function __construct($filePath, array $callbacks = null) {}
+    public function __construct(string $filePath, array $callbacks = null)
+    {
+    }
 
 }

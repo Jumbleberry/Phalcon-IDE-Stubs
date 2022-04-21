@@ -22,6 +22,6 @@ interface EventsAwareInterface
      *
      * @return ManagerInterface
      */
-    public function getEventsManager();
+    public function getEventsManager(): ManagerInterface;
 
 }

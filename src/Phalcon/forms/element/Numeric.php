@@ -2,12 +2,15 @@
 
 namespace Phalcon\Forms\Element;
 
+use Phalcon\Tag;
+use Phalcon\Forms\Element;
+
 /**
  * Phalcon\Forms\Element\Numeric
  *
  * Component INPUT[type=number] for forms
  */
-class Numeric extends \Phalcon\Forms\Element
+class Numeric extends Element
 {
 
     /**
@@ -16,6 +19,8 @@ class Numeric extends \Phalcon\Forms\Element
      * @param array $attributes
      * @return string
      */
-    public function render($attributes = null) {}
+    public function render($attributes = null): string
+    {
+    }
 
 }

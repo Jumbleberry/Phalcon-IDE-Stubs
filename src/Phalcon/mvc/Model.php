@@ -2,6 +2,33 @@
 
 namespace Phalcon\Mvc;
 
+use Phalcon\Di;
+use Phalcon\Db\Column;
+use Phalcon\Db\RawValue;
+use Phalcon\DiInterface;
+use Phalcon\Mvc\Model\Message;
+use Phalcon\Mvc\Model\ResultInterface;
+use Phalcon\Di\InjectionAwareInterface;
+use Phalcon\Mvc\Model\ManagerInterface;
+use Phalcon\Mvc\Model\MetaDataInterface;
+use Phalcon\Mvc\Model\Criteria;
+use Phalcon\Db\AdapterInterface;
+use Phalcon\Db\DialectInterface;
+use Phalcon\Mvc\Model\CriteriaInterface;
+use Phalcon\Mvc\Model\TransactionInterface;
+use Phalcon\Mvc\Model\Resultset;
+use Phalcon\Mvc\Model\ResultsetInterface;
+use Phalcon\Mvc\Model\Query;
+use Phalcon\Mvc\Model\Query\Builder;
+use Phalcon\Mvc\Model\Relation;
+use Phalcon\Mvc\Model\RelationInterface;
+use Phalcon\Mvc\Model\BehaviorInterface;
+use Phalcon\Mvc\Model\Exception;
+use Phalcon\Mvc\Model\MessageInterface;
+use Phalcon\ValidationInterface;
+use Phalcon\Mvc\Model\ValidationFailed;
+use Phalcon\Events\ManagerInterface as EventsManagerInterface;
+
 /**
  * Phalcon\Mvc\Model
  *
@@ -107,7 +134,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
 
 
 
-    public function getTransaction() {}
+    public function getTransaction()
+    {
+    }
 
     /**
      * Phalcon\Mvc\Model constructor
@@ -116,49 +145,63 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param \Phalcon\DiInterface $dependencyInjector
      * @param \Phalcon\Mvc\Model\ManagerInterface $modelsManager
      */
-    public final function __construct($data = null, \Phalcon\DiInterface $dependencyInjector = null, \Phalcon\Mvc\Model\ManagerInterface $modelsManager = null) {}
+    public final function __construct($data = null, \Phalcon\DiInterface $dependencyInjector = null, \Phalcon\Mvc\Model\ManagerInterface $modelsManager = null)
+    {
+    }
 
     /**
      * Sets the dependency injection container
      *
      * @param \Phalcon\DiInterface $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector) {}
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    {
+    }
 
     /**
      * Returns the dependency injection container
      *
-     * @return \Phalcon\DiInterface
+     * @return DiInterface
      */
-    public function getDI() {}
+    public function getDI(): DiInterface
+    {
+    }
 
     /**
      * Sets a custom events manager
      *
      * @param \Phalcon\Events\ManagerInterface $eventsManager
      */
-    protected function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager) {}
+    protected function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager)
+    {
+    }
 
     /**
      * Returns the custom events manager
      *
-     * @return \Phalcon\Events\ManagerInterface
+     * @return EventsManagerInterface
      */
-    protected function getEventsManager() {}
+    protected function getEventsManager(): EventsManagerInterface
+    {
+    }
 
     /**
      * Returns the models meta-data service related to the entity instance
      *
-     * @return \Phalcon\Mvc\Model\MetaDataInterface
+     * @return MetaDataInterface
      */
-    public function getModelsMetaData() {}
+    public function getModelsMetaData(): MetaDataInterface
+    {
+    }
 
     /**
      * Returns the models manager related to the entity instance
      *
-     * @return \Phalcon\Mvc\Model\ManagerInterface
+     * @return ManagerInterface
      */
-    public function getModelsManager() {}
+    public function getModelsManager(): ManagerInterface
+    {
+    }
 
     /**
      * Sets a transaction related to the Model instance
@@ -202,7 +245,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param \Phalcon\Mvc\Model\TransactionInterface $transaction
      * @return ModelInterface
      */
-    public function setTransaction(\Phalcon\Mvc\Model\TransactionInterface $transaction) {}
+    public function setTransaction(\Phalcon\Mvc\Model\TransactionInterface $transaction): ModelInterface
+    {
+    }
 
     /**
      * Sets the table name to which model should be mapped
@@ -210,14 +255,18 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $source
      * @return Model
      */
-    protected function setSource($source) {}
+    protected function setSource(string $source): Model
+    {
+    }
 
     /**
      * Returns the table name mapped in the model
      *
      * @return string
      */
-    public function getSource() {}
+    public function getSource(): string
+    {
+    }
 
     /**
      * Sets schema name where the mapped table is located
@@ -225,52 +274,66 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $schema
      * @return Model
      */
-    protected function setSchema($schema) {}
+    protected function setSchema(string $schema): Model
+    {
+    }
 
     /**
      * Returns schema name where the mapped table is located
      *
      * @return string
      */
-    public function getSchema() {}
+    public function getSchema(): string
+    {
+    }
 
     /**
      * Sets the DependencyInjection connection service name
      *
      * @param string $connectionService
-     * @return Model
+     * @return ModelInterface
      */
-    public function setConnectionService($connectionService) {}
+    public function setConnectionService(string $connectionService): ModelInterface
+    {
+    }
 
     /**
      * Sets the DependencyInjection connection service name used to read data
      *
      * @param string $connectionService
-     * @return Model
+     * @return ModelInterface
      */
-    public function setReadConnectionService($connectionService) {}
+    public function setReadConnectionService(string $connectionService): ModelInterface
+    {
+    }
 
     /**
      * Sets the DependencyInjection connection service name used to write data
      *
      * @param string $connectionService
-     * @return Model
+     * @return ModelInterface
      */
-    public function setWriteConnectionService($connectionService) {}
+    public function setWriteConnectionService(string $connectionService): ModelInterface
+    {
+    }
 
     /**
      * Returns the DependencyInjection connection service name used to read data related the model
      *
      * @return string
      */
-    public function getReadConnectionService() {}
+    public function getReadConnectionService(): string
+    {
+    }
 
     /**
      * Returns the DependencyInjection connection service name used to write data related to the model
      *
      * @return string
      */
-    public function getWriteConnectionService() {}
+    public function getWriteConnectionService(): string
+    {
+    }
 
     /**
      * Sets the dirty state of the object using one of the DIRTY_STATE_ constants
@@ -278,28 +341,36 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param int $dirtyState
      * @return ModelInterface
      */
-    public function setDirtyState($dirtyState) {}
+    public function setDirtyState(int $dirtyState): ModelInterface
+    {
+    }
 
     /**
      * Returns one of the DIRTY_STATE_ constants telling if the record exists in the database or not
      *
      * @return int
      */
-    public function getDirtyState() {}
+    public function getDirtyState(): int
+    {
+    }
 
     /**
      * Gets the connection used to read data for the model
      *
-     * @return \Phalcon\Db\AdapterInterface
+     * @return AdapterInterface
      */
-    public function getReadConnection() {}
+    public function getReadConnection(): AdapterInterface
+    {
+    }
 
     /**
      * Gets the connection used to write data to the model
      *
-     * @return \Phalcon\Db\AdapterInterface
+     * @return AdapterInterface
      */
-    public function getWriteConnection() {}
+    public function getWriteConnection(): AdapterInterface
+    {
+    }
 
     /**
      * Assigns values to a model from an array
@@ -350,9 +421,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $data
      * @param array $dataColumnMap array to transform keys of data to another
      * @param array $whiteList
-     * @return Model
+     * @return \Phalcon\Mvc\Model
      */
-    public function assign(array $data, $dataColumnMap = null, $whiteList = null) {}
+    public function assign(array $data, $dataColumnMap = null, $whiteList = null): Model
+    {
+    }
 
     /**
      * Assigns values to a model from an array, returning a new model.
@@ -375,7 +448,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param boolean $keepSnapshots
      * @return Model
      */
-    public static function cloneResultMap($base, array $data, $columnMap, $dirtyState = 0, $keepSnapshots = null) {}
+    public static function cloneResultMap($base, array $data, $columnMap, int $dirtyState = 0, bool $keepSnapshots = null): Model
+    {
+    }
 
     /**
      * Returns an hydrated result based on the data and the column map
@@ -385,7 +460,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param int $hydrationMode
      * @return mixed
      */
-    public static function cloneResultMapHydrate(array $data, $columnMap, $hydrationMode) {}
+    public static function cloneResultMapHydrate(array $data, $columnMap, int $hydrationMode)
+    {
+    }
 
     /**
      * Assigns values to a model from an array returning a new model
@@ -406,7 +483,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param int $dirtyState
      * @return \Phalcon\Mvc\ModelInterface
      */
-    public static function cloneResult(ModelInterface $base, array $data, $dirtyState = 0) {}
+    public static function cloneResult(ModelInterface $base, array $data, int $dirtyState = 0)
+    {
+    }
 
     /**
      * Query for a set of records that match the specified conditions
@@ -506,9 +585,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param mixed $parameters
-     * @return \Phalcon\Mvc\Model\ResultsetInterface
+     * @return ResultsetInterface
      */
-    public static function find($parameters = null) {}
+    public static function find($parameters = null): ResultsetInterface
+    {
+    }
 
     /**
      * Query the first record that matches the specified conditions
@@ -554,26 +635,32 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param mixed $parameters
-     * @return Model
+     * @return bool|Model
      */
-    public static function findFirst($parameters = null) {}
+    public static function findFirst($parameters = null)
+    {
+    }
 
     /**
      * shared prepare query logic for find and findFirst method
      *
      * @param mixed $params
      * @param mixed $limit
-     * @return \Phalcon\Mvc\Model\Query
+     * @return Query
      */
-    private static function getPreparedQuery($params, $limit = null) {}
+    private static function getPreparedQuery($params, $limit = null): Query
+    {
+    }
 
     /**
      * Create a criteria for a specific model
      *
      * @param \Phalcon\DiInterface $dependencyInjector
-     * @return \Phalcon\Mvc\Model\Criteria
+     * @return Criteria
      */
-    public static function query(\Phalcon\DiInterface $dependencyInjector = null) {}
+    public static function query(\Phalcon\DiInterface $dependencyInjector = null): Criteria
+    {
+    }
 
     /**
      * Checks whether the current record already exists
@@ -581,20 +668,24 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param \Phalcon\Mvc\Model\MetaDataInterface $metaData
      * @param \Phalcon\Db\AdapterInterface $connection
      * @param string|array $table
-     * @return bool
+     * @return boolean
      */
-    protected function _exists(\Phalcon\Mvc\Model\MetaDataInterface $metaData, \Phalcon\Db\AdapterInterface $connection, $table = null) {}
+    protected function _exists(\Phalcon\Mvc\Model\MetaDataInterface $metaData, \Phalcon\Db\AdapterInterface $connection, $table = null): bool
+    {
+    }
 
     /**
      * Generate a PHQL SELECT statement for an aggregate
      *
-     * @param string $functionName
+     * @param string $function
      * @param string $alias
      * @param array $parameters
-     * @param string $function
      * @return \Phalcon\Mvc\Model\ResultsetInterface
+     * @param string $functionName
      */
-    protected static function _groupResult($functionName, $alias, $parameters) {}
+    protected static function _groupResult(string $functionName, string $alias, $parameters): ResultsetInterface
+    {
+    }
 
     /**
      * Counts how many records match the specified conditions
@@ -614,7 +705,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $parameters
      * @return mixed
      */
-    public static function count($parameters = null) {}
+    public static function count($parameters = null)
+    {
+    }
 
     /**
      * Calculates the sum on a column for a result-set of rows that match the specified conditions
@@ -643,7 +736,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $parameters
      * @return mixed
      */
-    public static function sum($parameters = null) {}
+    public static function sum($parameters = null)
+    {
+    }
 
     /**
      * Returns the maximum value of a column for a result-set of rows that match the specified conditions
@@ -672,7 +767,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $parameters
      * @return mixed
      */
-    public static function maximum($parameters = null) {}
+    public static function maximum($parameters = null)
+    {
+    }
 
     /**
      * Returns the minimum value of a column for a result-set of rows that match the specified conditions
@@ -701,7 +798,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $parameters
      * @return mixed
      */
-    public static function minimum($parameters = null) {}
+    public static function minimum($parameters = null)
+    {
+    }
 
     /**
      * Returns the average value on a column for a result-set of rows matching the specified conditions
@@ -730,7 +829,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $parameters
      * @return double
      */
-    public static function average($parameters = null) {}
+    public static function average($parameters = null)
+    {
+    }
 
     /**
      * Fires an event, implicitly calls behaviors and listeners in the events manager are notified
@@ -738,7 +839,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $eventName
      * @return bool
      */
-    public function fireEvent($eventName) {}
+    public function fireEvent(string $eventName): bool
+    {
+    }
 
     /**
      * Fires an event, implicitly calls behaviors and listeners in the events manager are notified
@@ -747,12 +850,16 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $eventName
      * @return bool
      */
-    public function fireEventCancel($eventName) {}
+    public function fireEventCancel(string $eventName): bool
+    {
+    }
 
     /**
      * Cancel the current operation
      */
-    protected function _cancelOperation() {}
+    protected function _cancelOperation()
+    {
+    }
 
     /**
      * Appends a customized message on the validation process
@@ -779,7 +886,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param \Phalcon\Mvc\Model\MessageInterface $message
      * @return Model
      */
-    public function appendMessage(\Phalcon\Mvc\Model\MessageInterface $message) {}
+    public function appendMessage(\Phalcon\Mvc\Model\MessageInterface $message): Model
+    {
+    }
 
     /**
      * Executes validators on every validation call
@@ -815,7 +924,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param \Phalcon\ValidationInterface $validator
      * @return bool
      */
-    protected function validate(\Phalcon\ValidationInterface $validator) {}
+    protected function validate(\Phalcon\ValidationInterface $validator): bool
+    {
+    }
 
     /**
      * Check whether validation process has generated any messages
@@ -850,7 +961,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @return bool
      */
-    public function validationHasFailed() {}
+    public function validationHasFailed(): bool
+    {
+    }
 
     /**
      * Returns array of validation messages
@@ -876,9 +989,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param mixed $filter
-     * @return \Phalcon\Mvc\Model\MessageInterface[]
+     * @return array|\Phalcon\Mvc\Model\MessageInterface[]
      */
-    public function getMessages($filter = null) {}
+    public function getMessages($filter = null): array
+    {
+    }
 
     /**
      * Reads "belongs to" relations and check the virtual foreign keys when inserting or updating records
@@ -886,21 +1001,27 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @return bool
      */
-    protected final function _checkForeignKeysRestrict() {}
+    protected final function _checkForeignKeysRestrict(): bool
+    {
+    }
 
     /**
      * Reads both "hasMany" and "hasOne" relations and checks the virtual foreign keys (cascade) when deleting records
      *
      * @return bool
      */
-    protected final function _checkForeignKeysReverseCascade() {}
+    protected final function _checkForeignKeysReverseCascade(): bool
+    {
+    }
 
     /**
      * Reads both "hasMany" and "hasOne" relations and checks the virtual foreign keys (restrict) when deleting records
      *
      * @return bool
      */
-    protected final function _checkForeignKeysReverseRestrict() {}
+    protected final function _checkForeignKeysReverseRestrict(): bool
+    {
+    }
 
     /**
      * Executes internal hooks before save a record
@@ -910,7 +1031,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param mixed $identityField
      * @return bool
      */
-    protected function _preSave(\Phalcon\Mvc\Model\MetaDataInterface $metaData, $exists, $identityField) {}
+    protected function _preSave(\Phalcon\Mvc\Model\MetaDataInterface $metaData, bool $exists, $identityField): bool
+    {
+    }
 
     /**
      * Executes internal events after save a record
@@ -919,7 +1042,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param bool $exists
      * @return bool
      */
-    protected function _postSave($success, $exists) {}
+    protected function _postSave(bool $success, bool $exists): bool
+    {
+    }
 
     /**
      * Sends a pre-build INSERT SQL statement to the relational database system
@@ -928,9 +1053,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param \Phalcon\Db\AdapterInterface $connection
      * @param string|array $table
      * @param boolean|string $identityField
-     * @return bool
+     * @return boolean
      */
-    protected function _doLowInsert(\Phalcon\Mvc\Model\MetaDataInterface $metaData, \Phalcon\Db\AdapterInterface $connection, $table, $identityField) {}
+    protected function _doLowInsert(\Phalcon\Mvc\Model\MetaDataInterface $metaData, \Phalcon\Db\AdapterInterface $connection, $table, $identityField): bool
+    {
+    }
 
     /**
      * Sends a pre-build UPDATE SQL statement to the relational database system
@@ -938,27 +1065,33 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param \Phalcon\Mvc\Model\MetaDataInterface $metaData
      * @param \Phalcon\Db\AdapterInterface $connection
      * @param string|array $table
-     * @return bool
+     * @return boolean
      */
-    protected function _doLowUpdate(\Phalcon\Mvc\Model\MetaDataInterface $metaData, \Phalcon\Db\AdapterInterface $connection, $table) {}
+    protected function _doLowUpdate(\Phalcon\Mvc\Model\MetaDataInterface $metaData, \Phalcon\Db\AdapterInterface $connection, $table): bool
+    {
+    }
 
     /**
      * Saves related records that must be stored prior to save the master record
      *
      * @param \Phalcon\Db\AdapterInterface $connection
      * @param \Phalcon\Mvc\ModelInterface[] $related
-     * @return bool
+     * @return boolean
      */
-    protected function _preSaveRelatedRecords(\Phalcon\Db\AdapterInterface $connection, $related) {}
+    protected function _preSaveRelatedRecords(\Phalcon\Db\AdapterInterface $connection, $related): bool
+    {
+    }
 
     /**
      * Save the related records assigned in the has-one/has-many relations
      *
-     * @param \Phalcon\Db\AdapterInterface $connection
-     * @param \Phalcon\Mvc\ModelInterface[] $related
-     * @return bool
+     * @param Phalcon\Db\AdapterInterface $connection
+     * @param Phalcon\Mvc\ModelInterface[] $related
+     * @return boolean
      */
-    protected function _postSaveRelatedRecords(\Phalcon\Db\AdapterInterface $connection, $related) {}
+    protected function _postSaveRelatedRecords(\Phalcon\Db\AdapterInterface $connection, $related): bool
+    {
+    }
 
     /**
      * Inserts or updates a model instance. Returning true on success or false otherwise.
@@ -983,9 +1116,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @param array $data
      * @param array $whiteList
-     * @return bool
+     * @return boolean
      */
-    public function save($data = null, $whiteList = null) {}
+    public function save($data = null, $whiteList = null): bool
+    {
+    }
 
     /**
      * Inserts a model instance. If the instance already exists in the persistence it will throw an exception
@@ -1017,7 +1152,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param mixed $whiteList
      * @return bool
      */
-    public function create($data = null, $whiteList = null) {}
+    public function create($data = null, $whiteList = null): bool
+    {
+    }
 
     /**
      * Updates a model instance. If the instance doesn't exist in the persistence it will throw an exception
@@ -1036,7 +1173,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param mixed $whiteList
      * @return bool
      */
-    public function update($data = null, $whiteList = null) {}
+    public function update($data = null, $whiteList = null): bool
+    {
+    }
 
     /**
      * Deletes a model instance. Returning true on success or false otherwise.
@@ -1055,7 +1194,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @return bool
      */
-    public function delete() {}
+    public function delete(): bool
+    {
+    }
 
     /**
      * Returns the type of the latest operation performed by the ORM
@@ -1063,21 +1204,27 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @return int
      */
-    public function getOperationMade() {}
+    public function getOperationMade(): int
+    {
+    }
 
     /**
      * Refreshes the model attributes re-querying the record from the database
      *
      * @return Model
      */
-    public function refresh() {}
+    public function refresh(): Model
+    {
+    }
 
     /**
      * Skips the current operation forcing a success state
      *
      * @param bool $skip
      */
-    public function skipOperation($skip) {}
+    public function skipOperation(bool $skip)
+    {
+    }
 
     /**
      * Reads an attribute value by its name
@@ -1088,7 +1235,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @param string $attribute
      */
-    public function readAttribute($attribute) {}
+    public function readAttribute(string $attribute)
+    {
+    }
 
     /**
      * Writes an attribute value by its name
@@ -1100,7 +1249,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $attribute
      * @param mixed $value
      */
-    public function writeAttribute($attribute, $value) {}
+    public function writeAttribute(string $attribute, $value)
+    {
+    }
 
     /**
      * Sets a list of attributes that must be skipped from the
@@ -1123,7 +1274,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @param array $attributes
      */
-    protected function skipAttributes(array $attributes) {}
+    protected function skipAttributes(array $attributes)
+    {
+    }
 
     /**
      * Sets a list of attributes that must be skipped from the
@@ -1145,8 +1298,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param array $attributes
+     * @return void
      */
-    protected function skipAttributesOnCreate(array $attributes) {}
+    protected function skipAttributesOnCreate(array $attributes): void
+    {
+    }
 
     /**
      * Sets a list of attributes that must be skipped from the
@@ -1168,8 +1324,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param array $attributes
+     * @return void
      */
-    protected function skipAttributesOnUpdate(array $attributes) {}
+    protected function skipAttributesOnUpdate(array $attributes): void
+    {
+    }
 
     /**
      * Sets a list of attributes that must be skipped from the
@@ -1191,8 +1350,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param array $attributes
+     * @return void
      */
-    protected function allowEmptyStringValues(array $attributes) {}
+    protected function allowEmptyStringValues(array $attributes): void
+    {
+    }
 
     /**
      * Setup a 1-1 relation between two models
@@ -1212,9 +1374,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $referenceModel
      * @param mixed $referencedFields
      * @param mixed $options
-     * @return \Phalcon\Mvc\Model\Relation
+     * @return Relation
      */
-    protected function hasOne($fields, $referenceModel, $referencedFields, $options = null) {}
+    protected function hasOne($fields, string $referenceModel, $referencedFields, $options = null): Relation
+    {
+    }
 
     /**
      * Setup a reverse 1-1 or n-1 relation between two models
@@ -1234,9 +1398,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $referenceModel
      * @param mixed $referencedFields
      * @param mixed $options
-     * @return \Phalcon\Mvc\Model\Relation
+     * @return Relation
      */
-    protected function belongsTo($fields, $referenceModel, $referencedFields, $options = null) {}
+    protected function belongsTo($fields, string $referenceModel, $referencedFields, $options = null): Relation
+    {
+    }
 
     /**
      * Setup a 1-n relation between two models
@@ -1256,9 +1422,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $referenceModel
      * @param mixed $referencedFields
      * @param mixed $options
-     * @return \Phalcon\Mvc\Model\Relation
+     * @return Relation
      */
-    protected function hasMany($fields, $referenceModel, $referencedFields, $options = null) {}
+    protected function hasMany($fields, string $referenceModel, $referencedFields, $options = null): Relation
+    {
+    }
 
     /**
      * Setup an n-n relation between two models, through an intermediate relation
@@ -1282,21 +1450,19 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * }
      * </code>
      *
-     * @param	string|array fields
-     * @param	string intermediateModel
-     * @param	string|array intermediateFields
-     * @param	string|array intermediateReferencedFields
-     * @param	string referencedModel
-     * @param mixed $fields
+     * @param string|array $fields
      * @param string $intermediateModel
-     * @param mixed $intermediateFields
-     * @param mixed $intermediateReferencedFields
-     * @param string $referenceModel
+     * @param string|array $intermediateFields
+     * @param string|array $intermediateReferencedFields
+     * @param string $referencedModel
      * @param string|array $referencedFields
      * @param array $options
-     * @return \Phalcon\Mvc\Model\Relation
+     * @return  Phalcon\Mvc\Model\Relation
+     * @param string $referenceModel
      */
-    protected function hasManyToMany($fields, $intermediateModel, $intermediateFields, $intermediateReferencedFields, $referenceModel, $referencedFields, $options = null) {}
+    protected function hasManyToMany($fields, string $intermediateModel, $intermediateFields, $intermediateReferencedFields, string $referenceModel, $referencedFields, $options = null): Relation
+    {
+    }
 
     /**
      * Setups a behavior in a model
@@ -1325,8 +1491,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param \Phalcon\Mvc\Model\BehaviorInterface $behavior
+     * @return void
      */
-    public function addBehavior(\Phalcon\Mvc\Model\BehaviorInterface $behavior) {}
+    public function addBehavior(\Phalcon\Mvc\Model\BehaviorInterface $behavior): void
+    {
+    }
 
     /**
      * Sets if the model must keep the original record snapshot in memory
@@ -1345,8 +1514,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param bool $keepSnapshot
+     * @return void
      */
-    protected function keepSnapshots($keepSnapshot) {}
+    protected function keepSnapshots(bool $keepSnapshot): void
+    {
+    }
 
     /**
      * Sets the record's snapshot data.
@@ -1355,7 +1527,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $data
      * @param array $columnMap
      */
-    public function setSnapshotData(array $data, $columnMap = null) {}
+    public function setSnapshotData(array $data, $columnMap = null)
+    {
+    }
 
     /**
      * Sets the record's old snapshot data.
@@ -1364,28 +1538,36 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $data
      * @param array $columnMap
      */
-    public function setOldSnapshotData(array $data, $columnMap = null) {}
+    public function setOldSnapshotData(array $data, $columnMap = null)
+    {
+    }
 
     /**
      * Checks if the object has internal snapshot data
      *
      * @return bool
      */
-    public function hasSnapshotData() {}
+    public function hasSnapshotData(): bool
+    {
+    }
 
     /**
      * Returns the internal snapshot data
      *
      * @return array
      */
-    public function getSnapshotData() {}
+    public function getSnapshotData(): array
+    {
+    }
 
     /**
      * Returns the internal old snapshot data
      *
      * @return array
      */
-    public function getOldSnapshotData() {}
+    public function getOldSnapshotData(): array
+    {
+    }
 
     /**
      * Check if a specific attribute has changed
@@ -1399,17 +1581,21 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * $robot->year = 1952;
      *
      * $robot->create();
+     *
      * $robot->type = "hydraulic";
+     *
      * $hasChanged = $robot->hasChanged("type"); // returns true
      * $hasChanged = $robot->hasChanged(["type", "name"]); // returns true
-     * $hasChanged = $robot->hasChanged(["type", "name", true]); // returns false
+     * $hasChanged = $robot->hasChanged(["type", "name"], true); // returns false
      * </code>
      *
      * @param string|array $fieldName
      * @param boolean $allFields
      * @return bool
      */
-    public function hasChanged($fieldName = null, $allFields = false) {}
+    public function hasChanged($fieldName = null, bool $allFields = false): bool
+    {
+    }
 
     /**
      * Check if a specific attribute was updated
@@ -1419,7 +1605,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param bool $allFields
      * @return bool
      */
-    public function hasUpdated($fieldName = null, $allFields = false) {}
+    public function hasUpdated($fieldName = null, bool $allFields = false): bool
+    {
+    }
 
     /**
      * Returns a list of changed values.
@@ -1436,7 +1624,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @return array
      */
-    public function getChangedFields() {}
+    public function getChangedFields(): array
+    {
+    }
 
     /**
      * Returns a list of updated values.
@@ -1454,7 +1644,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * print_r($robots->getUpdatedFields()); // ["deleted"]
      * </code>
      */
-    public function getUpdatedFields() {}
+    public function getUpdatedFields()
+    {
+    }
 
     /**
      * Sets if a model must use dynamic update instead of the all-field update
@@ -1473,8 +1665,11 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * </code>
      *
      * @param bool $dynamicUpdate
+     * @return void
      */
-    protected function useDynamicUpdate($dynamicUpdate) {}
+    protected function useDynamicUpdate(bool $dynamicUpdate): void
+    {
+    }
 
     /**
      * Returns related records based on defined relations
@@ -1483,7 +1678,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $arguments
      * @return \Phalcon\Mvc\Model\ResultsetInterface
      */
-    public function getRelated($alias, $arguments = null) {}
+    public function getRelated(string $alias, $arguments = null): ResultsetInterface
+    {
+    }
 
     /**
      * Returns related records defined relations depending on the method name
@@ -1493,7 +1690,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $arguments
      * @return mixed
      */
-    protected function _getRelatedRecords($modelName, $method, $arguments) {}
+    protected function _getRelatedRecords(string $modelName, string $method, $arguments)
+    {
+    }
 
     /**
      * Try to check if the query must invoke a finder
@@ -1502,29 +1701,31 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $arguments
      * @return \Phalcon\Mvc\ModelInterface[]|\Phalcon\Mvc\ModelInterface|boolean
      */
-    protected final static function _invokeFinder($method, $arguments) {}
+    protected final static function _invokeFinder($method, $arguments)
+    {
+    }
 
     /**
      * Handles method calls when a method is not implemented
      *
-     * @param	string method
-     * @param	array arguments
-     * @return	mixed
      * @param string $method
-     * @param mixed $arguments
+     * @param array $arguments
+     * @return	mixed
      */
-    public function __call($method, $arguments) {}
+    public function __call(string $method, $arguments)
+    {
+    }
 
     /**
      * Handles method calls when a static method is not implemented
      *
-     * @param	string method
-     * @param	array arguments
-     * @return	mixed
      * @param string $method
-     * @param mixed $arguments
+     * @param array $arguments
+     * @return	mixed
      */
-    public static function __callStatic($method, $arguments) {}
+    public static function __callStatic(string $method, $arguments)
+    {
+    }
 
     /**
      * Magic method to assign values to the the model
@@ -1532,7 +1733,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $property
      * @param mixed $value
      */
-    public function __set($property, $value) {}
+    public function __set(string $property, $value)
+    {
+    }
 
     /**
      * Check for, and attempt to use, possible setter.
@@ -1541,7 +1744,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param mixed $value
      * @return string
      */
-    protected final function _possibleSetter($property, $value) {}
+    protected final function _possibleSetter(string $property, $value)
+    {
+    }
 
     /**
      * Magic method to get related records using the relation alias as a property
@@ -1549,7 +1754,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $property
      * @return \Phalcon\Mvc\Model\Resultset|Phalcon\Mvc\Model
      */
-    public function __get($property) {}
+    public function __get(string $property)
+    {
+    }
 
     /**
      * Magic method to check if a property is a valid relation
@@ -1557,21 +1764,27 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param string $property
      * @return bool
      */
-    public function __isset($property) {}
+    public function __isset(string $property): bool
+    {
+    }
 
     /**
      * Serializes the object ignoring connections, services, related objects or static properties
      *
      * @return string
      */
-    public function serialize() {}
+    public function serialize(): string
+    {
+    }
 
     /**
      * Unserializes the object from a serialized string
      *
      * @param mixed $data
      */
-    public function unserialize($data) {}
+    public function unserialize($data)
+    {
+    }
 
     /**
      * Returns a simple representation of the object that can be used with var_dump
@@ -1584,7 +1797,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @return array
      */
-    public function dump() {}
+    public function dump(): array
+    {
+    }
 
     /**
      * Returns the instance as an array representation
@@ -1598,7 +1813,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * @param array $columns
      * @return array
      */
-    public function toArray($columns = null) {}
+    public function toArray($columns = null): array
+    {
+    }
 
     /**
      * Serializes the object for json_encode
@@ -1609,18 +1826,25 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @return array
      */
-    public function jsonSerialize() {}
+    public function jsonSerialize(): array
+    {
+    }
 
     /**
      * Enables/disables options in the ORM
      *
      * @param array $options
+     * @return void
      */
-    public static function setup(array $options) {}
+    public static function setup(array $options): void
+    {
+    }
 
     /**
      * Reset a model instance data
      */
-    public function reset() {}
+    public function reset()
+    {
+    }
 
 }

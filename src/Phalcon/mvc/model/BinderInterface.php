@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc\Model;
 
+use Phalcon\Cache\BackendInterface;
+
 /**
  * Phalcon\Mvc\Model\BinderInterface
  *
@@ -15,14 +17,14 @@ interface BinderInterface
      *
      * @return array
      */
-    public function getBoundModels();
+    public function getBoundModels(): array;
 
     /**
      * Gets cache instance
      *
-     * @return \Phalcon\Cache\BackendInterface
+     * @return BackendInterface
      */
-    public function getCache();
+    public function getCache(): BackendInterface;
 
     /**
      * Sets cache instance
@@ -30,7 +32,7 @@ interface BinderInterface
      * @param \Phalcon\Cache\BackendInterface $cache
      * @return BinderInterface
      */
-    public function setCache(\Phalcon\Cache\BackendInterface $cache);
+    public function setCache(\Phalcon\Cache\BackendInterface $cache): BinderInterface;
 
     /**
      * Bind models into params in proper handler
@@ -41,6 +43,6 @@ interface BinderInterface
      * @param mixed $methodName
      * @return array
      */
-    public function bindToHandler($handler, array $params, $cacheKey, $methodName = null);
+    public function bindToHandler($handler, array $params, string $cacheKey, $methodName = null): array;
 
 }

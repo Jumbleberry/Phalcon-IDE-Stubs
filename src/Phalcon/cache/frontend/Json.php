@@ -2,6 +2,8 @@
 
 namespace Phalcon\Cache\Frontend;
 
+use Phalcon\Cache\FrontendInterface;
+
 /**
  * Phalcon\Cache\Frontend\Json
  *
@@ -50,38 +52,52 @@ class Json implements \Phalcon\Cache\FrontendInterface
      *
      * @param array $frontendOptions
      */
-    public function __construct($frontendOptions = null) {}
+    public function __construct($frontendOptions = null)
+    {
+    }
 
     /**
      * Returns the cache lifetime
      *
      * @return int
      */
-    public function getLifetime() {}
+    public function getLifetime(): int
+    {
+    }
 
     /**
      * Check whether if frontend is buffering output
      *
      * @return bool
      */
-    public function isBuffering() {}
+    public function isBuffering(): bool
+    {
+    }
 
     /**
      * Starts output frontend. Actually, does nothing
      */
-    public function start() {}
+    public function start()
+    {
+    }
 
     /**
      * Returns output cached content
      *
      * @return string
      */
-    public function getContent() {}
+    public function getContent()
+    {
+    }
 
     /**
      * Stops output frontend
+     *
+     * @return void
      */
-    public function stop() {}
+    public function stop(): void
+    {
+    }
 
     /**
      * Serializes data before storing them
@@ -89,7 +105,9 @@ class Json implements \Phalcon\Cache\FrontendInterface
      * @param mixed $data
      * @return string
      */
-    public function beforeStore($data) {}
+    public function beforeStore($data): string
+    {
+    }
 
     /**
      * Unserializes data after retrieval
@@ -97,6 +115,8 @@ class Json implements \Phalcon\Cache\FrontendInterface
      * @param mixed $data
      * @return mixed
      */
-    public function afterRetrieve($data) {}
+    public function afterRetrieve($data)
+    {
+    }
 
 }

@@ -2,6 +2,8 @@
 
 namespace Phalcon\Mvc\Collection;
 
+use Phalcon\Mvc\CollectionInterface;
+
 /**
  * Phalcon\Mvc\Collection\Behavior
  *
@@ -18,7 +20,9 @@ abstract class Behavior implements \Phalcon\Mvc\Collection\BehaviorInterface
      *
      * @param array $options
      */
-    public function __construct($options = null) {}
+    public function __construct($options = null)
+    {
+    }
 
     /**
      * Checks whether the behavior must take action on certain event
@@ -26,7 +30,9 @@ abstract class Behavior implements \Phalcon\Mvc\Collection\BehaviorInterface
      * @param string $eventName
      * @return bool
      */
-    protected function mustTakeAction($eventName) {}
+    protected function mustTakeAction(string $eventName): bool
+    {
+    }
 
     /**
      * Returns the behavior options related to an event
@@ -34,7 +40,9 @@ abstract class Behavior implements \Phalcon\Mvc\Collection\BehaviorInterface
      * @param string $eventName
      * @return array
      */
-    protected function getOptions($eventName = null) {}
+    protected function getOptions(string $eventName = null)
+    {
+    }
 
     /**
      * This method receives the notifications from the EventsManager
@@ -42,7 +50,9 @@ abstract class Behavior implements \Phalcon\Mvc\Collection\BehaviorInterface
      * @param string $type
      * @param \Phalcon\Mvc\CollectionInterface $model
      */
-    public function notify($type, \Phalcon\Mvc\CollectionInterface $model) {}
+    public function notify(string $type, \Phalcon\Mvc\CollectionInterface $model)
+    {
+    }
 
     /**
      * Acts as fallbacks when a missing method is called on the collection
@@ -51,6 +61,8 @@ abstract class Behavior implements \Phalcon\Mvc\Collection\BehaviorInterface
      * @param string $method
      * @param mixed $arguments
      */
-    public function missingMethod(\Phalcon\Mvc\CollectionInterface $model, $method, $arguments = null) {}
+    public function missingMethod(\Phalcon\Mvc\CollectionInterface $model, string $method, $arguments = null)
+    {
+    }
 
 }

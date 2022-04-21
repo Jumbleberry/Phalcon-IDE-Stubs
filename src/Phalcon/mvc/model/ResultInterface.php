@@ -15,6 +15,6 @@ interface ResultInterface
      *
      * @param integer $dirtyState
      */
-    public function setDirtyState($dirtyState);
+    public function setDirtyState(int $dirtyState);
 
 }

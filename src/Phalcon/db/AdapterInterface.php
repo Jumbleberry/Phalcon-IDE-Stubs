@@ -18,7 +18,7 @@ interface AdapterInterface
      * @param int $placeholders
      * @return array
      */
-    public function fetchOne($sqlQuery, $fetchMode = 2, $placeholders = null);
+    public function fetchOne(string $sqlQuery, $fetchMode = 2, $placeholders = null);
 
     /**
      * Dumps the complete result of a query into an array
@@ -28,32 +28,28 @@ interface AdapterInterface
      * @param int $placeholders
      * @return array
      */
-    public function fetchAll($sqlQuery, $fetchMode = 2, $placeholders = null);
+    public function fetchAll(string $sqlQuery, $fetchMode = 2, $placeholders = null);
 
     /**
      * Inserts data into a table using custom RDBMS SQL syntax
      *
-     * @param mixed $table
+     * @param string $table
      * @param array $values
-     * @param mixed $fields
-     * @param mixed $dataTypes
-     * @param $string table
-     * @param $array dataTypes
-     * @return 
+     * @param array $fields
+     * @param array $dataTypes
+     * @return 	boolean
      */
     public function insert($table, array $values, $fields = null, $dataTypes = null);
 
     /**
      * Updates data on a table using custom RDBMS SQL syntax
      *
-     * @param mixed $table
-     * @param mixed $fields
-     * @param mixed $values
-     * @param mixed $whereCondition
-     * @param mixed $dataTypes
-     * @param $string whereCondition
-     * @param $array dataTypes
-     * @return 
+     * @param string $table
+     * @param array $fields
+     * @param array $values
+     * @param string $whereCondition
+     * @param array $dataTypes
+     * @return 	boolean
      */
     public function update($table, $fields, $values, $whereCondition = null, $dataTypes = null);
 
@@ -71,9 +67,8 @@ interface AdapterInterface
     /**
      * Gets a list of columns
      *
-     * @param	array columnList
+     * @param array $columnList
      * @return	string
-     * @param mixed $columnList
      */
     public function getColumnList($columnList);
 
@@ -82,11 +77,9 @@ interface AdapterInterface
      *
      * @param string $sqlQuery
      * @param int $number
-     * @param $string sqlQuery
-     * @param $int number
-     * @return 
+     * @return 	string
      */
-    public function limit($sqlQuery, $number);
+    public function limit(string $sqlQuery, int $number);
 
     /**
      * Generates SQL checking for the existence of a schema.table
@@ -95,7 +88,7 @@ interface AdapterInterface
      * @param string $schemaName
      * @return bool
      */
-    public function tableExists($tableName, $schemaName = null);
+    public function tableExists(string $tableName, string $schemaName = null): bool;
 
     /**
      * Generates SQL checking for the existence of a schema.view
@@ -104,7 +97,7 @@ interface AdapterInterface
      * @param string $schemaName
      * @return bool
      */
-    public function viewExists($viewName, $schemaName = null);
+    public function viewExists(string $viewName, string $schemaName = null): bool;
 
     /**
      * Returns a SQL modified with a FOR UPDATE clause
@@ -112,7 +105,7 @@ interface AdapterInterface
      * @param string $sqlQuery
      * @return string
      */
-    public function forUpdate($sqlQuery);
+    public function forUpdate(string $sqlQuery): string;
 
     /**
      * Returns a SQL modified with a LOCK IN SHARE MODE clause
@@ -120,7 +113,7 @@ interface AdapterInterface
      * @param string $sqlQuery
      * @return string
      */
-    public function sharedLock($sqlQuery);
+    public function sharedLock(string $sqlQuery): string;
 
     /**
      * Creates a table
@@ -130,7 +123,7 @@ interface AdapterInterface
      * @param array $definition
      * @return bool
      */
-    public function createTable($tableName, $schemaName, array $definition);
+    public function createTable(string $tableName, string $schemaName, array $definition): bool;
 
     /**
      * Drops a table from a schema/database
@@ -140,7 +133,7 @@ interface AdapterInterface
      * @param bool $ifExists
      * @return bool
      */
-    public function dropTable($tableName, $schemaName = null, $ifExists = true);
+    public function dropTable(string $tableName, string $schemaName = null, bool $ifExists = true): bool;
 
     /**
      * Creates a view
@@ -150,7 +143,7 @@ interface AdapterInterface
      * @param string $schemaName
      * @return bool
      */
-    public function createView($viewName, array $definition, $schemaName = null);
+    public function createView(string $viewName, array $definition, string $schemaName = null): bool;
 
     /**
      * Drops a view
@@ -160,7 +153,7 @@ interface AdapterInterface
      * @param bool $ifExists
      * @return bool
      */
-    public function dropView($viewName, $schemaName = null, $ifExists = true);
+    public function dropView(string $viewName, string $schemaName = null, bool $ifExists = true): bool;
 
     /**
      * Adds a column to a table
@@ -170,7 +163,7 @@ interface AdapterInterface
      * @param ColumnInterface $column
      * @return bool
      */
-    public function addColumn($tableName, $schemaName, ColumnInterface $column);
+    public function addColumn(string $tableName, string $schemaName, ColumnInterface $column): bool;
 
     /**
      * Modifies a table column based on a definition
@@ -181,7 +174,7 @@ interface AdapterInterface
      * @param ColumnInterface $currentColumn
      * @return bool
      */
-    public function modifyColumn($tableName, $schemaName, ColumnInterface $column, ColumnInterface $currentColumn = null);
+    public function modifyColumn(string $tableName, string $schemaName, ColumnInterface $column, ColumnInterface $currentColumn = null): bool;
 
     /**
      * Drops a column from a table
@@ -191,7 +184,7 @@ interface AdapterInterface
      * @param string $columnName
      * @return bool
      */
-    public function dropColumn($tableName, $schemaName, $columnName);
+    public function dropColumn(string $tableName, string $schemaName, string $columnName): bool;
 
     /**
      * Adds an index to a table
@@ -201,7 +194,7 @@ interface AdapterInterface
      * @param IndexInterface $index
      * @return bool
      */
-    public function addIndex($tableName, $schemaName, IndexInterface $index);
+    public function addIndex(string $tableName, string $schemaName, IndexInterface $index): bool;
 
     /**
      * Drop an index from a table
@@ -211,7 +204,7 @@ interface AdapterInterface
      * @param string $indexName
      * @return bool
      */
-    public function dropIndex($tableName, $schemaName, $indexName);
+    public function dropIndex(string $tableName, string $schemaName, string $indexName): bool;
 
     /**
      * Adds a primary key to a table
@@ -221,7 +214,7 @@ interface AdapterInterface
      * @param IndexInterface $index
      * @return bool
      */
-    public function addPrimaryKey($tableName, $schemaName, IndexInterface $index);
+    public function addPrimaryKey(string $tableName, string $schemaName, IndexInterface $index): bool;
 
     /**
      * Drops primary key from a table
@@ -230,7 +223,7 @@ interface AdapterInterface
      * @param string $schemaName
      * @return bool
      */
-    public function dropPrimaryKey($tableName, $schemaName);
+    public function dropPrimaryKey(string $tableName, string $schemaName): bool;
 
     /**
      * Adds a foreign key to a table
@@ -240,7 +233,7 @@ interface AdapterInterface
      * @param ReferenceInterface $reference
      * @return bool
      */
-    public function addForeignKey($tableName, $schemaName, ReferenceInterface $reference);
+    public function addForeignKey(string $tableName, string $schemaName, ReferenceInterface $reference): bool;
 
     /**
      * Drops a foreign key from a table
@@ -250,7 +243,7 @@ interface AdapterInterface
      * @param string $referenceName
      * @return bool
      */
-    public function dropForeignKey($tableName, $schemaName, $referenceName);
+    public function dropForeignKey(string $tableName, string $schemaName, string $referenceName): bool;
 
     /**
      * Returns the SQL column definition from a column
@@ -258,7 +251,7 @@ interface AdapterInterface
      * @param ColumnInterface $column
      * @return string
      */
-    public function getColumnDefinition(ColumnInterface $column);
+    public function getColumnDefinition(ColumnInterface $column): string;
 
     /**
      * List all tables on a database
@@ -266,7 +259,7 @@ interface AdapterInterface
      * @param string $schemaName
      * @return array
      */
-    public function listTables($schemaName = null);
+    public function listTables(string $schemaName = null): array;
 
     /**
      * List all views on a database
@@ -274,7 +267,7 @@ interface AdapterInterface
      * @param string $schemaName
      * @return array
      */
-    public function listViews($schemaName = null);
+    public function listViews(string $schemaName = null): array;
 
     /**
      * Return descriptor used to connect to the active database
@@ -295,14 +288,14 @@ interface AdapterInterface
      *
      * @return string
      */
-    public function getSQLStatement();
+    public function getSQLStatement(): string;
 
     /**
      * Active SQL statement in the object without replace bound parameters
      *
      * @return string
      */
-    public function getRealSQLStatement();
+    public function getRealSQLStatement(): string;
 
     /**
      * Active SQL statement in the object
@@ -337,7 +330,7 @@ interface AdapterInterface
      *
      * @return DialectInterface
      */
-    public function getDialect();
+    public function getDialect(): DialectInterface;
 
     /**
      * This method is automatically called in \Phalcon\Db\Adapter\Pdo constructor.
@@ -346,7 +339,7 @@ interface AdapterInterface
      * @param array $descriptor
      * @return bool
      */
-    public function connect(array $descriptor = null);
+    public function connect(array $descriptor = null): bool;
 
     /**
      * Sends SQL statements to the database server returning the success state.
@@ -357,7 +350,7 @@ interface AdapterInterface
      * @param mixed $dataTypes
      * @return bool|ResultInterface
      */
-    public function query($sqlStatement, $placeholders = null, $dataTypes = null);
+    public function query(string $sqlStatement, $placeholders = null, $dataTypes = null);
 
     /**
      * Sends SQL statements to the database server returning the success state.
@@ -368,14 +361,14 @@ interface AdapterInterface
      * @param mixed $dataTypes
      * @return bool
      */
-    public function execute($sqlStatement, $placeholders = null, $dataTypes = null);
+    public function execute(string $sqlStatement, $placeholders = null, $dataTypes = null): bool;
 
     /**
      * Returns the number of affected rows by the last INSERT/UPDATE/DELETE reported by the database system
      *
      * @return int
      */
-    public function affectedRows();
+    public function affectedRows(): int;
 
     /**
      * Closes active connection returning success. Phalcon automatically closes
@@ -383,7 +376,7 @@ interface AdapterInterface
      *
      * @return bool
      */
-    public function close();
+    public function close(): bool;
 
     /**
      * Escapes a column/table/schema name
@@ -391,7 +384,7 @@ interface AdapterInterface
      * @param string $identifier
      * @return string
      */
-    public function escapeIdentifier($identifier);
+    public function escapeIdentifier($identifier): string;
 
     /**
      * Escapes a value to avoid SQL injections
@@ -399,7 +392,7 @@ interface AdapterInterface
      * @param string $str
      * @return string
      */
-    public function escapeString($str);
+    public function escapeString(string $str): string;
 
     /**
      * Returns insert id for the auto_increment column inserted in the last SQL statement
@@ -415,7 +408,7 @@ interface AdapterInterface
      * @param bool $nesting
      * @return bool
      */
-    public function begin($nesting = true);
+    public function begin(bool $nesting = true): bool;
 
     /**
      * Rollbacks the active transaction in the connection
@@ -423,7 +416,7 @@ interface AdapterInterface
      * @param bool $nesting
      * @return bool
      */
-    public function rollback($nesting = true);
+    public function rollback(bool $nesting = true): bool;
 
     /**
      * Commits the active transaction in the connection
@@ -431,39 +424,39 @@ interface AdapterInterface
      * @param bool $nesting
      * @return bool
      */
-    public function commit($nesting = true);
+    public function commit(bool $nesting = true): bool;
 
     /**
      * Checks whether connection is under database transaction
      *
      * @return bool
      */
-    public function isUnderTransaction();
+    public function isUnderTransaction(): bool;
 
     /**
      * Return internal PDO handler
      *
      * @return \Pdo
      */
-    public function getInternalHandler();
+    public function getInternalHandler(): \Pdo;
 
     /**
      * Lists table indexes
      *
      * @param string $table
      * @param string $schema
-     * @return IndexInterface[]
+     * @return array|IndexInterface[]
      */
-    public function describeIndexes($table, $schema = null);
+    public function describeIndexes(string $table, string $schema = null): array;
 
     /**
      * Lists table references
      *
      * @param string $table
      * @param string $schema
-     * @return ReferenceInterface[]
+     * @return array|ReferenceInterface[]
      */
-    public function describeReferences($table, $schema = null);
+    public function describeReferences(string $table, string $schema = null): array;
 
     /**
      * Gets creation options from a table
@@ -472,28 +465,28 @@ interface AdapterInterface
      * @param string $schemaName
      * @return array
      */
-    public function tableOptions($tableName, $schemaName = null);
+    public function tableOptions(string $tableName, string $schemaName = null): array;
 
     /**
      * Check whether the database system requires an explicit value for identity columns
      *
      * @return bool
      */
-    public function useExplicitIdValue();
+    public function useExplicitIdValue(): bool;
 
     /**
      * Return the default identity value to insert in an identity column
      *
      * @return RawValue
      */
-    public function getDefaultIdValue();
+    public function getDefaultIdValue(): RawValue;
 
     /**
      * Check whether the database system requires a sequence to produce auto-numeric values
      *
      * @return bool
      */
-    public function supportSequences();
+    public function supportSequences(): bool;
 
     /**
      * Creates a new savepoint
@@ -501,7 +494,7 @@ interface AdapterInterface
      * @param string $name
      * @return bool
      */
-    public function createSavepoint($name);
+    public function createSavepoint(string $name): bool;
 
     /**
      * Releases given savepoint
@@ -509,7 +502,7 @@ interface AdapterInterface
      * @param string $name
      * @return bool
      */
-    public function releaseSavepoint($name);
+    public function releaseSavepoint(string $name): bool;
 
     /**
      * Rollbacks given savepoint
@@ -517,7 +510,7 @@ interface AdapterInterface
      * @param string $name
      * @return bool
      */
-    public function rollbackSavepoint($name);
+    public function rollbackSavepoint(string $name): bool;
 
     /**
      * Set if nested transactions should use savepoints
@@ -525,29 +518,29 @@ interface AdapterInterface
      * @param bool $nestedTransactionsWithSavepoints
      * @return AdapterInterface
      */
-    public function setNestedTransactionsWithSavepoints($nestedTransactionsWithSavepoints);
+    public function setNestedTransactionsWithSavepoints(bool $nestedTransactionsWithSavepoints): AdapterInterface;
 
     /**
      * Returns if nested transactions should use savepoints
      *
      * @return bool
      */
-    public function isNestedTransactionsWithSavepoints();
+    public function isNestedTransactionsWithSavepoints(): bool;
 
     /**
      * Returns the savepoint name to use for nested transactions
      *
      * @return string
      */
-    public function getNestedTransactionSavepointName();
+    public function getNestedTransactionSavepointName(): string;
 
     /**
      * Returns an array of Phalcon\Db\Column objects describing a table
      *
      * @param string $table
      * @param string $schema
-     * @return ColumnInterface[]
+     * @return array|ColumnInterface[]
      */
-    public function describeColumns($table, $schema = null);
+    public function describeColumns(string $table, string $schema = null): array;
 
 }

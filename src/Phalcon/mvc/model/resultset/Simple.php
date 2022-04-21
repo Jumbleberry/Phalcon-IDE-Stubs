@@ -2,13 +2,18 @@
 
 namespace Phalcon\Mvc\Model\Resultset;
 
+use Phalcon\Mvc\Model;
+use Phalcon\Mvc\Model\Resultset;
+use Phalcon\Mvc\Model\Exception;
+use Phalcon\Cache\BackendInterface;
+
 /**
  * Phalcon\Mvc\Model\Resultset\Simple
  *
  * Simple resultsets only contains a complete objects
  * This class builds every complete object as it is required
  */
-class Simple extends \Phalcon\Mvc\Model\Resultset
+class Simple extends Resultset
 {
 
     protected $_model;
@@ -29,14 +34,18 @@ class Simple extends \Phalcon\Mvc\Model\Resultset
      * @param \Phalcon\Cache\BackendInterface $cache
      * @param boolean $keepSnapshots
      */
-    public function __construct($columnMap, $model, $result, \Phalcon\Cache\BackendInterface $cache = null, $keepSnapshots = null) {}
+    public function __construct($columnMap, $model, $result, \Phalcon\Cache\BackendInterface $cache = null, $keepSnapshots = null)
+    {
+    }
 
     /**
      * Returns current row in the resultset
      *
      * @return bool|ModelInterface
      */
-    public final function current() {}
+    public final function current()
+    {
+    }
 
     /**
      * Returns a complete resultset as an array, if the resultset has a big number of rows
@@ -46,20 +55,27 @@ class Simple extends \Phalcon\Mvc\Model\Resultset
      * @param bool $renameColumns
      * @return array
      */
-    public function toArray($renameColumns = true) {}
+    public function toArray(bool $renameColumns = true): array
+    {
+    }
 
     /**
      * Serializing a resultset will dump all related rows into a big array
      *
      * @return string
      */
-    public function serialize() {}
+    public function serialize(): string
+    {
+    }
 
     /**
      * Unserializing a resultset will allow to only works on the rows present in the saved state
      *
      * @param mixed $data
+     * @return void
      */
-    public function unserialize($data) {}
+    public function unserialize($data): void
+    {
+    }
 
 }

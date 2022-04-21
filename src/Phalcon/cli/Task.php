@@ -2,6 +2,8 @@
 
 namespace Phalcon\Cli;
 
+use Phalcon\Di\Injectable;
+
 /**
  * Phalcon\Cli\Task
  *
@@ -26,12 +28,14 @@ namespace Phalcon\Cli;
  * }
  * </code>
  */
-class Task extends \Phalcon\Di\Injectable implements \Phalcon\Cli\TaskInterface
+class Task extends Injectable implements \Phalcon\Cli\TaskInterface
 {
 
     /**
      * Phalcon\Cli\Task constructor
      */
-    public final function __construct() {}
+    public final function __construct()
+    {
+    }
 
 }

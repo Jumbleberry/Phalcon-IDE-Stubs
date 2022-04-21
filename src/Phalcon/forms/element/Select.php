@@ -2,12 +2,15 @@
 
 namespace Phalcon\Forms\Element;
 
+use Phalcon\Tag\Select;
+use Phalcon\Forms\Element;
+
 /**
  * Phalcon\Forms\Element\Select
  *
  * Component SELECT (choice) for forms
  */
-class Select extends \Phalcon\Forms\Element
+class Select extends Element
 {
 
     protected $_optionsValues;
@@ -20,7 +23,9 @@ class Select extends \Phalcon\Forms\Element
      * @param object|array $options
      * @param array $attributes
      */
-    public function __construct($name, $options = null, $attributes = null) {}
+    public function __construct(string $name, $options = null, $attributes = null)
+    {
+    }
 
     /**
      * Set the choice's options
@@ -28,22 +33,28 @@ class Select extends \Phalcon\Forms\Element
      * @param array|object $options
      * @return \Phalcon\Forms\Element
      */
-    public function setOptions($options) {}
+    public function setOptions($options): Element
+    {
+    }
 
     /**
      * Returns the choices' options
      *
      * @return array|object
      */
-    public function getOptions() {}
+    public function getOptions()
+    {
+    }
 
     /**
      * Adds an option to the current options
      *
      * @param array $option
-     * @return \Phalcon\Forms\Element
+     * @return this
      */
-    public function addOption($option) {}
+    public function addOption($option): Element
+    {
+    }
 
     /**
      * Renders the element widget returning html
@@ -51,6 +62,8 @@ class Select extends \Phalcon\Forms\Element
      * @param array $attributes
      * @return string
      */
-    public function render($attributes = null) {}
+    public function render($attributes = null): string
+    {
+    }
 
 }

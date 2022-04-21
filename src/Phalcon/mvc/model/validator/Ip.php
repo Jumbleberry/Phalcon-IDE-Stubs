@@ -2,6 +2,10 @@
 
 namespace Phalcon\Mvc\Model\Validator;
 
+use Phalcon\Mvc\EntityInterface;
+use Phalcon\Mvc\Model\Exception;
+use Phalcon\Mvc\Model\Validator;
+
 /**
  * Phalcon\Mvc\Model\Validator\IP
  *
@@ -62,7 +66,7 @@ namespace Phalcon\Mvc\Model\Validator;
  *
  * @deprecated 3.1.0
  */
-class Ip extends \Phalcon\Mvc\Model\Validator
+class Ip extends Validator
 {
 
     const VERSION_4 = 1048576;
@@ -77,6 +81,8 @@ class Ip extends \Phalcon\Mvc\Model\Validator
      * @param \Phalcon\Mvc\EntityInterface $record
      * @return bool
      */
-    public function validate(\Phalcon\Mvc\EntityInterface $record) {}
+    public function validate(\Phalcon\Mvc\EntityInterface $record): bool
+    {
+    }
 
 }

@@ -2,6 +2,11 @@
 
 namespace Phalcon\Logger\Adapter;
 
+use Phalcon\Logger\Adapter;
+use Phalcon\Logger\Exception;
+use Phalcon\Logger\FormatterInterface;
+use Phalcon\Logger\Formatter\Line as LineFormatter;
+
 /**
  * Phalcon\Logger\Adapter\File
  *
@@ -17,7 +22,7 @@ namespace Phalcon\Logger\Adapter;
  * $logger->close();
  * </code>
  */
-class File extends \Phalcon\Logger\Adapter
+class File extends Adapter
 {
     /**
      * File handler resource
@@ -40,7 +45,9 @@ class File extends \Phalcon\Logger\Adapter
     /**
      * File Path
      */
-    public function getPath() {}
+    public function getPath()
+    {
+    }
 
     /**
      * Phalcon\Logger\Adapter\File constructor
@@ -48,14 +55,18 @@ class File extends \Phalcon\Logger\Adapter
      * @param string $name
      * @param array $options
      */
-    public function __construct($name, $options = null) {}
+    public function __construct(string $name, $options = null)
+    {
+    }
 
     /**
      * Returns the internal formatter
      *
-     * @return \Phalcon\Logger\FormatterInterface
+     * @return FormatterInterface
      */
-    public function getFormatter() {}
+    public function getFormatter(): FormatterInterface
+    {
+    }
 
     /**
      * Writes the log to the file itself
@@ -64,19 +75,26 @@ class File extends \Phalcon\Logger\Adapter
      * @param int $type
      * @param int $time
      * @param array $context
+     * @return void
      */
-    public function logInternal($message, $type, $time, array $context) {}
+    public function logInternal(string $message, int $type, int $time, array $context): void
+    {
+    }
 
     /**
      * Closes the logger
      *
      * @return bool
      */
-    public function close() {}
+    public function close(): bool
+    {
+    }
 
     /**
      * Opens the internal file handler after unserialization
      */
-    public function __wakeup() {}
+    public function __wakeup()
+    {
+    }
 
 }
