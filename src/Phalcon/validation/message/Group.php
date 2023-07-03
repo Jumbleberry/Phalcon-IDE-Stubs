@@ -17,9 +17,7 @@ class Group implements \Countable, \ArrayAccess, \Iterator
 
     protected $_position = 0;
 
-
-    protected $_messages = array();
-
+    protected $_messages = [];
 
     /**
      * Phalcon\Validation\Message\Group constructor
@@ -190,5 +188,4 @@ class Group implements \Countable, \ArrayAccess, \Iterator
     public static function __set_state($group): Group
     {
     }
-
 }

@@ -44,13 +44,13 @@ use Phalcon\Cache\FrontendInterface;
  */
 class File extends Backend
 {
+
     /**
      * Default to false for backwards compatibility
      *
      * @var boolean
      */
     private $_useSafeKey = false;
-
 
     /**
      * Phalcon\Cache\Backend\File constructor
@@ -174,5 +174,4 @@ class File extends Backend
     public function useSafeKey(bool $useSafeKey): File
     {
     }
-
 }

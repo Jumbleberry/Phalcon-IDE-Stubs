@@ -7,6 +7,7 @@ namespace Phalcon\Paginator;
  */
 abstract class Adapter implements \Phalcon\Paginator\AdapterInterface
 {
+
     /**
      * Number of rows to show in the paginator. By default is null
      */
@@ -16,7 +17,6 @@ abstract class Adapter implements \Phalcon\Paginator\AdapterInterface
      * Current page in paginate
      */
     protected $_page = null;
-
 
     /**
      * Get current rows limit
@@ -46,5 +46,4 @@ abstract class Adapter implements \Phalcon\Paginator\AdapterInterface
     public function setLimit(int $limitRows): Adapter
     {
     }
-
 }

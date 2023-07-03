@@ -9,6 +9,7 @@ namespace Phalcon\Db\Profiler;
  */
 class Item
 {
+
     /**
      * SQL statement related to the profile
      *
@@ -43,7 +44,6 @@ class Item
      * @var double
      */
     protected $_finalTime;
-
 
     /**
      * SQL statement related to the profile
@@ -143,5 +143,4 @@ class Item
     public function getTotalElapsedSeconds(): float
     {
     }
-
 }

@@ -25,13 +25,13 @@ use Phalcon\Logger\Formatter\Line as LineFormatter;
  */
 class Stream extends Adapter
 {
+
     /**
      * File handler resource
      *
      * @var resource
      */
     protected $_stream;
-
 
     /**
      * Phalcon\Logger\Adapter\Stream constructor
@@ -72,5 +72,4 @@ class Stream extends Adapter
     public function close(): bool
     {
     }
-
 }

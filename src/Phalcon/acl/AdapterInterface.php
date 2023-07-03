@@ -10,6 +10,7 @@ namespace Phalcon\Acl;
 interface AdapterInterface
 {
 
+
     /**
      * Sets the default access level (Phalcon\Acl::ALLOW or Phalcon\Acl::DENY)
      *
@@ -167,5 +168,4 @@ interface AdapterInterface
      * @return array|ResourceInterface[]
      */
     public function getResources(): array;
-
 }

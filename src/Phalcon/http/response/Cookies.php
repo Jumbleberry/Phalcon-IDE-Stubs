@@ -58,12 +58,9 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
 
     protected $_dependencyInjector;
 
-
     protected $_registered = false;
 
-
     protected $_useEncryption = true;
-
 
     protected $_cookies;
 
@@ -73,7 +70,6 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
      * @var string|null
      */
     protected $signKey = null;
-
 
     /**
      * Phalcon\Http\Response\Cookies constructor
@@ -219,5 +215,4 @@ class Cookies implements \Phalcon\Http\Response\CookiesInterface, \Phalcon\Di\In
     public function reset(): CookiesInterface
     {
     }
-
 }

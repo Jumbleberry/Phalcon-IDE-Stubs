@@ -21,6 +21,7 @@ use Phalcon\Factory as BaseFactory;
 class Factory extends \Phalcon\Factory
 {
 
+
     /**
      * @param \Phalcon\Config|array $config
      * @return AdapterInterface
@@ -28,5 +29,4 @@ class Factory extends \Phalcon\Factory
     public static function load($config): AdapterInterface
     {
     }
-
 }

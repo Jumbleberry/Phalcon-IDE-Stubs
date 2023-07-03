@@ -14,6 +14,7 @@ use Phalcon\Mvc\Collection\Exception;
 class Document implements \Phalcon\Mvc\EntityInterface, \ArrayAccess
 {
 
+
     /**
      * Checks whether an offset exists in the document
      *
@@ -90,5 +91,4 @@ class Document implements \Phalcon\Mvc\EntityInterface, \ArrayAccess
     public function toArray()
     {
     }
-
 }

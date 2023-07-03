@@ -11,6 +11,7 @@ namespace Phalcon\Acl;
 interface ResourceInterface
 {
 
+
     /**
      * Returns the resource name
      *
@@ -31,5 +32,4 @@ interface ResourceInterface
      * @return string
      */
     public function __toString(): string;
-
 }

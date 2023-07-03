@@ -12,6 +12,7 @@ use Phalcon\Mvc\Model\Exception;
 class Annotations implements \Phalcon\Mvc\Model\MetaData\StrategyInterface
 {
 
+
     /**
      * The meta-data is obtained by reading the column descriptions from the database information schema
      *
@@ -33,5 +34,4 @@ class Annotations implements \Phalcon\Mvc\Model\MetaData\StrategyInterface
     public final function getColumnMaps(\Phalcon\Mvc\ModelInterface $model, \Phalcon\DiInterface $dependencyInjector): array
     {
     }
-
 }

@@ -47,7 +47,6 @@ class Mongo extends Backend
 
     protected $_collection = null;
 
-
     /**
      * Phalcon\Cache\Backend\Mongo constructor
      *
@@ -168,5 +167,4 @@ class Mongo extends Backend
     public function flush(): bool
     {
     }
-
 }

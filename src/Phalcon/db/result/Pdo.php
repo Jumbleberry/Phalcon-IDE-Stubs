@@ -27,7 +27,6 @@ class Pdo implements \Phalcon\Db\ResultInterface
 
     protected $_connection;
 
-
     protected $_result;
 
     /**
@@ -42,18 +41,13 @@ class Pdo implements \Phalcon\Db\ResultInterface
      */
     protected $_pdoStatement;
 
-
     protected $_sqlStatement;
-
 
     protected $_bindParams;
 
-
     protected $_bindTypes;
 
-
     protected $_rowCount = false;
-
 
     /**
      * Phalcon\Db\Result\Pdo constructor
@@ -224,5 +218,4 @@ class Pdo implements \Phalcon\Db\ResultInterface
     public function getInternalResult(): \PDOStatement
     {
     }
-
 }

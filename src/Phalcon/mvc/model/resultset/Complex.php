@@ -26,7 +26,6 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
      */
     protected $_disableHydration = false;
 
-
     /**
      * Phalcon\Mvc\Model\Resultset\Complex constructor
      *
@@ -75,5 +74,4 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
     public function unserialize($data): void
     {
     }
-
 }

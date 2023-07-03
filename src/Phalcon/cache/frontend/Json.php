@@ -46,7 +46,6 @@ class Json implements \Phalcon\Cache\FrontendInterface
 
     protected $_frontendOptions;
 
-
     /**
      * Phalcon\Cache\Frontend\Base64 constructor
      *
@@ -118,5 +117,4 @@ class Json implements \Phalcon\Cache\FrontendInterface
     public function afterRetrieve($data)
     {
     }
-
 }

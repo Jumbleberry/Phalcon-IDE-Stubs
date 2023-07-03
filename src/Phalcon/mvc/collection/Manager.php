@@ -35,31 +35,21 @@ class Manager implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Events\Ev
 
     protected $_dependencyInjector;
 
-
     protected $_initialized;
-
 
     protected $_lastInitialized;
 
-
     protected $_eventsManager;
-
 
     protected $_customEventsManager;
 
-
     protected $_connectionServices;
-
 
     protected $_implicitObjectsIds;
 
-
     protected $_behaviors;
 
-
     protected $_serviceName = 'mongo';
-
-
 
     public function getServiceName()
     {
@@ -246,5 +236,4 @@ class Manager implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Events\Ev
     public function addBehavior(\Phalcon\Mvc\CollectionInterface $model, \Phalcon\Mvc\Collection\BehaviorInterface $behavior)
     {
     }
-
 }

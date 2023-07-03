@@ -35,9 +35,7 @@ class Mysql extends \Phalcon\Db\Adapter\Pdo
 
     protected $_type = 'mysql';
 
-
     protected $_dialectType = 'mysql';
-
 
     /**
      * Returns an array of Phalcon\Db\Column objects describing a table
@@ -101,5 +99,4 @@ class Mysql extends \Phalcon\Db\Adapter\Pdo
     public function addForeignKey(string $tableName, string $schemaName, \Phalcon\Db\ReferenceInterface $reference): bool
     {
     }
-
 }

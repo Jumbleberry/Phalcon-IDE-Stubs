@@ -10,4 +10,5 @@ namespace Phalcon\Cli\Router;
 class Exception extends \Phalcon\Exception
 {
 
+
 }

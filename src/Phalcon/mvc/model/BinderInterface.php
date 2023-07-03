@@ -12,6 +12,7 @@ use Phalcon\Cache\BackendInterface;
 interface BinderInterface
 {
 
+
     /**
      * Gets active bound models
      *
@@ -44,5 +45,4 @@ interface BinderInterface
      * @return array
      */
     public function bindToHandler($handler, array $params, string $cacheKey, $methodName = null): array;
-
 }

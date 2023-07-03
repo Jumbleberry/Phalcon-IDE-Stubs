@@ -19,9 +19,7 @@ abstract class Adapter implements \Phalcon\Annotations\AdapterInterface
 
     protected $_reader;
 
-
     protected $_annotations;
-
 
     /**
      * Sets the annotations parser
@@ -92,5 +90,4 @@ abstract class Adapter implements \Phalcon\Annotations\AdapterInterface
     public function getProperty(string $className, string $propertyName): Collection
     {
     }
-
 }

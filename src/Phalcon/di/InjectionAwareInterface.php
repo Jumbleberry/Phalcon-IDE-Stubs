@@ -12,6 +12,7 @@ use Phalcon\DiInterface;
 interface InjectionAwareInterface
 {
 
+
     /**
      * Sets the dependency injector
      *
@@ -22,8 +23,7 @@ interface InjectionAwareInterface
     /**
      * Returns the internal dependency injector
      *
-     * @return \Phalcon\DiInterface|null
+     * @return DiInterface|null
      */
     public function getDI(): ?DiInterface;
-
 }

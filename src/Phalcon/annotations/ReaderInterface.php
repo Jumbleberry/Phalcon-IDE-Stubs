@@ -10,6 +10,7 @@ namespace Phalcon\Annotations;
 interface ReaderInterface
 {
 
+
     /**
      * Reads annotations from the class dockblocks, its methods and/or properties
      *
@@ -27,5 +28,4 @@ interface ReaderInterface
      * @return array
      */
     public static function parseDocBlock(string $docBlock, $file = null, $line = null): array;
-
 }

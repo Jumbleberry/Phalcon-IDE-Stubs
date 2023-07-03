@@ -25,9 +25,7 @@ class Imagick extends Adapter
 
     static protected $_version = 0;
 
-
     static protected $_checked = false;
-
 
     /**
      * Checks if Imagick is enabled
@@ -236,5 +234,4 @@ class Imagick extends Adapter
     public function setResourceLimit(int $type, int $limit)
     {
     }
-
 }

@@ -32,12 +32,9 @@ use Phalcon\Config\Exception;
  */
 class Config implements \ArrayAccess, \Countable
 {
-
     const DEFAULT_PATH_DELIMITER = '.';
 
-
     static protected $_pathDelimiter;
-
 
     /**
      * Phalcon\Config constructor
@@ -237,5 +234,4 @@ class Config implements \ArrayAccess, \Countable
     protected final function _merge(Config $config, $instance = null): Config
     {
     }
-
 }

@@ -26,7 +26,6 @@ class Files extends Adapter
 
     protected $_annotationsDir = './';
 
-
     /**
      * Phalcon\Annotations\Adapter\Files constructor
      *
@@ -55,5 +54,4 @@ class Files extends Adapter
     public function write(string $key, \Phalcon\Annotations\Reflection $data)
     {
     }
-
 }

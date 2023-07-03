@@ -36,22 +36,15 @@ class Request implements \Phalcon\Http\RequestInterface, \Phalcon\Di\InjectionAw
 
     protected $_dependencyInjector;
 
-
     protected $_rawBody;
-
 
     protected $_filter;
 
-
     protected $_putCache;
-
 
     protected $_httpMethodParameterOverride = false;
 
-
     protected $_strictHostCheck = false;
-
-
 
     public function getHttpMethodParameterOverride()
     {
@@ -777,5 +770,4 @@ class Request implements \Phalcon\Http\RequestInterface, \Phalcon\Di\InjectionAw
     protected final function _getQualityHeader(string $serverIndex, string $name): array
     {
     }
-
 }

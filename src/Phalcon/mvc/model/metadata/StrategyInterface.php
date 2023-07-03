@@ -8,6 +8,7 @@ use Phalcon\DiInterface;
 interface StrategyInterface
 {
 
+
     /**
      * The meta-data is obtained by reading the column descriptions from the database information schema
      *
@@ -26,5 +27,4 @@ interface StrategyInterface
      * @todo Not implemented
      */
     public function getColumnMaps(\Phalcon\Mvc\ModelInterface $model, \Phalcon\DiInterface $dependencyInjector);
-
 }

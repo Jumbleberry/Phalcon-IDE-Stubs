@@ -10,6 +10,7 @@ namespace Phalcon\Di;
 interface ServiceInterface
 {
 
+
     /**
      * Returns the service's name
      *
@@ -70,5 +71,4 @@ interface ServiceInterface
      * @return ServiceInterface
      */
     public static function __set_state(array $attributes): ServiceInterface;
-
 }

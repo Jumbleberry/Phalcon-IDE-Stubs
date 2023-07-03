@@ -21,60 +21,41 @@ use Phalcon\ValidationInterface;
  */
 abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\CollectionInterface, \Phalcon\Di\InjectionAwareInterface, \Serializable
 {
-
     const OP_NONE = 0;
-
 
     const OP_CREATE = 1;
 
-
     const OP_UPDATE = 2;
-
 
     const OP_DELETE = 3;
 
-
     const DIRTY_STATE_PERSISTENT = 0;
-
 
     const DIRTY_STATE_TRANSIENT = 1;
 
-
     const DIRTY_STATE_DETACHED = 2;
-
 
     public $_id;
 
-
     protected $_dependencyInjector;
-
 
     protected $_modelsManager;
 
-
     protected $_source;
-
 
     protected $_operationMade = 0;
 
-
     protected $_dirtyState = 1;
-
 
     protected $_connection;
 
-
-    protected $_errorMessages = array();
-
+    protected $_errorMessages = [];
 
     static protected $_reserved;
 
-
     static protected $_disableEvents;
 
-
     protected $_skipped = false;
-
 
     /**
      * Phalcon\Mvc\Collection constructor
@@ -813,5 +794,4 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
     public function unserialize($data)
     {
     }
-
 }

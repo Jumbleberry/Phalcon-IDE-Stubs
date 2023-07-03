@@ -16,6 +16,7 @@ use Phalcon\Mvc\Model\ResultInterface;
 class Row implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model\ResultInterface, \ArrayAccess, \JsonSerializable
 {
 
+
     /**
      * Set the current object's state
      *
@@ -111,5 +112,4 @@ class Row implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model\ResultInte
     public function jsonSerialize(): array
     {
     }
-
 }

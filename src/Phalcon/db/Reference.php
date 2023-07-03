@@ -27,6 +27,7 @@ namespace Phalcon\Db;
  */
 class Reference implements \Phalcon\Db\ReferenceInterface
 {
+
     /**
      * Constraint name
      *
@@ -34,9 +35,7 @@ class Reference implements \Phalcon\Db\ReferenceInterface
      */
     protected $_name;
 
-
     protected $_schemaName;
-
 
     protected $_referencedSchema;
 
@@ -75,7 +74,6 @@ class Reference implements \Phalcon\Db\ReferenceInterface
      */
     protected $_onUpdate;
 
-
     /**
      * Constraint name
      *
@@ -85,11 +83,9 @@ class Reference implements \Phalcon\Db\ReferenceInterface
     {
     }
 
-
     public function getSchemaName()
     {
     }
-
 
     public function getReferencedSchema()
     {
@@ -159,5 +155,4 @@ class Reference implements \Phalcon\Db\ReferenceInterface
     public static function __set_state(array $data): ReferenceInterface
     {
     }
-
 }

@@ -17,12 +17,9 @@ class Volt extends Engine
 
     protected $_options;
 
-
     protected $_compiler;
 
-
     protected $_macros;
-
 
     /**
      * Set Volt's options
@@ -123,8 +120,7 @@ class Volt extends Engine
      * @param array $arguments
      * @return mixed
      */
-    public function callMacro(string $name, array $arguments = array())
+    public function callMacro(string $name, array $arguments = [])
     {
     }
-
 }

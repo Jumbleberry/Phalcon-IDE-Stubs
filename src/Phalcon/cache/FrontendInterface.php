@@ -10,6 +10,7 @@ namespace Phalcon\Cache;
 interface FrontendInterface
 {
 
+
     /**
      * Returns the cache lifetime
      *
@@ -54,5 +55,4 @@ interface FrontendInterface
      * @param mixed $data
      */
     public function afterRetrieve($data);
-
 }

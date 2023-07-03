@@ -13,6 +13,7 @@ use Phalcon\Mvc\Model\MessageInterface;
 interface StatusInterface
 {
 
+
     /**
      * Returns the model which executed the action
      *
@@ -33,5 +34,4 @@ interface StatusInterface
      * @return bool
      */
     public function success(): bool;
-
 }

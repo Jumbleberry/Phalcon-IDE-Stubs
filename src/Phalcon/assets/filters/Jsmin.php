@@ -14,6 +14,7 @@ use Phalcon\Assets\FilterInterface;
 class Jsmin implements \Phalcon\Assets\FilterInterface
 {
 
+
     /**
      * Filters the content using JSMIN
      *
@@ -23,5 +24,4 @@ class Jsmin implements \Phalcon\Assets\FilterInterface
     public function filter(string $content): string
     {
     }
-
 }

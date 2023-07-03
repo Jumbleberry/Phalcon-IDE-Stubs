@@ -46,6 +46,7 @@ use Phalcon\Mvc\Model\Validator;
 class Uniqueness extends Validator
 {
 
+
     /**
      * Executes the validator
      *
@@ -55,5 +56,4 @@ class Uniqueness extends Validator
     public function validate(\Phalcon\Mvc\EntityInterface $record): bool
     {
     }
-
 }

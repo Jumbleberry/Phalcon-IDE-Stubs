@@ -12,6 +12,7 @@ use Phalcon\Assets\Inline as InlineBase;
 class Js extends \Phalcon\Assets\Inline
 {
 
+
     /**
      * Phalcon\Assets\Inline\Js
      *
@@ -22,5 +23,4 @@ class Js extends \Phalcon\Assets\Inline
     public function __construct(string $content, bool $filter = true, $attributes = null)
     {
     }
-
 }

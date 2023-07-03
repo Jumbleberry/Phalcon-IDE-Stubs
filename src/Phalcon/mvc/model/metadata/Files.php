@@ -23,9 +23,7 @@ class Files extends MetaData
 
     protected $_metaDataDir = './';
 
-
-    protected $_metaData = array();
-
+    protected $_metaData = [];
 
     /**
      * Phalcon\Mvc\Model\MetaData\Files constructor
@@ -56,5 +54,4 @@ class Files extends MetaData
     public function write(string $key, $data): void
     {
     }
-
 }

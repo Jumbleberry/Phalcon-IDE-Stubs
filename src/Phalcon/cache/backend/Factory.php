@@ -26,6 +26,7 @@ use Phalcon\Config;
 class Factory extends \Phalcon\Factory
 {
 
+
     /**
      * @param \Phalcon\Config|array $config
      * @return BackendInterface
@@ -41,5 +42,4 @@ class Factory extends \Phalcon\Factory
     protected static function loadClass(string $namespace, $config)
     {
     }
-
 }

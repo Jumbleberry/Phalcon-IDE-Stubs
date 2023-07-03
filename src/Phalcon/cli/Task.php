@@ -31,11 +31,11 @@ use Phalcon\Di\Injectable;
 class Task extends Injectable implements \Phalcon\Cli\TaskInterface
 {
 
+
     /**
      * Phalcon\Cli\Task constructor
      */
     public final function __construct()
     {
     }
-
 }

@@ -39,15 +39,11 @@ class Redis extends Adapter
 
     protected $_redis = null;
 
-
     protected $_lifetime = 8600;
-
-
 
     public function getRedis()
     {
     }
-
 
     public function getLifetime()
     {
@@ -58,7 +54,7 @@ class Redis extends Adapter
      *
      * @param array $options
      */
-    public function __construct(array $options = array())
+    public function __construct(array $options = [])
     {
     }
 
@@ -119,5 +115,4 @@ class Redis extends Adapter
     public function gc(): bool
     {
     }
-
 }

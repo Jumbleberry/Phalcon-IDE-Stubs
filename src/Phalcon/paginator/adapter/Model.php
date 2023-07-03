@@ -26,11 +26,11 @@ use Phalcon\Paginator\Adapter;
  */
 class Model extends Adapter
 {
+
     /**
      * Configuration of paginator by model
      */
     protected $_config = null;
-
 
     /**
      * Phalcon\Paginator\Adapter\Model constructor
@@ -59,5 +59,4 @@ class Model extends Adapter
     public function paginate(): \stdClass
     {
     }
-
 }

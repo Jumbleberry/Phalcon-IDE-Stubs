@@ -17,23 +17,17 @@ class Multiple
 
     protected $_loggers;
 
-
     protected $_formatter;
 
-
     protected $_logLevel;
-
-
 
     public function getLoggers()
     {
     }
 
-
     public function getFormatter()
     {
     }
-
 
     public function getLogLevel()
     {
@@ -156,5 +150,4 @@ class Multiple
     public function alert(string $message, array $context = null)
     {
     }
-
 }

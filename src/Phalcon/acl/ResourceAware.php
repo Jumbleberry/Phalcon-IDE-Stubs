@@ -10,11 +10,11 @@ namespace Phalcon\Acl;
 interface ResourceAware
 {
 
+
     /**
      * Returns resource name
      *
      * @return string
      */
     public function getResourceName(): string;
-
 }

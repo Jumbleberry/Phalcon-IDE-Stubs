@@ -38,6 +38,7 @@ use Phalcon\Cache\Backend;
 class Apcu extends Backend
 {
 
+
     /**
      * Returns a cached content
      *
@@ -141,5 +142,4 @@ class Apcu extends Backend
     public function flush(): bool
     {
     }
-
 }

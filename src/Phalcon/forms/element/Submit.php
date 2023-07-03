@@ -13,6 +13,7 @@ use Phalcon\Forms\Element;
 class Submit extends Element
 {
 
+
     /**
      * Renders the element widget
      *
@@ -22,5 +23,4 @@ class Submit extends Element
     public function render($attributes = null): string
     {
     }
-
 }

@@ -32,9 +32,7 @@ class Sqlite extends \Phalcon\Db\Adapter\Pdo
 
     protected $_type = 'sqlite';
 
-
     protected $_dialectType = 'sqlite';
-
 
     /**
      * This method is automatically called in Phalcon\Db\Adapter\Pdo constructor.
@@ -124,5 +122,4 @@ class Sqlite extends \Phalcon\Db\Adapter\Pdo
     public function getDefaultValue(): RawValue
     {
     }
-
 }

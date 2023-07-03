@@ -16,7 +16,6 @@ class Failed extends Exception
 
     protected $_record = null;
 
-
     /**
      * Phalcon\Mvc\Model\Transaction\Failed constructor
      *
@@ -44,5 +43,4 @@ class Failed extends Exception
     public function getRecord(): ModelInterface
     {
     }
-
 }

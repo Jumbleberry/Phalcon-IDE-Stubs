@@ -56,6 +56,7 @@ use Phalcon\Validation\Validator;
 class Between extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -66,5 +67,4 @@ class Between extends Validator
     public function validate(\Phalcon\Validation $validation, string $field): bool
     {
     }
-
 }

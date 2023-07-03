@@ -10,6 +10,7 @@ namespace Phalcon\Http\Request;
 interface FileInterface
 {
 
+
     /**
      * Returns the file size of the uploaded file
      *
@@ -53,5 +54,4 @@ interface FileInterface
      * @return bool
      */
     public function moveTo(string $destination): bool;
-
 }

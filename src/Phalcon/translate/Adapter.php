@@ -13,11 +13,11 @@ use Phalcon\Translate\Interpolator\AssociativeArray;
  */
 abstract class Adapter implements \Phalcon\Translate\AdapterInterface
 {
+
     /**
      * @var Phalcon\Translate\InterpolatorInterface
      */
     protected $_interpolator;
-
 
     /**
      * @param array $options
@@ -105,5 +105,4 @@ abstract class Adapter implements \Phalcon\Translate\AdapterInterface
     protected function replacePlaceholders(string $translation, $placeholders = null): string
     {
     }
-
 }

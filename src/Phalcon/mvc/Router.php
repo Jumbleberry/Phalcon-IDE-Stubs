@@ -40,82 +40,55 @@ use Phalcon\Events\EventsAwareInterface;
  */
 class Router implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Mvc\RouterInterface, \Phalcon\Events\EventsAwareInterface
 {
-
     const URI_SOURCE_GET_URL = 0;
-
 
     const URI_SOURCE_SERVER_REQUEST_URI = 1;
 
-
     const POSITION_FIRST = 0;
-
 
     const POSITION_LAST = 1;
 
-
     protected $_dependencyInjector;
-
 
     protected $_eventsManager;
 
-
     protected $_uriSource;
-
 
     protected $_namespace = null;
 
-
     protected $_module = null;
-
 
     protected $_controller = null;
 
-
     protected $_action = null;
 
-
-    protected $_params = array();
-
+    protected $_params = [];
 
     protected $_routes;
 
-
     protected $_matchedRoute;
-
 
     protected $_matches;
 
-
     protected $_wasMatched = false;
-
 
     protected $_defaultNamespace;
 
-
     protected $_defaultModule;
-
 
     protected $_defaultController;
 
-
     protected $_defaultAction;
 
-
-    protected $_defaultParams = array();
-
+    protected $_defaultParams = [];
 
     protected $_removeExtraSlashes;
 
-
     protected $_notFoundPaths;
 
+    protected $_keyRouteNames = [];
 
-    protected $_keyRouteNames = array();
-
-
-    protected $_keyRouteIds = array();
-
-
+    protected $_keyRouteIds = [];
 
     public function getKeyRouteNames()
     {
@@ -127,7 +100,6 @@ class Router implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Mvc\Router
     public function setKeyRouteNames($keyRouteNames)
     {
     }
-
 
     public function getKeyRouteIds()
     {
@@ -591,7 +563,7 @@ class Router implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Mvc\Router
      * Returns a route object by its id
      *
      * @param mixed $id
-     * @return bool|\Phalcon\Mvc\Router\RouteInterface
+     * @return bool|RouteInterface
      */
     public function getRouteById($id)
     {
@@ -601,7 +573,7 @@ class Router implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Mvc\Router
      * Returns a route object by its name
      *
      * @param string $name
-     * @return bool|\Phalcon\Mvc\Router\RouteInterface
+     * @return bool|RouteInterface
      */
     public function getRouteByName(string $name)
     {
@@ -615,5 +587,4 @@ class Router implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Mvc\Router
     public function isExactControllerName(): bool
     {
     }
-
 }

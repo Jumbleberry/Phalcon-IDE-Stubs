@@ -13,6 +13,7 @@ use Phalcon\Mvc\Model\Transaction\ManagerInterface;
 interface TransactionInterface
 {
 
+
     /**
      * Sets transaction manager related to the transaction
      *
@@ -90,5 +91,4 @@ interface TransactionInterface
      * @param \Phalcon\Mvc\ModelInterface $record
      */
     public function setRollbackedRecord(\Phalcon\Mvc\ModelInterface $record);
-
 }

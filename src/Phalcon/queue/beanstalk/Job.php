@@ -12,6 +12,7 @@ use Phalcon\Queue\Beanstalk\Exception;
  */
 class Job
 {
+
     /**
      * @var string
      */
@@ -22,9 +23,7 @@ class Job
      */
     protected $_body;
 
-
     protected $_queue;
-
 
     /**
      * @return string
@@ -123,5 +122,4 @@ class Job
     public function __wakeup()
     {
     }
-
 }

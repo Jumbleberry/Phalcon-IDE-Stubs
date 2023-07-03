@@ -9,6 +9,7 @@ namespace Phalcon\Logger;
  */
 class Item
 {
+
     /**
      * Log type
      *
@@ -30,9 +31,7 @@ class Item
      */
     protected $_time;
 
-
     protected $_context;
-
 
     /**
      * Log type
@@ -61,7 +60,6 @@ class Item
     {
     }
 
-
     public function getContext()
     {
     }
@@ -77,5 +75,4 @@ class Item
     public function __construct(string $message, int $type, int $time = 0, $context = null)
     {
     }
-
 }

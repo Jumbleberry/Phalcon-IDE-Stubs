@@ -10,6 +10,7 @@ namespace Phalcon;
 interface FlashInterface
 {
 
+
     /**
      * Shows a HTML error message
      *
@@ -45,5 +46,4 @@ interface FlashInterface
      * @param string $message
      */
     public function message(string $type, string $message);
-
 }

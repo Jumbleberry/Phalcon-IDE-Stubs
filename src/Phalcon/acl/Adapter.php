@@ -12,6 +12,7 @@ use Phalcon\Events\EventsAwareInterface;
  */
 abstract class Adapter implements \Phalcon\Acl\AdapterInterface, \Phalcon\Events\EventsAwareInterface
 {
+
     /**
      * Events manager
      *
@@ -53,7 +54,6 @@ abstract class Adapter implements \Phalcon\Acl\AdapterInterface, \Phalcon\Events
      * @var string
      */
     protected $_activeAccess;
-
 
     /**
      * Role which the list is checking if it's allowed to certain resource/access
@@ -117,5 +117,4 @@ abstract class Adapter implements \Phalcon\Acl\AdapterInterface, \Phalcon\Events
     public function getDefaultAction(): int
     {
     }
-
 }

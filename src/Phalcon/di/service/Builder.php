@@ -13,6 +13,7 @@ use Phalcon\Di\Exception;
 class Builder
 {
 
+
     /**
      * Resolves a constructor/call parameter
      *
@@ -47,5 +48,4 @@ class Builder
     public function build(\Phalcon\DiInterface $dependencyInjector, array $definition, $parameters = null)
     {
     }
-
 }

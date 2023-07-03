@@ -13,6 +13,7 @@ use Phalcon\Mvc\Model\MetaData\StrategyInterface;
 interface MetaDataInterface
 {
 
+
     /**
      * Set the meta-data extraction strategy
      *
@@ -242,5 +243,4 @@ interface MetaDataInterface
      * @param array $data
      */
     public function write(string $key, $data);
-
 }

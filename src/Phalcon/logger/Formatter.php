@@ -12,6 +12,7 @@ use Phalcon\Logger;
 abstract class Formatter implements \Phalcon\Logger\FormatterInterface
 {
 
+
     /**
      * Returns the string meaning of a logger constant
      *
@@ -32,5 +33,4 @@ abstract class Formatter implements \Phalcon\Logger\FormatterInterface
     public function interpolate(string $message, $context = null)
     {
     }
-
 }

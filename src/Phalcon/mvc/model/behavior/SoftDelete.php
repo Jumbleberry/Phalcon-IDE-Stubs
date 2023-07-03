@@ -15,6 +15,7 @@ use Phalcon\Mvc\Model\Exception;
 class SoftDelete extends Behavior
 {
 
+
     /**
      * Listens for notifications from the models manager
      *
@@ -24,5 +25,4 @@ class SoftDelete extends Behavior
     public function notify(string $type, \Phalcon\Mvc\ModelInterface $model)
     {
     }
-
 }

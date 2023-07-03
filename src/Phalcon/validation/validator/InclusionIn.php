@@ -51,6 +51,7 @@ use Phalcon\Validation\Message;
 class InclusionIn extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -61,5 +62,4 @@ class InclusionIn extends Validator
     public function validate(\Phalcon\Validation $validation, string $field): bool
     {
     }
-
 }

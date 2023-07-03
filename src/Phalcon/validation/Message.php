@@ -14,15 +14,11 @@ class Message implements \Phalcon\Validation\MessageInterface
 
     protected $_type;
 
-
     protected $_message;
-
 
     protected $_field;
 
-
     protected $_code;
-
 
     /**
      * Phalcon\Validation\Message constructor
@@ -130,5 +126,4 @@ class Message implements \Phalcon\Validation\MessageInterface
     public static function __set_state(array $message): MessageInterface
     {
     }
-
 }

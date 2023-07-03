@@ -31,6 +31,7 @@ use Phalcon\Db;
  */
 class QueryBuilder extends Adapter
 {
+
     /**
      * Configuration of paginator by model
      */
@@ -45,7 +46,6 @@ class QueryBuilder extends Adapter
      * Columns for count query if builder has having
      */
     protected $_columns;
-
 
     /**
      * Phalcon\Paginator\Adapter\QueryBuilder
@@ -102,5 +102,4 @@ class QueryBuilder extends Adapter
     public function paginate(): \stdClass
     {
     }
-
 }

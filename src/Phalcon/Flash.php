@@ -20,24 +20,17 @@ abstract class Flash implements \Phalcon\FlashInterface, \Phalcon\Di\InjectionAw
 
     protected $_cssClasses;
 
-
     protected $_implicitFlush = true;
-
 
     protected $_automaticHtml = true;
 
-
     protected $_escaperService = null;
-
 
     protected $_autoescape = true;
 
-
     protected $_dependencyInjector = null;
 
-
     protected $_messages;
-
 
     /**
      * Phalcon\Flash constructor
@@ -214,5 +207,4 @@ abstract class Flash implements \Phalcon\FlashInterface, \Phalcon\Di\InjectionAw
     public function clear(): void
     {
     }
-
 }

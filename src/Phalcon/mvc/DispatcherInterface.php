@@ -13,6 +13,7 @@ use Phalcon\DispatcherInterface as DispatcherInterfaceBase;
 interface DispatcherInterface extends DispatcherInterfaceBase
 {
 
+
     /**
      * Sets the default controller suffix
      *
@@ -54,5 +55,4 @@ interface DispatcherInterface extends DispatcherInterfaceBase
      * @return ControllerInterface
      */
     public function getActiveController(): ControllerInterface;
-
 }

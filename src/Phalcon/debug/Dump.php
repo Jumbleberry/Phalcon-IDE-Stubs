@@ -28,13 +28,9 @@ class Dump
 
     protected $_detailed = false;
 
-
-    protected $_methods = array();
-
+    protected $_methods = [];
 
     protected $_styles;
-
-
 
     public function getDetailed()
     {
@@ -53,7 +49,7 @@ class Dump
      * @param boolean $detailed debug object's private and protected properties
      * @param array $styles
      */
-    public function __construct(array $styles = array(), bool $detailed = false)
+    public function __construct(array $styles = [], bool $detailed = false)
     {
     }
 
@@ -84,7 +80,7 @@ class Dump
      * @param array $styles
      * @return array
      */
-    public function setStyles(array $styles = array()): array
+    public function setStyles(array $styles = []): array
     {
     }
 
@@ -168,5 +164,4 @@ class Dump
     public function toJson($variable): string
     {
     }
-
 }

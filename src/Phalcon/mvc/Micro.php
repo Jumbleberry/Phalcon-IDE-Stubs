@@ -41,42 +41,29 @@ class Micro extends Injectable implements \ArrayAccess
 
     protected $_dependencyInjector;
 
-
-    protected $_handlers = array();
-
+    protected $_handlers = [];
 
     protected $_router;
 
-
     protected $_stopped;
-
 
     protected $_notFoundHandler;
 
-
     protected $_errorHandler;
-
 
     protected $_activeHandler;
 
-
     protected $_beforeHandlers;
-
 
     protected $_afterHandlers;
 
-
     protected $_finishHandlers;
-
 
     protected $_returnedValue;
 
-
     protected $_modelBinder;
 
-
     protected $_afterBindingHandlers;
-
 
     /**
      * Phalcon\Mvc\Micro constructor
@@ -410,7 +397,7 @@ class Micro extends Injectable implements \ArrayAccess
     /**
      * Gets model binder
      *
-     * @return \Phalcon\Mvc\Model\BinderInterface|null
+     * @return BinderInterface|null
      */
     public function getModelBinder(): ?BinderInterface
     {
@@ -440,5 +427,4 @@ class Micro extends Injectable implements \ArrayAccess
     public function getBoundModels(): array
     {
     }
-
 }

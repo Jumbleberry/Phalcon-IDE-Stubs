@@ -10,6 +10,7 @@ namespace Phalcon\Mvc;
 interface EntityInterface
 {
 
+
     /**
      * Reads an attribute value by its name
      *
@@ -25,5 +26,4 @@ interface EntityInterface
      * @param mixed $value
      */
     public function writeAttribute(string $attribute, $value);
-
 }

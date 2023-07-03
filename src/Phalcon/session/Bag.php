@@ -24,18 +24,13 @@ class Bag implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Session\BagIn
 
     protected $_dependencyInjector;
 
-
     protected $_name = null;
-
 
     protected $_data;
 
-
     protected $_initialized = false;
 
-
     protected $_session;
-
 
     /**
      * Phalcon\Session\Bag constructor
@@ -193,9 +188,9 @@ class Bag implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Session\BagIn
      * </code>
      *
      * @param string $property
-     * @return bool
+     * @return void
      */
-    public function __unset(string $property): bool
+    public function __unset(string $property): void
     {
     }
 
@@ -251,5 +246,4 @@ class Bag implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Session\BagIn
     public final function offsetGet($property)
     {
     }
-
 }

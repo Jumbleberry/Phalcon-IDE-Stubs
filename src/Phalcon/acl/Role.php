@@ -11,6 +11,7 @@ use Phalcon\Acl\Exception;
  */
 class Role implements \Phalcon\Acl\RoleInterface
 {
+
     /**
      * Role name
      *
@@ -24,7 +25,6 @@ class Role implements \Phalcon\Acl\RoleInterface
      * @var string
      */
     protected $_description;
-
 
     /**
      * Role name
@@ -62,5 +62,4 @@ class Role implements \Phalcon\Acl\RoleInterface
     public function __construct(string $name, string $description = null)
     {
     }
-
 }

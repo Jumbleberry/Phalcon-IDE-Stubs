@@ -10,6 +10,7 @@ namespace Phalcon\Validation;
 interface ValidatorInterface
 {
 
+
     /**
      * Checks if an option is defined
      *
@@ -36,5 +37,4 @@ interface ValidatorInterface
      * @return bool
      */
     public function validate(\Phalcon\Validation $validation, string $attribute): bool;
-
 }

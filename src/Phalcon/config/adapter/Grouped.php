@@ -61,6 +61,7 @@ use Phalcon\Config\Factory;
 class Grouped extends Config
 {
 
+
     /**
      * Phalcon\Config\Adapter\Grouped constructor
      *
@@ -70,5 +71,4 @@ class Grouped extends Config
     public function __construct(array $arrayConfig, string $defaultAdapter = 'php')
     {
     }
-
 }

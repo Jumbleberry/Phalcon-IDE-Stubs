@@ -21,93 +21,63 @@ use Phalcon\Mvc\Model\BinderInterface;
  */
 abstract class Dispatcher implements \Phalcon\DispatcherInterface, \Phalcon\Di\InjectionAwareInterface, \Phalcon\Events\EventsAwareInterface
 {
-
     const EXCEPTION_NO_DI = 0;
-
 
     const EXCEPTION_CYCLIC_ROUTING = 1;
 
-
     const EXCEPTION_HANDLER_NOT_FOUND = 2;
-
 
     const EXCEPTION_INVALID_HANDLER = 3;
 
-
     const EXCEPTION_INVALID_PARAMS = 4;
-
 
     const EXCEPTION_ACTION_NOT_FOUND = 5;
 
-
     protected $_dependencyInjector;
-
 
     protected $_eventsManager;
 
-
     protected $_activeHandler;
-
 
     protected $_finished = false;
 
-
     protected $_forwarded = false;
-
 
     protected $_moduleName = null;
 
-
     protected $_namespaceName = null;
-
 
     protected $_handlerName = null;
 
-
     protected $_actionName = null;
 
-
-    protected $_params = array();
-
+    protected $_params = [];
 
     protected $_returnedValue = null;
 
-
     protected $_lastHandler = null;
-
 
     protected $_defaultNamespace = null;
 
-
     protected $_defaultHandler = null;
-
 
     protected $_defaultAction = '';
 
-
     protected $_handlerSuffix = '';
-
 
     protected $_actionSuffix = 'Action';
 
-
     protected $_previousNamespaceName = null;
-
 
     protected $_previousHandlerName = null;
 
-
     protected $_previousActionName = null;
-
 
     protected $_modelBinding = false;
 
-
     protected $_modelBinder = null;
 
-
     protected $_isControllerInitialize = false;
-
 
     /**
      * Sets the dependency injector
@@ -382,7 +352,7 @@ abstract class Dispatcher implements \Phalcon\DispatcherInterface, \Phalcon\Di\I
     /**
      * Gets model binder
      *
-     * @return \Phalcon\Mvc\Model\BinderInterface|null
+     * @return BinderInterface|null
      */
     public function getModelBinder(): ?BinderInterface
     {
@@ -445,7 +415,7 @@ abstract class Dispatcher implements \Phalcon\DispatcherInterface, \Phalcon\Di\I
      * @param string $actionMethod
      * @param array $params
      */
-    public function callActionMethod($handler, string $actionMethod, array $params = array())
+    public function callActionMethod($handler, string $actionMethod, array $params = [])
     {
     }
 
@@ -476,5 +446,4 @@ abstract class Dispatcher implements \Phalcon\DispatcherInterface, \Phalcon\Di\I
     protected function _resolveEmptyProperties(): void
     {
     }
-
 }

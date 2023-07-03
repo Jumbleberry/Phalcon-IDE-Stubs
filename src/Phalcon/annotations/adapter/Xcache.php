@@ -17,6 +17,7 @@ use Phalcon\Annotations\Reflection;
 class Xcache extends Adapter
 {
 
+
     /**
      * Reads parsed annotations from XCache
      *
@@ -36,5 +37,4 @@ class Xcache extends Adapter
     public function write(string $key, \Phalcon\Annotations\Reflection $data)
     {
     }
-
 }

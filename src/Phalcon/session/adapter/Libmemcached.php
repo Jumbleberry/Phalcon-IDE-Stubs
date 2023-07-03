@@ -45,15 +45,11 @@ class Libmemcached extends Adapter
 
     protected $_libmemcached = null;
 
-
     protected $_lifetime = 8600;
-
-
 
     public function getLibmemcached()
     {
     }
-
 
     public function getLifetime()
     {
@@ -122,5 +118,4 @@ class Libmemcached extends Adapter
     public function gc(): bool
     {
     }
-
 }

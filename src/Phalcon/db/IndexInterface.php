@@ -10,6 +10,7 @@ namespace Phalcon\Db;
 interface IndexInterface
 {
 
+
     /**
      * Gets the index name
      *
@@ -38,5 +39,4 @@ interface IndexInterface
      * @return IndexInterface
      */
     public static function __set_state(array $data): IndexInterface;
-
 }

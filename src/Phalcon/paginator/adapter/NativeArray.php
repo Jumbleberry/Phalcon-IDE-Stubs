@@ -30,11 +30,11 @@ use Phalcon\Paginator\Adapter;
  */
 class NativeArray extends Adapter
 {
+
     /**
      * Configuration of the paginator
      */
     protected $_config = null;
-
 
     /**
      * Phalcon\Paginator\Adapter\NativeArray constructor
@@ -63,5 +63,4 @@ class NativeArray extends Adapter
     public function paginate(): \stdClass
     {
     }
-
 }

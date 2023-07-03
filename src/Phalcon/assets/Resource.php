@@ -13,6 +13,7 @@ namespace Phalcon\Assets;
  */
 class Resource implements \Phalcon\Assets\ResourceInterface
 {
+
     /**
      * @var string
      */
@@ -38,15 +39,11 @@ class Resource implements \Phalcon\Assets\ResourceInterface
      */
     protected $_attributes;
 
-
     protected $_sourcePath;
-
 
     protected $_targetPath;
 
-
     protected $_targetUri;
-
 
     /**
      * @return string
@@ -83,16 +80,13 @@ class Resource implements \Phalcon\Assets\ResourceInterface
     {
     }
 
-
     public function getSourcePath()
     {
     }
 
-
     public function getTargetPath()
     {
     }
-
 
     public function getTargetUri()
     {
@@ -239,5 +233,4 @@ class Resource implements \Phalcon\Assets\ResourceInterface
     public function getResourceKey(): string
     {
     }
-
 }

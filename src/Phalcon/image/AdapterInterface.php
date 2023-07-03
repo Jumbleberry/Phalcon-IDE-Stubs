@@ -5,6 +5,7 @@ namespace Phalcon\Image;
 interface AdapterInterface
 {
 
+
     /**
      * @param int $width
      * @param int $height
@@ -93,5 +94,4 @@ interface AdapterInterface
      * @param int $quality
      */
     public function render(string $ext = null, int $quality = 100);
-
 }

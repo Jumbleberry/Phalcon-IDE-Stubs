@@ -10,6 +10,7 @@ namespace Phalcon\Db;
 interface AdapterInterface
 {
 
+
     /**
      * Returns the first row in a SQL query result
      *
@@ -542,5 +543,4 @@ interface AdapterInterface
      * @return array|ColumnInterface[]
      */
     public function describeColumns(string $table, string $schema = null): array;
-
 }

@@ -41,6 +41,7 @@ use Phalcon\Cache\Backend;
 class Apc extends Backend
 {
 
+
     /**
      * Returns a cached content
      *
@@ -144,5 +145,4 @@ class Apc extends Backend
     public function flush(): bool
     {
     }
-
 }

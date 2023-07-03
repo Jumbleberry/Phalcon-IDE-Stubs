@@ -25,69 +25,47 @@ class Compiler implements \Phalcon\Di\InjectionAwareInterface
 
     protected $_dependencyInjector;
 
-
     protected $_view;
-
 
     protected $_options;
 
-
     protected $_arrayHelpers;
-
 
     protected $_level = 0;
 
-
     protected $_foreachLevel = 0;
-
 
     protected $_blockLevel = 0;
 
-
     protected $_exprLevel = 0;
-
 
     protected $_extended = false;
 
-
     protected $_autoescape = false;
-
 
     protected $_extendedBlocks;
 
-
     protected $_currentBlock;
-
 
     protected $_blocks;
 
-
     protected $_forElsePointers;
-
 
     protected $_loopPointers;
 
-
     protected $_extensions;
-
 
     protected $_functions;
 
-
     protected $_filters;
-
 
     protected $_macros;
 
-
     protected $_prefix;
-
 
     protected $_currentPath;
 
-
     protected $_compiledTemplatePath;
-
 
     /**
      * Phalcon\Mvc\View\Engine\Volt\Compiler
@@ -575,5 +553,4 @@ class Compiler implements \Phalcon\Di\InjectionAwareInterface
     protected function getFinalPath(string $path)
     {
     }
-
 }

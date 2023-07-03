@@ -34,7 +34,6 @@ class Syslog extends Adapter
 
     protected $_opened = false;
 
-
     /**
      * Phalcon\Logger\Adapter\Syslog constructor
      *
@@ -74,5 +73,4 @@ class Syslog extends Adapter
     public function close(): bool
     {
     }
-
 }

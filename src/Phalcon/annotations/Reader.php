@@ -12,6 +12,7 @@ use Phalcon\Annotations\ReaderInterface;
 class Reader implements \Phalcon\Annotations\ReaderInterface
 {
 
+
     /**
      * Reads annotations from the class dockblocks, its methods and/or properties
      *
@@ -33,5 +34,4 @@ class Reader implements \Phalcon\Annotations\ReaderInterface
     public static function parseDocBlock(string $docBlock, $file = null, $line = null): array
     {
     }
-
 }

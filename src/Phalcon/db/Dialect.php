@@ -13,9 +13,7 @@ abstract class Dialect implements \Phalcon\Db\DialectInterface
 
     protected $_escapeChar;
 
-
     protected $_customFunctions;
-
 
     /**
      * Registers custom SQL functions
@@ -270,11 +268,11 @@ abstract class Dialect implements \Phalcon\Db\DialectInterface
      * Resolve function calls
      *
      * @param array $expression
-     * @param string $escapeChar
      * @param mixed $bindCounts
+     * @param string $escapeChar
      * @return string
      */
-    protected final function getSqlExpressionFunctionCall(array $expression, string $escapeChar = null, $bindCounts): string
+    protected final function getSqlExpressionFunctionCall(array $expression, $bindCounts, string $escapeChar = null): string
     {
     }
 
@@ -456,5 +454,4 @@ abstract class Dialect implements \Phalcon\Db\DialectInterface
     protected function prepareQualified(string $column, string $domain = null, string $escapeChar = null): string
     {
     }
-
 }

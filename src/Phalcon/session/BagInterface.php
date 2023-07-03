@@ -10,6 +10,7 @@ namespace Phalcon\Session;
 interface BagInterface
 {
 
+
     /**
      * Initializes the session bag. This method must not be called directly, the
      * class calls it when its internal data is accessed
@@ -69,5 +70,4 @@ interface BagInterface
      * @return bool
      */
     public function __isset(string $property): bool;
-
 }

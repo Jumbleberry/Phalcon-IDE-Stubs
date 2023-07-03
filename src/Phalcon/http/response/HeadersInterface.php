@@ -10,6 +10,7 @@ namespace Phalcon\Http\Response;
 interface HeadersInterface
 {
 
+
     /**
      * Sets a header to be sent at the end of the request
      *
@@ -52,5 +53,4 @@ interface HeadersInterface
      * @return HeadersInterface
      */
     public static function __set_state(array $data): HeadersInterface;
-
 }

@@ -31,7 +31,6 @@ class Memory extends Backend implements \Serializable
 
     protected $_data;
 
-
     /**
      * Returns a cached content
      *
@@ -142,5 +141,4 @@ class Memory extends Backend implements \Serializable
     public function unserialize($data)
     {
     }
-
 }

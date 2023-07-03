@@ -13,6 +13,7 @@ use Phalcon\Forms\Element;
 class Email extends Element
 {
 
+
     /**
      * Renders the element widget returning html
      *
@@ -22,5 +23,4 @@ class Email extends Element
     public function render($attributes = null): string
     {
     }
-
 }

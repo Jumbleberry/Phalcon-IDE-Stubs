@@ -10,6 +10,7 @@ namespace Phalcon\Cache;
 interface BackendInterface
 {
 
+
     /**
      * Starts a cache. The keyname allows to identify the created fragment
      *
@@ -112,5 +113,4 @@ interface BackendInterface
      * @return boolean
      */
     public function exists($keyName = null, int $lifetime = null): bool;
-
 }

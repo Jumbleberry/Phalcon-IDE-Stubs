@@ -10,6 +10,7 @@ namespace Phalcon\Mvc\Model;
 interface ResultsetInterface
 {
 
+
     /**
      * Returns the internal type of data retrieval that the resultset is using
      *
@@ -59,5 +60,4 @@ interface ResultsetInterface
      * @return array
      */
     public function toArray(): array;
-
 }

@@ -10,6 +10,7 @@ namespace Phalcon\Logger;
 interface AdapterInterface
 {
 
+
     /**
      * Sets the message formatter
      *
@@ -140,5 +141,4 @@ interface AdapterInterface
      * @return AdapterInterface
      */
     public function emergency(string $message, array $context = null): AdapterInterface;
-
 }

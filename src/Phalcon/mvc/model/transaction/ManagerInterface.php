@@ -10,6 +10,7 @@ namespace Phalcon\Mvc\Model\Transaction;
 interface ManagerInterface
 {
 
+
     /**
      * Checks whether manager has an active transaction
      *
@@ -61,5 +62,4 @@ interface ManagerInterface
      * Remove all the transactions from the manager
      */
     public function collectTransactions();
-
 }

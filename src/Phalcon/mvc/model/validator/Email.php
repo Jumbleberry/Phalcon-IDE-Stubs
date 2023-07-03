@@ -42,6 +42,7 @@ use Phalcon\Mvc\Model\Validator;
 class Email extends Validator
 {
 
+
     /**
      * Executes the validator
      *
@@ -51,5 +52,4 @@ class Email extends Validator
     public function validate(\Phalcon\Mvc\EntityInterface $record): bool
     {
     }
-
 }

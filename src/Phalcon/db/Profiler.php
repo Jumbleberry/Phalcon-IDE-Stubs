@@ -58,6 +58,7 @@ use Phalcon\Db\Profiler\Item;
  */
 class Profiler
 {
+
     /**
      * All the Phalcon\Db\Profiler\Item in the active profile
      *
@@ -78,7 +79,6 @@ class Profiler
      * @var float
      */
     protected $_totalSeconds = 0;
-
 
     /**
      * Starts the profile of a SQL sentence
@@ -145,5 +145,4 @@ class Profiler
     public function getLastProfile(): Item
     {
     }
-
 }

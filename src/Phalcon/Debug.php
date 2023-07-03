@@ -12,27 +12,19 @@ class Debug
 
     public $_uri = '//static.phalconphp.com/www/debug/3.0.x/';
 
-
     public $_theme = 'default';
-
 
     protected $_hideDocumentRoot = false;
 
-
     protected $_showBackTrace = true;
-
 
     protected $_showFiles = true;
 
-
     protected $_showFileFragment = false;
-
 
     protected $_data;
 
-
     static protected $_isActive;
-
 
     /**
      * Change the base URI for static resources
@@ -233,5 +225,4 @@ class Debug
     public function onUncaughtException(\Exception $exception): bool
     {
     }
-
 }

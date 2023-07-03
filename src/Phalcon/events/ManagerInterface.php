@@ -10,6 +10,7 @@ namespace Phalcon\Events;
 interface ManagerInterface
 {
 
+
     /**
      * Attach a listener to the events manager
      *
@@ -50,5 +51,4 @@ interface ManagerInterface
      * @return array
      */
     public function getListeners(string $type);
-
 }

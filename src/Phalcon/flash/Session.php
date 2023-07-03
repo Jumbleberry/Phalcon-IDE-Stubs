@@ -15,6 +15,7 @@ use Phalcon\Session\AdapterInterface as SessionInterface;
 class Session extends \Phalcon\Flash
 {
 
+
     /**
      * Returns the messages stored in session
      *
@@ -85,5 +86,4 @@ class Session extends \Phalcon\Flash
     public function clear(): void
     {
     }
-
 }

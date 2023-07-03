@@ -66,73 +66,49 @@ use Phalcon\Events\ManagerInterface as EventsManagerInterface;
  */
 abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\ModelInterface, \Phalcon\Mvc\Model\ResultInterface, \Phalcon\Di\InjectionAwareInterface, \Serializable, \JsonSerializable
 {
-
     const TRANSACTION_INDEX = 'transaction';
-
 
     const OP_NONE = 0;
 
-
     const OP_CREATE = 1;
-
 
     const OP_UPDATE = 2;
 
-
     const OP_DELETE = 3;
-
 
     const DIRTY_STATE_PERSISTENT = 0;
 
-
     const DIRTY_STATE_TRANSIENT = 1;
-
 
     const DIRTY_STATE_DETACHED = 2;
 
-
     protected $_dependencyInjector;
-
 
     protected $_modelsManager;
 
-
     protected $_modelsMetaData;
-
 
     protected $_errorMessages;
 
-
     protected $_operationMade = 0;
-
 
     protected $_dirtyState = 1;
 
-
     protected $_transaction;
-
 
     protected $_uniqueKey;
 
-
     protected $_uniqueParams;
-
 
     protected $_uniqueTypes;
 
-
     protected $_skipped;
-
 
     protected $_related;
 
-
     protected $_snapshot;
 
-
     protected $_oldSnapshot;
-
-
 
     public function getTransaction()
     {
@@ -1846,5 +1822,4 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
     public function reset()
     {
     }
-
 }

@@ -10,4 +10,5 @@ namespace Phalcon\Session;
 class Exception extends \Phalcon\Exception
 {
 
+
 }

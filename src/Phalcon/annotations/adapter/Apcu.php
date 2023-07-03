@@ -21,9 +21,7 @@ class Apcu extends Adapter
 
     protected $_prefix = '';
 
-
     protected $_ttl = 172800;
-
 
     /**
      * Phalcon\Annotations\Adapter\Apcu constructor
@@ -38,7 +36,7 @@ class Apcu extends Adapter
      * Reads parsed annotations from APCu
      *
      * @param string $key
-     * @return bool|\Phalcon\Annotations\Reflection
+     * @return bool|Reflection
      */
     public function read(string $key)
     {
@@ -53,5 +51,4 @@ class Apcu extends Adapter
     public function write(string $key, \Phalcon\Annotations\Reflection $data)
     {
     }
-
 }

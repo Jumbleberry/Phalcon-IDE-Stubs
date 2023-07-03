@@ -49,12 +49,9 @@ class Builder implements \Phalcon\Mvc\Model\Query\BuilderInterface, \Phalcon\Di\
 
     protected $_dependencyInjector;
 
-
     protected $_columns;
 
-
     protected $_models;
-
 
     protected $_joins;
 
@@ -63,42 +60,29 @@ class Builder implements \Phalcon\Mvc\Model\Query\BuilderInterface, \Phalcon\Di\
      */
     protected $_with;
 
-
     protected $_conditions;
-
 
     protected $_group;
 
-
     protected $_having;
-
 
     protected $_order;
 
-
     protected $_limit;
-
 
     protected $_offset;
 
-
     protected $_forUpdate;
-
 
     protected $_sharedLock;
 
-
     protected $_bindParams;
-
 
     protected $_bindTypes;
 
-
     protected $_distinct;
 
-
     protected $_hiddenParamNumber = 0;
-
 
     /**
      * Phalcon\Mvc\Model\Query\Builder constructor
@@ -830,5 +814,4 @@ class Builder implements \Phalcon\Mvc\Model\Query\BuilderInterface, \Phalcon\Di\
     protected function _conditionNotIn(string $clause, string $operator, string $expr, array $values): Builder
     {
     }
-
 }

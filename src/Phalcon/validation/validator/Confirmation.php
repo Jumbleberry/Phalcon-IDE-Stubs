@@ -51,6 +51,7 @@ use Phalcon\Validation\Validator;
 class Confirmation extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -72,5 +73,4 @@ class Confirmation extends Validator
     protected final function compare(string $a, string $b): bool
     {
     }
-
 }

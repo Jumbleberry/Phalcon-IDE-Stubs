@@ -27,6 +27,7 @@ use Phalcon\Config;
 class Json extends Config
 {
 
+
     /**
      * Phalcon\Config\Adapter\Json constructor
      *
@@ -35,5 +36,4 @@ class Json extends Config
     public function __construct(string $filePath)
     {
     }
-
 }

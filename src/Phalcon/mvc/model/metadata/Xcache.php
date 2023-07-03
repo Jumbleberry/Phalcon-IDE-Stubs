@@ -27,12 +27,9 @@ class Xcache extends MetaData
 
     protected $_prefix = '';
 
-
     protected $_ttl = 172800;
 
-
-    protected $_metaData = array();
-
+    protected $_metaData = [];
 
     /**
      * Phalcon\Mvc\Model\MetaData\Xcache constructor
@@ -62,5 +59,4 @@ class Xcache extends MetaData
     public function write(string $key, $data)
     {
     }
-
 }

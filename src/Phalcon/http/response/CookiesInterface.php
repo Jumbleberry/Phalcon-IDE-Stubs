@@ -12,6 +12,7 @@ use Phalcon\Http\CookieInterface;
 interface CookiesInterface
 {
 
+
     /**
      * Set if cookies in the bag must be automatically encrypted/decrypted
      *
@@ -79,5 +80,4 @@ interface CookiesInterface
      * @return CookiesInterface
      */
     public function reset(): CookiesInterface;
-
 }

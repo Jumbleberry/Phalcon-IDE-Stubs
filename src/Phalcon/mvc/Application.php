@@ -63,12 +63,9 @@ class Application extends \Phalcon\Application
 
     protected $_implicitView = true;
 
-
     protected $_sendHeaders = true;
 
-
     protected $_sendCookies = true;
-
 
     /**
      * Enables or disables sending headers by each request handling
@@ -105,10 +102,9 @@ class Application extends \Phalcon\Application
      * Handles a MVC request
      *
      * @param string $uri
-     * @return bool|\Phalcon\Http\ResponseInterface
+     * @return bool|ResponseInterface
      */
     public function handle(string $uri = null)
     {
     }
-
 }

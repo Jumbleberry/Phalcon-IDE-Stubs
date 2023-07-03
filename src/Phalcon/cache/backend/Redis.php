@@ -48,7 +48,6 @@ class Redis extends Backend
 
     protected $_redis = null;
 
-
     /**
      * Phalcon\Cache\Backend\Redis constructor
      *
@@ -165,5 +164,4 @@ class Redis extends Backend
     public function flush(): bool
     {
     }
-
 }

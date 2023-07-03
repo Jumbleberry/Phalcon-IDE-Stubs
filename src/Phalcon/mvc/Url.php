@@ -33,18 +33,13 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
 
     protected $_dependencyInjector;
 
-
     protected $_baseUri = null;
-
 
     protected $_staticBaseUri = null;
 
-
     protected $_basePath = null;
 
-
     protected $_router;
-
 
     /**
      * Sets the DependencyInjector container
@@ -209,5 +204,4 @@ class Url implements \Phalcon\Mvc\UrlInterface, \Phalcon\Di\InjectionAwareInterf
     public function path(string $path = null): string
     {
     }
-
 }

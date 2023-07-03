@@ -72,48 +72,33 @@ class View extends Injectable implements \Phalcon\Mvc\ViewInterface
      */
     const CACHE_MODE_NONE = 0;
 
-
     const CACHE_MODE_INVERSE = 1;
-
 
     protected $_options;
 
-
     protected $_basePath = '';
-
 
     protected $_content = '';
 
-
     protected $_renderLevel = 5;
-
 
     protected $_currentRenderLevel = 0;
 
-
     protected $_disabledLevels;
 
-
-    protected $_viewParams = array();
-
+    protected $_viewParams = [];
 
     protected $_layout;
 
-
     protected $_layoutsDir = '';
-
 
     protected $_partialsDir = '';
 
+    protected $_viewsDirs = [];
 
-    protected $_viewsDirs = array();
+    protected $_templatesBefore = [];
 
-
-    protected $_templatesBefore = array();
-
-
-    protected $_templatesAfter = array();
-
+    protected $_templatesAfter = [];
 
     protected $_engines = false;
 
@@ -122,39 +107,27 @@ class View extends Injectable implements \Phalcon\Mvc\ViewInterface
      */
     protected $_registeredEngines;
 
-
     protected $_mainView = 'index';
-
 
     protected $_controllerName;
 
-
     protected $_actionName;
-
 
     protected $_params;
 
-
     protected $_pickView;
-
 
     protected $_cache;
 
-
     protected $_cacheLevel = 0;
-
 
     protected $_activeRenderPaths;
 
-
     protected $_disabled = false;
-
-
 
     public function getRenderLevel()
     {
     }
-
 
     public function getCurrentRenderLevel()
     {
@@ -172,7 +145,7 @@ class View extends Injectable implements \Phalcon\Mvc\ViewInterface
      *
      * @param array $options
      */
-    public function __construct(array $options = array())
+    public function __construct(array $options = [])
     {
     }
 
@@ -841,5 +814,4 @@ class View extends Injectable implements \Phalcon\Mvc\ViewInterface
     protected function getViewsDirs(): array
     {
     }
-
 }

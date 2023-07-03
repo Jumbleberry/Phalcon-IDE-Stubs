@@ -13,6 +13,7 @@ use Phalcon\Forms\Element;
 class Numeric extends Element
 {
 
+
     /**
      * Renders the element widget returning html
      *
@@ -22,5 +23,4 @@ class Numeric extends Element
     public function render($attributes = null): string
     {
     }
-
 }

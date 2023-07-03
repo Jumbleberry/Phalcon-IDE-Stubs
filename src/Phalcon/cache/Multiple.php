@@ -71,7 +71,6 @@ class Multiple
 
     protected $_backends;
 
-
     /**
      * Phalcon\Cache\Multiple constructor
      *
@@ -155,5 +154,4 @@ class Multiple
     public function flush(): bool
     {
     }
-
 }

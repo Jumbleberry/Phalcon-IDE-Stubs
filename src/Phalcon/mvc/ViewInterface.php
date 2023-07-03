@@ -10,6 +10,7 @@ namespace Phalcon\Mvc;
 interface ViewInterface extends \Phalcon\Mvc\ViewBaseInterface
 {
 
+
     /**
      * Sets the layouts sub-directory. Must be a directory under the views
      * directory. Depending of your platform, always add a trailing slash or backslash
@@ -197,5 +198,4 @@ interface ViewInterface extends \Phalcon\Mvc\ViewBaseInterface
      * @return bool
      */
     public function isDisabled(): bool;
-
 }

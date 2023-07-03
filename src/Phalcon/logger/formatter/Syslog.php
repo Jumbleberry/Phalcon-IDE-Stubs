@@ -12,6 +12,7 @@ use Phalcon\Logger\Formatter;
 class Syslog extends Formatter
 {
 
+
     /**
      * Applies a format to a message before sent it to the internal log
      *
@@ -24,5 +25,4 @@ class Syslog extends Formatter
     public function format($message, int $type, int $timestamp, $context = null): array
     {
     }
-
 }

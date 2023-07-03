@@ -16,11 +16,9 @@ use Phalcon\Cli\Console\Exception;
 class Console extends \Phalcon\Application
 {
 
-    protected $_arguments = array();
+    protected $_arguments = [];
 
-
-    protected $_options = array();
-
+    protected $_options = [];
 
     /**
      * Merge modules with the existing ones
@@ -63,5 +61,4 @@ class Console extends \Phalcon\Application
     public function setArgument(array $arguments = null, bool $str = true, bool $shift = true): Console
     {
     }
-
 }

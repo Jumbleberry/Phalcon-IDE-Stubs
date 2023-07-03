@@ -43,6 +43,7 @@ use Phalcon\Session\BagInterface;
  */
 abstract class Injectable implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Events\EventsAwareInterface
 {
+
     /**
      * Dependency Injector
      *
@@ -56,7 +57,6 @@ abstract class Injectable implements \Phalcon\Di\InjectionAwareInterface, \Phalc
      * @var \Phalcon\Events\ManagerInterface
      */
     protected $_eventsManager;
-
 
     /**
      * Sets the dependency injector
@@ -102,5 +102,4 @@ abstract class Injectable implements \Phalcon\Di\InjectionAwareInterface, \Phalc
     public function __get(string $propertyName)
     {
     }
-
 }

@@ -32,6 +32,7 @@ use Phalcon\Mvc\Model\MessageInterface;
  */
 class Message implements \Phalcon\Mvc\Model\MessageInterface
 {
+
     /**
      * @var string
      */
@@ -42,15 +43,11 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
      */
     protected $_message;
 
-
     protected $_field;
-
 
     protected $_model;
 
-
     protected $_code;
-
 
     /**
      * @return string
@@ -172,5 +169,4 @@ class Message implements \Phalcon\Mvc\Model\MessageInterface
     public static function __set_state(array $message): MessageInterface
     {
     }
-
 }

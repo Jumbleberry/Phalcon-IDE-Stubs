@@ -11,6 +11,7 @@ use Phalcon\Acl\Exception;
  */
 class Resource implements \Phalcon\Acl\ResourceInterface
 {
+
     /**
      * Resource name
      *
@@ -24,7 +25,6 @@ class Resource implements \Phalcon\Acl\ResourceInterface
      * @var string
      */
     protected $_description;
-
 
     /**
      * Resource name
@@ -62,5 +62,4 @@ class Resource implements \Phalcon\Acl\ResourceInterface
     public function __construct(string $name, string $description = null)
     {
     }
-
 }

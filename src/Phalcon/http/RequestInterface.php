@@ -10,6 +10,7 @@ namespace Phalcon\Http;
 interface RequestInterface
 {
 
+
     /**
      * Gets a variable from the $_REQUEST superglobal applying filters if needed
      *
@@ -332,5 +333,4 @@ interface RequestInterface
      * @return array
      */
     public function getDigestAuth(): array;
-
 }

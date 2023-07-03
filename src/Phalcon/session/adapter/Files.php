@@ -28,4 +28,5 @@ use Phalcon\Session\Adapter;
 class Files extends Adapter
 {
 
+
 }

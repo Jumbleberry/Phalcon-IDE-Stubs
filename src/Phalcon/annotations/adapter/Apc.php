@@ -24,9 +24,7 @@ class Apc extends Adapter
 
     protected $_prefix = '';
 
-
     protected $_ttl = 172800;
-
 
     /**
      * Phalcon\Annotations\Adapter\Apc constructor
@@ -41,7 +39,7 @@ class Apc extends Adapter
      * Reads parsed annotations from APC
      *
      * @param string $key
-     * @return bool|\Phalcon\Annotations\Reflection
+     * @return bool|Reflection
      */
     public function read(string $key)
     {
@@ -56,5 +54,4 @@ class Apc extends Adapter
     public function write(string $key, \Phalcon\Annotations\Reflection $data)
     {
     }
-
 }

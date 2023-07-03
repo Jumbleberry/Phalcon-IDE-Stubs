@@ -45,6 +45,7 @@ use Phalcon\Validation\Message;
 class CreditCard extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -65,5 +66,4 @@ class CreditCard extends Validator
     private function verifyByLuhnAlgorithm($number): bool
     {
     }
-
 }

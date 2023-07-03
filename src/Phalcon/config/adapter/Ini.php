@@ -50,6 +50,7 @@ use Phalcon\Config\Exception;
 class Ini extends Config
 {
 
+
     /**
      * Phalcon\Config\Adapter\Ini constructor
      *
@@ -88,10 +89,9 @@ class Ini extends Config
      * We have to cast values manually because parse_ini_file() has a poor implementation.
      *
      * @param mixed $ini The array casted by `parse_ini_file`
-     * @return bool|null|double|int|string
+     * @return bool|double|int|string|null
      */
     protected function _cast($ini)
     {
     }
-
 }

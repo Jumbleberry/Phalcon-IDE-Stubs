@@ -18,12 +18,9 @@ class Simple extends Resultset
 
     protected $_model;
 
-
     protected $_columnMap;
 
-
     protected $_keepSnapshots = false;
-
 
     /**
      * Phalcon\Mvc\Model\Resultset\Simple constructor
@@ -77,5 +74,4 @@ class Simple extends Resultset
     public function unserialize($data): void
     {
     }
-
 }

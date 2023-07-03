@@ -52,6 +52,7 @@ use Phalcon\Di\ServiceProviderInterface;
  */
 class Di implements \Phalcon\DiInterface
 {
+
     /**
      * List of registered services
      */
@@ -78,7 +79,6 @@ class Di implements \Phalcon\DiInterface
      * Latest DI build
      */
     static protected $_default;
-
 
     /**
      * Phalcon\Di constructor
@@ -146,7 +146,7 @@ class Di implements \Phalcon\DiInterface
      * @param string $name
      * @param mixed $definition
      * @param bool $shared
-     * @return bool|\Phalcon\Di\ServiceInterface
+     * @return bool|ServiceInterface
      */
     public function attempt(string $name, $definition, bool $shared = false)
     {
@@ -431,5 +431,4 @@ class Di implements \Phalcon\DiInterface
     protected function loadFromConfig(\Phalcon\Config $config): void
     {
     }
-
 }

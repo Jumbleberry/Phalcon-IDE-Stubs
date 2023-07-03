@@ -29,15 +29,11 @@ class Reflection
 
     protected $_reflectionData;
 
-
     protected $_classAnnotations;
-
 
     protected $_methodAnnotations;
 
-
     protected $_propertyAnnotations;
-
 
     /**
      * Phalcon\Annotations\Reflection constructor
@@ -51,7 +47,7 @@ class Reflection
     /**
      * Returns the annotations found in the class docblock
      *
-     * @return bool|\Phalcon\Annotations\Collection
+     * @return bool|Collection
      */
     public function getClassAnnotations()
     {
@@ -92,5 +88,4 @@ class Reflection
     public static function __set_state($data): Reflection
     {
     }
-
 }

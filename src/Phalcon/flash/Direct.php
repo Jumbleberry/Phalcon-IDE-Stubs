@@ -12,6 +12,7 @@ use Phalcon\Flash as FlashBase;
 class Direct extends \Phalcon\Flash
 {
 
+
     /**
      * Outputs a message
      *
@@ -31,5 +32,4 @@ class Direct extends \Phalcon\Flash
     public function output(bool $remove = true): void
     {
     }
-
 }

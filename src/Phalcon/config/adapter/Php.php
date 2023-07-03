@@ -42,6 +42,7 @@ use Phalcon\Config;
 class Php extends Config
 {
 
+
     /**
      * Phalcon\Config\Adapter\Php constructor
      *
@@ -50,5 +51,4 @@ class Php extends Config
     public function __construct(string $filePath)
     {
     }
-
 }

@@ -35,12 +35,9 @@ class Dispatcher extends \Phalcon\Dispatcher implements \Phalcon\Mvc\DispatcherI
 
     protected $_handlerSuffix = 'Controller';
 
-
     protected $_defaultHandler = 'index';
 
-
     protected $_defaultAction = 'index';
-
 
     /**
      * Sets the default controller suffix
@@ -209,5 +206,4 @@ class Dispatcher extends \Phalcon\Dispatcher implements \Phalcon\Mvc\DispatcherI
     public function getActiveController(): ControllerInterface
     {
     }
-
 }

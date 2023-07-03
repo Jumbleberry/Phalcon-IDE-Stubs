@@ -46,6 +46,7 @@ use Phalcon\Mvc\Model\Exception;
 class StringLength extends Validator
 {
 
+
     /**
      * Executes the validator
      *
@@ -55,5 +56,4 @@ class StringLength extends Validator
     public function validate(\Phalcon\Mvc\EntityInterface $record): bool
     {
     }
-
 }

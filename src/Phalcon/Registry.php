@@ -57,7 +57,6 @@ final class Registry implements \ArrayAccess, \Countable, \Iterator
 
     protected $_data;
 
-
     /**
      * Registry constructor
      */
@@ -194,5 +193,4 @@ final class Registry implements \ArrayAccess, \Countable, \Iterator
     public final function __unset(string $key): void
     {
     }
-
 }

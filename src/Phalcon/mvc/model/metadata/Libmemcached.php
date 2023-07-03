@@ -39,12 +39,9 @@ class Libmemcached extends MetaData
 
     protected $_ttl = 172800;
 
-
     protected $_memcache = null;
 
-
-    protected $_metaData = array();
-
+    protected $_metaData = [];
 
     /**
      * Phalcon\Mvc\Model\MetaData\Libmemcached constructor
@@ -84,5 +81,4 @@ class Libmemcached extends MetaData
     public function reset(): void
     {
     }
-
 }

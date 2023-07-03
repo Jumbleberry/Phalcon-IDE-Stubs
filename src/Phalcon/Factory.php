@@ -8,6 +8,7 @@ use Phalcon\Config;
 abstract class Factory implements \Phalcon\FactoryInterface
 {
 
+
     /**
      * @param string $namespace
      * @param mixed $config
@@ -15,5 +16,4 @@ abstract class Factory implements \Phalcon\FactoryInterface
     protected static function loadClass(string $namespace, $config)
     {
     }
-
 }

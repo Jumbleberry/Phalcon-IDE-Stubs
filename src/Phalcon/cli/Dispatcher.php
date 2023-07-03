@@ -34,15 +34,11 @@ class Dispatcher extends \Phalcon\Dispatcher implements \Phalcon\Cli\DispatcherI
 
     protected $_handlerSuffix = 'Task';
 
-
     protected $_defaultHandler = 'main';
-
 
     protected $_defaultAction = 'main';
 
-
-    protected $_options = array();
-
+    protected $_options = [];
 
     /**
      * Sets the default task suffix
@@ -165,8 +161,7 @@ class Dispatcher extends \Phalcon\Dispatcher implements \Phalcon\Cli\DispatcherI
      * @param array $params
      * @return mixed
      */
-    public function callActionMethod($handler, string $actionMethod, array $params = array())
+    public function callActionMethod($handler, string $actionMethod, array $params = [])
     {
     }
-
 }

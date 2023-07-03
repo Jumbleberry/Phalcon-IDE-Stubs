@@ -50,6 +50,7 @@ use Phalcon\Validation\Validator;
 class Identical extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -60,5 +61,4 @@ class Identical extends Validator
     public function validate(\Phalcon\Validation $validation, string $field): bool
     {
     }
-
 }

@@ -32,17 +32,13 @@ use Phalcon\Mvc\Router\Exception;
 class Annotations extends Router
 {
 
-    protected $_handlers = array();
-
+    protected $_handlers = [];
 
     protected $_controllerSuffix = 'Controller';
 
-
     protected $_actionSuffix = 'Action';
 
-
     protected $_routePrefix;
-
 
     /**
      * Adds a resource to the annotations handler
@@ -129,5 +125,4 @@ class Annotations extends Router
     public function getResources(): array
     {
     }
-
 }

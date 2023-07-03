@@ -18,7 +18,6 @@ abstract class Application extends Injectable implements \Phalcon\Events\EventsA
 
     protected $_eventsManager;
 
-
     protected $_dependencyInjector;
 
     /**
@@ -29,8 +28,7 @@ abstract class Application extends Injectable implements \Phalcon\Events\EventsA
     /**
      * @var array
      */
-    protected $_modules = array();
-
+    protected $_modules = [];
 
     /**
      * Phalcon\Application
@@ -101,7 +99,7 @@ abstract class Application extends Injectable implements \Phalcon\Events\EventsA
      * @param string $name
      * @return array|object
      */
-    public function getModule(string $name): array
+    public function getModule(string $name)
     {
     }
 
@@ -128,5 +126,4 @@ abstract class Application extends Injectable implements \Phalcon\Events\EventsA
      * Handles a request
      */
     abstract public function handle();
-
 }

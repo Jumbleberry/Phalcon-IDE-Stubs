@@ -11,6 +11,7 @@ use Phalcon\Logger\Formatter;
  */
 class Line extends Formatter
 {
+
     /**
      * Default date format
      *
@@ -24,7 +25,6 @@ class Line extends Formatter
      * @var string
      */
     protected $_format = '[%date%][%type%] %message%';
-
 
     /**
      * Default date format
@@ -84,5 +84,4 @@ class Line extends Formatter
     public function format(string $message, int $type, int $timestamp, $context = null): string
     {
     }
-
 }

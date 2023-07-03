@@ -32,21 +32,15 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
 
     protected $_sent = false;
 
-
     protected $_content;
-
 
     protected $_headers;
 
-
     protected $_cookies;
-
 
     protected $_file;
 
-
     protected $_dependencyInjector;
-
 
     /**
      * Phalcon\Http\Response constructor
@@ -436,5 +430,4 @@ class Response implements \Phalcon\Http\ResponseInterface, \Phalcon\Di\Injection
     public function removeHeader(string $name): Response
     {
     }
-
 }
