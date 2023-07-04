@@ -59,9 +59,9 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
     /**
      * Serializing a resultset will dump all related rows into a big array
      *
-     * @return string
+     * @return array
      */
-    public function serialize(): string
+    public function __serialize(): array
     {
     }
 
@@ -71,7 +71,7 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
      * @param mixed $data
      * @return void
      */
-    public function unserialize($data): void
+    public function __unserialize($data): void
     {
     }
 }

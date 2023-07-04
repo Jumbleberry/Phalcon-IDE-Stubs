@@ -19,7 +19,7 @@ use Phalcon\ValidationInterface;
  * This component implements a high level abstraction for NoSQL databases which
  * works with documents
  */
-abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\CollectionInterface, \Phalcon\Di\InjectionAwareInterface, \Serializable
+abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\CollectionInterface, \Phalcon\Di\InjectionAwareInterface
 {
     const OP_NONE = 0;
 
@@ -780,9 +780,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
     /**
      * Serializes the object ignoring connections or protected properties
      *
-     * @return string
+     * @return array
      */
-    public function serialize(): string
+    public function __serialize(): array
     {
     }
 
@@ -791,7 +791,7 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      *
      * @param mixed $data
      */
-    public function unserialize($data)
+    public function __unserialize($data)
     {
     }
 }

@@ -59,9 +59,9 @@ class Simple extends Resultset
     /**
      * Serializing a resultset will dump all related rows into a big array
      *
-     * @return string
+     * @return array
      */
-    public function serialize(): string
+    public function __serialize(): array
     {
     }
 
@@ -71,7 +71,7 @@ class Simple extends Resultset
      * @param mixed $data
      * @return void
      */
-    public function unserialize($data): void
+    public function __unserialize($data): void
     {
     }
 }

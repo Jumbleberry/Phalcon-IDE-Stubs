@@ -64,7 +64,7 @@ use Phalcon\Events\ManagerInterface as EventsManagerInterface;
  * }
  * </code>
  */
-abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\ModelInterface, \Phalcon\Mvc\Model\ResultInterface, \Phalcon\Di\InjectionAwareInterface, \Serializable, \JsonSerializable
+abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\ModelInterface, \Phalcon\Mvc\Model\ResultInterface, \Phalcon\Di\InjectionAwareInterface, \JsonSerializable
 {
     const TRANSACTION_INDEX = 'transaction';
 
@@ -1747,9 +1747,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
     /**
      * Serializes the object ignoring connections, services, related objects or static properties
      *
-     * @return string
+     * @return array
      */
-    public function serialize(): string
+    public function __serialize(): array
     {
     }
 
@@ -1758,7 +1758,7 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      *
      * @param mixed $data
      */
-    public function unserialize($data)
+    public function __unserialize($data)
     {
     }
 
