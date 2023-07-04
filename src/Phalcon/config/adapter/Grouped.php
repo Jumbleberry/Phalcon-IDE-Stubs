@@ -3,17 +3,17 @@
 namespace Phalcon\Config\Adapter;
 
 use Phalcon\Config;
-use Phalcon\Factory\Exception;
-use Phalcon\Config\Factory;
+use Phalcon\Config\ConfigFactory;
+use Phalcon\Config\ConfigInterface;
+use Phalcon\Config\Exception;
+use Phalcon\Factory\Exception as FactoryException;
 
 /**
- * Phalcon\Config\Adapter\Grouped
- *
  * Reads multiple files (or arrays) and merges them all together.
  *
- * @see Phalcon\Config\Factory::load To load Config Adapter class using 'adapter' option.
+ * See `Phalcon\Config\ConfigFactory::load` To load Config Adapter class using 'adapter' option.
  *
- * <code>
+ * ```php
  * use Phalcon\Config\Adapter\Grouped;
  *
  * $config = new Grouped(
@@ -22,9 +22,9 @@ use Phalcon\Config\Factory;
  *         "path/to/config.dist.php",
  *     ]
  * );
- * </code>
+ * ```
  *
- * <code>
+ * ```php
  * use Phalcon\Config\Adapter\Grouped;
  *
  * $config = new Grouped(
@@ -34,9 +34,9 @@ use Phalcon\Config\Factory;
  *     ],
  *     "json"
  * );
- * </code>
+ * ```
  *
- * <code>
+ * ```php
  * use Phalcon\Config\Adapter\Grouped;
  *
  * $config = new Grouped(
@@ -53,10 +53,11 @@ use Phalcon\Config\Factory;
  *             "adapter"  => "array",
  *             "config"   => [
  *                 "property" => "value",
+ *             ],
  *         ],
  *     ],
  * );
- * </code>
+ * ```
  */
 class Grouped extends Config
 {
