@@ -132,7 +132,7 @@ interface ManagerInterface
      * @param bool $newInstance
      * @return ModelInterface
      */
-    public function load(string $modelName, bool $newInstance = false): ModelInterface;
+    public function load(string $modelName, bool $newInstance = true): ModelInterface;
 
     /**
      * Setup a 1-1 relation between two models

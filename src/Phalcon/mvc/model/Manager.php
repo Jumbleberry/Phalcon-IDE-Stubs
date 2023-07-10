@@ -233,7 +233,7 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param bool $newInstance
      * @return ModelInterface
      */
-    public function load(string $modelName, bool $newInstance = false): ModelInterface
+    public function load(string $modelName, bool $newInstance = true): ModelInterface
     {
     }
 
