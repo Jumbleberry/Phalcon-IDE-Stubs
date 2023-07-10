@@ -1757,8 +1757,9 @@ abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model
      * Unserializes the object from a serialized string
      *
      * @param mixed $data
+     * @return void
      */
-    public function __unserialize($data)
+    public function __unserialize($data): void
     {
     }
 

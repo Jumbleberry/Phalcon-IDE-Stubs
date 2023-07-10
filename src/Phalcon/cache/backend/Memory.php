@@ -137,8 +137,9 @@ class Memory extends Backend
      * Required for interface \Serializable
      *
      * @param mixed $data
+     * @return void
      */
-    public function __unserialize($data)
+    public function __unserialize($data): void
     {
     }
 }

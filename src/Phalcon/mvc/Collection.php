@@ -790,8 +790,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * Unserializes the object from a serialized string
      *
      * @param mixed $data
+     * @return void
      */
-    public function __unserialize($data)
+    public function __unserialize($data): void
     {
     }
 }
