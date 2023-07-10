@@ -92,7 +92,7 @@ class Pdo implements \Phalcon\Db\ResultInterface
      * @param mixed $cursorOrientation
      * @param mixed $cursorOffset
      */
-    public function fetch($fetchStyle = null, $cursorOrientation = null, $cursorOffset = null)
+    public function fetch($fetchStyle = \PDO::FETCH_DEFAULT, $cursorOrientation = \PDO::FETCH_ORI_NEXT, $cursorOffset = 0)
     {
     }
 
