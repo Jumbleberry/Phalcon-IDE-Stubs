@@ -2,6 +2,7 @@
 
 namespace Phalcon\Mvc;
 
+use stdClass;
 use Phalcon\Di;
 use Phalcon\Db\Column;
 use Phalcon\Db\RawValue;
@@ -64,7 +65,7 @@ use Phalcon\Events\ManagerInterface as EventsManagerInterface;
  * }
  * </code>
  */
-abstract class Model implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\ModelInterface, \Phalcon\Mvc\Model\ResultInterface, \Phalcon\Di\InjectionAwareInterface, \JsonSerializable
+abstract class Model extends stdClass implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\ModelInterface, \Phalcon\Mvc\Model\ResultInterface, \Phalcon\Di\InjectionAwareInterface, \JsonSerializable
 {
     const TRANSACTION_INDEX = 'transaction';
 

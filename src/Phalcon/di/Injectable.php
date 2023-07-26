@@ -2,6 +2,7 @@
 
 namespace Phalcon\Di;
 
+use stdClass;
 use Phalcon\Di;
 use Phalcon\DiInterface;
 use Phalcon\Events\ManagerInterface;
@@ -41,7 +42,7 @@ use Phalcon\Session\BagInterface;
  * @property \Phalcon\Session\Bag|\Phalcon\Session\BagInterface $persistent
  * @property \Phalcon\Mvc\View|\Phalcon\Mvc\ViewInterface $view
  */
-abstract class Injectable implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Events\EventsAwareInterface
+abstract class Injectable extends stdClass implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Events\EventsAwareInterface
 {
 
     /**
@@ -57,24 +58,6 @@ abstract class Injectable implements \Phalcon\Di\InjectionAwareInterface, \Phalc
      * @var \Phalcon\Events\ManagerInterface
      */
     protected $_eventsManager;
-
-    /**
-     * Sets the dependency injector
-     *
-     * @param \Phalcon\DiInterface $dependencyInjector
-     */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector)
-    {
-    }
-
-    /**
-     * Returns the internal dependency injector
-     *
-     * @return DiInterface
-     */
-    public function getDI(): DiInterface
-    {
-    }
 
     /**
      * Sets the event manager
@@ -100,6 +83,34 @@ abstract class Injectable implements \Phalcon\Di\InjectionAwareInterface, \Phalc
      * @param string $propertyName
      */
     public function __get(string $propertyName)
+    {
+    }
+
+    /**
+     * Magic method __isset
+     *
+     * @param string $name
+     * @return bool
+     */
+    public function __isset(string $name): bool
+    {
+    }
+
+    /**
+     * Returns the internal dependency injector
+     *
+     * @return DiInterface
+     */
+    public function getDI(): DiInterface
+    {
+    }
+
+    /**
+     * Sets the dependency injector
+     *
+     * @param \Phalcon\DiInterface $dependencyInjector
+     */
+    public function setDI(\Phalcon\DiInterface $dependencyInjector)
     {
     }
 }

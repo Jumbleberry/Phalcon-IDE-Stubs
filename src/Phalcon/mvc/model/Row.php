@@ -2,11 +2,13 @@
 
 namespace Phalcon\Mvc\Model;
 
+use stdClass;
+use JsonSerializable;
+use ArrayAccess;
 use Phalcon\Mvc\ModelInterface;
 use Phalcon\Mvc\EntityInterface;
 use Phalcon\Mvc\Model\Exception;
 use Phalcon\Mvc\Model\ResultInterface;
-use Phalcon\Support\Collection;
 
 /**
  * Phalcon\Mvc\Model\Row
@@ -14,13 +16,9 @@ use Phalcon\Support\Collection;
  * This component allows Phalcon\Mvc\Model to return rows without an associated entity.
  * This objects implements the ArrayAccess interface to allow access the object as object->x or array[x].
  */
-class Row extends Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model\ResultInterface
+class Row extends stdClass implements \ArrayAccess, \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\Model\ResultInterface, \JsonSerializable
 {
 
-    /**
-     * @var bool
-     */
-    protected $insensitive = false;
 
     /**
      * Set the current object's state
@@ -29,6 +27,27 @@ class Row extends Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\M
      * @return bool
      */
     public function setDirtyState(int $dirtyState): bool
+    {
+    }
+
+    /**
+     * Rows cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface
+     * Checks whether offset exists in the row
+     *
+     * @param string|int $index
+     * @return boolean
+     */
+    public function offsetExists($index): bool
+    {
+    }
+
+    /**
+     * Gets a record in a specific position of the row
+     *
+     * @param string|int $index
+     * @return string|Phalcon\Mvc\ModelInterface
+     */
+    public function offsetGet($index)
     {
     }
 
@@ -81,6 +100,24 @@ class Row extends Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\M
      * @return void
      */
     public function writeAttribute(string $attribute, $value): void
+    {
+    }
+
+    /**
+     * Returns the instance as an array representation
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+    }
+
+    /**
+     * Serializes the object for json_encode
+     *
+     * @return array
+     */
+    public function jsonSerialize(): array
     {
     }
 }

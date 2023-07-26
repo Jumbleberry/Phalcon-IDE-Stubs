@@ -51,7 +51,7 @@ use Phalcon\Mvc\Model\ResultsetInterface;
  * }
  * </code>
  */
-abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iterator, \SeekableIterator, \Countable, \ArrayAccess, \JsonSerializable
+abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iterator, \SeekableIterator, \ArrayAccess, \JsonSerializable
 {
     const TYPE_RESULT_FULL = 0;
 
