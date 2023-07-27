@@ -60,7 +60,7 @@ class Collection implements \Iterator, \Countable
     /**
      * Returns the current annotation in the iterator
      *
-     * @return \Phalcon\Annotations\Annotation
+     * @return mixed
      */
     public function current()
     {

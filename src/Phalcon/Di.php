@@ -253,9 +253,9 @@ class Di implements \Phalcon\DiInterface
      *
      * @param mixed $name
      * @param mixed $definition
-     * @return bool
+     * @return void
      */
-    public function offsetSet($name, $definition): bool
+    public function offsetSet($name, $definition): void
     {
     }
 
@@ -277,9 +277,9 @@ class Di implements \Phalcon\DiInterface
      * Removes a service from the services container using the array syntax
      *
      * @param mixed $name
-     * @return bool
+     * @return void
      */
-    public function offsetUnset($name): bool
+    public function offsetUnset($name): void
     {
     }
 

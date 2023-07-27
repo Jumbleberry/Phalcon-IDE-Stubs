@@ -40,9 +40,9 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
     /**
      * Returns current row in the resultset
      *
-     * @return bool|ModelInterface
+     * @return mixed
      */
-    public final function current()
+    final public function current()
     {
     }
 

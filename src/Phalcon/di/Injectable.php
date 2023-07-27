@@ -87,16 +87,6 @@ abstract class Injectable extends stdClass implements \Phalcon\Di\InjectionAware
     }
 
     /**
-     * Magic method __isset
-     *
-     * @param string $name
-     * @return bool
-     */
-    public function __isset(string $name): bool
-    {
-    }
-
-    /**
      * Returns the internal dependency injector
      *
      * @return DiInterface

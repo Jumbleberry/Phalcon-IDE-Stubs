@@ -166,7 +166,7 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
      * Gets row in a specific position of the resultset
      *
      * @param mixed $index
-     * @return bool|ModelInterface
+     * @return mixed
      */
     public function offsetGet($index)
     {
@@ -177,8 +177,9 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
      *
      * @param int $index
      * @param \Phalcon\Mvc\ModelInterface $value
+     * @return void
      */
-    public function offsetSet($index, $value)
+    public function offsetSet($index, $value): void
     {
     }
 
@@ -186,8 +187,9 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
      * Resultsets cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface
      *
      * @param mixed $offset
+     * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
     }
 

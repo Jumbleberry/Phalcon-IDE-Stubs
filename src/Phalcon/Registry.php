@@ -152,6 +152,8 @@ final class Registry implements \ArrayAccess, \Countable, \Iterator
 
     /**
      * Obtains the current value in the internal iterator
+     *
+     * @return mixed
      */
     public function current()
     {

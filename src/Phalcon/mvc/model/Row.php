@@ -34,8 +34,8 @@ class Row extends stdClass implements \ArrayAccess, \Phalcon\Mvc\EntityInterface
      * Rows cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface
      * Checks whether offset exists in the row
      *
-     * @param string|int $index
-     * @return boolean
+     * @param mixed $index
+     * @return bool
      */
     public function offsetExists($index): bool
     {
@@ -44,8 +44,8 @@ class Row extends stdClass implements \ArrayAccess, \Phalcon\Mvc\EntityInterface
     /**
      * Gets a record in a specific position of the row
      *
-     * @param string|int $index
-     * @return string|Phalcon\Mvc\ModelInterface
+     * @param mixed $index
+     * @return mixed
      */
     public function offsetGet($index)
     {
@@ -54,9 +54,8 @@ class Row extends stdClass implements \ArrayAccess, \Phalcon\Mvc\EntityInterface
     /**
      * Rows cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface
      *
-     * @param string|int $index
-     * @param \Phalcon\Mvc\ModelInterface $value
      * @param mixed $element
+     * @param mixed $value
      * @return void
      */
     public function offsetSet($element, $value): void
@@ -66,7 +65,6 @@ class Row extends stdClass implements \ArrayAccess, \Phalcon\Mvc\EntityInterface
     /**
      * Rows cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface
      *
-     * @param string|int $offset
      * @param mixed $element
      * @return void
      */

@@ -219,8 +219,9 @@ class Bag implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Session\BagIn
     /**
      * @param mixed $property
      * @param mixed $value
+     * @return void
      */
-    public final function offsetSet($property, $value)
+    public final function offsetSet($property, $value): void
     {
     }
 
@@ -234,8 +235,9 @@ class Bag implements \Phalcon\Di\InjectionAwareInterface, \Phalcon\Session\BagIn
 
     /**
      * @param mixed $property
+     * @return void
      */
-    public final function offsetUnset($property)
+    public final function offsetUnset($property): void
     {
     }
 

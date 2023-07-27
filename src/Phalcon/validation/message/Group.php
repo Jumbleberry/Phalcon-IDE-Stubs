@@ -37,8 +37,8 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * );
      * </code>
      *
-     * @param int $index
-     * @return \Phalcon\Validation\Message
+     * @param mixed $index
+     * @return mixed
      */
     public function offsetGet($index)
     {
@@ -51,10 +51,11 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * $messages[0] = new \Phalcon\Validation\Message("This is a message");
      * </code>
      *
-     * @param int $index
-     * @param \Phalcon\Validation\Message $message
+     * @param mixed $index
+     * @param mixed $message
+     * @return void
      */
-    public function offsetSet($index, $message)
+    public function offsetSet($index, $message): void
     {
     }
 
@@ -67,8 +68,8 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * );
      * </code>
      *
-     * @param int $index
-     * @return boolean
+     * @param mixed $index
+     * @return bool
      */
     public function offsetExists($index): bool
     {
@@ -82,8 +83,9 @@ class Group implements \Countable, \ArrayAccess, \Iterator
      * </code>
      *
      * @param mixed $index
+     * @return void
      */
-    public function offsetUnset($index)
+    public function offsetUnset($index): void
     {
     }
 

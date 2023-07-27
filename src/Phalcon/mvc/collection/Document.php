@@ -29,6 +29,7 @@ class Document implements \Phalcon\Mvc\EntityInterface, \ArrayAccess
      * Returns the value of a field using the ArrayAccess interfase
      *
      * @param mixed $index
+     * @return mixed
      */
     public function offsetGet($index)
     {
@@ -49,8 +50,9 @@ class Document implements \Phalcon\Mvc\EntityInterface, \ArrayAccess
      * Rows cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface
      *
      * @param string $offset
+     * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
     }
 

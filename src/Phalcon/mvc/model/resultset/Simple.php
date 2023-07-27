@@ -38,9 +38,9 @@ class Simple extends Resultset
     /**
      * Returns current row in the resultset
      *
-     * @return bool|ModelInterface
+     * @return mixed
      */
-    public final function current()
+    final public function current()
     {
     }
 
