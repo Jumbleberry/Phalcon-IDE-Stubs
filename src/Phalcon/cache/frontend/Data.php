@@ -59,7 +59,6 @@ class Data implements \Phalcon\Cache\FrontendInterface
 
     protected $_frontendOptions;
 
-
     /**
      * Phalcon\Cache\Frontend\Data constructor
      *
@@ -128,5 +127,4 @@ class Data implements \Phalcon\Cache\FrontendInterface
     public function afterRetrieve($data)
     {
     }
-
 }

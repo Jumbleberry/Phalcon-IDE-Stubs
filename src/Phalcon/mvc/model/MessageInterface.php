@@ -10,6 +10,7 @@ namespace Phalcon\Mvc\Model;
 interface MessageInterface
 {
 
+
     /**
      * Sets message type
      *
@@ -66,5 +67,4 @@ interface MessageInterface
      * @return MessageInterface
      */
     public static function __set_state(array $message): MessageInterface;
-
 }

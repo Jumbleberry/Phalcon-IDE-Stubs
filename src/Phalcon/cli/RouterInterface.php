@@ -12,6 +12,7 @@ use Phalcon\Cli\Router\RouteInterface;
 interface RouterInterface
 {
 
+
     /**
      * Sets the name of the default module
      *
@@ -132,5 +133,4 @@ interface RouterInterface
      * @return RouteInterface
      */
     public function getRouteByName(string $name): RouteInterface;
-
 }

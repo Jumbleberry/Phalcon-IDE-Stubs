@@ -12,6 +12,7 @@ use Phalcon\Assets\FilterInterface;
 class None implements \Phalcon\Assets\FilterInterface
 {
 
+
     /**
      * Returns the content without be touched
      *
@@ -21,5 +22,4 @@ class None implements \Phalcon\Assets\FilterInterface
     public function filter(string $content): string
     {
     }
-
 }

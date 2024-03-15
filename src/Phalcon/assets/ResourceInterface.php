@@ -10,6 +10,7 @@ namespace Phalcon\Assets;
 interface ResourceInterface
 {
 
+
     /**
      * Sets the resource's type.
      *
@@ -61,5 +62,4 @@ interface ResourceInterface
      * @return string
      */
     public function getResourceKey(): string;
-
 }

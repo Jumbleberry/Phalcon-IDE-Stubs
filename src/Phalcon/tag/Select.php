@@ -14,6 +14,7 @@ use Phalcon\EscaperInterface;
 abstract class Select
 {
 
+
     /**
      * Generates a SELECT tag
      *
@@ -46,5 +47,4 @@ abstract class Select
     private static function _optionsFromArray($data, $value, $closeOption)
     {
     }
-
 }

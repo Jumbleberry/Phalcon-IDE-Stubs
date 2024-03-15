@@ -10,6 +10,7 @@ namespace Phalcon\Mvc;
 interface UrlInterface
 {
 
+
     /**
      * Sets a prefix to all the urls generated
      *
@@ -56,5 +57,4 @@ interface UrlInterface
      * @return string
      */
     public function path(string $path = null): string;
-
 }

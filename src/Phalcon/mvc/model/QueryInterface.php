@@ -10,6 +10,7 @@ namespace Phalcon\Mvc\Model;
 interface QueryInterface
 {
 
+
     /**
      * Parses the intermediate code produced by Phalcon\Mvc\Model\Query\Lang generating another
      * intermediate representation that could be executed by Phalcon\Mvc\Model\Query
@@ -56,5 +57,4 @@ interface QueryInterface
      * @return mixed
      */
     public function execute($bindParams = null, $bindTypes = null);
-
 }

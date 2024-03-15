@@ -38,33 +38,23 @@ class Loader implements \Phalcon\Events\EventsAwareInterface
 
     protected $_eventsManager = null;
 
-
     protected $_foundPath = null;
-
 
     protected $_checkedPath = null;
 
+    protected $_classes = [];
 
-    protected $_classes = array();
+    protected $_extensions = ['php'];
 
+    protected $_namespaces = [];
 
-    protected $_extensions = array('php');
+    protected $_directories = [];
 
-
-    protected $_namespaces = array();
-
-
-    protected $_directories = array();
-
-
-    protected $_files = array();
-
+    protected $_files = [];
 
     protected $_registered = false;
 
-
     protected $fileCheckingCallback = 'is_file';
-
 
     /**
      * Sets the file check callback.
@@ -267,5 +257,4 @@ class Loader implements \Phalcon\Events\EventsAwareInterface
     public function getCheckedPath(): string
     {
     }
-
 }

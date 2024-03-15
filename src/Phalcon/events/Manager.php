@@ -17,15 +17,11 @@ class Manager implements \Phalcon\Events\ManagerInterface
 
     protected $_events = null;
 
-
     protected $_collect = false;
-
 
     protected $_enablePriorities = false;
 
-
     protected $_responses;
-
 
     /**
      * Attach a listener to the events manager
@@ -151,5 +147,4 @@ class Manager implements \Phalcon\Events\ManagerInterface
     public function getListeners(string $type)
     {
     }
-
 }

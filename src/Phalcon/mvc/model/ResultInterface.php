@@ -10,11 +10,11 @@ namespace Phalcon\Mvc\Model;
 interface ResultInterface
 {
 
+
     /**
      * Sets the object's state
      *
      * @param integer $dirtyState
      */
     public function setDirtyState(int $dirtyState);
-
 }

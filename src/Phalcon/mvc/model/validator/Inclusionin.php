@@ -43,6 +43,7 @@ use Phalcon\Mvc\Model\Validator;
 class Inclusionin extends Validator
 {
 
+
     /**
      * Executes validator
      *
@@ -52,5 +53,4 @@ class Inclusionin extends Validator
     public function validate(\Phalcon\Mvc\EntityInterface $record): bool
     {
     }
-
 }

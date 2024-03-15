@@ -10,6 +10,7 @@ namespace Phalcon\Acl;
 interface RoleInterface
 {
 
+
     /**
      * Returns the role name
      *
@@ -30,5 +31,4 @@ interface RoleInterface
      * @return string
      */
     public function __toString(): string;
-
 }

@@ -55,6 +55,7 @@ use Phalcon\Cache\FrontendInterface;
 class Igbinary extends Data implements \Phalcon\Cache\FrontendInterface
 {
 
+
     /**
      * Phalcon\Cache\Frontend\Data constructor
      *
@@ -124,5 +125,4 @@ class Igbinary extends Data implements \Phalcon\Cache\FrontendInterface
     public function afterRetrieve($data)
     {
     }
-
 }

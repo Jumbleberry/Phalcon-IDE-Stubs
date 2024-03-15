@@ -20,31 +20,21 @@ class Validation extends Injectable implements \Phalcon\ValidationInterface
 
     protected $_data;
 
-
     protected $_entity;
 
+    protected $_validators = [];
 
-    protected $_validators = array();
+    protected $_combinedFieldsValidators = [];
 
-
-    protected $_combinedFieldsValidators = array();
-
-
-    protected $_filters = array();
-
+    protected $_filters = [];
 
     protected $_messages;
 
-
     protected $_defaultMessages;
 
-
-    protected $_labels = array();
-
+    protected $_labels = [];
 
     protected $_values;
-
-
 
     public function getData()
     {
@@ -164,7 +154,7 @@ class Validation extends Injectable implements \Phalcon\ValidationInterface
      * @param array $messages
      * @return array
      */
-    public function setDefaultMessages(array $messages = array()): array
+    public function setDefaultMessages(array $messages = []): array
     {
     }
 
@@ -248,5 +238,4 @@ class Validation extends Injectable implements \Phalcon\ValidationInterface
     protected function preChecking($field, \Phalcon\Validation\ValidatorInterface $validator): bool
     {
     }
-
 }

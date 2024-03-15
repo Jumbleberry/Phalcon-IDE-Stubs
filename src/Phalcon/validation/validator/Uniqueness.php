@@ -88,7 +88,6 @@ class Uniqueness extends CombinedFieldsValidator
 
     private $columnMap = null;
 
-
     /**
      * Executes the validation
      *
@@ -141,5 +140,4 @@ class Uniqueness extends CombinedFieldsValidator
     protected function isUniquenessCollection($record, array $field, array $values)
     {
     }
-
 }

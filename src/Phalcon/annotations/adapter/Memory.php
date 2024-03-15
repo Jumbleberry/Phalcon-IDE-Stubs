@@ -12,6 +12,7 @@ use Phalcon\Annotations\Reflection;
  */
 class Memory extends Adapter
 {
+
     /**
      * Data
      *
@@ -19,12 +20,11 @@ class Memory extends Adapter
      */
     protected $_data;
 
-
     /**
      * Reads parsed annotations from memory
      *
      * @param string $key
-     * @return bool|\Phalcon\Annotations\Reflection
+     * @return bool|Reflection
      */
     public function read(string $key)
     {
@@ -39,5 +39,4 @@ class Memory extends Adapter
     public function write(string $key, \Phalcon\Annotations\Reflection $data)
     {
     }
-
 }

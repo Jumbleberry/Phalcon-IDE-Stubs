@@ -31,12 +31,9 @@ class Apc extends MetaData
 
     protected $_prefix = '';
 
-
     protected $_ttl = 172800;
 
-
-    protected $_metaData = array();
-
+    protected $_metaData = [];
 
     /**
      * Phalcon\Mvc\Model\MetaData\Apc constructor
@@ -67,5 +64,4 @@ class Apc extends MetaData
     public function write(string $key, $data): void
     {
     }
-
 }

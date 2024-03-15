@@ -43,6 +43,7 @@ use Phalcon\Mvc\Model\Validator;
 class PresenceOf extends Validator
 {
 
+
     /**
      * Executes the validator
      *
@@ -52,5 +53,4 @@ class PresenceOf extends Validator
     public function validate(\Phalcon\Mvc\EntityInterface $record): bool
     {
     }
-
 }

@@ -33,12 +33,9 @@ class Redis extends MetaData
 
     protected $_ttl = 172800;
 
-
     protected $_redis = null;
 
-
-    protected $_metaData = array();
-
+    protected $_metaData = [];
 
     /**
      * Phalcon\Mvc\Model\MetaData\Redis constructor
@@ -78,5 +75,4 @@ class Redis extends MetaData
     public function reset(): void
     {
     }
-
 }

@@ -16,7 +16,6 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
 
     protected $_options;
 
-
     /**
      * Phalcon\Validation\Validator constructor
      *
@@ -114,5 +113,4 @@ abstract class Validator implements \Phalcon\Validation\ValidatorInterface
     protected function prepareCode(string $field): ?int
     {
     }
-
 }

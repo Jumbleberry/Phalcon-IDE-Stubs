@@ -19,30 +19,21 @@ abstract class Element implements \Phalcon\Forms\ElementInterface
 
     protected $_form;
 
-
     protected $_name;
-
 
     protected $_value;
 
-
     protected $_label;
-
 
     protected $_attributes;
 
-
-    protected $_validators = array();
-
+    protected $_validators = [];
 
     protected $_filters;
 
-
     protected $_options;
 
-
     protected $_messages;
-
 
     /**
      * Phalcon\Forms\Element constructor
@@ -360,5 +351,4 @@ abstract class Element implements \Phalcon\Forms\ElementInterface
     public function __toString(): string
     {
     }
-
 }

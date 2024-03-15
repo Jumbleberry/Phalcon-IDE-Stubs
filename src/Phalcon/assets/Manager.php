@@ -18,6 +18,7 @@ use Phalcon\Assets\Inline\Js as InlineJs;
  */
 class Manager
 {
+
     /**
      * Options configure
      *
@@ -25,12 +26,9 @@ class Manager
      */
     protected $_options;
 
-
     protected $_collections;
 
-
     protected $_implicitOutput = true;
-
 
     /**
      * Phalcon\Assets\Manager
@@ -338,5 +336,4 @@ class Manager
     public function exists(string $id): bool
     {
     }
-
 }

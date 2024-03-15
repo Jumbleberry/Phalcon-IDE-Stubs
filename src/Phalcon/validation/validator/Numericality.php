@@ -45,6 +45,7 @@ use Phalcon\Validation\Validator;
 class Numericality extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -55,5 +56,4 @@ class Numericality extends Validator
     public function validate(\Phalcon\Validation $validation, string $field): bool
     {
     }
-
 }

@@ -26,11 +26,10 @@ use Phalcon\Cache\Exception;
  * $data = $cache->get("my-data");
  * </code>
  */
-class Memory extends Backend implements \Serializable
+class Memory extends Backend
 {
 
     protected $_data;
-
 
     /**
      * Returns a cached content
@@ -128,9 +127,9 @@ class Memory extends Backend implements \Serializable
     /**
      * Required for interface \Serializable
      *
-     * @return string
+     * @return array
      */
-    public function serialize(): string
+    public function __serialize(): array
     {
     }
 
@@ -138,9 +137,9 @@ class Memory extends Backend implements \Serializable
      * Required for interface \Serializable
      *
      * @param mixed $data
+     * @return void
      */
-    public function unserialize($data)
+    public function __unserialize($data): void
     {
     }
-
 }

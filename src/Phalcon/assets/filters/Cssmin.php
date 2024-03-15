@@ -14,6 +14,7 @@ use Phalcon\Assets\FilterInterface;
 class Cssmin implements \Phalcon\Assets\FilterInterface
 {
 
+
     /**
      * Filters the content using CSSMIN
      *
@@ -23,5 +24,4 @@ class Cssmin implements \Phalcon\Assets\FilterInterface
     public function filter(string $content): string
     {
     }
-
 }

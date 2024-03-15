@@ -77,6 +77,7 @@ namespace Phalcon\Security;
 class Random
 {
 
+
     /**
      * Generates a random binary string
      *
@@ -275,5 +276,4 @@ class Random
     protected function base(string $alphabet, int $base, $n = null): string
     {
     }
-
 }

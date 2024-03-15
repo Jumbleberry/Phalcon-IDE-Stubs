@@ -30,12 +30,9 @@ class Memcache extends MetaData
 
     protected $_ttl = 172800;
 
-
     protected $_memcache = null;
 
-
-    protected $_metaData = array();
-
+    protected $_metaData = [];
 
     /**
      * Phalcon\Mvc\Model\MetaData\Memcache constructor
@@ -75,5 +72,4 @@ class Memcache extends MetaData
     public function reset(): void
     {
     }
-
 }

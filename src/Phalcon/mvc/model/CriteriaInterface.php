@@ -12,6 +12,7 @@ use Phalcon\DiInterface;
 interface CriteriaInterface
 {
 
+
     /**
      * Set a model on which the query will be executed
      *
@@ -215,5 +216,4 @@ interface CriteriaInterface
      * @return ResultsetInterface
      */
     public function execute(): ResultsetInterface;
-
 }

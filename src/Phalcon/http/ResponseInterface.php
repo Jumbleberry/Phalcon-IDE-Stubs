@@ -12,6 +12,7 @@ use Phalcon\Http\Response\HeadersInterface;
 interface ResponseInterface
 {
 
+
     /**
      * Sets the HTTP response code
      *
@@ -162,5 +163,4 @@ interface ResponseInterface
      * @return ResponseInterface
      */
     public function setFileToSend(string $filePath, $attachmentName = null): ResponseInterface;
-
 }

@@ -12,6 +12,7 @@ use Phalcon\Mvc\Model\MessageInterface;
 interface CollectionInterface
 {
 
+
     /**
      * Sets a value for the _id property, creates a MongoId object if needed
      *
@@ -161,5 +162,4 @@ interface CollectionInterface
      * @return bool
      */
     public function delete(): bool;
-
 }

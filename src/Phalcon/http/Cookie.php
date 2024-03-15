@@ -20,36 +20,25 @@ class Cookie implements \Phalcon\Http\CookieInterface, \Phalcon\Di\InjectionAwar
 
     protected $_readed = false;
 
-
     protected $_restored = false;
-
 
     protected $_useEncryption = false;
 
-
     protected $_dependencyInjector;
-
 
     protected $_filter;
 
-
     protected $_name;
-
 
     protected $_value;
 
-
     protected $_expire;
-
 
     protected $_path = '/';
 
-
     protected $_domain;
 
-
     protected $_secure;
-
 
     protected $_httpOnly = true;
 
@@ -59,7 +48,6 @@ class Cookie implements \Phalcon\Http\CookieInterface, \Phalcon\Di\InjectionAwar
      * @var string|null
      */
     protected $signKey = null;
-
 
     /**
      * Phalcon\Http\Cookie constructor.
@@ -303,5 +291,4 @@ class Cookie implements \Phalcon\Http\CookieInterface, \Phalcon\Di\InjectionAwar
     protected function assertSignKeyIsLongEnough(string $signKey): void
     {
     }
-
 }

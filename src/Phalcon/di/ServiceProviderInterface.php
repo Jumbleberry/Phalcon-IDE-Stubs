@@ -30,6 +30,7 @@ use Phalcon\DiInterface;
 interface ServiceProviderInterface
 {
 
+
     /**
      * Registers a service provider.
      *
@@ -37,5 +38,4 @@ interface ServiceProviderInterface
      * @return void
      */
     public function register(\Phalcon\DiInterface $di): void;
-
 }

@@ -14,25 +14,17 @@ abstract class Backend implements \Phalcon\Cache\BackendInterface
 
     protected $_frontend;
 
-
     protected $_options;
-
 
     protected $_prefix = '';
 
-
     protected $_lastKey = '';
-
 
     protected $_lastLifetime = null;
 
-
     protected $_fresh = false;
 
-
     protected $_started = false;
-
-
 
     public function getFrontend()
     {
@@ -45,7 +37,6 @@ abstract class Backend implements \Phalcon\Cache\BackendInterface
     {
     }
 
-
     public function getOptions()
     {
     }
@@ -56,7 +47,6 @@ abstract class Backend implements \Phalcon\Cache\BackendInterface
     public function setOptions($options)
     {
     }
-
 
     public function getLastKey()
     {
@@ -126,5 +116,4 @@ abstract class Backend implements \Phalcon\Cache\BackendInterface
     public function getLifetime(): int
     {
     }
-
 }

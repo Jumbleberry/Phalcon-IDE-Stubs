@@ -9,6 +9,7 @@ namespace Phalcon\Events;
  */
 class Event implements \Phalcon\Events\EventInterface
 {
+
     /**
      * Event type
      *
@@ -43,7 +44,6 @@ class Event implements \Phalcon\Events\EventInterface
      * @var boolean
      */
     protected $_cancelable = true;
-
 
     /**
      * Event type
@@ -142,5 +142,4 @@ class Event implements \Phalcon\Events\EventInterface
     public function isCancelable(): bool
     {
     }
-
 }

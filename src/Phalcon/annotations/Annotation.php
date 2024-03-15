@@ -12,6 +12,7 @@ use Phalcon\Annotations\Exception;
  */
 class Annotation
 {
+
     /**
      * Annotation Name
      *
@@ -32,7 +33,6 @@ class Annotation
      * @var string
      */
     protected $_exprArguments;
-
 
     /**
      * Phalcon\Annotations\Annotation constructor
@@ -128,5 +128,4 @@ class Annotation
     public function getNamedParameter(string $name)
     {
     }
-
 }

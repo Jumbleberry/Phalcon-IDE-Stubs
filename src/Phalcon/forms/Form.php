@@ -21,30 +21,21 @@ class Form extends Injectable implements \Countable, \Iterator
 
     protected $_position;
 
-
     protected $_entity;
 
-
-    protected $_options = array();
-
+    protected $_options = [];
 
     protected $_data;
 
-
-    protected $_elements = array();
-
+    protected $_elements = [];
 
     protected $_elementsIndexed;
 
-
     protected $_messages;
-
 
     protected $_action;
 
-
     protected $_validation;
-
 
     /**
      * @param mixed $validation
@@ -52,7 +43,6 @@ class Form extends Injectable implements \Countable, \Iterator
     public function setValidation($validation)
     {
     }
-
 
     public function getValidation()
     {
@@ -203,7 +193,7 @@ class Form extends Injectable implements \Countable, \Iterator
      * </code>
      *
      * @param bool $byItemName
-     * @return array|\Phalcon\Validation\Message\Group
+     * @return array|Group
      */
     public function getMessages(bool $byItemName = false)
     {
@@ -344,7 +334,7 @@ class Form extends Injectable implements \Countable, \Iterator
     /**
      * Returns the current element in the iterator
      *
-     * @return bool|\Phalcon\Forms\ElementInterface
+     * @return mixed
      */
     public function current()
     {
@@ -376,5 +366,4 @@ class Form extends Injectable implements \Countable, \Iterator
     public function valid(): bool
     {
     }
-
 }

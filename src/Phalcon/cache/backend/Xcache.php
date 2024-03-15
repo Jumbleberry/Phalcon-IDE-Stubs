@@ -39,6 +39,7 @@ use Phalcon\Cache\FrontendInterface;
 class Xcache extends Backend
 {
 
+
     /**
      * Phalcon\Cache\Backend\Xcache constructor
      *
@@ -141,5 +142,4 @@ class Xcache extends Backend
     public function flush(): bool
     {
     }
-
 }

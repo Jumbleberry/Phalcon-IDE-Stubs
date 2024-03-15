@@ -10,6 +10,7 @@ namespace Phalcon\Mvc\Router;
 interface RouteInterface
 {
 
+
     /**
      * Sets a hostname restriction to the route
      *
@@ -121,5 +122,4 @@ interface RouteInterface
      * @return void
      */
     public static function reset(): void;
-
 }

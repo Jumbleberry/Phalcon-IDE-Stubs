@@ -25,6 +25,7 @@ use Phalcon\Translate\Adapter;
  */
 class Gettext extends Adapter implements \ArrayAccess
 {
+
     /**
      * @var string|array
      */
@@ -44,7 +45,6 @@ class Gettext extends Adapter implements \ArrayAccess
      * @var int
      */
     protected $_category;
-
 
     /**
      * @return string|array
@@ -212,5 +212,4 @@ class Gettext extends Adapter implements \ArrayAccess
     protected function getOptionsDefault(): array
     {
     }
-
 }

@@ -20,13 +20,13 @@ namespace Phalcon\Db;
  */
 class RawValue
 {
+
     /**
      * Raw value without quoting or formatting
      *
      * @var string
      */
     protected $_value;
-
 
     /**
      * Raw value without quoting or formatting
@@ -54,5 +54,4 @@ class RawValue
     public function __construct($value)
     {
     }
-
 }

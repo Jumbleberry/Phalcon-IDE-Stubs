@@ -10,7 +10,6 @@ class Gd extends Adapter
 
     static protected $_checked = false;
 
-
     /**
      * @return bool
      */
@@ -155,9 +154,7 @@ class Gd extends Adapter
     {
     }
 
-
     public function __destruct()
     {
     }
-
 }

@@ -22,6 +22,7 @@ namespace Phalcon\Mvc\Model\Query;
 abstract class Lang
 {
 
+
     /**
      * Parses a PHQL statement returning an intermediate representation (IR)
      *
@@ -31,5 +32,4 @@ abstract class Lang
     public static function parsePHQL(string $phql)
     {
     }
-
 }

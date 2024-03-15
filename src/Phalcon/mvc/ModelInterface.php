@@ -15,6 +15,7 @@ use Phalcon\Mvc\Model\MessageInterface;
 interface ModelInterface
 {
 
+
     /**
      * Sets a transaction related to the Model instance
      *
@@ -327,5 +328,4 @@ interface ModelInterface
      * Reset a model instance data
      */
     public function reset();
-
 }

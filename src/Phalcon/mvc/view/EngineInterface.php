@@ -13,6 +13,7 @@ use Phalcon\Mvc\ViewBaseInterface;
 interface EngineInterface
 {
 
+
     /**
      * Returns cached output on another view stage
      *
@@ -37,5 +38,4 @@ interface EngineInterface
      * @param bool $mustClean
      */
     public function render(string $path, $params, bool $mustClean = false);
-
 }

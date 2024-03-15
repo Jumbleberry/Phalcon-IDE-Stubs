@@ -13,8 +13,7 @@ use Phalcon\Translate\Adapter;
 class Csv extends Adapter implements \ArrayAccess
 {
 
-    protected $_translate = array();
-
+    protected $_translate = [];
 
     /**
      * Phalcon\Translate\Adapter\Csv constructor
@@ -58,5 +57,4 @@ class Csv extends Adapter implements \ArrayAccess
     public function exists(string $index): bool
     {
     }
-
 }

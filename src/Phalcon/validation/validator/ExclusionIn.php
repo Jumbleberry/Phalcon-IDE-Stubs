@@ -57,6 +57,7 @@ use Phalcon\Validation\Exception;
 class ExclusionIn extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -67,5 +68,4 @@ class ExclusionIn extends Validator
     public function validate(\Phalcon\Validation $validation, string $field): bool
     {
     }
-
 }

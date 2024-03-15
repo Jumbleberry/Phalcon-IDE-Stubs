@@ -20,7 +20,6 @@ class Sqlite extends Dialect
 
     protected $_escapeChar = '\\\"';
 
-
     /**
      * Gets the column name in SQLite
      *
@@ -340,5 +339,4 @@ class Sqlite extends Dialect
     public function sharedLock(string $sqlQuery): string
     {
     }
-
 }

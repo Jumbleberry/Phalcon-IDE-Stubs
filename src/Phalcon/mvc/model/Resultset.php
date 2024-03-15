@@ -51,20 +51,15 @@ use Phalcon\Mvc\Model\ResultsetInterface;
  * }
  * </code>
  */
-abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iterator, \SeekableIterator, \Countable, \ArrayAccess, \Serializable, \JsonSerializable
+abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iterator, \SeekableIterator, \ArrayAccess, \JsonSerializable
 {
-
     const TYPE_RESULT_FULL = 0;
-
 
     const TYPE_RESULT_PARTIAL = 1;
 
-
     const HYDRATE_RECORDS = 0;
 
-
     const HYDRATE_OBJECTS = 2;
-
 
     const HYDRATE_ARRAYS = 1;
 
@@ -73,33 +68,23 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
      */
     protected $_result = false;
 
-
     protected $_cache;
-
 
     protected $_isFresh = true;
 
-
     protected $_pointer = 0;
-
 
     protected $_count;
 
-
     protected $_activeRow = null;
-
 
     protected $_rows = null;
 
-
     protected $_row = null;
-
 
     protected $_errorMessages;
 
-
     protected $_hydrateMode = 0;
-
 
     /**
      * Phalcon\Mvc\Model\Resultset constructor
@@ -181,7 +166,7 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
      * Gets row in a specific position of the resultset
      *
      * @param mixed $index
-     * @return bool|\Phalcon\Mvc\ModelInterface
+     * @return mixed
      */
     public function offsetGet($index)
     {
@@ -192,8 +177,9 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
      *
      * @param int $index
      * @param \Phalcon\Mvc\ModelInterface $value
+     * @return void
      */
-    public function offsetSet($index, $value)
+    public function offsetSet($index, $value): void
     {
     }
 
@@ -201,8 +187,9 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
      * Resultsets cannot be changed. It has only been implemented to meet the definition of the ArrayAccess interface
      *
      * @param mixed $offset
+     * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
     }
 
@@ -218,7 +205,7 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
     /**
      * Get first row in the resultset
      *
-     * @return bool|\Phalcon\Mvc\ModelInterface
+     * @return bool|ModelInterface
      */
     public function getFirst()
     {
@@ -227,7 +214,7 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
     /**
      * Get last row in the resultset
      *
-     * @return bool|\Phalcon\Mvc\ModelInterface
+     * @return bool|ModelInterface
      */
     public function getLast()
     {
@@ -344,5 +331,4 @@ abstract class Resultset implements \Phalcon\Mvc\Model\ResultsetInterface, \Iter
     public function jsonSerialize(): array
     {
     }
-
 }

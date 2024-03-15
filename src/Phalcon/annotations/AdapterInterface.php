@@ -14,6 +14,7 @@ use Phalcon\Annotations\ReaderInterface;
 interface AdapterInterface
 {
 
+
     /**
      * Sets the annotations parser
      *
@@ -69,5 +70,4 @@ interface AdapterInterface
      * @return Collection
      */
     public function getProperty(string $className, string $propertyName): Collection;
-
 }

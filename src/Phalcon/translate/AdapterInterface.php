@@ -10,6 +10,7 @@ namespace Phalcon\Translate;
 interface AdapterInterface
 {
 
+
     /**
      * Returns the translation string of the given key
      *
@@ -35,5 +36,4 @@ interface AdapterInterface
      * @return bool
      */
     public function exists(string $index): bool;
-
 }

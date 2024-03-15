@@ -56,24 +56,17 @@ class Transaction implements \Phalcon\Mvc\Model\TransactionInterface
 
     protected $_connection;
 
-
     protected $_activeTransaction = false;
-
 
     protected $_isNewTransaction = true;
 
-
     protected $_rollbackOnAbort = false;
-
 
     protected $_manager;
 
-
     protected $_messages;
 
-
     protected $_rollbackRecord;
-
 
     /**
      * Phalcon\Mvc\Model\Transaction constructor
@@ -186,5 +179,4 @@ class Transaction implements \Phalcon\Mvc\Model\TransactionInterface
     public function setRollbackedRecord(\Phalcon\Mvc\ModelInterface $record)
     {
     }
-
 }

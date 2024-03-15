@@ -86,13 +86,12 @@ class Beanstalk
      */
     protected $_parameters;
 
-
     /**
      * Phalcon\Queue\Beanstalk
      *
      * @param array $parameters
      */
-    public function __construct(array $parameters = array())
+    public function __construct(array $parameters = [])
     {
     }
 
@@ -120,7 +119,7 @@ class Beanstalk
      * Reserves/locks a ready job from the specified tube.
      *
      * @param mixed $timeout
-     * @return bool|\Phalcon\Queue\Beanstalk\Job
+     * @return bool|Job
      */
     public function reserve($timeout = null)
     {
@@ -226,7 +225,7 @@ class Beanstalk
     /**
      * Inspect the next ready job.
      *
-     * @return bool|\Phalcon\Queue\Beanstalk\Job
+     * @return bool|Job
      */
     public function peekReady()
     {
@@ -235,7 +234,7 @@ class Beanstalk
     /**
      * Return the next job in the list of buried jobs.
      *
-     * @return bool|\Phalcon\Queue\Beanstalk\Job
+     * @return bool|Job
      */
     public function peekBuried()
     {
@@ -244,7 +243,7 @@ class Beanstalk
     /**
      * Return the next job in the list of buried jobs.
      *
-     * @return bool|\Phalcon\Queue\Beanstalk\Job
+     * @return bool|Job
      */
     public function peekDelayed()
     {
@@ -254,7 +253,7 @@ class Beanstalk
      * The peek commands let the client inspect a job in the system.
      *
      * @param int $id
-     * @return bool|\Phalcon\Queue\Beanstalk\Job
+     * @return bool|Job
      */
     public function jobPeek(int $id)
     {
@@ -316,5 +315,4 @@ class Beanstalk
     public function quit(): bool
     {
     }
-
 }

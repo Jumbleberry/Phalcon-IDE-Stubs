@@ -10,6 +10,7 @@ namespace Phalcon;
 interface DispatcherInterface
 {
 
+
     /**
      * Sets the default action suffix
      *
@@ -132,5 +133,4 @@ interface DispatcherInterface
      * @param array $forward
      */
     public function forward($forward);
-
 }

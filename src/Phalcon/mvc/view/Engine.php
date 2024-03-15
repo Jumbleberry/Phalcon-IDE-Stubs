@@ -17,7 +17,6 @@ abstract class Engine extends Injectable implements \Phalcon\Mvc\View\EngineInte
 
     protected $_view;
 
-
     /**
      * Phalcon\Mvc\View\Engine constructor
      *
@@ -56,5 +55,4 @@ abstract class Engine extends Injectable implements \Phalcon\Mvc\View\EngineInte
     public function getView(): ViewBaseInterface
     {
     }
-
 }

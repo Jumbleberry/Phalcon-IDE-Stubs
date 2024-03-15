@@ -43,6 +43,7 @@ use Phalcon\Mvc\Model\Exception;
 class Exclusionin extends Validator
 {
 
+
     /**
      * Executes the validator
      *
@@ -52,5 +53,4 @@ class Exclusionin extends Validator
     public function validate(\Phalcon\Mvc\EntityInterface $record): bool
     {
     }
-
 }

@@ -13,12 +13,13 @@ use Phalcon\Cache\BackendInterface;
  */
 class Binder implements \Phalcon\Mvc\Model\BinderInterface
 {
+
     /**
      * Array for storing active bound models
      *
      * @var array
      */
-    protected $boundModels = array();
+    protected $boundModels = [];
 
     /**
      * Cache object used for caching parameters for model binding
@@ -28,13 +29,12 @@ class Binder implements \Phalcon\Mvc\Model\BinderInterface
     /**
      * Internal cache for caching parameters for model binding during request
      */
-    protected $internalCache = array();
+    protected $internalCache = [];
 
     /**
      * Array for original values
      */
-    protected $originalValues = array();
-
+    protected $originalValues = [];
 
     /**
      * Array for storing active bound models
@@ -100,7 +100,7 @@ class Binder implements \Phalcon\Mvc\Model\BinderInterface
      * @param string $className
      * @return object|bool
      */
-    protected function findBoundModel($paramValue, string $className): bool
+    protected function findBoundModel($paramValue, string $className)
     {
     }
 
@@ -126,5 +126,4 @@ class Binder implements \Phalcon\Mvc\Model\BinderInterface
     protected function getParamsFromReflection($handler, array $params, string $cacheKey, $methodName): array
     {
     }
-
 }

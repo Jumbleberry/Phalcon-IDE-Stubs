@@ -32,15 +32,11 @@ class File implements \Phalcon\Http\Request\FileInterface
 
     protected $_name;
 
-
     protected $_tmp;
-
 
     protected $_size;
 
-
     protected $_type;
-
 
     protected $_realType;
 
@@ -58,7 +54,6 @@ class File implements \Phalcon\Http\Request\FileInterface
      * @var string
      */
     protected $_extension;
-
 
     /**
      * @return string|null
@@ -155,5 +150,4 @@ class File implements \Phalcon\Http\Request\FileInterface
     public function moveTo(string $destination): bool
     {
     }
-
 }

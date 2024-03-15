@@ -9,24 +9,17 @@ namespace Phalcon\Session;
  */
 abstract class Adapter implements \Phalcon\Session\AdapterInterface
 {
-
     const SESSION_ACTIVE = 2;
-
 
     const SESSION_NONE = 1;
 
-
     const SESSION_DISABLED = 0;
-
 
     protected $_uniqueId;
 
-
     protected $_started = false;
 
-
     protected $_options;
-
 
     /**
      * Phalcon\Session\Adapter constructor
@@ -283,7 +276,6 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
     {
     }
 
-
     public function __destruct()
     {
     }
@@ -294,5 +286,4 @@ abstract class Adapter implements \Phalcon\Session\AdapterInterface
     protected function removeSessionData(): void
     {
     }
-
 }

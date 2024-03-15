@@ -13,11 +13,11 @@ namespace Phalcon\Assets;
  */
 class Inline implements \Phalcon\Assets\ResourceInterface
 {
+
     /**
      * @var string
      */
     protected $_type;
-
 
     protected $_content;
 
@@ -26,9 +26,7 @@ class Inline implements \Phalcon\Assets\ResourceInterface
      */
     protected $_filter;
 
-
     protected $_attributes;
-
 
     /**
      * @return string
@@ -36,7 +34,6 @@ class Inline implements \Phalcon\Assets\ResourceInterface
     public function getType(): string
     {
     }
-
 
     public function getContent()
     {
@@ -108,5 +105,4 @@ class Inline implements \Phalcon\Assets\ResourceInterface
     public function getResourceKey(): string
     {
     }
-
 }

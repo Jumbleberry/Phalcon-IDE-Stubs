@@ -15,7 +15,6 @@ class Select extends Element
 
     protected $_optionsValues;
 
-
     /**
      * Phalcon\Forms\Element constructor
      *
@@ -65,5 +64,4 @@ class Select extends Element
     public function render($attributes = null): string
     {
     }
-
 }

@@ -12,6 +12,7 @@ use Phalcon\Assets\Resource as ResourceBase;
 class Css extends \Phalcon\Assets\Resource
 {
 
+
     /**
      * Phalcon\Assets\Resource\Css
      *
@@ -23,5 +24,4 @@ class Css extends \Phalcon\Assets\Resource
     public function __construct(string $path, bool $local = true, bool $filter = true, $attributes = null)
     {
     }
-
 }

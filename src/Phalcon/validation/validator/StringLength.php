@@ -63,6 +63,7 @@ use Phalcon\Validation\Message;
 class StringLength extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -73,5 +74,4 @@ class StringLength extends Validator
     public function validate(\Phalcon\Validation $validation, string $field): bool
     {
     }
-
 }

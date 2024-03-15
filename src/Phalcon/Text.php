@@ -9,21 +9,15 @@ namespace Phalcon;
  */
 abstract class Text
 {
-
     const RANDOM_ALNUM = 0;
-
 
     const RANDOM_ALPHA = 1;
 
-
     const RANDOM_HEXDEC = 2;
-
 
     const RANDOM_NUMERIC = 3;
 
-
     const RANDOM_NOZERO = 4;
-
 
     const RANDOM_DISTINCT = 5;
 
@@ -196,7 +190,6 @@ abstract class Text
      * @param string $a
      * @param string $b
      * @param string ...N
-     * @param string  ...N
      * @return string
      */
     public static function concat(): string
@@ -259,5 +252,4 @@ abstract class Text
     public static function humanize(string $text): string
     {
     }
-
 }

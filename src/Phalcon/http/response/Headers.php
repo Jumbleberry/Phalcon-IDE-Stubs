@@ -12,8 +12,7 @@ use Phalcon\Http\Response\HeadersInterface;
 class Headers implements \Phalcon\Http\Response\HeadersInterface
 {
 
-    protected $_headers = array();
-
+    protected $_headers = [];
 
     /**
      * Sets a header to be sent at the end of the request
@@ -87,5 +86,4 @@ class Headers implements \Phalcon\Http\Response\HeadersInterface
     public static function __set_state(array $data): HeadersInterface
     {
     }
-
 }

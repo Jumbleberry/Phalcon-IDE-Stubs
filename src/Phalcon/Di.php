@@ -52,6 +52,7 @@ use Phalcon\Di\ServiceProviderInterface;
  */
 class Di implements \Phalcon\DiInterface
 {
+
     /**
      * List of registered services
      */
@@ -78,7 +79,6 @@ class Di implements \Phalcon\DiInterface
      * Latest DI build
      */
     static protected $_default;
-
 
     /**
      * Phalcon\Di constructor
@@ -146,7 +146,7 @@ class Di implements \Phalcon\DiInterface
      * @param string $name
      * @param mixed $definition
      * @param bool $shared
-     * @return bool|\Phalcon\Di\ServiceInterface
+     * @return bool|ServiceInterface
      */
     public function attempt(string $name, $definition, bool $shared = false)
     {
@@ -253,9 +253,9 @@ class Di implements \Phalcon\DiInterface
      *
      * @param mixed $name
      * @param mixed $definition
-     * @return bool
+     * @return void
      */
-    public function offsetSet($name, $definition): bool
+    public function offsetSet($name, $definition): void
     {
     }
 
@@ -277,9 +277,9 @@ class Di implements \Phalcon\DiInterface
      * Removes a service from the services container using the array syntax
      *
      * @param mixed $name
-     * @return bool
+     * @return void
      */
-    public function offsetUnset($name): bool
+    public function offsetUnset($name): void
     {
     }
 
@@ -431,5 +431,4 @@ class Di implements \Phalcon\DiInterface
     protected function loadFromConfig(\Phalcon\Config $config): void
     {
     }
-
 }

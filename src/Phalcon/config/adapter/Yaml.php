@@ -45,6 +45,7 @@ use Phalcon\Config\Exception;
 class Yaml extends Config
 {
 
+
     /**
      * Phalcon\Config\Adapter\Yaml constructor
      *
@@ -55,5 +56,4 @@ class Yaml extends Config
     public function __construct(string $filePath, array $callbacks = null)
     {
     }
-
 }

@@ -10,6 +10,7 @@ namespace Phalcon\Mvc\Micro;
 interface CollectionInterface
 {
 
+
     /**
      * Sets a prefix for all routes added to the collection
      *
@@ -142,5 +143,4 @@ interface CollectionInterface
      * @return \Phalcon\Mvc\Router\RouteInterface
      */
     public function options(string $routePattern, $handler, $name = null);
-
 }

@@ -12,6 +12,7 @@ use Phalcon\Mvc\ModelInterface;
 interface BehaviorInterface
 {
 
+
     /**
      * This method receives the notifications from the EventsManager
      *
@@ -28,5 +29,4 @@ interface BehaviorInterface
      * @param array $arguments
      */
     public function missingMethod(\Phalcon\Mvc\ModelInterface $model, string $method, $arguments = null);
-
 }

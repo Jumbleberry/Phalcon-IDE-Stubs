@@ -10,6 +10,7 @@ namespace Phalcon\Http;
 interface CookieInterface
 {
 
+
     /**
      * Sets the cookie's value
      *
@@ -135,5 +136,4 @@ interface CookieInterface
      * @return bool
      */
     public function getHttpOnly(): bool;
-
 }

@@ -16,6 +16,7 @@ use Phalcon\Validation\ValidatorInterface;
 interface ValidationInterface
 {
 
+
     /**
      * Validate a set of data according to a set of rules
      *
@@ -86,7 +87,7 @@ interface ValidationInterface
      *
      * @param array $messages
      */
-    public function setDefaultMessages(array $messages = array());
+    public function setDefaultMessages(array $messages = []);
 
     /**
      * Get default message for validator type
@@ -141,5 +142,4 @@ interface ValidationInterface
      * @return mixed
      */
     public function getValue(string $field);
-
 }

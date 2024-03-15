@@ -37,15 +37,11 @@ class Memcache extends Adapter
 
     protected $_memcache = null;
 
-
     protected $_lifetime = 8600;
-
-
 
     public function getMemcache()
     {
     }
-
 
     public function getLifetime()
     {
@@ -56,7 +52,7 @@ class Memcache extends Adapter
      *
      * @param array $options
      */
-    public function __construct(array $options = array())
+    public function __construct(array $options = [])
     {
     }
 
@@ -113,5 +109,4 @@ class Memcache extends Adapter
     public function gc(): bool
     {
     }
-
 }

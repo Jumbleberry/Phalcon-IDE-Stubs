@@ -261,7 +261,6 @@ class Column implements \Phalcon\Db\ColumnInterface
      */
     protected $_bindType = 2;
 
-
     /**
      * Column's name
      *
@@ -432,5 +431,4 @@ class Column implements \Phalcon\Db\ColumnInterface
     public function hasDefault(): bool
     {
     }
-
 }

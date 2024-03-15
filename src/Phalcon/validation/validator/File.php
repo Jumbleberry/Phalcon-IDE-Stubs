@@ -78,6 +78,7 @@ use Phalcon\Validation\Validator;
 class File extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -99,5 +100,4 @@ class File extends Validator
     public function isAllowEmpty(\Phalcon\Validation $validation, string $field): bool
     {
     }
-
 }

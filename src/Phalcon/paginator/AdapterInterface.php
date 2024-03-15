@@ -10,6 +10,7 @@ namespace Phalcon\Paginator;
 interface AdapterInterface
 {
 
+
     /**
      * Set the current page number
      *
@@ -38,5 +39,4 @@ interface AdapterInterface
      * @return int
      */
     public function getLimit(): int;
-
 }

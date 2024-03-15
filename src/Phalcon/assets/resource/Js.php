@@ -12,6 +12,7 @@ use Phalcon\Assets\Resource as ResourceBase;
 class Js extends \Phalcon\Assets\Resource
 {
 
+
     /**
      * Phalcon\Assets\Resource\Js
      *
@@ -23,5 +24,4 @@ class Js extends \Phalcon\Assets\Resource
     public function __construct($path, $local = true, $filter = true, $attributes = null)
     {
     }
-
 }

@@ -14,6 +14,7 @@ use Phalcon\Db\IndexInterface;
 interface DialectInterface
 {
 
+
     /**
      * Generates the SQL for LIMIT clause
      *
@@ -290,5 +291,4 @@ interface DialectInterface
      * @return string
      */
     public function rollbackSavepoint(string $name): string;
-
 }

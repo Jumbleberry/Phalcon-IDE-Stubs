@@ -14,14 +14,13 @@ class Exception extends \Phalcon\Mvc\View\Exception
 
     protected $statement;
 
-
     /**
      * @param string $message
      * @param array $statement
      * @param int $code
      * @param \Exception $previous
      */
-    public function __construct(string $message = '', array $statement = array(), int $code = 0, \Exception $previous = null)
+    public function __construct(string $message = '', array $statement = [], int $code = 0, \Exception $previous = null)
     {
     }
 
@@ -33,5 +32,4 @@ class Exception extends \Phalcon\Mvc\View\Exception
     public function getStatement(): array
     {
     }
-
 }

@@ -10,7 +10,6 @@ class Manager
 
     protected $_forms;
 
-
     /**
      * Creates a form registering it in the forms manager
      *
@@ -52,5 +51,4 @@ class Manager
     public function set(string $name, Form $form): FormManager
     {
     }
-
 }

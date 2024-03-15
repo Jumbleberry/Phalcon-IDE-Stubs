@@ -68,9 +68,7 @@ use Phalcon\Mvc\Model\Validator;
  */
 class Ip extends Validator
 {
-
     const VERSION_4 = 1048576;
-
 
     const VERSION_6 = 2097152;
 
@@ -84,5 +82,4 @@ class Ip extends Validator
     public function validate(\Phalcon\Mvc\EntityInterface $record): bool
     {
     }
-
 }

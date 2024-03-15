@@ -31,6 +31,7 @@ use Phalcon\Events\ManagerInterface as EventsManagerInterface;
 interface ManagerInterface
 {
 
+
     /**
      * Sets a custom events manager for a specific model
      *
@@ -117,5 +118,4 @@ interface ManagerInterface
      * @param \Phalcon\Mvc\Collection\BehaviorInterface $behavior
      */
     public function addBehavior(\Phalcon\Mvc\CollectionInterface $model, \Phalcon\Mvc\Collection\BehaviorInterface $behavior);
-
 }

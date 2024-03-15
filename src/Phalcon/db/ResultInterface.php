@@ -10,6 +10,7 @@ namespace Phalcon\Db;
 interface ResultInterface
 {
 
+
     /**
      * Allows to executes the statement again. Some database systems don't support scrollable cursors,
      * So, as cursors are forward only, we need to execute the cursor again to fetch rows from the begining
@@ -73,5 +74,4 @@ interface ResultInterface
      * @return \PDOStatement
      */
     public function getInternalResult();
-
 }

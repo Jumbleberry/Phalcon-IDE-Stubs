@@ -80,6 +80,7 @@ use Phalcon\Acl\ResourceInterface;
  */
 class Memory extends Adapter
 {
+
     /**
      * Roles Names
      *
@@ -142,7 +143,6 @@ class Memory extends Adapter
      * @var mixed
      */
     protected $_noArgumentsDefaultAction = Acl::ALLOW;
-
 
     /**
      * Phalcon\Acl\Adapter\Memory constructor
@@ -396,5 +396,4 @@ class Memory extends Adapter
     public function getResources(): array
     {
     }
-
 }

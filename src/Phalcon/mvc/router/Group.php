@@ -55,18 +55,13 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
 
     protected $_prefix;
 
-
     protected $_hostname;
-
 
     protected $_paths;
 
-
     protected $_routes;
 
-
     protected $_beforeMatch;
-
 
     /**
      * Phalcon\Mvc\Router\Group constructor
@@ -187,7 +182,6 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
      * @param string/array paths
      * @return \Phalcon\Mvc\Router\Route
      * @param mixed $paths
-     * @param string  /array paths
      */
     public function addGet(string $pattern, $paths = null): RouteInterface
     {
@@ -200,7 +194,6 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
      * @param string/array paths
      * @return \Phalcon\Mvc\Router\Route
      * @param mixed $paths
-     * @param string  /array paths
      */
     public function addPost(string $pattern, $paths = null): RouteInterface
     {
@@ -213,7 +206,6 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
      * @param string/array paths
      * @return \Phalcon\Mvc\Router\Route
      * @param mixed $paths
-     * @param string  /array paths
      */
     public function addPut(string $pattern, $paths = null): RouteInterface
     {
@@ -226,7 +218,6 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
      * @param string/array paths
      * @return \Phalcon\Mvc\Router\Route
      * @param mixed $paths
-     * @param string  /array paths
      */
     public function addPatch(string $pattern, $paths = null): RouteInterface
     {
@@ -239,7 +230,6 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
      * @param string/array paths
      * @return \Phalcon\Mvc\Router\Route
      * @param mixed $paths
-     * @param string  /array paths
      */
     public function addDelete(string $pattern, $paths = null): RouteInterface
     {
@@ -252,7 +242,6 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
      * @param string/array paths
      * @return \Phalcon\Mvc\Router\Route
      * @param mixed $paths
-     * @param string  /array paths
      */
     public function addOptions(string $pattern, $paths = null): RouteInterface
     {
@@ -265,7 +254,6 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
      * @param string/array paths
      * @return \Phalcon\Mvc\Router\Route
      * @param mixed $paths
-     * @param string  /array paths
      */
     public function addHead(string $pattern, $paths = null): RouteInterface
     {
@@ -291,5 +279,4 @@ class Group implements \Phalcon\Mvc\Router\GroupInterface
     protected function _addRoute(string $pattern, $paths = null, $httpMethods = null): RouteInterface
     {
     }
-
 }

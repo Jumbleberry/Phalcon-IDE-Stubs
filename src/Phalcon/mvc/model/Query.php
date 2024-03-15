@@ -76,78 +76,53 @@ use Phalcon\Db\DialectInterface;
  */
 class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionAwareInterface
 {
-
     const TYPE_SELECT = 309;
-
 
     const TYPE_INSERT = 306;
 
-
     const TYPE_UPDATE = 300;
-
 
     const TYPE_DELETE = 303;
 
-
     protected $_dependencyInjector;
-
 
     protected $_manager;
 
-
     protected $_metaData;
-
 
     protected $_type;
 
-
     protected $_phql;
-
 
     protected $_ast;
 
-
     protected $_intermediate;
-
 
     protected $_models;
 
-
     protected $_sqlAliases;
-
 
     protected $_sqlAliasesModels;
 
-
     protected $_sqlModelsAliases;
-
 
     protected $_sqlAliasesModelsInstances;
 
-
     protected $_sqlColumnAliases;
-
 
     protected $_modelsInstances;
 
-
     protected $_cache;
-
 
     protected $_cacheOptions;
 
-
     protected $_uniqueRow;
-
 
     protected $_bindParams;
 
-
     protected $_bindTypes;
 
-
     protected $_enableImplicitJoins;
-
 
     protected $_sharedLock;
 
@@ -158,9 +133,7 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      */
     protected $_transaction;
 
-
     static protected $_irPhqlCache;
-
 
     /**
      * TransactionInterface so that the query can wrap a transaction
@@ -446,7 +419,7 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
      * @param mixed $bindParams
      * @param mixed $bindTypes
      * @param bool $simulate
-     * @return array|\Phalcon\Mvc\Model\ResultsetInterface
+     * @return array|ResultsetInterface
      */
     protected final function _executeSelect($intermediate, $bindParams, $bindTypes, bool $simulate = false)
     {
@@ -681,5 +654,4 @@ class Query implements \Phalcon\Mvc\Model\QueryInterface, \Phalcon\Di\InjectionA
     public function setTransaction(\Phalcon\Mvc\Model\TransactionInterface $transaction): Query
     {
     }
-
 }

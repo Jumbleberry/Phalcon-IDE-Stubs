@@ -31,9 +31,7 @@ class Postgresql extends \Phalcon\Db\Adapter\Pdo
 
     protected $_type = 'pgsql';
 
-
     protected $_dialectType = 'postgresql';
-
 
     /**
      * This method is automatically called in Phalcon\Db\Adapter\Pdo constructor.
@@ -131,5 +129,4 @@ class Postgresql extends \Phalcon\Db\Adapter\Pdo
     public function supportSequences(): bool
     {
     }
-
 }

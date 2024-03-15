@@ -13,11 +13,11 @@ use Phalcon\Translate\Interpolator\AssociativeArray;
  */
 abstract class Adapter implements \Phalcon\Translate\AdapterInterface
 {
+
     /**
      * @var Phalcon\Translate\InterpolatorInterface
      */
     protected $_interpolator;
-
 
     /**
      * @param array $options
@@ -59,10 +59,11 @@ abstract class Adapter implements \Phalcon\Translate\AdapterInterface
     /**
      * Sets a translation value
      *
-     * @param string $offset
-     * @param string $value
+     * @param mixed $offset
+     * @param mixed $value
+     * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
     }
 
@@ -79,17 +80,18 @@ abstract class Adapter implements \Phalcon\Translate\AdapterInterface
     /**
      * Unsets a translation from the dictionary
      *
-     * @param string $offset
+     * @param mixed $offset
+     * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
     }
 
     /**
      * Returns the translation related to the given key
      *
-     * @param string $translateKey
-     * @return string
+     * @param mixed $translateKey
+     * @return mixed
      */
     public function offsetGet($translateKey)
     {
@@ -105,5 +107,4 @@ abstract class Adapter implements \Phalcon\Translate\AdapterInterface
     protected function replacePlaceholders(string $translation, $placeholders = null): string
     {
     }
-
 }

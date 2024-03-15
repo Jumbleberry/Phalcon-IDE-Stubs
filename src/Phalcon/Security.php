@@ -28,63 +28,43 @@ use Phalcon\Session\AdapterInterface as SessionInterface;
  */
 class Security implements \Phalcon\Di\InjectionAwareInterface
 {
-
     const CRYPT_DEFAULT = 0;
-
 
     const CRYPT_STD_DES = 1;
 
-
     const CRYPT_EXT_DES = 2;
-
 
     const CRYPT_MD5 = 3;
 
-
     const CRYPT_BLOWFISH = 4;
-
 
     const CRYPT_BLOWFISH_A = 5;
 
-
     const CRYPT_BLOWFISH_X = 6;
-
 
     const CRYPT_BLOWFISH_Y = 7;
 
-
     const CRYPT_SHA256 = 8;
-
 
     const CRYPT_SHA512 = 9;
 
-
     protected $_dependencyInjector;
-
 
     protected $_workFactor = 8;
 
-
     protected $_numberBytes = 16;
-
 
     protected $_tokenKeySessionID = '$PHALCON/CSRF/KEY$';
 
-
     protected $_tokenValueSessionID = '$PHALCON/CSRF$';
-
 
     protected $_token;
 
-
     protected $_tokenKey;
-
 
     protected $_random;
 
-
     protected $_defaultHash;
-
 
     /**
      * @param mixed $workFactor
@@ -92,7 +72,6 @@ class Security implements \Phalcon\Di\InjectionAwareInterface
     public function setWorkFactor($workFactor)
     {
     }
-
 
     public function getWorkFactor()
     {
@@ -304,5 +283,4 @@ class Security implements \Phalcon\Di\InjectionAwareInterface
     public function getSslVersionNumber(): int
     {
     }
-
 }

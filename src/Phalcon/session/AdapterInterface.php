@@ -10,6 +10,7 @@ namespace Phalcon\Session;
 interface AdapterInterface
 {
 
+
     /**
      * Starts session, optionally using an adapter
      */
@@ -104,5 +105,4 @@ interface AdapterInterface
      * @return string
      */
     public function getName(): string;
-
 }

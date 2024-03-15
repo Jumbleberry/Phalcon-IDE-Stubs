@@ -26,7 +26,6 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
      */
     protected $_disableHydration = false;
 
-
     /**
      * Phalcon\Mvc\Model\Resultset\Complex constructor
      *
@@ -41,9 +40,9 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
     /**
      * Returns current row in the resultset
      *
-     * @return bool|ModelInterface
+     * @return mixed
      */
-    public final function current()
+    final public function current()
     {
     }
 
@@ -60,9 +59,9 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
     /**
      * Serializing a resultset will dump all related rows into a big array
      *
-     * @return string
+     * @return array
      */
-    public function serialize(): string
+    public function __serialize(): array
     {
     }
 
@@ -72,8 +71,7 @@ class Complex extends Resultset implements \Phalcon\Mvc\Model\ResultsetInterface
      * @param mixed $data
      * @return void
      */
-    public function unserialize($data): void
+    public function __unserialize($data): void
     {
     }
-
 }

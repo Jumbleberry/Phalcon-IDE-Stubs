@@ -35,6 +35,7 @@ namespace Phalcon\Db;
  */
 class Index implements \Phalcon\Db\IndexInterface
 {
+
     /**
      * Index name
      *
@@ -55,7 +56,6 @@ class Index implements \Phalcon\Db\IndexInterface
      * @var string
      */
     protected $_type;
-
 
     /**
      * Index name
@@ -104,5 +104,4 @@ class Index implements \Phalcon\Db\IndexInterface
     public static function __set_state(array $data): IndexInterface
     {
     }
-
 }

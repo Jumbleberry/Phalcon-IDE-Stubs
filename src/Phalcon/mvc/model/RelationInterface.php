@@ -10,6 +10,7 @@ namespace Phalcon\Mvc\Model;
 interface RelationInterface
 {
 
+
     /**
      * Sets the intermediate model dat for has--through relations
      *
@@ -110,5 +111,4 @@ interface RelationInterface
      * @return string|array
      */
     public function getIntermediateReferencedFields();
-
 }

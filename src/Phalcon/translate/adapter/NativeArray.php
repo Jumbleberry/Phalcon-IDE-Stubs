@@ -15,7 +15,6 @@ class NativeArray extends Adapter implements \ArrayAccess
 
     protected $_translate;
 
-
     /**
      * Phalcon\Translate\Adapter\NativeArray constructor
      *
@@ -45,5 +44,4 @@ class NativeArray extends Adapter implements \ArrayAccess
     public function exists(string $index): bool
     {
     }
-
 }

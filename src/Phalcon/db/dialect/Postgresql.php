@@ -20,7 +20,6 @@ class Postgresql extends Dialect
 
     protected $_escapeChar = '\\\"';
 
-
     /**
      * Gets the column name in PostgreSQL
      *
@@ -328,5 +327,4 @@ class Postgresql extends Dialect
     public function sharedLock(string $sqlQuery): string
     {
     }
-
 }

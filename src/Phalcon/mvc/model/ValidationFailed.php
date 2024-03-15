@@ -15,9 +15,7 @@ class ValidationFailed extends \Phalcon\Mvc\Model\Exception
 
     protected $_model;
 
-
     protected $_messages;
-
 
     /**
      * Phalcon\Mvc\Model\ValidationFailed constructor
@@ -46,5 +44,4 @@ class ValidationFailed extends \Phalcon\Mvc\Model\Exception
     public function getMessages(): array
     {
     }
-
 }

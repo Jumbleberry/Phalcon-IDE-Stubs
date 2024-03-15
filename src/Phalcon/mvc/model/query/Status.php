@@ -37,9 +37,7 @@ class Status implements \Phalcon\Mvc\Model\Query\StatusInterface
 
     protected $_success;
 
-
     protected $_model;
-
 
     /**
      * Phalcon\Mvc\Model\Query\Status
@@ -77,5 +75,4 @@ class Status implements \Phalcon\Mvc\Model\Query\StatusInterface
     public function success(): bool
     {
     }
-
 }

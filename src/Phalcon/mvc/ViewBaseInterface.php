@@ -10,6 +10,7 @@ namespace Phalcon\Mvc;
 interface ViewBaseInterface
 {
 
+
     /**
      * Sets views directory. Depending of your platform, always add a trailing slash or backslash
      *
@@ -82,5 +83,4 @@ interface ViewBaseInterface
      * @param mixed $params
      */
     public function partial(string $partialPath, $params = null);
-
 }

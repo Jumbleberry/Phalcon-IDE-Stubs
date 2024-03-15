@@ -135,5 +135,4 @@ class Version
     public static function getPart(int $part): string
     {
     }
-
 }

@@ -12,6 +12,7 @@ use Phalcon\Logger\Formatter;
 class Json extends Formatter
 {
 
+
     /**
      * Applies a format to a message before sent it to the internal log
      *
@@ -24,5 +25,4 @@ class Json extends Formatter
     public function format(string $message, int $type, int $timestamp, $context = null): string
     {
     }
-
 }

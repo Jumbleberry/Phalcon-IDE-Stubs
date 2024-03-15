@@ -41,12 +41,9 @@ class Simple extends Injectable implements \Phalcon\Mvc\ViewBaseInterface
 
     protected $_options;
 
-
     protected $_viewsDir;
 
-
     protected $_partialsDir;
-
 
     protected $_viewParams;
 
@@ -60,18 +57,13 @@ class Simple extends Injectable implements \Phalcon\Mvc\ViewBaseInterface
      */
     protected $_registeredEngines;
 
-
     protected $_activeRenderPath;
-
 
     protected $_content;
 
-
     protected $_cache = false;
 
-
     protected $_cacheOptions;
-
 
     /**
      * @return array|null
@@ -85,7 +77,7 @@ class Simple extends Injectable implements \Phalcon\Mvc\ViewBaseInterface
      *
      * @param array $options
      */
-    public function __construct(array $options = array())
+    public function __construct(array $options = [])
     {
     }
 
@@ -364,5 +356,4 @@ class Simple extends Injectable implements \Phalcon\Mvc\ViewBaseInterface
     public function __get(string $key)
     {
     }
-
 }

@@ -10,6 +10,7 @@ namespace Phalcon;
 interface FilterInterface
 {
 
+
     /**
      * Adds a user-defined filter
      *
@@ -34,5 +35,4 @@ interface FilterInterface
      * @return array
      */
     public function getFilters(): array;
-
 }

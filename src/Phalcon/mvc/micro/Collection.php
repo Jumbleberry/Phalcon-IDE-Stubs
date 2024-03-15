@@ -26,15 +26,11 @@ class Collection implements \Phalcon\Mvc\Micro\CollectionInterface
 
     protected $_prefix;
 
-
     protected $_lazy;
-
 
     protected $_handler;
 
-
     protected $_handlers;
-
 
     /**
      * Internal function to add a handler to the group
@@ -223,5 +219,4 @@ class Collection implements \Phalcon\Mvc\Micro\CollectionInterface
     public function options(string $routePattern, $handler, $name = null): Collection
     {
     }
-
 }

@@ -20,7 +20,6 @@ class Mysql extends Dialect
 
     protected $_escapeChar = '`';
 
-
     /**
      * Gets the column name in MySQL
      *
@@ -335,5 +334,4 @@ class Mysql extends Dialect
     public function sharedLock(string $sqlQuery): string
     {
     }
-
 }

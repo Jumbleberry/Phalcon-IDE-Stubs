@@ -61,6 +61,7 @@ use Phalcon\Cache\Exception;
 class Msgpack extends \Phalcon\Cache\Frontend\Data implements \Phalcon\Cache\FrontendInterface
 {
 
+
     /**
      * Phalcon\Cache\Frontend\Msgpack constructor
      *
@@ -130,5 +131,4 @@ class Msgpack extends \Phalcon\Cache\Frontend\Data implements \Phalcon\Cache\Fro
     public function afterRetrieve($data)
     {
     }
-
 }

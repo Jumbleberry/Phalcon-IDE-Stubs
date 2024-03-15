@@ -15,36 +15,25 @@ use Phalcon\Mvc\UrlInterface;
  */
 class Tag
 {
-
     const HTML32 = 1;
-
 
     const HTML401_STRICT = 2;
 
-
     const HTML401_TRANSITIONAL = 3;
-
 
     const HTML401_FRAMESET = 4;
 
-
     const HTML5 = 5;
-
 
     const XHTML10_STRICT = 6;
 
-
     const XHTML10_TRANSITIONAL = 7;
-
 
     const XHTML10_FRAMESET = 8;
 
-
     const XHTML11 = 9;
 
-
     const XHTML20 = 10;
-
 
     const XHTML5 = 11;
 
@@ -58,15 +47,11 @@ class Tag
      */
     static protected $_documentTitle = null;
 
-
     static protected $_documentAppendTitle = null;
-
 
     static protected $_documentPrependTitle = null;
 
-
     static protected $_documentTitleSeparator = null;
-
 
     static protected $_documentType = 11;
 
@@ -75,18 +60,13 @@ class Tag
      */
     static protected $_dependencyInjector;
 
-
     static protected $_urlService = null;
-
 
     static protected $_dispatcherService = null;
 
-
     static protected $_escaperService = null;
 
-
     static protected $_autoEscape = true;
-
 
     /**
      * Obtains the 'escaper' service if required
@@ -966,5 +946,4 @@ class Tag
     public static function tagHtmlClose(string $tagName, bool $useEol = false): string
     {
     }
-
 }

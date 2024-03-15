@@ -24,6 +24,7 @@ use Phalcon\Logger\Formatter\Line as LineFormatter;
  */
 class File extends Adapter
 {
+
     /**
      * File handler resource
      *
@@ -40,7 +41,6 @@ class File extends Adapter
      * Path options
      */
     protected $_options;
-
 
     /**
      * File Path
@@ -96,5 +96,4 @@ class File extends Adapter
     public function __wakeup()
     {
     }
-
 }

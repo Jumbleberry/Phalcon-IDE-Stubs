@@ -51,6 +51,7 @@ use Phalcon\Cache\FrontendInterface;
 class None implements \Phalcon\Cache\FrontendInterface
 {
 
+
     /**
      * Returns cache lifetime, always one second expiring content
      *
@@ -110,5 +111,4 @@ class None implements \Phalcon\Cache\FrontendInterface
     public function afterRetrieve($data)
     {
     }
-
 }

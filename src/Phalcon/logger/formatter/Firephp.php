@@ -17,9 +17,7 @@ class Firephp extends Formatter
 
     protected $_showBacktrace = true;
 
-
     protected $_enableLabels = true;
-
 
     /**
      * Returns the string meaning of a logger constant
@@ -82,5 +80,4 @@ class Firephp extends Formatter
     public function format(string $message, int $type, int $timestamp, $context = null): string
     {
     }
-
 }

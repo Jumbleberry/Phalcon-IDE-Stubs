@@ -13,6 +13,7 @@ use Phalcon\Di\ServiceInterface;
 interface DiInterface extends \ArrayAccess
 {
 
+
     /**
      * Registers a service in the services container
      *
@@ -134,5 +135,4 @@ interface DiInterface extends \ArrayAccess
      * Resets the internal default DI
      */
     public static function reset();
-
 }

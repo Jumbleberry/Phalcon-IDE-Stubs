@@ -29,9 +29,7 @@ class Firephp extends Adapter
 
     private $_initialized = false;
 
-
     private $_index = 1;
-
 
     /**
      * Returns the internal formatter
@@ -63,5 +61,4 @@ class Firephp extends Adapter
     public function close(): bool
     {
     }
-
 }

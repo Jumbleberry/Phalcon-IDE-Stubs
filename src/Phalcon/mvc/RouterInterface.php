@@ -14,6 +14,7 @@ use Phalcon\Mvc\RouterInterface;
 interface RouterInterface
 {
 
+
     /**
      * Sets the name of the default module
      *
@@ -236,7 +237,7 @@ interface RouterInterface
      * Returns a route object by its id
      *
      * @param mixed $id
-     * @return bool|\Phalcon\Mvc\Router\RouteInterface
+     * @return bool|RouteInterface
      */
     public function getRouteById($id);
 
@@ -244,8 +245,7 @@ interface RouterInterface
      * Returns a route object by its name
      *
      * @param string $name
-     * @return bool|\Phalcon\Mvc\Router\RouteInterface
+     * @return bool|RouteInterface
      */
     public function getRouteByName(string $name);
-
 }

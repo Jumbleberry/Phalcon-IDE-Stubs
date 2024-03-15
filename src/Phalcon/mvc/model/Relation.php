@@ -11,54 +11,37 @@ use Phalcon\Mvc\Model\RelationInterface;
  */
 class Relation implements \Phalcon\Mvc\Model\RelationInterface
 {
-
     const BELONGS_TO = 0;
-
 
     const HAS_ONE = 1;
 
-
     const HAS_MANY = 2;
-
 
     const HAS_ONE_THROUGH = 3;
 
-
     const HAS_MANY_THROUGH = 4;
-
 
     const NO_ACTION = 0;
 
-
     const ACTION_RESTRICT = 1;
-
 
     const ACTION_CASCADE = 2;
 
-
     protected $_type;
-
 
     protected $_referencedModel;
 
-
     protected $_fields;
-
 
     protected $_referencedFields;
 
-
     protected $_intermediateModel;
-
 
     protected $_intermediateFields;
 
-
     protected $_intermediateReferencedFields;
 
-
     protected $_options;
-
 
     /**
      * Phalcon\Mvc\Model\Relation constructor
@@ -210,5 +193,4 @@ class Relation implements \Phalcon\Mvc\Model\RelationInterface
     public function getIntermediateReferencedFields()
     {
     }
-
 }

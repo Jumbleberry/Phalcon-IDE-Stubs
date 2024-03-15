@@ -10,6 +10,7 @@ namespace Phalcon\Logger;
 interface FormatterInterface
 {
 
+
     /**
      * Applies a format to a message before sent it to the internal log
      *
@@ -20,5 +21,4 @@ interface FormatterInterface
      * @return string|array
      */
     public function format(string $message, int $type, int $timestamp, $context = null);
-
 }

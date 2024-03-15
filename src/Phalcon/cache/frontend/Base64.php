@@ -54,7 +54,6 @@ class Base64 implements \Phalcon\Cache\FrontendInterface
 
     protected $_frontendOptions;
 
-
     /**
      * Phalcon\Cache\Frontend\Base64 constructor
      *
@@ -124,5 +123,4 @@ class Base64 implements \Phalcon\Cache\FrontendInterface
     public function afterRetrieve($data)
     {
     }
-
 }

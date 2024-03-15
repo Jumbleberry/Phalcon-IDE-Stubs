@@ -14,6 +14,7 @@ use Phalcon\Events\ManagerInterface;
  */
 abstract class Adapter implements \Phalcon\Db\AdapterInterface, \Phalcon\Events\EventsAwareInterface
 {
+
     /**
      * Event Manager
      *
@@ -24,7 +25,7 @@ abstract class Adapter implements \Phalcon\Db\AdapterInterface, \Phalcon\Events\
     /**
      * Descriptor used to connect to a database
      */
-    protected $_descriptor = array();
+    protected $_descriptor = [];
 
     /**
      * Name of the dialect used
@@ -83,7 +84,6 @@ abstract class Adapter implements \Phalcon\Db\AdapterInterface, \Phalcon\Events\
      * Connection ID
      */
     static protected $_connectionConsecutive = 0;
-
 
     /**
      * Name of the dialect used
@@ -907,5 +907,4 @@ abstract class Adapter implements \Phalcon\Db\AdapterInterface, \Phalcon\Events\
     public function getSQLBindTypes()
     {
     }
-
 }

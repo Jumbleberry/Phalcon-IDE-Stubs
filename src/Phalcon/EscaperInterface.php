@@ -10,6 +10,7 @@ namespace Phalcon;
 interface EscaperInterface
 {
 
+
     /**
      * Sets the encoding to be used by the escaper
      *
@@ -72,5 +73,4 @@ interface EscaperInterface
      * @return string
      */
     public function escapeUrl(string $url): string;
-
 }

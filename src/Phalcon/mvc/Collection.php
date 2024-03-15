@@ -19,62 +19,43 @@ use Phalcon\ValidationInterface;
  * This component implements a high level abstraction for NoSQL databases which
  * works with documents
  */
-abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\CollectionInterface, \Phalcon\Di\InjectionAwareInterface, \Serializable
+abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\CollectionInterface, \Phalcon\Di\InjectionAwareInterface
 {
-
     const OP_NONE = 0;
-
 
     const OP_CREATE = 1;
 
-
     const OP_UPDATE = 2;
-
 
     const OP_DELETE = 3;
 
-
     const DIRTY_STATE_PERSISTENT = 0;
-
 
     const DIRTY_STATE_TRANSIENT = 1;
 
-
     const DIRTY_STATE_DETACHED = 2;
-
 
     public $_id;
 
-
     protected $_dependencyInjector;
-
 
     protected $_modelsManager;
 
-
     protected $_source;
-
 
     protected $_operationMade = 0;
 
-
     protected $_dirtyState = 1;
-
 
     protected $_connection;
 
-
-    protected $_errorMessages = array();
-
+    protected $_errorMessages = [];
 
     static protected $_reserved;
 
-
     static protected $_disableEvents;
 
-
     protected $_skipped = false;
-
 
     /**
      * Phalcon\Mvc\Collection constructor
@@ -799,9 +780,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
     /**
      * Serializes the object ignoring connections or protected properties
      *
-     * @return string
+     * @return array
      */
-    public function serialize(): string
+    public function __serialize(): array
     {
     }
 
@@ -809,9 +790,9 @@ abstract class Collection implements \Phalcon\Mvc\EntityInterface, \Phalcon\Mvc\
      * Unserializes the object from a serialized string
      *
      * @param mixed $data
+     * @return void
      */
-    public function unserialize($data)
+    public function __unserialize($data): void
     {
     }
-
 }

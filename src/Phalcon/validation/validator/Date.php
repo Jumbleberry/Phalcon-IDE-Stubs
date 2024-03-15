@@ -50,6 +50,7 @@ use Phalcon\Validation\Message;
 class Date extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -69,5 +70,4 @@ class Date extends Validator
     private function checkDate($value, $format): bool
     {
     }
-
 }

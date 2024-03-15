@@ -46,7 +46,6 @@ class Memcache extends Backend
 
     protected $_memcache = null;
 
-
     /**
      * Phalcon\Cache\Backend\Memcache constructor
      *
@@ -168,5 +167,4 @@ class Memcache extends Backend
     public function flush(): bool
     {
     }
-
 }

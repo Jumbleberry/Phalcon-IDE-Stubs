@@ -9,39 +9,27 @@ namespace Phalcon\Cli\Router;
  */
 class Route
 {
-
     const DEFAULT_DELIMITER = ' ';
-
 
     protected $_pattern;
 
-
     protected $_compiledPattern;
-
 
     protected $_paths;
 
-
     protected $_converters;
-
 
     protected $_id;
 
-
     protected $_name;
-
 
     protected $_beforeMatch;
 
-
     protected $_delimiter;
-
 
     static protected $_uniqueId;
 
-
     static protected $_delimiterPath;
-
 
     /**
      * Phalcon\Cli\Router\Route constructor
@@ -221,5 +209,4 @@ class Route
     public static function getDelimiter(): string
     {
     }
-
 }

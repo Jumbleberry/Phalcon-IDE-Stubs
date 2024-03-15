@@ -26,18 +26,13 @@ class Service implements \Phalcon\Di\ServiceInterface
 
     protected $_name;
 
-
     protected $_definition;
-
 
     protected $_shared = false;
 
-
     protected $_resolved = false;
 
-
     protected $_sharedInstance;
-
 
     /**
      * Phalcon\Di\Service
@@ -157,5 +152,4 @@ class Service implements \Phalcon\Di\ServiceInterface
     public static function __set_state(array $attributes): ServiceInterface
     {
     }
-
 }

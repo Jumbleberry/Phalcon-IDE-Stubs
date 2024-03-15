@@ -10,6 +10,7 @@ namespace Phalcon\Db;
 interface ColumnInterface
 {
 
+
     /**
      * Returns schema's table related to column
      *
@@ -136,5 +137,4 @@ interface ColumnInterface
      * @return ColumnInterface
      */
     public static function __set_state(array $data): ColumnInterface;
-
 }

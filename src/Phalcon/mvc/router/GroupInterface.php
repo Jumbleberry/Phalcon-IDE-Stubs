@@ -53,6 +53,7 @@ use Phalcon\Mvc\Router\RouteInterface;
 interface GroupInterface
 {
 
+
     /**
      * Set a hostname restriction for all the routes in the group
      *
@@ -205,5 +206,4 @@ interface GroupInterface
      * @return void
      */
     public function clear(): void;
-
 }

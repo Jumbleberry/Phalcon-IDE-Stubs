@@ -14,6 +14,7 @@ use Phalcon\Logger\FormatterInterface;
 class Blackhole extends Adapter
 {
 
+
     /**
      * Returns the internal formatter
      *
@@ -44,5 +45,4 @@ class Blackhole extends Adapter
     public function close(): bool
     {
     }
-
 }

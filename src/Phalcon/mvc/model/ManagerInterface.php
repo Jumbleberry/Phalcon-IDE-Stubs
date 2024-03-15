@@ -13,6 +13,7 @@ use Phalcon\Mvc\ModelInterface;
 interface ManagerInterface
 {
 
+
     /**
      * Initializes a model in the model manager
      *
@@ -131,7 +132,7 @@ interface ManagerInterface
      * @param bool $newInstance
      * @return ModelInterface
      */
-    public function load(string $modelName, bool $newInstance = false): ModelInterface;
+    public function load(string $modelName, bool $newInstance = true): ModelInterface;
 
     /**
      * Setup a 1-1 relation between two models
@@ -351,5 +352,4 @@ interface ManagerInterface
      * @return \Phalcon\Mvc\Model\Relation
      */
     public function getRelationByAlias(string $modelName, string $alias);
-
 }

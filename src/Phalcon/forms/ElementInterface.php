@@ -15,6 +15,7 @@ use Phalcon\Validation\Message\Group;
 interface ElementInterface
 {
 
+
     /**
      * Sets the parent form to the element
      *
@@ -259,5 +260,4 @@ interface ElementInterface
      * @return string
      */
     public function render($attributes = null): string;
-
 }

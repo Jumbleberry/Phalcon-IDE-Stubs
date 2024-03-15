@@ -48,23 +48,17 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
 
     protected $_dependencyInjector;
 
-
     protected $_eventsManager;
-
 
     protected $_customEventsManager;
 
-
     protected $_readConnectionServices;
-
 
     protected $_writeConnectionServices;
 
-
     protected $_aliases;
 
-
-    protected $_modelVisibility = array();
+    protected $_modelVisibility = [];
 
     /**
      * Has many relations
@@ -111,12 +105,9 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      */
     protected $_initialized;
 
-
     protected $_prefix = '';
 
-
     protected $_sources;
-
 
     protected $_schemas;
 
@@ -140,7 +131,6 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      */
     protected $_reusable;
 
-
     protected $_keepSnapshots;
 
     /**
@@ -148,9 +138,7 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      */
     protected $_dynamicUpdate;
 
-
     protected $_namespaceAliases;
-
 
     /**
      * Sets the DependencyInjector container
@@ -203,7 +191,7 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * Returns a custom events manager related to a model
      *
      * @param \Phalcon\Mvc\ModelInterface $model
-     * @return bool|\Phalcon\Events\ManagerInterface
+     * @return bool|EventsManagerInterface
      */
     public function getCustomEventsManager(\Phalcon\Mvc\ModelInterface $model)
     {
@@ -245,7 +233,7 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param bool $newInstance
      * @return ModelInterface
      */
-    public function load(string $modelName, bool $newInstance = false): ModelInterface
+    public function load(string $modelName, bool $newInstance = true): ModelInterface
     {
     }
 
@@ -635,7 +623,7 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      *
      * @param string $modelName
      * @param string $alias
-     * @return bool|\Phalcon\Mvc\Model\Relation
+     * @return bool|Relation
      */
     public function getRelationByAlias(string $modelName, string $alias)
     {
@@ -657,11 +645,11 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      *
      * @return \Phalcon\Mvc\Model\Resultset\Simple|Phalcon\Mvc\Model\Resultset\Simple|int|false
      * @param \Phalcon\Mvc\Model\RelationInterface $relation
-     * @param string $method
      * @param \Phalcon\Mvc\ModelInterface $record
+     * @param string $method
      * @param mixed $parameters
      */
-    public function getRelationRecords(\Phalcon\Mvc\Model\RelationInterface $relation, string $method = null, \Phalcon\Mvc\ModelInterface $record, $parameters = null)
+    public function getRelationRecords(\Phalcon\Mvc\Model\RelationInterface $relation, \Phalcon\Mvc\ModelInterface $record, string $method = null, $parameters = null)
     {
     }
 
@@ -701,7 +689,7 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param mixed $modelRelation
      * @param \Phalcon\Mvc\ModelInterface $record
      * @param mixed $parameters
-     * @return bool|\Phalcon\Mvc\Model\ResultsetInterface
+     * @return bool|ResultsetInterface
      */
     public function getBelongsToRecords(string $method, string $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null)
     {
@@ -715,7 +703,7 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param mixed $modelRelation
      * @param \Phalcon\Mvc\ModelInterface $record
      * @param mixed $parameters
-     * @return bool|\Phalcon\Mvc\Model\ResultsetInterface
+     * @return bool|ResultsetInterface
      */
     public function getHasManyRecords(string $method, string $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null)
     {
@@ -729,7 +717,7 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
      * @param mixed $modelRelation
      * @param \Phalcon\Mvc\ModelInterface $record
      * @param mixed $parameters
-     * @return bool|\Phalcon\Mvc\ModelInterface
+     * @return bool|ModelInterface
      */
     public function getHasOneRecords(string $method, string $modelName, $modelRelation, \Phalcon\Mvc\ModelInterface $record, $parameters = null)
     {
@@ -889,5 +877,4 @@ class Manager implements \Phalcon\Mvc\Model\ManagerInterface, \Phalcon\Di\Inject
     public function __destruct()
     {
     }
-
 }

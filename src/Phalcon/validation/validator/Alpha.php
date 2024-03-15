@@ -45,6 +45,7 @@ use Phalcon\Validation\Validator;
 class Alpha extends Validator
 {
 
+
     /**
      * Executes the validation
      *
@@ -55,5 +56,4 @@ class Alpha extends Validator
     public function validate(\Phalcon\Validation $validation, string $field): bool
     {
     }
-
 }

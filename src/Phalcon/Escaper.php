@@ -26,15 +26,11 @@ class Escaper implements \Phalcon\EscaperInterface
 
     protected $_encoding = 'utf-8';
 
-
     protected $_htmlEscapeMap = null;
-
 
     protected $_htmlQuoteType = 3;
 
-
     protected $_doubleEncode = true;
-
 
     /**
      * Sets the encoding to be used by the escaper
@@ -157,5 +153,4 @@ class Escaper implements \Phalcon\EscaperInterface
     public function escapeUrl(string $url): string
     {
     }
-
 }

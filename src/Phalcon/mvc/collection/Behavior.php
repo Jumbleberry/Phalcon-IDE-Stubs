@@ -14,7 +14,6 @@ abstract class Behavior implements \Phalcon\Mvc\Collection\BehaviorInterface
 
     protected $_options;
 
-
     /**
      * Phalcon\Mvc\Collection\Behavior
      *
@@ -64,5 +63,4 @@ abstract class Behavior implements \Phalcon\Mvc\Collection\BehaviorInterface
     public function missingMethod(\Phalcon\Mvc\CollectionInterface $model, string $method, $arguments = null)
     {
     }
-
 }

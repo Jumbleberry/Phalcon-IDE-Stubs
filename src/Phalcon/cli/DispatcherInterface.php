@@ -12,6 +12,7 @@ use Phalcon\DispatcherInterface as DispatcherInterfaceBase;
 interface DispatcherInterface extends DispatcherInterfaceBase
 {
 
+
     /**
      * Sets the default task suffix
      *
@@ -53,5 +54,4 @@ interface DispatcherInterface extends DispatcherInterfaceBase
      * @return TaskInterface
      */
     public function getActiveTask(): TaskInterface;
-
 }

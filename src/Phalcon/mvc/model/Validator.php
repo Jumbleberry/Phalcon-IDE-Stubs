@@ -20,9 +20,7 @@ abstract class Validator implements \Phalcon\Mvc\Model\ValidatorInterface
 
     protected $_options;
 
-
-    protected $_messages = array();
-
+    protected $_messages = [];
 
     /**
      * Phalcon\Mvc\Model\Validator constructor
@@ -83,5 +81,4 @@ abstract class Validator implements \Phalcon\Mvc\Model\ValidatorInterface
     public function isSetOption(string $option): bool
     {
     }
-
 }

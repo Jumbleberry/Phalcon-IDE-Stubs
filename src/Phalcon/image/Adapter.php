@@ -14,9 +14,7 @@ abstract class Adapter implements \Phalcon\Image\AdapterInterface
 
     protected $_image;
 
-
     protected $_file;
-
 
     protected $_realpath;
 
@@ -50,15 +48,11 @@ abstract class Adapter implements \Phalcon\Image\AdapterInterface
      */
     protected $_mime;
 
-
     static protected $_checked = false;
-
-
 
     public function getImage()
     {
     }
-
 
     public function getRealpath()
     {
@@ -273,5 +267,4 @@ abstract class Adapter implements \Phalcon\Image\AdapterInterface
     public function render(string $ext = null, int $quality = 100): string
     {
     }
-
 }

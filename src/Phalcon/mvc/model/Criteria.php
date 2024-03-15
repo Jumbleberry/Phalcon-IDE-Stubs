@@ -33,18 +33,13 @@ class Criteria implements \Phalcon\Mvc\Model\CriteriaInterface, \Phalcon\Di\Inje
 
     protected $_model;
 
-
     protected $_params;
-
 
     protected $_bindParams;
 
-
     protected $_bindTypes;
 
-
     protected $_hiddenParamNumber = 0;
-
 
     /**
      * Sets the DependencyInjector container
@@ -58,7 +53,7 @@ class Criteria implements \Phalcon\Mvc\Model\CriteriaInterface, \Phalcon\Di\Inje
     /**
      * Returns the DependencyInjector container
      *
-     * @return \Phalcon\DiInterface|null
+     * @return DiInterface|null
      */
     public function getDI(): ?DiInterface
     {
@@ -526,5 +521,4 @@ class Criteria implements \Phalcon\Mvc\Model\CriteriaInterface, \Phalcon\Di\Inje
     public function execute(): ResultsetInterface
     {
     }
-
 }

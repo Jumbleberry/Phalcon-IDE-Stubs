@@ -28,9 +28,7 @@ class Collection implements \Iterator, \Countable
 
     protected $_position = 0;
 
-
     protected $_annotations;
-
 
     /**
      * Phalcon\Annotations\Collection constructor
@@ -62,7 +60,7 @@ class Collection implements \Iterator, \Countable
     /**
      * Returns the current annotation in the iterator
      *
-     * @return \Phalcon\Annotations\Annotation
+     * @return mixed
      */
     public function current()
     {
@@ -133,5 +131,4 @@ class Collection implements \Iterator, \Countable
     public function has(string $name): bool
     {
     }
-
 }

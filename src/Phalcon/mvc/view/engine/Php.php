@@ -12,6 +12,7 @@ use Phalcon\Mvc\View\Engine;
 class Php extends Engine
 {
 
+
     /**
      * Renders a view using the template engine
      *
@@ -22,5 +23,4 @@ class Php extends Engine
     public function render(string $path, $params, bool $mustClean = false)
     {
     }
-
 }

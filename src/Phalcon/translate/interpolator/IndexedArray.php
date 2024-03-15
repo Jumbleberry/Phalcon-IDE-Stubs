@@ -7,6 +7,7 @@ use Phalcon\Translate\InterpolatorInterface;
 class IndexedArray implements \Phalcon\Translate\InterpolatorInterface
 {
 
+
     /**
      * Replaces placeholders by the values passed
      *
@@ -17,5 +18,4 @@ class IndexedArray implements \Phalcon\Translate\InterpolatorInterface
     public function replacePlaceholders(string $translation, $placeholders = null): string
     {
     }
-
 }

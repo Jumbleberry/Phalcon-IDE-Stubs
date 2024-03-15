@@ -20,98 +20,73 @@ class Collection implements \Countable, \Iterator
 
     protected $_prefix;
 
-
     protected $_local = true;
 
+    protected $_resources = [];
 
-    protected $_resources = array();
-
-
-    protected $_codes = array();
-
+    protected $_codes = [];
 
     protected $_position;
 
+    protected $_filters = [];
 
-    protected $_filters = array();
-
-
-    protected $_attributes = array();
-
+    protected $_attributes = [];
 
     protected $_join = true;
 
-
     protected $_targetUri;
-
 
     protected $_targetPath;
 
-
     protected $_targetLocal = true;
-
 
     protected $_sourcePath;
 
-
     protected $_includedResources;
-
-
 
     public function getPrefix()
     {
     }
 
-
     public function getLocal()
     {
     }
-
 
     public function getResources()
     {
     }
 
-
     public function getCodes()
     {
     }
-
 
     public function getPosition()
     {
     }
 
-
     public function getFilters()
     {
     }
-
 
     public function getAttributes()
     {
     }
 
-
     public function getJoin()
     {
     }
-
 
     public function getTargetUri()
     {
     }
 
-
     public function getTargetPath()
     {
     }
 
-
     public function getTargetLocal()
     {
     }
-
 
     public function getSourcePath()
     {
@@ -387,5 +362,4 @@ class Collection implements \Countable, \Iterator
     protected final function addResource(ResourceInterface $resource): bool
     {
     }
-
 }

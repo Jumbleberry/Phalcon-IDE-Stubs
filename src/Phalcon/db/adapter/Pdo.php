@@ -30,6 +30,7 @@ use Phalcon\Db\Result\Pdo as ResultPdo;
  */
 abstract class Pdo extends Adapter
 {
+
     /**
      * PDO Handler
      *
@@ -41,7 +42,6 @@ abstract class Pdo extends Adapter
      * Last affected rows
      */
     protected $_affectedRows;
-
 
     /**
      * Constructor for Phalcon\Db\Adapter\Pdo
@@ -161,7 +161,7 @@ abstract class Pdo extends Adapter
      * @param string $sqlStatement
      * @param mixed $bindParams
      * @param mixed $bindTypes
-     * @return bool|\Phalcon\Db\ResultInterface
+     * @return bool|ResultInterface
      */
     public function query(string $sqlStatement, $bindParams = null, $bindTypes = null)
     {
@@ -254,7 +254,7 @@ abstract class Pdo extends Adapter
      * @param array $params
      * @return array
      */
-    public function convertBoundParams(string $sql, array $params = array()): array
+    public function convertBoundParams(string $sql, array $params = []): array
     {
     }
 
@@ -360,5 +360,4 @@ abstract class Pdo extends Adapter
     public function getErrorInfo()
     {
     }
-
 }

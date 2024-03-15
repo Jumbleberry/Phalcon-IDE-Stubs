@@ -14,40 +14,27 @@ class Route implements \Phalcon\Mvc\Router\RouteInterface
 
     protected $_pattern;
 
-
     protected $_compiledPattern;
-
 
     protected $_paths;
 
-
     protected $_methods;
-
 
     protected $_hostname;
 
-
     protected $_converters;
-
 
     protected $_id;
 
-
     protected $_name;
-
 
     protected $_beforeMatch;
 
-
     protected $_match;
-
 
     protected $_group;
 
-
     static protected $_uniqueId;
-
-
 
     public function getId()
     {
@@ -387,5 +374,4 @@ class Route implements \Phalcon\Mvc\Router\RouteInterface
     public static function reset(): void
     {
     }
-
 }

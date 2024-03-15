@@ -10,6 +10,7 @@ namespace Phalcon;
 interface CryptInterface
 {
 
+
     /**
      * Sets the cipher algorithm
      *
@@ -82,5 +83,4 @@ interface CryptInterface
      * @return array
      */
     public function getAvailableCiphers(): array;
-
 }

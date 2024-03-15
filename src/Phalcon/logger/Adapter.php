@@ -15,6 +15,7 @@ use Phalcon\Logger\FormatterInterface;
  */
 abstract class Adapter implements \Phalcon\Logger\AdapterInterface
 {
+
     /**
      * Tells if there is an active transaction or not
      *
@@ -27,7 +28,7 @@ abstract class Adapter implements \Phalcon\Logger\AdapterInterface
      *
      * @var array
      */
-    protected $_queue = array();
+    protected $_queue = [];
 
     /**
      * Formatter
@@ -42,7 +43,6 @@ abstract class Adapter implements \Phalcon\Logger\AdapterInterface
      * @var int
      */
     protected $_logLevel = 9;
-
 
     /**
      * Filters the logs sent to the handlers that are less or equal than a specific level
@@ -208,5 +208,4 @@ abstract class Adapter implements \Phalcon\Logger\AdapterInterface
     public function log($type, $message = null, array $context = null): AdapterInterface
     {
     }
-
 }

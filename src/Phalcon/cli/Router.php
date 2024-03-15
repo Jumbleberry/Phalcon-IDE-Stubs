@@ -33,42 +33,29 @@ class Router implements \Phalcon\Di\InjectionAwareInterface
 
     protected $_dependencyInjector;
 
-
     protected $_module;
-
 
     protected $_task;
 
-
     protected $_action;
 
-
-    protected $_params = array();
-
+    protected $_params = [];
 
     protected $_defaultModule = null;
 
-
     protected $_defaultTask = null;
-
 
     protected $_defaultAction = null;
 
-
-    protected $_defaultParams = array();
-
+    protected $_defaultParams = [];
 
     protected $_routes;
 
-
     protected $_matchedRoute;
-
 
     protected $_matches;
 
-
     protected $_wasMatched = false;
-
 
     /**
      * Phalcon\Cli\Router constructor
@@ -164,7 +151,6 @@ class Router implements \Phalcon\Di\InjectionAwareInterface
      * @param string/array paths
      * @return \Phalcon\Cli\Router\Route
      * @param mixed $paths
-     * @param string  /array paths
      */
     public function add(string $pattern, $paths = null): RouteInterface
     {
@@ -261,5 +247,4 @@ class Router implements \Phalcon\Di\InjectionAwareInterface
     public function getRouteByName(string $name)
     {
     }
-
 }

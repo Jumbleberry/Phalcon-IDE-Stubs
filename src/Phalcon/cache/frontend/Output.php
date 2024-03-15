@@ -61,9 +61,7 @@ class Output implements \Phalcon\Cache\FrontendInterface
 
     protected $_buffering = false;
 
-
     protected $_frontendOptions;
-
 
     /**
      * Phalcon\Cache\Frontend\Output constructor
@@ -138,5 +136,4 @@ class Output implements \Phalcon\Cache\FrontendInterface
     public function afterRetrieve($data)
     {
     }
-
 }

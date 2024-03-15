@@ -60,21 +60,15 @@ class Manager implements \Phalcon\Mvc\Model\Transaction\ManagerInterface, \Phalc
 
     protected $_dependencyInjector;
 
-
     protected $_initialized = false;
-
 
     protected $_rollbackPendent = true;
 
-
     protected $_number = 0;
-
 
     protected $_service = 'db';
 
-
     protected $_transactions;
-
 
     /**
      * Phalcon\Mvc\Model\Transaction\Manager constructor
@@ -228,5 +222,4 @@ class Manager implements \Phalcon\Mvc\Model\Transaction\ManagerInterface, \Phalc
     public function collectTransactions()
     {
     }
-
 }

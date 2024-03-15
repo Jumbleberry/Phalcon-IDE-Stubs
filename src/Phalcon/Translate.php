@@ -11,4 +11,5 @@ namespace Phalcon;
 abstract class Translate
 {
 
+
 }

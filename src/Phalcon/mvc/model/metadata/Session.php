@@ -26,7 +26,6 @@ class Session extends MetaData
 
     protected $_prefix = '';
 
-
     /**
      * Phalcon\Mvc\Model\MetaData\Session constructor
      *
@@ -56,5 +55,4 @@ class Session extends MetaData
     public function write(string $key, $data): void
     {
     }
-
 }

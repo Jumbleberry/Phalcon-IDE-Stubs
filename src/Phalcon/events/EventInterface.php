@@ -10,6 +10,7 @@ namespace Phalcon\Events;
 interface EventInterface
 {
 
+
     /**
      * Gets event data
      *
@@ -60,5 +61,4 @@ interface EventInterface
      * @return bool
      */
     public function isCancelable(): bool;
-
 }

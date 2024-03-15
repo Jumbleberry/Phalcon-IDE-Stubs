@@ -12,6 +12,7 @@ use Phalcon\DiInterface;
 interface ModuleDefinitionInterface
 {
 
+
     /**
      * Registers an autoloader related to the module
      *
@@ -25,5 +26,4 @@ interface ModuleDefinitionInterface
      * @param \Phalcon\DiInterface $dependencyInjector
      */
     public function registerServices(\Phalcon\DiInterface $dependencyInjector);
-
 }
